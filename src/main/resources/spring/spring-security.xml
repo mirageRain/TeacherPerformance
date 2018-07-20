@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/security
+            http://www.springframework.org/schema/security/spring-security.xsd">
+	<!-- 不需要权限访问 -->
+	<http pattern="/login" security="none"></http>
+	<http pattern="/404" security="none"></http>
+	<http pattern="/500" security="none"></http>
+
+	<authentication-manager>
+		<authentication-provider>
+			<user-service>
+				<user name="admin" password="123456" authorities="ROLE_USER" />
+			</user-service>
+		</authentication-provider>
+	</authentication-manager>
+
+	<http auto-config='true'>
+		<csrf disabled="true" />
+		<!-- 没有权限跳转页面 -->
+		<access-denied-handler error-page="/login" />
+
+
+		<!-- 校验登陆可访问 -->
+		<intercept-url pattern="/admin**"  access="hasRole('ROLE_USER')" />
+		<form-login login-page="/login" />
+		<logout logout-url="/logout" logout-success-url="/login" />
+
+
+
+	</http>
+
+	<!-- 验证配置，实现用户认证的入口，主要实现UserDetailsService接口即可 -->
+	<authentication-manager alias="authenticationManager">
+		<authentication-provider ref="daoAuthenticationProvider">
+		</authentication-provider>
+	</authentication-manager>
+	
+	<beans:bean id="daoAuthenticationProvider" class="org.springframework.security.authentication.dao.DaoAuthenticationProvider">
+        <beans:property name="userDetailsService" ref="myUserDetailService" />
+    </beans:bean>    
+    <!-- spring推荐的单向加密算法 -->
+    <beans:bean id="passwordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
+    
+    <!-- 在这个类中，读入用户的密码，角色信息，是否锁定，账号是否过期等属性信息  -->
+    <beans:bean id="myUserDetailService" class="com.hdc.security.MyUserDetailService" />
+
+</beans:beans>

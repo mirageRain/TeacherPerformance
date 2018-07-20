@@ -1,0 +1,32 @@
+{
+	"code": 0,
+	"msg": "",
+	"count": 5,
+	"data": [
+		{
+			"collegeId": "1",
+			"collegeName":"信息工程学院",
+			"collegeUser": "xxgcxy"
+		},
+		{
+			"collegeId": "2",
+			"collegeName":"软件学院",
+			"collegeUser": "rjxy"
+		},
+		{
+			"collegeId": "3",
+			"collegeName":"文史学院",
+			"collegeUser": "wsxy"
+		},
+		{
+			"collegeId": "4",
+			"collegeName":"教育学院",
+			"collegeUser": "jyxy"
+		},
+		{
+			"collegeId": "5",
+			"collegeName":"经济管理学院",
+			"collegeUser": "jgxy"
+		}
+	]
+}

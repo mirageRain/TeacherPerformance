@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html class="loginHtml">
+<head>
+	<meta charset="utf-8">
+	<title>邯郸学院教师教学业绩考核系统</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="icon" href="../../favicon.ico">
+	<link rel="stylesheet" href="../resources/layui/css/layui.css" media="all" />
+	<link rel="stylesheet" href="../resources/css/public.css" media="all" />
+	<style type="text/css">
+	</style>
+</head>
+<<body class="beg-login-bg">
+		<div class="beg-login-box">
+			<header>
+				<h1>教师教学业绩考核系统</h1>
+			</header>
+			<div class="beg-login-main">
+				<form class="layui-form" onsubmit="return false;">
+					<div class="layui-form-item">
+						<label class="beg-login-icon">
+                        <i class="layui-icon">&#xe612;</i>
+                    </label>
+						<input type="text" id="user-name" name="userName" lay-verify="userName" autocomplete="off" placeholder="这里输入您的账号" class="layui-input">
+					</div>
+					<div class="layui-form-item">
+						<label class="beg-login-icon">
+                        <i class="layui-icon">&#xe642;</i>
+                    </label>
+						<input type="password" id="password" name="password" lay-verify="password" autocomplete="off" placeholder="这里输入您的密码" class="layui-input">
+					</div>
+					<div class="layui-form-item">
+					</div>
+						<div class="beg-pull-left beg-login-remember">
+							<label>记住帐号？</label>
+							<input type="checkbox" name="zzz" lay-skin="switch" lay-text="记住|关闭"  checked title="记住帐号">
+							
+						</div>
+						<div class="beg-pull-right">
+							<button id="login" class="layui-btn layui-btn-primary" lay-submit>
+                            <i class="layui-icon">&#xe650;</i> 登录
+                        </button>
+						</div>
+						<div class="beg-clear"></div>
+				</form>
+			</div>
+			<footer>
+				<p id="time">Copyright  ©<a href="www.hdc.edu.cn">邯郸学院  </a></p>
+			</footer>
+		</div>
+	<script type="text/javascript" src="../resources/layui/layui.js"></script>
+	<script type="text/javascript" src="login.js"></script>
+	<script type="text/javascript" src="../resources/js/cache.js"></script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>文章列表--layui后台管理模板 2.0</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="../resources/layui/css/layui.css" media="all" />
+	<link rel="stylesheet" href="../resources/css/public.css" media="all" />
+	<style type="text/css">
+		.layui-field-box .layui-upload{
+			margin-left: 40px;
+		}
+		.btnlist .layui-btn{
+			float: right;
+			margin-left: 20px;
+		}
+	</style>
+</head>
+<body class="childrenBody">
+	<div class="layui-field-box">
+		<form class="layui-form" action="">
+			<div class="layui-form-item">
+				<div class="layui-inline">
+					<label class="layui-form-label">申报人</label>
+					<div class="layui-input-inline">
+						<input type="text" value="张三" disabled="disabled" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-inline">
+					<label class="layui-form-label">职称</label>
+					<div class="layui-input-inline">
+						<input type="text" value="讲师" disabled="disabled" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<div class="layui-inline">
+					<label class="layui-form-label">专业</label>
+					<div class="layui-input-inline">
+						<input type="text" value="计算机科学与技术" disabled="disabled" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+			</div>
+			
+			<div class="layui-form-item">
+				<label class="layui-form-label">评估指标</label>
+				<div class="layui-input-block">
+					<select name="interest" lay-filter="aihao">
+						<option value="1" selected="">1.承担教育教学工作量情况</option>
+						<option value="2">2.教学工作延伸</option>
+						<option value="3">3.师资队伍建设</option>
+					</select>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">主要观测点</label>
+				<div class="layui-input-block">
+					<select name="interest" lay-filter="aihao">
+						<option value="1.1">1.1 讲授理论课程</option>
+						<option value="1.2" disabled="">1.2 讲授实验、实训课程</option>
+						<option value="1.3">1.3 考务工作[注1]</option>
+						<option value="1.4">1.4指导实习/教学实践/本科生导师/启航书院导师</option>
+						<option value="1.5">1.5指导毕业论文</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="layui-form-item">
+				<label class="layui-form-label">观测点的评分标准</label>
+				<div class="layui-input-block">
+					<select name="interest" lay-filter="aihao">
+						<option value="1">导师制0.5分/生（最多不超过20分）</option>
+						<option value="2">实习指导0.5分/每生（最多不超过15分）</option>
+						<option value="3">指导小组学生人数*2/小组导师人数</option>
+					</select>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<div class="layui-inline">
+					<label class="layui-form-label">观测点的评分依据</label>
+					<div class="layui-input-inline">
+						<input type="text" value="相关教学文件" disabled="disabled" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+			</div>
+
+			
+
+			<div class="layui-form-item">
+				<div class="layui-inline">
+					<label class="layui-form-label">自评得分</label>
+					<div class="layui-input-inline">
+						<input type="text" name="number" lay-verify="required|number" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+			</div>
+			<div class="layui-form-item layui-form-text">
+				<label class="layui-form-label">备注说明</label>
+				<div class="layui-input-block">
+					<textarea placeholder="请输入备注说明" class="layui-textarea"></textarea>
+				</div>
+			</div>
+			<div class="layui-form-item layui-form-text">
+				<label class="layui-form-label">上传依据</label>
+				<div class="layui-upload">
+					<button type="button" class="layui-btn layui-btn-normal" id="testList">选择多文件</button> 
+					<div class="layui-upload-list">
+						<table class="layui-table">
+							<thead>
+								<tr><th>文件名</th>
+									<th>大小</th>
+									<th>状态</th>
+									<th>操作</th>
+								</tr></thead>
+								<tbody id="demoList"></tbody>
+							</table>
+						</div>
+						<button type="button" class="layui-btn" id="testListAction">开始上传</button>
+					</div> 
+				</div>
+			</div>			
+			<div class="page-footer">
+				<div class="btn-list">
+					<div class="btnlist">
+						<button class="layui-btn" lay-submit="" lay-filter="submit" data-url="/student/save"><i class="fa fa-floppy-o">&nbsp;</i>申报</button>
+						<button class="layui-btn" onclick="$t.closeWindow();"><i class="fa fa-undo">&nbsp;</i>返回</button>
+					</div>
+				</div>
+			</div>
+		</form>
+
+	</div>
+	<script type="text/javascript" src="../resources/layui/layui.js"></script>
+	<script type="text/javascript" src="../resources/js/teacher/newsAdd.js"></script>
+</body>
+</html>

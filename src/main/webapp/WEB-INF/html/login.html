@@ -15,24 +15,24 @@
 	<style type="text/css">
 	</style>
 </head>
-<<body class="beg-login-bg">
+<body class="beg-login-bg">
 		<div class="beg-login-box">
 			<header>
 				<h1>教师教学业绩考核系统</h1>
 			</header>
 			<div class="beg-login-main">
-				<form class="layui-form" id="userForm" action="logincheck" method="post" >
+				<form class="layui-form" id="userForm"  name="f" action="login" method="post" >
 					<div class="layui-form-item">
 						<label class="beg-login-icon">
                         <i class="layui-icon">&#xe612;</i>
                     </label>
-						<input type="text" id="user-name" name=j_username lay-verify="userName" autocomplete="off" placeholder="这里输入您的账号" class="layui-input">
+						<input type="text" id="user-name" name=username lay-verify="userName" autocomplete="off" placeholder="这里输入您的账号" class="layui-input">
 					</div>
 					<div class="layui-form-item">
 						<label class="beg-login-icon">
                         <i class="layui-icon">&#xe642;</i>
                     </label>
-						<input type="password" id="password" name=j_password lay-verify="password" autocomplete="off" placeholder="这里输入您的密码" class="layui-input">
+						<input type="password" id="password" name=password lay-verify="password" autocomplete="off" placeholder="这里输入您的密码" class="layui-input">
 					</div>
 					<div class="layui-form-item">
 					</div>

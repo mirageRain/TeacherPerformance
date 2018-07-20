@@ -36,7 +36,7 @@ public class MyUserDetailService implements UserDetailsService {
             // 存放权限
             Collection<GrantedAuthority> auths = new ArrayList<GrantedAuthority>();
                 String action = "ROLE_USER";
-              
+              System.out.println(userCode);
                     String[] roleaCtion = action.split(",");
                     for (int i = 0; i < roleaCtion.length; i++) {
                         SimpleGrantedAuthority auth = new SimpleGrantedAuthority(roleaCtion[i]);
@@ -44,7 +44,7 @@ public class MyUserDetailService implements UserDetailsService {
                     }
                 
                 //spring security自带的User对象
-            User userDetails = new User("admin", "123456", true, true, true, true, auths);
+            User userDetails = new User("admin", "admin", true, true, true, true, auths);
             return userDetails;
 //        }
 //        return null;

@@ -6,7 +6,7 @@
             http://www.springframework.org/schema/security
             http://www.springframework.org/schema/security/spring-security.xsd">
 	<!-- 不需要权限访问 -->
-	<http pattern="/login" security="none"></http>
+	<http pattern="/loginPage" security="none"></http>
 	<http pattern="/404" security="none"></http>
 	<http pattern="/500" security="none"></http>
 
@@ -20,15 +20,19 @@
 
 	<http auto-config='true'>
 		<csrf disabled="true" />
+		<headers>
+            <!-- Iframe页面允许被其它页面嵌入 -->
+            <frame-options disabled="true" />
+        </headers>
 		<!-- 没有权限跳转页面 -->
-		<access-denied-handler error-page="/login" />
+		<access-denied-handler error-page="/loginPage" />
 
 
 		<!-- 校验登陆可访问 -->
 		<intercept-url pattern="/admin**"  access="hasRole('ROLE_USER')" />
-		<form-login login-page="/login" />
+		<form-login login-page="/loginPage" login-processing-url="/login" />
 		<logout logout-url="/logout" logout-success-url="/login" />
-
+		
 
 
 	</http>

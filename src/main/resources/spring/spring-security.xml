@@ -10,13 +10,6 @@
 	<http pattern="/404" security="none"></http>
 	<http pattern="/500" security="none"></http>
 
-	<authentication-manager>
-		<authentication-provider>
-			<user-service>
-				<user name="admin" password="123456" authorities="ROLE_USER" />
-			</user-service>
-		</authentication-provider>
-	</authentication-manager>
 
 	<http auto-config='true'>
 		<csrf disabled="true" />
@@ -29,7 +22,7 @@
 
 
 		<!-- 校验登陆可访问 -->
-		<intercept-url pattern="/admin**"  access="hasRole('ROLE_USER')" />
+		<intercept-url pattern="/admin**"  access="hasRole('ROLE_ADMIN')" />
 		<form-login login-page="/loginPage" login-processing-url="/login" />
 		<logout logout-url="/logout" logout-success-url="/login" />
 		
@@ -42,6 +35,13 @@
 		<authentication-provider ref="daoAuthenticationProvider">
 		</authentication-provider>
 	</authentication-manager>
+	 <authentication-manager alias="authManager" erase-credentials="false" >
+      <authentication-provider user-service-ref="myUserDetailService">
+         <password-encoder ref="passwordEncoder">
+           </password-encoder>
+      </authentication-provider>
+   </authentication-manager>
+
 	
 	<beans:bean id="daoAuthenticationProvider" class="org.springframework.security.authentication.dao.DaoAuthenticationProvider">
         <beans:property name="userDetailsService" ref="myUserDetailService" />

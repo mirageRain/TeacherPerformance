@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+          xmlns:beans="http://www.springframework.org/schema/beans"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:aop="http://www.springframework.org/schema/aop"
+          xsi:schemaLocation="http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+                    http://www.springframework.org/schema/security
+                    http://www.springframework.org/schema/security/spring-security-3.2.xsd
+                    http://www.springframework.org/schema/aop
+                    http://www.springframework.org/schema/aop/spring-aop.xsd">
+   <!-- 不需要权限访问 -->
+   <http pattern="/login.jsp" security="none"></http>
+   <http pattern="/404.jsp" security="none"></http>
+   <http pattern="/500.jsp" security="none"></http>
+   <http pattern="/index.jsp" security="none"></http>
+   <http pattern="/access.jsp" security="none"></http>
+   <http pattern="/error.jsp" security="none"></http>
+    <http pattern="/sessionTimeOut.jsp" security="none"/>
+   <http pattern="/quitPage.jsp" security="none"/>
+<!--以上部分可根据自己的需求设定那些事不需要拦截的，然后直接放行就ok了-->
+   <http auto-config='true' >
+      <!-- 没有权限跳转页面  -->
+      <access-denied-handler error-page="/access.jsp" />
+
+   <!--
+      校验登陆可访问-->
+      <intercept-url pattern="/**" access="IS_AUTHENTICATED_FULLY" />
+      <form-login
+            login-page="/system/loginpage"
+                login-processing-url="/logincheck"
+                authentication-failure-handler-ref="failureHandler"
+                authentication-success-handler-ref="successHandler"/> 
+<logout logout-url="/logout"    logout-success-url="/system/loginpage" />
+
+      <!--session 不做处理-->
+      <session-management invalid-session-url="/system/loginpage"  session-fixation-protection="none" >
+
+<concurrency-control max-sessions="1" error-if-maximum-exceeded="false" expired-url="/system/loginpage" />
+      </session-management>
+      <!-- 1、注释此过滤器，不再验证是否有访问权限(访问所有资源不再判断是否具有权限)
+          2、注释此过滤器，并更改max-sessions="9999",可用一个账号登陆9999次,并且不再验证是否有访问权限(访问所有资源不再判断是否具有权限) -->
+       <custom-filter ref="mySecurityFilter" before="FILTER_SECURITY_INTERCEPTOR" />
+    
+   </http>
+
+
+   <authentication-manager alias="authManager" erase-credentials="false" >
+      <authentication-provider user-service-ref="userServiceDetail">
+         <password-encoder ref="passwordEncoder">
+           </password-encoder>
+      </authentication-provider>
+   </authentication-manager>
+   <!-- SHA加密方式 -->
+   <beans:bean id="passwordEncoder"
+   class="org.springframework.security.authentication.encoding.ShaPasswordEncoder" />
+
+   </beans:beans>

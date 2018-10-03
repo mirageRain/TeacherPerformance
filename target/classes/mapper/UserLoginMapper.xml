@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hdc.dao.UserLoginDao">
+
+
+
+	<select id="queryUserLoginByUsername" resultType="com.hdc.entity.UserLoginEntity">
+		SELECT
+		*
+		FROM
+		users a
+		LEFT
+		JOIN
+		authorities b
+		ON
+		a.user_id =
+		b.user_id
+		where a.username = #{username};
+	</select>
+
+</mapper>

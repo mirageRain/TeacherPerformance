@@ -1,0 +1,6 @@
+Exception: STATUS_ACCESS_VIOLATION at eip=05A674AC
+eax=00000001 ebx=05A674AC ecx=FFF96000 edx=641D85A8 esi=02E4CE64 edi=02E4CDC4
+ebp=00000002 esp=02E4CD6C program=C:\Program Files (x86)\Git\usr\bin\less.exe, pid 12876, thread unknown (0x4BC4)
+cs=0023 ds=002B es=002B fs=0053 gs=002B ss=002B
+Stack trace:
+Frame     Function  Args

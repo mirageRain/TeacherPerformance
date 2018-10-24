@@ -23,7 +23,7 @@ layui.use(['form','layer','layedit','laydate','upload'],function(){
     var tableJson = {};
 
     $.ajax({
-        "url": "../json/evaluationIndexList.json",
+        "url": "../resources/json/evaluationIndexList.json",
         "contentType": "application/json",
         "type": "get",
         "async": false,
@@ -44,7 +44,7 @@ layui.use(['form','layer','layedit','laydate','upload'],function(){
         }
     });
     $.ajax({
-        "url": "../json/observationPointList.json",
+        "url": "../resources/json/observationPointList.json",
         "contentType": "application/json",
         "type": "get",
         "async": false,
@@ -65,7 +65,7 @@ layui.use(['form','layer','layedit','laydate','upload'],function(){
     });
 
     $.ajax({
-        "url": "../json/gradingStandardList.json",
+        "url": "../resources/json/gradingStandardList.json",
         "contentType": "application/json",
         "type": "get",
         "async": false,
@@ -86,7 +86,7 @@ layui.use(['form','layer','layedit','laydate','upload'],function(){
     });
 
     $.ajax({
-        "url": "../json/auditList.json",
+        "url": "../resources/json/auditList.json",
         "contentType": "application/json",
         "type": "get",
         "async": false,
@@ -237,7 +237,7 @@ layui.use(['form','layer','layedit','laydate','upload'],function(){
     //上传缩略图
     upload.render({
         elem: '.thumbBox',
-        url: '../../json/userface.json',
+        url: '../resources/json/userface.json',
         method : "get",  //此处是为了演示之用，实际使用中请将此删除，默认用post方式提交
         done: function(res, index, upload){
             var num = parseInt(4*Math.random());  //生成0-4的随机数，随机显示一个头像信息
@@ -326,7 +326,7 @@ layui.use(['form','layer','layedit','laydate','upload'],function(){
     var editIndex = layedit.build('news_content',{
         height : 535,
         uploadImage : {
-            url : "../../json/newsImg.json"
+            url : "../resources/json/newsImg.json"
         }
     });
 	//多文件列表示例

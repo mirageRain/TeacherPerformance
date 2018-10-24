@@ -19,11 +19,11 @@ layui.use(['form','layer','laydate','table','laytpl'],function(){
         cols : [[
             {type: "checkbox", fixed:"left", width:50},
             {field: 'newsId', title: '申报ID', width:100, align:"center"},
+			{field: 'name', title: '申报人', width:100, align:"center"},
+			{field: 'college', title: '申报人学院', width:200, align:"center"},
             {field: 'newsAuthor', title: '申报项', align:'center'},
             {field: 'newsName', title: '评分标准', width:350,align:"center"},
-            {field: 'newsLook', title: '审核单位',  align:'center'},
-            {field: 'newsStatus', title: '申报状态', align:'center',templet:"#newsStatus"},
-            {field: 'evaluationScore', title: '自评得分',  align:'center'},
+            {field: 'evaluationScore', title: '申请分数',  align:'center'},
             {field: 'newsTime', title: '申报时间', align:'center', minWidth:110, templet:function(d){
                 return d.newsTime.substring(0,10);
             }},
@@ -60,10 +60,10 @@ layui.use(['form','layer','laydate','table','laytpl'],function(){
         }
     });
 
-    //添加申报单
+    //添加文章
     function addNews(edit){
         var index = layui.layer.open({
-            title : "新评分申报",
+            title : "评分认证",
             type : 2,
 			shadeClose: false,
             shade: [0.3, '#000'],
@@ -83,7 +83,7 @@ layui.use(['form','layer','laydate','table','laytpl'],function(){
                     form.render();
                 }
                 setTimeout(function(){
-                    layui.layer.tips('点击此处返回申报列表', '.layui-layer-setwin .layui-layer-close', {
+                    layui.layer.tips('点击此处返回文章列表', '.layui-layer-setwin .layui-layer-close', {
                         tips: 3
                     });
                 },500)
@@ -108,8 +108,8 @@ layui.use(['form','layer','laydate','table','laytpl'],function(){
             for (var i in data) {
                 newsId.push(data[i].newsId);
             }
-            layer.confirm('确定删除选中的申报单？', {icon: 3, title: '提示信息'}, function (index) {
-                // $.get("删除申报单接口",{
+            layer.confirm('确定删除选中的文章？', {icon: 3, title: '提示信息'}, function (index) {
+                // $.get("删除文章接口",{
                 //     newsId : newsId  //将需要删除的newsId作为参数传入
                 // },function(data){
                 tableIns.reload();
@@ -117,7 +117,7 @@ layui.use(['form','layer','laydate','table','laytpl'],function(){
                 // })
             })
         }else{
-            layer.msg("请选择需要删除的申报单");
+            layer.msg("请选择需要删除的文章");
         }
     })
 
@@ -129,8 +129,8 @@ layui.use(['form','layer','laydate','table','laytpl'],function(){
         if(layEvent === 'edit'){ //编辑
             addNews(data);
         } else if(layEvent === 'del'){ //删除
-            layer.confirm('确定删除此申报单？',{icon:3, title:'提示信息'},function(index){
-                // $.get("删除申报单接口",{
+            layer.confirm('确定删除此文章？',{icon:3, title:'提示信息'},function(index){
+                // $.get("删除文章接口",{
                 //     newsId : data.newsId  //将需要删除的newsId作为参数传入
                 // },function(data){
                     tableIns.reload();
@@ -138,7 +138,7 @@ layui.use(['form','layer','laydate','table','laytpl'],function(){
                 // })
             });
         } else if(layEvent === 'look'){ //预览
-            layer.alert("此功能需要前台展示，实际开发中传入对应的必要参数进行申报单内容页面访问")
+            layer.alert("此功能需要前台展示，实际开发中传入对应的必要参数进行文章内容页面访问")
         }
     });
     

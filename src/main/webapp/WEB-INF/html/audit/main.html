@@ -9,15 +9,12 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="../layui/css/layui.css" media="all" />
-	<link rel="stylesheet" href="../css/public.css" media="all" />
+	<link rel="stylesheet" href="../resources/layui/css/layui.css" media="all" />
+	<link rel="stylesheet" href="../resources/css/public.css" media="all" />
 </head>
 <body class="childrenBody">
 	<blockquote class="layui-elem-quote layui-bg-green">
 		<div id="nowTime"></div>
-	</blockquote>
-	<blockquote class="layui-elem-quote main_btn">
-		<p></p>
 	</blockquote>
 	<div class="layui-row layui-col-space10">
 		<div class="layui-col-lg12 layui-col-md12">
@@ -33,104 +30,17 @@
 			      <th>主要观测点</th>
 			      <th>评分标准</th>
 			      <th>评分依据</th>
+					<th>审核机构</th>
 			    </tr> 
 			  </thead>
-				<tbody>
-					<!-- tr个数为所有子项个数*2  -->
-				<tr>
-					<!--主评估指标内rowspan为tr个数  -->
-					<td rowspan="13">1.承担教育教学工作量情况</td>
-					<!--主要观测点内rowspan为此观测点内tr个数  -->
-					<td rowspan="1">1.1 讲授理论课程</td>
-					<td>1分×K1×K2×K3（K1为课程类别系数：学校新开设课程为1.5，新上课程为1.3，其他课程为1.1；K2为授课班学生人数系数：学生人数小于60为1，每增加10人递增0.1；K3为每门课的总课时</td>
-					<td>评分依据：相关教学文件</td>
-				</tr>
-				<tr>
-					<td rowspan="1">1.2 讲授实验、实训课程</td>
-					<td>评分标准：实验课程：1分×K1×K2×K3（K1为课程类别系数：学校新开设课程为1.5，新上课程为1.2，其他课程为1.1课时，K2为授课班学生人数系数：学生人数小于60为1，每增加10人递增0.1；K3为每门课的总课时
-实训课程：1分×K1×K2×K3 ；（K1为课程类别系数：学校新开设课程为1.5，其他课程为1.1；K2为授课班学生人数系数：学生人数小于60为1，每增加10人递增0.1；K3为每门课的总课时
-</td>
-<td>评分依据：相关教学文件</td>
-				</tr>
-
-				<tr>
-					<td rowspan="1">1.3 考务工作[注1]</td>
-					<td>评分标准:教学计划监考为1分/场（含英语四六级监考）；巡考人员0.5分/次,考务人员0.5分/次
-</td>
-<td>评分依据：相关教学文件</td>
-				</tr>
-
-
-				<tr>
-					<td rowspan="4">1.4指导实习/教学实践/本科生导师/启航书院导师</td>
-					<td>评分标准：实习指导0.5分/每生（最多不超过15分）</td>
-					<td>评分依据：相关教学文件</td>
-				</tr>
-
-
-				<tr>
-					<td>评分标准：导师制0.5分/生（最多不超过20分）</td>
-					<td>评分依据：相关教学文件</td>
-				</tr>
-
-
-				<tr>
-					<td>评分标准：指导本科生0.5分/每生</td>
-					<td>评分依据：相关教学文件</td>
-				</tr>
-	
-
-				<tr>
-					<td>评分标准：指导小组学生人数*2/小组导师人数</td>
-					<td>评分依据：相关教学文件</td>
-				</tr>
-			
-
-				<tr>
-					<td rowspan="2">1.5指导毕业论文</td>
-					<td>评分标准：2分×K1×K2/篇（K1为学科类别系数：人文学科为4，理工学科为5；K2为毕业论文级别系数：一般毕业论文为1，优秀毕业论文为1.2，每人指导论文篇数不超过8篇）</td>
-					<td>评分依据：相关教学文件</td>
-				</tr>
-			
-
-				<tr>
-					<td>评分标准：参与答辩0.2分/生</td>
-					<td>评分依据：相关教学文件</td>
-				</tr>
-				
-
-				<tr>
-					<td rowspan="1">1.6 指导短学期</td>
-					<td>评分标准： 1分/每生</td>
-					<td>评分依据：相关教学文件</td>
-				</tr>
-				
-
-				<tr>
-					<td rowspan="2">1.7 参加教学观摩活动（包括讲评课）</td>
-					<td>评分标准：主讲教师5分/课时，听讲教师1分/课时（信工教师教学大赛预赛）</td>
-					<td>评分依据：相关教学文件</td>
-				</tr>
-				
-
-				<tr>
-					<td>评分标准：讲评课10分/天</td>
-					<td>评分依据：相关教学文件</td>
-				</tr>
-				
-				<tr>
-					<td rowspan="1">1.8 教师间相互听课</td>
-					<td>评分标准：1分/课时，最高不超过10分</td>
-					<td>评分依据：相关教学文件</td>
-				</tr>
-				
+				<tbody id="grading_standard_table">
 
 				</tbody>
 			</table>
 		</div>
 	</div>
 
-	<script type="text/javascript" src="../layui/layui.js"></script>
-	<script type="text/javascript" src="../js/main.js"></script>
+	<script type="text/javascript" src="../resources/layui/layui.js"></script>
+	<script type="text/javascript" src="../resources/js/main.js"></script>
 </body>
 </html>

@@ -60,7 +60,7 @@ layui.use(['form','layer','laydate','table','laytpl'],function(){
         }
     });
 
-    //添加文章
+    //添加申报单
     function addNews(edit){
         var index = layui.layer.open({
             title : "新评分申报",
@@ -83,7 +83,7 @@ layui.use(['form','layer','laydate','table','laytpl'],function(){
                     form.render();
                 }
                 setTimeout(function(){
-                    layui.layer.tips('点击此处返回文章列表', '.layui-layer-setwin .layui-layer-close', {
+                    layui.layer.tips('点击此处返回申报单列表', '.layui-layer-setwin .layui-layer-close', {
                         tips: 3
                     });
                 },500)
@@ -108,8 +108,8 @@ layui.use(['form','layer','laydate','table','laytpl'],function(){
             for (var i in data) {
                 newsId.push(data[i].newsId);
             }
-            layer.confirm('确定删除选中的文章？', {icon: 3, title: '提示信息'}, function (index) {
-                // $.get("删除文章接口",{
+            layer.confirm('确定删除选中的申报单？', {icon: 3, title: '提示信息'}, function (index) {
+                // $.get("删除申报单接口",{
                 //     newsId : newsId  //将需要删除的newsId作为参数传入
                 // },function(data){
                 tableIns.reload();
@@ -117,7 +117,7 @@ layui.use(['form','layer','laydate','table','laytpl'],function(){
                 // })
             })
         }else{
-            layer.msg("请选择需要删除的文章");
+            layer.msg("请选择需要删除的申报单");
         }
     })
 
@@ -129,8 +129,8 @@ layui.use(['form','layer','laydate','table','laytpl'],function(){
         if(layEvent === 'edit'){ //编辑
             addNews(data);
         } else if(layEvent === 'del'){ //删除
-            layer.confirm('确定删除此文章？',{icon:3, title:'提示信息'},function(index){
-                // $.get("删除文章接口",{
+            layer.confirm('确定删除此申报单？',{icon:3, title:'提示信息'},function(index){
+                // $.get("删除申报单接口",{
                 //     newsId : data.newsId  //将需要删除的newsId作为参数传入
                 // },function(data){
                     tableIns.reload();
@@ -138,7 +138,7 @@ layui.use(['form','layer','laydate','table','laytpl'],function(){
                 // })
             });
         } else if(layEvent === 'look'){ //预览
-            layer.alert("此功能需要前台展示，实际开发中传入对应的必要参数进行文章内容页面访问")
+            layer.alert("此功能需要前台展示，实际开发中传入对应的必要参数进行申报单内容页面访问")
         }
     });
     

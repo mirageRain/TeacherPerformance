@@ -8,10 +8,6 @@ layui.use(['form','jquery',"layer"],function() {
     //判断是否web端打开
     if(!/http(s*):\/\//.test(location.href)){
         layer.alert("请先将项目部署到 localhost 下再进行访问【建议通过tomcat、webstorm、hb等方式运行，不建议通过iis方式运行】，否则部分数据将无法显示");
-    }else{    //判断是否处于锁屏状态【如果关闭以后则未关闭浏览器之前不再显示】
-        if(window.sessionStorage.getItem("lockcms") != "true" && window.sessionStorage.getItem("showNotice") != "true"){
-            showNotice();
-        }
     }
 
     //判断是否设置过头像，如果设置过则修改顶部、左侧和个人资料中的头像，否则使用默认头像
@@ -65,7 +61,7 @@ layui.use(['form','jquery',"layer"],function() {
             type : 1,
             content : '<div class="admin-header-lock" id="lock-box">'+
                             '<div class="admin-header-lock-img"><img src="images/face.jpg" class="userAvatar"/></div>'+
-                            '<div class="admin-header-lock-name" id="lockUserName">驊驊龔頾</div>'+
+                            '<div class="admin-header-lock-name" id="lockUserName">admin</div>'+
                             '<div class="input_btn">'+
                                 '<input type="password" class="admin-header-lock-input layui-input" autocomplete="off" placeholder="请输入密码解锁.." name="lockPwd" id="lockPwd" />'+
                                 '<button class="layui-btn" id="unlock">解锁</button>'+

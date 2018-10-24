@@ -1,0 +1,146 @@
+{
+	"code": 200,
+	"msg": "",
+	"data": [
+		{
+			"gradingStandardId": "1",
+			"observationPointId": "1",
+			"evaluationIndexId" : "1",
+			"collegeId": "1",
+			"auditId": "1",
+			"content":"1分×K1×K2×K3（K1为课程类别系数：学校新开设课程为1.5，新上课程为1.3，其他课程为1.1；K2为授课班学生人数系数：学生人数小于60为1，每增加10人递增0.1；K3为每门课的总课时",
+			"gradingBasis": "相关教学文件",
+			"note": ""
+		},
+		{
+			"evaluationIndexId" : "1",
+			"observationPointId": "2",
+			"gradingStandardId": "2",
+			"collegeId": "1",
+			"auditId": "2",
+			"content":"实验课程：1分×K1×K2×K3（K1为课程类别系数：学校新开设课程为1.5，新上课程为1.2，其他课程为1.1课时，K2为授课班学生人数系数：学生人数小于60为1，每增加10人递增0.1；K3为每门课的总课时 实训课程：1分×K1×K2×K3 ；（K1为课程类别系数：学校新开设课程为1.5，其他课程为1.1；K2为授课班学生人数系数：学生人数小于60为1，每增加10人递增0.1；K3为每门课的总课时",
+			"gradingBasis": "相关教学文件",
+			"note": ""
+		},
+		{
+			"evaluationIndexId" : "1",
+			"observationPointId": "3",
+			"gradingStandardId": "3",
+			"collegeId": "1",
+			"auditId": "3",
+			"content":"教学计划监考为1分/场（含英语四六级监考）；巡考人员0.5分/次,考务人员0.5分/次",
+			"gradingBasis": "评分依据：考务安排及相关资料",
+			"note": ""
+		},
+		{
+			"evaluationIndexId" : "1",
+			"observationPointId": "4",
+			"gradingStandardId": "4",
+			"collegeId": "1",
+			"auditId": "1",
+			"content":"实习指导0.5分/每生（最多不超过15分）",
+			"gradingBasis": "考务安排及相关资料",
+			"note": ""
+		},
+		{
+			"evaluationIndexId" : "1",
+			"observationPointId": "4",
+			"gradingStandardId": "5",
+			"collegeId": "1",
+			"auditId": "1",
+			"content":"导师制0.5分/生（最多不超过20分）",
+			"gradingBasis": "相关教学文件",
+			"note": ""
+		},
+		{
+			"evaluationIndexId" : "1",
+			"observationPointId": "4",
+			"gradingStandardId": "6",
+			"collegeId": "1",
+			"auditId": "3",
+			"content":"指导本科生0.5分/每生",
+			"gradingBasis": "相关教学文件",
+			"note": ""
+		},
+		{
+			"evaluationIndexId" : "1",
+			"observationPointId": "4",
+			"gradingStandardId": "7",
+			"collegeId": "1",
+			"auditId": "2",
+			"content":"指导小组学生人数*2/小组导师人数",
+			"gradingBasis": "相关教学文件",
+			"note": "1"
+		},
+		{
+			"evaluationIndexId" : "1",
+			"observationPointId": "5",
+			"gradingStandardId": "8",
+			"collegeId": "1",
+			"auditId": "1",
+			"content":"2分×K1×K2/篇（K1为学科类别系数：人文学科为4，理工学科为5；K2为毕业论文级别系数：一般毕业论文为1，优秀毕业论文为1.2，每人指导论文篇数不超过8篇）",
+			"gradingBasis": "相关教学文件",
+			"note": ""
+		},
+		{
+			"evaluationIndexId" : "1",
+			"observationPointId": "5",
+			"gradingStandardId": "9",
+			"collegeId": "1",
+			"auditId": "1",
+			"content":"参与答辩0.2分/生",
+			"gradingBasis": "相关教学文件",
+			"note": ""
+		},
+		{
+			"evaluationIndexId" : "1",
+			"observationPointId": "6",
+			"gradingStandardId": "10",
+			"collegeId": "1",
+			"auditId": "1",
+			"content":"1分/每生",
+			"gradingBasis": "相关教学文件",
+			"note": ""
+		},
+		{
+			"evaluationIndexId" : "1",
+			"observationPointId": "7",
+			"gradingStandardId": "11",
+			"collegeId": "1",
+			"auditId": "1",
+			"content":"主讲教师5分/课时，听讲教师1分/课时（信工教师教学大赛预赛）",
+			"gradingBasis": "相关教学文件",
+			"note": ""
+		},
+		{
+			"evaluationIndexId" : "1",
+			"observationPointId": "7",
+			"gradingStandardId": "12",
+			"collegeId": "1",
+			"auditId": "1",
+			"content":"讲评课10分/天",
+			"gradingBasis": "相关教学文件",
+			"note": ""
+		},
+		{
+			"evaluationIndexId" : "1",
+			"observationPointId": "8",
+			"gradingStandardId": "13",
+			"collegeId": "1",
+			"auditId": "1",
+			"content":"1分/课时，最高不超过10分",
+			"gradingBasis": "相关教学文件",
+			"note": ""
+		},
+		{
+			"evaluationIndexId" : "1",
+			"observationPointId": "9",
+			"gradingStandardId": "14",
+			"collegeId": "1",
+			"auditId": "2",
+			"content":"1分/项，最高不超过10分",
+			"gradingBasis": "相关证书及其文件",
+			"note": ""
+		}
+	]
+}

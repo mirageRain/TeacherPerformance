@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 @RequestMapping("/teacher")
-public class View {
+public class TeacherView {
 	
 	@RequestMapping(value = "/certifiedScore", method = RequestMethod.GET)
 	public String certifiedScoreView() {

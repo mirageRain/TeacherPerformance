@@ -10,6 +10,230 @@ layui.use(['form','layer','layedit','laydate','upload'],function(){
     //用于同步编辑器内容到textarea
     layedit.sync(editIndex);
 
+
+    var evaluationIndexList = [];
+    var observationPointList = [];
+    var gradingStandardList = [];
+    var auditList = [];
+    var tableList = [];
+
+    var evaluationIndexJson;
+    var observationPointJson;
+    var gradingStandardJson;
+    var tableJson = {};
+
+    $.ajax({
+        "url": "../json/evaluationIndexList.json",
+        "contentType": "application/json",
+        "type": "get",
+        "async": false,
+        "error": function () {
+            alert("服务器繁忙");
+        },
+        "success": function (returnData) {
+            if (returnData.code == 200) {
+                evaluationIndexJson = returnData.data;
+                $.each(returnData.data, function (i, item) {
+                    evaluationIndexList[item.evaluationIndexId] = item;
+                });
+
+            } else {
+                layer.alert(returnData.msg);
+            }
+
+        }
+    });
+    $.ajax({
+        "url": "../json/observationPointList.json",
+        "contentType": "application/json",
+        "type": "get",
+        "async": false,
+        "error": function () {
+            layer.alert("服务器繁忙");
+        },
+        "success": function (returnData) {
+            if (returnData.code == 200) {
+                observationPointJson = returnData.data;
+                $.each(returnData.data,function(i,item){
+                    observationPointList[item.observationPointId]=item;
+                });
+            } else {
+                alert(returnData.errMsg);
+            }
+
+        }
+    });
+
+    $.ajax({
+        "url": "../json/gradingStandardList.json",
+        "contentType": "application/json",
+        "type": "get",
+        "async": false,
+        "error": function () {
+            alert("服务器繁忙");
+        },
+        "success": function (returnData) {
+            if (returnData.code == 200) {
+                gradingStandardJson = returnData.data;
+                $.each(returnData.data, function (i, item) {
+                    gradingStandardList[item.gradingStandardId] = item;
+                });
+            } else {
+                alert(returnData.msg);
+            }
+
+        }
+    });
+
+    $.ajax({
+        "url": "../json/auditList.json",
+        "contentType": "application/json",
+        "type": "get",
+        "async": false,
+        "error": function () {
+            alert("服务器繁忙");
+        },
+        "success": function (returnData) {
+            if (returnData.code == 200) {
+                $.each(returnData.data,function(i,item){
+                    auditList[item.auditId]=item.auditName;
+                });
+            } else {
+                alert(returnData.msg);
+            }
+
+        }
+    });
+
+
+    //通过evaluationIndexJson、observationPointJson、gradingStandardJson组合出二维数组tableList
+    function formatTableList(evaluationIndexJson,observationPointJson,gradingStandardJson){
+        var tempGradingStandardList = [];
+        var tableList = [];
+
+        $.each(gradingStandardJson, function (i, item) {
+            if(tempGradingStandardList[item.observationPointId]!=null){
+                tempGradingStandardList[item.observationPointId][item.gradingStandardId]=item;
+            }else{
+                tempGradingStandardList[item.observationPointId] = new Array();
+                tempGradingStandardList[item.observationPointId][item.gradingStandardId]=item;
+            }
+        });
+       $.each(observationPointJson, function (i, item) {
+           console.log(item.evaluationIndexId);
+            if(tableList[item.evaluationIndexId]!=null){
+                tableList[item.evaluationIndexId][item.observationPointId]=(tempGradingStandardList[item.observationPointId]);
+            }else{
+                tableList[item.evaluationIndexId] = [];
+                tableList[item.evaluationIndexId][item.observationPointId]=(tempGradingStandardList[item.observationPointId]);
+            }
+        });
+        return tableList;
+    }
+
+    //通过evaluationIndexJson、observationPointJson、gradingStandardJson组合出树形的分层tableJson
+    function formatTableJsonByAllJson(evaluationIndexJson,observationPointJson,gradingStandardJson) {
+        var lastIndex1 = 0, lastIndex2 = 0;
+        var tableJson = evaluationIndexJson;
+        for (var i = 0; i < tableJson.length; i++) {
+            tableJson[i].observationPointList = [];
+            tableJson[i].gradingStandardListSize=0;
+            var jCount=0,kCount=0;
+            for (var j = lastIndex1; j < observationPointJson.length; j++) {
+                //记录每次添加的顺序，如果顺序不统一则会出错
+                if (tableJson[i].evaluationIndexId == observationPointJson[j].evaluationIndexId) {
+                    tableJson[i].observationPointList.push(observationPointJson[j]);
+                    tableJson[i].observationPointList[jCount].gradingStandardList = [];
+                    for (var k = lastIndex2; k < gradingStandardJson.length; k++) {
+                        if (tableJson[i].observationPointList[jCount].observationPointId == gradingStandardJson[k].observationPointId) {
+                            tableJson[i].observationPointList[jCount].gradingStandardList.push(gradingStandardJson[k]);
+                        } else {
+                            lastIndex2 = k;
+                            break;
+                        }
+                    }
+                    tableJson[i].gradingStandardListSize+=tableJson[i].observationPointList[jCount].gradingStandardList.length;
+                    jCount++;
+                } else {
+                    lastIndex1 = j;
+                    break;
+                }
+            }
+        }
+        return tableJson;
+    }
+    tableJson = formatTableJsonByAllJson(evaluationIndexJson,observationPointJson,gradingStandardJson);
+    tableList = formatTableList(evaluationIndexJson,observationPointJson,gradingStandardJson);
+    console.log(tableList);
+    $.each(tableJson,function(i,item){
+        $("#evaluation_index_list").append("<option value='"+item.evaluationIndexId+"'>"+(i+1)+'. '+item.content+"</option>");
+
+    });
+    form.render();
+
+
+    form.on('select(evaluation_index)', function (data) {
+
+        $("#observation_point_list").html('<option value="0"  disabled=""  selected>请选择</option>');
+        $.each(tableJson,function(i,item){
+            if(item.evaluationIndexId==data.value){
+
+                $.each(tableJson[i].observationPointList,function(j,observationPoint){
+                    $("#observation_point_list").append("<option value='"+observationPoint.observationPointId+"'" +">"+(i+1)+'. '+(j+1)+' '+observationPoint.content+"</option>");
+                });
+            }
+        });
+        $("#grading_standard_list").html("");
+        $("#grading_basis").val("");
+        form.render();
+    });
+
+    form.on('select(observation_point)', function (data) {
+        console.log([data.value]);
+
+        var observationPointId = data.value;
+        var evaluationIndexId = observationPointList[observationPointId].evaluationIndexId;
+        console.log(tableList);
+        $("#grading_standard_list").html('<option value="0"  disabled=""  selected>请选择</option>');
+
+        for(var i=0;i<tableList[evaluationIndexId][observationPointId].length;i++){
+            var item=tableList[evaluationIndexId][observationPointId][i];
+            if(item!=null)
+                $("#grading_standard_list").append("<option value='"+item.gradingStandardId+"'>"+item.content+"</option>");
+        }
+        $("#grading_basis").val("");
+        form.render();
+    });
+
+    form.on('select(grading_standard)', function (data) {
+
+
+        $("#grading_basis").val(gradingStandardList[data.value].gradingBasis);
+
+    });
+
+    /*$.ajax({
+        "url": "/json/evaluationIndexList.json",
+        "contentType": "application/json",
+        "type": "get",
+        "async": false,
+        "error": function () {
+            alert("服务器繁忙");
+        },
+        "success": function (returnData) {
+
+            if (returnData.code == 200) {
+                for (var i = 0; i < returnData.data.length; i++) {
+                     $("#evaluation_index_list").append("<option value='"+returnData.data[i].evaluationIndexId+"'>"+(i+1)+'. '+returnData.data[i].content+"</option>");
+                }
+                form.render();
+            } else {
+                alert(returnData.msg);
+            }
+
+        }
+    });*/
+
     //上传缩略图
     upload.render({
         elem: '.thumbBox',

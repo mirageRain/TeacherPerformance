@@ -1,0 +1,22 @@
+{
+	"code": 200,
+	"msg": "",
+	"count": 3,
+	"data": [
+		{
+			"auditId": "1",
+			"collegeId":"1",
+			"auditName": "教务处"
+		},
+		{
+			"auditId": "2",
+			"collegeId":"1",
+			"auditName": "科研处"
+		},
+		{
+			"auditId": "3",
+			"collegeId":"1",
+			"auditName": "办公室"
+		}
+	]
+}

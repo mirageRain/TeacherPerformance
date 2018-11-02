@@ -18,6 +18,6 @@ public class AuthoritiesDaoTest extends BaseTest {
 	@Test
 	public void testAuthoritiesDao(){
 		List<AuthoritiesEntity> AuthoritiesList = authoritiesDao.queryAuthorities();
-		assertEquals(3,AuthoritiesList.size());
+		assertEquals(4,AuthoritiesList.size());
 	}
 }

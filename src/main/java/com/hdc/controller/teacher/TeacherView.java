@@ -59,5 +59,15 @@ public class TeacherView {
 	public String indexView() {
 		return "teacher/index";
 	}
+
+	@RequestMapping(value = "/tableTest", method = RequestMethod.GET)
+	public String tableTestView() {
+		return "teacher/tableTest";
+	}
+
+	@RequestMapping(value = "/tableTest2", method = RequestMethod.GET)
+	public String tableTest2View() {
+		return "teacher/tableTest2";
+	}
 	
 }

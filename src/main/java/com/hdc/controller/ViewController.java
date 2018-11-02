@@ -9,7 +9,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class ViewController {
 
 	@RequestMapping(value = "/loginPage", method = RequestMethod.GET)
-	public String addAddress() {
+	public String loginPageView() {
 		return "login";
 	}
+
+	@RequestMapping(value = "/selectLogin", method = RequestMethod.GET)
+	public String selectLoginView() {
+		return "selectLogin";
+	}
+
+
 }

@@ -54,6 +54,16 @@ public class AdminView {
         return "admin/scoreDeclaration";
     }
 
+    @RequestMapping(value = "/collegeList", method = RequestMethod.GET)
+    public String collegePageView() {
+        return "admin/collegeList";
+    }
+
+    @RequestMapping(value = "/collegeAdd", method = RequestMethod.GET)
+    public String collegeAddView() {
+        return "admin/collegeAdd";
+    }
+
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String indexView() {
         return "admin/index";

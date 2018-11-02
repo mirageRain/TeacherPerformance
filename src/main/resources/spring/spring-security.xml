@@ -7,6 +7,7 @@
             http://www.springframework.org/schema/security/spring-security.xsd">
 	<!-- 不需要权限访问 -->
 	<http pattern="/loginPage" security="none"></http>
+	<http pattern="/selectlogin" security="none"></http>
 	<http pattern="/404" security="none"></http>
 	<http pattern="/500" security="none"></http>
 
@@ -22,9 +23,10 @@
 
 
 		<!-- 校验登陆可访问 -->
-		<intercept-url pattern="/admin**"  access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/admin/**"  access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/**"  access="permitAll()" method="OPTIONS"/>
 		<form-login login-page="/loginPage" login-processing-url="/login" />
-		<logout logout-url="/logout" logout-success-url="/login" />
+		<logout logout-url="/logout" logout-success-url="/selectLogin" />
 		
 
 

@@ -1,3 +1,4 @@
+/*
 package com.hdc.security;
 
 import java.io.IOException;
@@ -10,13 +11,14 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 
-public class LoginAuthenticationFailureHandler implements AuthenticationFailureHandler{
+public class  LoginAuthenticationFailureHandler implements AuthenticationFailureHandler{
 
 	//@Autowired
-	 /*  private UserService userService;
+	 */
+/*  private UserService userService;
 	   private LoginRegisterService loginRegisterService;
 	   private SysLogService sysLogService;
-	   
+
 	   public void setUserService(UserService userService) {
 	      this.userService = userService;
 	   }
@@ -25,7 +27,8 @@ public class LoginAuthenticationFailureHandler implements AuthenticationFailureH
 	   }
 	   public void setSysLogService(SysLogService sysLogService) {
 	      this.sysLogService = sysLogService;
-	   }*/
+	   }*//*
+
 	   public void onAuthenticationFailure(HttpServletRequest request,
 	         HttpServletResponse response, AuthenticationException authentication)
 	         throws IOException, ServletException {
@@ -38,3 +41,4 @@ public class LoginAuthenticationFailureHandler implements AuthenticationFailureH
 	   }
 
 }
+*/

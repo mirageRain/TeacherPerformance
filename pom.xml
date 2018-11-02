@@ -78,6 +78,24 @@
 			<version>3.1.0</version>
 		</dependency>
 
+		<!--参数bean验证包-->
+		<dependency>
+			<groupId>javax.el</groupId>
+			<artifactId>javax.el-api</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>2.0.0.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>5.1.1.Final</version>
+		</dependency>
+
+
 		<!-- 4.Spring -->
 		<!-- 1)Spring核心 -->
 		<dependency>

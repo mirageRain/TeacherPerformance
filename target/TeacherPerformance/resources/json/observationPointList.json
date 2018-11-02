@@ -1,0 +1,52 @@
+{
+	"code": 200,
+	"msg": "",
+	"data": [
+		{
+			"evaluationIndexId":"1",
+			"observationPointId": "1",
+			"content":"讲授理论课程"
+		},
+		{
+			"evaluationIndexId":"1",
+			"observationPointId": "2",
+			"content":"讲授实验、实训课程"
+		},
+		{
+			"evaluationIndexId":"1",
+			"observationPointId": "3",
+			"content":" 考务工作"
+		},
+		{
+			"evaluationIndexId":"1",
+			"observationPointId": "4",
+			"content":"指导实习/教学实践/本科生导师/启航书院导师"
+		},
+		{
+			"evaluationIndexId":"1",
+			"observationPointId": "5",
+			"content":"指导毕业论文"
+		},
+		{
+			"evaluationIndexId":"1",
+			"observationPointId": "6",
+			"content":"指导短学期"
+		},
+		{
+			"evaluationIndexId":"1",
+			"observationPointId": "7",
+			"content":"参加教学观摩活动（包括讲评课）"
+		},
+		{
+			"evaluationIndexId": "1",
+			"observationPointId": "8",
+			"content": " 教师间相互听课"
+		},
+		{
+			"evaluationIndexId":"2",
+			"observationPointId": "9",
+			"content":"各类比赛活动"
+		}
+
+	]
+}

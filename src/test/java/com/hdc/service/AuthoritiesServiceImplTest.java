@@ -9,16 +9,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.hdc.BaseTest;
 import com.hdc.entity.AuthoritiesEntity;
-import com.hdc.service.impl.AuthoritiesServiceImpl;
+import com.hdc.service.AuthoritiesService;
 
 public class AuthoritiesServiceImplTest extends BaseTest{
 	@Autowired
-	private AuthoritiesService authoritiesServiceImpl;
+	private AuthoritiesService authoritiesService;
 	
 	@Test
 	public void testAuthoritiesServiceImpl(){
-		List<AuthoritiesEntity> AuthoritiesList = authoritiesServiceImpl.getAuthoritiesList();
-		assertEquals(3,AuthoritiesList.size());
+		List<AuthoritiesEntity> AuthoritiesList = authoritiesService.getAuthoritiesList();
+		assertEquals(4,AuthoritiesList.size());
 	}
 	
 }

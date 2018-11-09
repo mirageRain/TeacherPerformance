@@ -10,7 +10,7 @@ public interface UsersDao {
 
     int deleteByExample(UsersExample example);
 
-    int deleteByPrimaryKey(Long userId);
+    int deleteByPrimaryKey(Integer userId);
 
     int insert(Users record);
 
@@ -18,7 +18,7 @@ public interface UsersDao {
 
     List<Users> selectByExample(UsersExample example);
 
-    Users selectByPrimaryKey(Long userId);
+    Users selectByPrimaryKey(Integer userId);
 
     int updateByExampleSelective(@Param("record") Users record, @Param("example") UsersExample example);
 

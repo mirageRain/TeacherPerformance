@@ -3,6 +3,7 @@ package com.hdc.service;
 
 import com.hdc.entity.College;
 import com.hdc.entity.CollegeExample;
+import com.hdc.entity.Users;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
 
@@ -25,7 +26,11 @@ public interface CollegeService {
 
 	List<College> selectAll();
 
+	List<College> selectAllByExample(CollegeExample example);
+
 	College selectByPrimaryKey(Integer collegeId);
+
+	Users selectUserByCollegeId(Integer collegeId);
 
 	int updateByExampleSelective(@Param("record") College record, @Param("example") CollegeExample example);
 

@@ -7,10 +7,10 @@ layui.use(['form', 'layer', 'layedit', 'laydate', 'upload'], function () {
         laydate = layui.laydate,
         $ = layui.jquery;
 
-
     //验证表单信息
     form.verify({
         collegeName: function (value, item) { //value：表单的值、item：表单的DOM对象
+
             if (!new RegExp("^[a-zA-Z0-9_\u4e00-\u9fa5\\s·]+$").test(value)) {
                 return '用户名不能有特殊字符';
             }
@@ -18,9 +18,10 @@ layui.use(['form', 'layer', 'layedit', 'laydate', 'upload'], function () {
                 return '用户名首尾不能出现下划线\'_\'';
             }
             var meg;
+            var collegeId = $("#collegeId").val();
             $.ajax({
                 "url": "/admin/college/testCollegeName",
-                "data": {"collegeName": value},
+                "data": {"collegeName": value, "collegeId": collegeId},
                 "contentType": "application/json",
                 "type": "get",
                 "async": false,
@@ -44,9 +45,10 @@ layui.use(['form', 'layer', 'layedit', 'laydate', 'upload'], function () {
                 return '用户名首尾不能出现下划线\'_\'';
             }
             var meg;
+            var collegeId = $("#collegeId").val();
             $.ajax({
                 "url": "/admin/college/testUsername",
-                "data": {"username": value},
+                "data": {"username": value, "collegeId": collegeId},
                 "contentType": "application/json",
                 "type": "get",
                 "async": false,
@@ -70,11 +72,11 @@ layui.use(['form', 'layer', 'layedit', 'laydate', 'upload'], function () {
 
 
     form.on("submit(submit)", function (data) {
-
         var index = top.layer.msg('数据提交中，请稍候', {icon: 16, time: false, shade: 0.1});
 
         //将学院信息封装成JSON数据
         var collegeData = {};
+        collegeData.collegeId = $("#collegeId").val();
         collegeData.username = $("#username").val();
         collegeData.password = $("#password").val();
         collegeData.collegeName = $("#collegeName").val();
@@ -83,7 +85,7 @@ layui.use(['form', 'layer', 'layedit', 'laydate', 'upload'], function () {
             "url": "/admin/college",
             "data": JSON.stringify(collegeData),
             "contentType": "application/json",
-            "type": "post",
+            "type": "put",
             "error": function () {
                 top.layer.msg("服务器繁忙！");
                 top.layer.close(index);
@@ -92,13 +94,12 @@ layui.use(['form', 'layer', 'layedit', 'laydate', 'upload'], function () {
                 if (data1.code == 200) {
                     top.layer.close(index);
                     $("#close").click();
-                    top.layer.msg("学院添加成功！");
+                    top.layer.msg("学院信息更新成功！");
                 } else {
                     top.layer.msg(data1.msg);
                 }
             }
         });
         return false;
-    });
-
-});
+    })
+})

@@ -59,6 +59,9 @@ public class Users implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    public Users() {
+    }
+
     public Users(Integer userId, String username, String password, Byte enable, Byte type, Byte state, String registerIp, String lastLoginIp, Date lastLoginTime, Date registerTime) {
         this.userId = userId;
         this.username = username;
@@ -72,7 +75,7 @@ public class Users implements Serializable {
         this.registerTime = registerTime;
     }
 
-    public Users() {
+    public void init() {
         this.enable = 1;
         this.type = 1;
         this.state = 1;

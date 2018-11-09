@@ -31,4 +31,5 @@ public interface CollegeDao {
     int updateByPrimaryKey(College record);
 
 
+    List<College> selectAllByExample(CollegeExample example);
 }

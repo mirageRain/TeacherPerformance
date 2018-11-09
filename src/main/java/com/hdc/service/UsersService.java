@@ -5,6 +5,7 @@ import com.hdc.entity.Users;
 import com.hdc.entity.UsersExample;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -14,7 +15,7 @@ public interface UsersService {
 
 	int deleteByExample(UsersExample example);
 
-	int deleteByPrimaryKey(Long userId);
+	int deleteByPrimaryKey(Integer userId);
 
 	int insert(Users record);
 
@@ -22,7 +23,7 @@ public interface UsersService {
 
 	List<Users> selectByExample(UsersExample example);
 
-	Users selectByPrimaryKey(Long userId);
+	Users selectByPrimaryKey(Integer userId);
 
 	int updateByExampleSelective(@Param("record") Users record, @Param("example") UsersExample example);
 
@@ -39,4 +40,9 @@ public interface UsersService {
 	int insertCollege(Users college, UserInfo userInfo);
 
 	int insertAudit(Users audit, UserInfo userInfo);
+
+	@Transactional
+	int updateCollege(Users users, UserInfo userInfo);
+
+	int deleteCollege(List<Integer> collegeIdList);
 }

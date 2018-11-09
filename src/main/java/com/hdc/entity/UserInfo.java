@@ -38,6 +38,9 @@ public class UserInfo implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    public UserInfo(){
+
+    }
     public UserInfo(Integer userInfoId, Integer userId, String displayName, String imgUrl, String phone, String email) {
         this.userInfoId = userInfoId;
         this.userId = userId;
@@ -47,7 +50,7 @@ public class UserInfo implements Serializable {
         this.email = email;
     }
 
-    public UserInfo() {
+    public void init() {
         this.displayName = "";
         this.imgUrl = "";
         this.phone = "";

@@ -24,7 +24,6 @@
 
 		<!-- 校验登陆可访问 -->
 		<intercept-url pattern="/admin/**"  access="hasRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/**"  access="permitAll()" method="OPTIONS"/>
 		<form-login login-page="/loginPage" login-processing-url="/login" />
 		<logout logout-url="/logout" logout-success-url="/selectLogin" />
 		

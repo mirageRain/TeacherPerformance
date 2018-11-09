@@ -1,66 +1,68 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<title>添加学院</title>
-	<meta name="renderer" content="webkit">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="../resources/layui/css/layui.css" media="all" />
-	<link rel="stylesheet" href="../resources/css/public.css" media="all" />
-	<style type="text/css">
-		.layui-field-box .layui-upload{
-			margin-left: 40px;
-		}
-		.btnlist .layui-btn{
-			float: right;
-			margin-left: 20px;
-		}
-	</style>
+    <meta charset="utf-8">
+    <title>添加学院</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../resources/layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="../resources/css/public.css" media="all"/>
+    <style type="text/css">
+        .layui-field-box .layui-upload {
+            margin-left: 40px;
+        }
+
+        .btnlist .layui-btn {
+            float: right;
+            margin-left: 20px;
+        }
+    </style>
 </head>
 <body class="childrenBody">
-	<div class="layui-field-box">
-		<form class="layui-form" action="">
-			<div class="layui-form-item">
-				<div class="layui-inline">
-					<label class="layui-form-label">学院名称</label>
-					<div class="layui-input-inline">
-						<input type="text" class="layui-input " id="collegeName"  name="collegeName" placeholder="请输入学院名称" autocomplete="off"  lay-verify="required">
-					</div>
-				</div>
-			</div>
-			<div class="layui-form-item">
-				<div class="layui-inline">
-					<label class="layui-form-label">学院账号</label>
-					<div class="layui-input-inline">
-						<input type="text" class="layui-input " id="username"  name="username" placeholder="请输入学院账号" autocomplete="off"  lay-verify="username">
-					</div>
-				</div>
-			</div>
-			<div class="layui-inline">
-				<label class="layui-form-label">学院密码</label>
-				<div class="layui-input-inline">
-					<input type="text"  class="layui-input " id="password" lay-verify="password" name="password" placeholder="请输入学院密码" autocomplete="off">
-				</div>
-			</div>
+<div class="layui-field-box">
+    <form class="layui-form" action>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">学院名称</label>
+                <div class="layui-input-inline">
+                    <input type="text" class="layui-input " id="collegeName" name="collegeName" placeholder="请输入学院名称"
+                           autocomplete="off" lay-verify="collegeName">
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">学院账号</label>
+                <div class="layui-input-inline">
+                    <input type="text" class="layui-input " id="username" name="username" placeholder="请输入学院账号"
+                           autocomplete="off" lay-verify="username">
+                </div>
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">学院密码</label>
+            <div class="layui-input-inline">
+                <input type="text" class="layui-input " id="password" lay-verify="password" name="password"
+                       placeholder="请输入学院密码" autocomplete="off">
+            </div>
+        </div>
 
+        <div class="page-footer">
+            <div class="btn-list">
+                <div class="btnlist">
+                    <button class="layui-btn layui-btn-primary" type="button" id="close">返回</button>
+                    <button class="layui-btn" type="submit" lay-submit="" lay-filter="submit">提交</button>
+                </div>
+            </div>
+        </div>
+    </form>
 
-
-			<div class="page-footer">
-				<div class="btn-list">
-					<div class="btnlist">
-						<button class="layui-btn" onclick="$t.closeWindow();"><i class="fa fa-undo">&nbsp;</i>返回</button>
-						<button class="layui-btn" lay-submit="" lay-filter="submit" data-url=""><i class="fa fa-floppy-o">&nbsp;</i>添加</button>
-					</div>
-				</div>
-			</div>
-		</form>
-
-	</div>
-	<script type="text/javascript" src="../resources/layui/layui.js"></script>
-	<script type="text/javascript" src="../resources/js/admin/collegeAdd.js"></script>
+</div>
+<script type="text/javascript" src="../resources/layui/layui.js"></script>
+<script type="text/javascript" src="../resources/js/admin/collegeAdd.js"></script>
 </body>
 </html>

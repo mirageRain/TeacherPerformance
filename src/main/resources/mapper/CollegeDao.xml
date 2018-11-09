@@ -106,6 +106,32 @@
     a.user_id = b.user_id
   </select>
 
+  <select id="selectAllByExample" parameterType="com.hdc.entity.CollegeExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    college_id, a.user_id, college_name  ,b.username
+    from college a
+    left join users b
+    on
+    a.user_id = b.user_id
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <if test="limit != null">
+      <if test="offset != null">
+        limit ${offset}, ${limit}
+      </if>
+      <if test="offset == null">
+        limit ${limit}
+      </if>
+    </if>
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from college
     where college_id = #{collegeId,jdbcType=INTEGER}

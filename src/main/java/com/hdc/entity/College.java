@@ -28,6 +28,9 @@ public class College implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    public College() {
+    }
+
     public College(Integer collegeId, Integer userId, String collegeName,String username) {
         this.collegeId = collegeId;
         this.userId = userId;
@@ -35,7 +38,7 @@ public class College implements Serializable {
         this.username = username;
     }
 
-    public College() {
+    public void init() {
         this.collegeName = "";
         this.username="";
     }

@@ -1,46 +1,72 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<title>新业绩评分审核</title>
-	<meta name="renderer" content="webkit">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="../resources/layui/css/layui.css" media="all" />
-	<link rel="stylesheet" href="../resources/css/public.css" media="all" />
+    <meta charset="utf-8">
+    <title>新业绩评分审核</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../resources/layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="../resources/css/public.css" media="all"/>
 </head>
 <body class="childrenBody">
 <form class="layui-form">
-	<blockquote class="layui-elem-quote quoteBox">
-		<form class="layui-form">
-			<div class="layui-inline">
-				<a class="layui-btn layui-btn-normal addNews_btn">添加学院</a>
-			</div>
-			<div class="layui-inline">
-				<a class="layui-btn layui-btn-danger layui-btn-normal delAll_btn">批量删除</a>
-			</div>
-		</form>
-	</blockquote>
-	<table id="newsList" lay-filter="newsList"></table>
-	<!--审核状态-->
-	<script type="text/html" id="newsStatus">
-		{{#  if(d.newsStatus == "1"){ }}
-		<span class="layui-blue">等待审核</span>
-		{{#  } else if(d.newsStatus == "0"){ }}
-		<span class="layui-red">退回</span>
-		{{#  } else { }}
-		<span class="layui-green">审核完成</span>
-		{{#  }}}
-	</script>
+    <fieldset class="layui-elem-field">
+        <legend>学院管理</legend>
+        <div class="layui-field-box">
+            <form class="layui-form">
+                <!--<div class="layui-inline" style="margin-left: 15px">
+                    <label>请求类型:</label>
+                    <div class="layui-input-inline">
+                        <select name="s_type">
+                            <option value="">请选择一个请求类型</option>
+                            <option value="普通请求">普通请求</option>
+                            <option value="Ajax请求">Ajax请求</option>
+                        </select>
+                    </div>
+                </div>-->
+                <div class="layui-inline" style="margin-left: 15px">
+                    <label>查询:</label>
+                    <div class="layui-input-inline">
+                        <input type="text" value="" name="collegeName" placeholder="请输入学院名称"
+                               class="layui-input search_input">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <button class="layui-btn" type="submit" lay-submit="" lay-filter="searchForm">查询</button>
+                </div>
+                <div class="layui-inline">
+                    <button class="layui-btn layui-btn-primary" type="reset" id="resetBtn">重置</button>
+                </div>
+                <div class="layui-inline">
+                    <a class="layui-btn layui-btn-normal " id="addCollegeBtn">添加学院</a>
+                </div>
+                <div class="layui-inline">
+                    <a class="layui-btn layui-btn-danger layui-btn-normal " id="delAllBtn">批量删除</a>
+                </div>
+            </form>
+        </div>
+    </fieldset>
+    <table id="collegeList" lay-filter="collegeList"></table>
+    <!--审核状态-->
+    <script type="text/html" id="collegeStatus">
+        {{#  if(d.collegeStatus == "1"){ }}
+        <span class="layui-blue">等待审核</span>
+        {{#  } else if(d.collegeStatus == "0"){ }}
+        <span class="layui-red">退回</span>
+        {{#  } else { }}
+        <span class="layui-green">审核完成</span>
+        {{#  }}}
+    </script>
 
-	<!--操作-->
-	<script type="text/html" id="newsListBar">
-		<a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
-		<a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="del">删除</a>
-	</script>
+    <!--操作-->
+    <script type="text/html" id="collegeListBar">
+        <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+        <a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="del">删除</a>
+    </script>
 </form>
 <script type="text/javascript" src="../resources/layui/layui.js"></script>
 <script type="text/javascript" src="../resources/js/admin/collegeList.js"></script>

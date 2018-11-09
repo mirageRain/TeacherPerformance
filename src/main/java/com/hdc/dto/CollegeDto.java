@@ -11,6 +11,14 @@ import java.io.Serializable;
 public class CollegeDto implements Serializable {
 
     /**
+     * 学院ID
+     */
+    private Integer collegeId;
+    /**
+     * 用户ID
+     */
+    private Integer userId;
+    /**
      * 学院名称
      */
     @NotEmpty(message = "用户名不能为空！")
@@ -55,4 +63,19 @@ public class CollegeDto implements Serializable {
         this.password = password;
     }
 
+    public Integer getCollegeId() {
+        return collegeId;
+    }
+
+    public void setCollegeId(Integer collegeId) {
+        this.collegeId = collegeId;
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
 }

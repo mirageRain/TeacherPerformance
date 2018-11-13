@@ -203,7 +203,7 @@ public class collegeController {
      * @return code为200时为插入成功，其它情况为插入失败
      */
     @PostMapping("")
-    public Map<String, Object> insert(@Valid @RequestBody CollegeDto college, BindingResult errors) {
+    public Map<String, Object> insert(@Valid @RequestBody(required = false) CollegeDto college, BindingResult errors) {
 
         Users user = new Users();
         UserInfo userInfo = new UserInfo();
@@ -272,7 +272,7 @@ public class collegeController {
      * @return code为200时为插入成功，其它情况为插入失败
      */
     @PutMapping("")
-    public Map<String, Object> update(@Valid @RequestBody CollegeDto college, BindingResult errors) {
+    public Map<String, Object> update(@Valid @RequestBody(required = false) CollegeDto college, BindingResult errors) {
 
 
         Users user = new Users();
@@ -343,7 +343,7 @@ public class collegeController {
      * @return code为200时为删除成功，其它情况为插入失败
      */
     @DeleteMapping("")
-    public Map<String, Object> delete(@RequestBody List<Integer> collegeIdList) {
+    public Map<String, Object> delete(@RequestBody(required = false) List<Integer> collegeIdList) {
 
         Map<String, Object> map = new HashMap<>();
 

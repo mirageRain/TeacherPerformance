@@ -20,7 +20,7 @@ public class AdminView {
 
     @RequestMapping(value = "/changePwd", method = RequestMethod.GET)
     public String changePwdView() {
-        return "admin/changePwd";
+        return "changePwd";
     }
 
     @RequestMapping(value = "/gradingStandard", method = RequestMethod.GET)
@@ -44,9 +44,9 @@ public class AdminView {
         return "admin/scoreReport";
     }
 
-    @RequestMapping(value = "/userInfo", method = RequestMethod.GET)
+    @RequestMapping(value = "/userInfoPage", method = RequestMethod.GET)
     public String userInfoView() {
-        return "admin/userInfo";
+        return "userInfoPage";
     }
 
     @RequestMapping(value = "/scoreDeclaration", method = RequestMethod.GET)
@@ -72,5 +72,10 @@ public class AdminView {
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String indexView() {
         return "admin/index";
+    }
+
+    @RequestMapping(value = "/systemConfigPage", method = RequestMethod.GET)
+    public String systemConfigPageView() {
+        return "admin/systemConfigPage";
     }
 }

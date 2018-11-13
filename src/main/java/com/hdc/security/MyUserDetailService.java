@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 
+import com.hdc.entity.SystemConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.security.core.GrantedAuthority;
@@ -44,12 +45,10 @@ public class MyUserDetailService implements UserDetailsService {
 		// 存放权限
 		UserLoginEntity userLogin = userLoginServiceImpl.getUserLoginByUsername(userCode);
 		Collection<GrantedAuthority> auths = new ArrayList<GrantedAuthority>();
+		Integer userId = userLogin.getUserId();
 		String authorities = userLogin.getAuthorities();
 		String username = userLogin.getUsername();
 		String password = userLogin.getPassword();
-		System.out.println(userCode);
-		System.out.println(password);
-		System.out.println(passwordEncoder.encode(password));
 		
 		String[] roleaCtion = authorities.split(",");
 		for (int i = 0; i < roleaCtion.length; i++) {
@@ -58,9 +57,10 @@ public class MyUserDetailService implements UserDetailsService {
 		}
 
 		// spring security自带的User对象
-		User userDetails = new User(username, password, true, true, true, true, auths);
+
+		MyUser userDetails = new MyUser(username, password, true, true, true, true, auths);
+		userDetails.setMyUserId(userId);
+		//System.out.println(((MyUser) userDetails).getMyUserId());
 		return userDetails;
-		// }
-		// return null;
 	}
 }

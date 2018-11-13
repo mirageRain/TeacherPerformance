@@ -11,5 +11,7 @@ public interface UserLoginDao {
 	 * @return
 	 */
 	UserLoginEntity queryUserLoginByUsername(String username);
+
+	UserLoginEntity queryUserLoginByUserId(Integer userId);
 	
 }

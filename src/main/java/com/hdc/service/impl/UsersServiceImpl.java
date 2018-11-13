@@ -232,6 +232,11 @@ public class UsersServiceImpl implements UsersService {
         //删除学院信息
         collegeDao.deleteByExample(collegeExample);
 
+        //删除权限信息
+        AuthoritiesExample authoritiesExample = new AuthoritiesExample();
+        authoritiesExample.createCriteria().andUserIdIn(userIdList);
+        authoritiesDao.deleteByExample(authoritiesExample);
+
         //删除用户信息
         UserInfoExample userInfoExample = new UserInfoExample();
         userInfoExample.createCriteria().andUserIdIn(userIdList);

@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class collegeServiceImpl implements CollegeService {
+public class CollegeServiceImpl implements CollegeService {
 
     @Autowired
     private CollegeDao collegeDao;

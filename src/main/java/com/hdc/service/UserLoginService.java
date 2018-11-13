@@ -13,4 +13,6 @@ public interface UserLoginService {
 	 * @return
 	 */
 	UserLoginEntity getUserLoginByUsername(String username);
+
+	UserLoginEntity getUserLoginByUserId(Integer userId);
 }

@@ -28,9 +28,9 @@ layui.use(['form', 'layer', 'layedit', 'laydate', 'upload'], function () {
                 "error": function () {
                     meg = "服务器繁忙！";
                 },
-                "success": function (data1) {
-                    if (data1.code != 200) {
-                        meg = data1.msg;
+                "success": function (result) {
+                    if (result.code != 200) {
+                        meg = result.msg;
                     }
                 }
             });
@@ -55,9 +55,9 @@ layui.use(['form', 'layer', 'layedit', 'laydate', 'upload'], function () {
                 "error": function () {
                     meg = "服务器繁忙！";
                 },
-                "success": function (data1) {
-                    if (data1.code != 200) {
-                        meg = data1.msg;
+                "success": function (result) {
+                    if (result.code != 200) {
+                        meg = result.msg;
                     }
                 }
             });
@@ -90,13 +90,13 @@ layui.use(['form', 'layer', 'layedit', 'laydate', 'upload'], function () {
                 top.layer.msg("服务器繁忙！");
                 top.layer.close(index);
             },
-            "success": function (data1) {
-                if (data1.code == 200) {
+            "success": function (result) {
+                if (result.code == 200) {
                     top.layer.close(index);
                     $("#close").click();
                     top.layer.msg("学院信息更新成功！");
                 } else {
-                    top.layer.msg(data1.msg);
+                    top.layer.msg(result.msg);
                 }
             }
         });

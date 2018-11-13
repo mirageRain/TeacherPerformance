@@ -1,7 +1,6 @@
 layui.config({
     base : "../../js/"
 }).use(['form','jquery',"address"],function() {
-	console.log("ok");
     var form = layui.form,
         $ = layui.jquery,
         address = layui.address;

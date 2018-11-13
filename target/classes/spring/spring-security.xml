@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans:beans xmlns:beans="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/security"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans
+			 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			 xmlns="http://www.springframework.org/schema/security" xmlns:sec="http://www.springframework.org/schema/c"
+			 xsi:schemaLocation="http://www.springframework.org/schema/beans
             http://www.springframework.org/schema/beans/spring-beans.xsd
             http://www.springframework.org/schema/security
             http://www.springframework.org/schema/security/spring-security.xsd">
@@ -20,13 +21,15 @@
         </headers>
 		<!-- 没有权限跳转页面 -->
 		<access-denied-handler error-page="/loginPage" />
-
-
 		<!-- 校验登陆可访问 -->
 		<intercept-url pattern="/admin/**"  access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/teacher/**"  access="hasRole('ROLE_TEACHER')" />
+		<intercept-url pattern="/college/**"  access="hasRole('ROLE_COLLEGE')" />
+		<intercept-url pattern="/audit/**"  access="hasRole('ROLE_AUDIT')" />
+        <!--<intercept-url pattern="/userInfo/**" access="authentication"/>-->
 		<form-login login-page="/loginPage" login-processing-url="/login" />
 		<logout logout-url="/logout" logout-success-url="/selectLogin" />
-		
+		<remember-me />
 
 
 	</http>

@@ -7,54 +7,115 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="495bf553-a407-47e6-8676-2f1db1ee2180" name="Default Changelist" comment="前端页面调整配置">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hdc/entity/Page.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/collegeEdit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/admin/collegeEdit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hdc/controller/UserInfoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hdc/controller/admin/SystemConfigController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hdc/controller/college/CollegeView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hdc/dao/SystemConfigDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hdc/dto/PasswordDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hdc/dto/SystemConfigDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hdc/dto/UserInfoDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hdc/entity/SystemConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hdc/entity/SystemConfigExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hdc/security/MyUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hdc/service/SystemConfigService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hdc/service/impl/SystemConfigServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/SystemConfigDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/main2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/systemConfigPage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/certifiedScore.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/certifyingScore.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/changePwd.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/collegeAdd.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/collegeEdit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/collegeList.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/gradingStandard.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/main.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/newsAdd.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/scoreDeclaration.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/scoreReport.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/systemConfigPage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/testExample.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/testExample2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/userInfoPage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/scroll-bar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/sub-page.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/admin/systemConfigPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/admin/userInfo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/changePassword.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/userInfo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hdc/controller/admin/AdminView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hdc/controller/admin/AdminView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hdc/controller/admin/collegeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hdc/controller/admin/collegeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hdc/dao/CollegeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hdc/dao/CollegeDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hdc/dao/UsersDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hdc/dao/UsersDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hdc/controller/teacher/UserInfoController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hdc/dao/UserLoginDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hdc/dao/UserLoginDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hdc/dto/CollegeDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hdc/dto/CollegeDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hdc/entity/College.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hdc/entity/College.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hdc/entity/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hdc/entity/UserInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hdc/entity/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hdc/entity/Users.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hdc/service/CollegeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hdc/service/CollegeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hdc/service/UsersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hdc/service/UsersService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hdc/security/CustomUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hdc/security/CustomUserDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hdc/security/MyUserDetailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hdc/security/MyUserDetailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hdc/service/UserLoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hdc/service/UserLoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hdc/service/impl/UserInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hdc/service/impl/UserInfoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hdc/service/impl/UserLoginServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hdc/service/impl/UserLoginServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hdc/service/impl/UsersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hdc/service/impl/UsersServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hdc/service/impl/collegeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hdc/service/impl/collegeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/CollegeDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/CollegeDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hdc/service/impl/collegeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hdc/service/impl/CollegeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserLoginMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserLoginMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/spring/spring-security.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring/spring-security.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/collegeAdd.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/collegeAdd.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/collegeList.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/collegeList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/changePwd.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/changePwd.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/userInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/userInfo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/selectLogin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/selectLogin.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/admin/collegeAdd.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/admin/collegeAdd.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/admin/collegeEdit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/admin/collegeEdit.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/admin/collegeList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/admin/collegeList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/admin/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/admin/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/cache.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/cache.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/cacheUserInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/cacheUserInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/json/adminNavs.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/json/adminNavs.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/controller/admin/AdminView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/controller/admin/AdminView.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/controller/admin/collegeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/controller/admin/collegeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/dao/CollegeDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/dao/CollegeDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/dao/UsersDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/dao/UsersDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/controller/teacher/UserInfoController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/dao/UserLoginDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/dao/UserLoginDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/dto/CollegeDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/dto/CollegeDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/service/CollegeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/service/CollegeService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/service/UsersService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/service/UsersService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/security/CustomUserDetailsService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/security/MyUserDetailService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/security/MyUserDetailService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/service/UserLoginService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/service/UserLoginService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/service/impl/UserInfoServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/service/impl/UserInfoServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/service/impl/UserLoginServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/service/impl/UserLoginServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/service/impl/UsersServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/service/impl/UsersServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/service/impl/collegeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/service/impl/collegeServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/mapper/CollegeDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/mapper/CollegeDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/mapper/UserLoginMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/mapper/UserLoginMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/spring/spring-security.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/spring/spring-security.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/html/admin/collegeAdd.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/html/admin/collegeAdd.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/html/admin/collegeList.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/html/admin/collegeList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/html/admin/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/html/admin/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/html/admin/changePwd.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/html/admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/html/admin/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/html/admin/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/html/admin/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/html/admin/userInfo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/html/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/html/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/html/selectLogin.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/html/selectLogin.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/resources/js/admin/collegeAdd.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/resources/js/admin/collegeAdd.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/resources/js/admin/collegeEdit.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/resources/js/admin/collegeEdit.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/resources/js/admin/collegeList.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/resources/js/admin/collegeList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/resources/js/admin/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/resources/js/admin/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/resources/js/cache.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/resources/js/cache.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/resources/js/cacheUserInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/resources/js/cacheUserInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/resources/json/adminNavs.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/resources/json/adminNavs.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/hdc/controller/admin/AdminView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hdc/controller/admin/AdminView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hdc/controller/admin/collegeController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hdc/dao/CollegeDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hdc/dao/CollegeDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hdc/dao/UsersDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hdc/dao/UsersDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hdc/controller/admin/collegeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hdc/controller/admin/collegeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hdc/controller/teacher/UserInfoController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hdc/dao/UserLoginDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hdc/dao/UserLoginDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/hdc/dto/CollegeDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hdc/dto/CollegeDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hdc/service/CollegeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hdc/service/CollegeService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hdc/service/UsersService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hdc/service/UsersService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hdc/security/CustomUserDetailsService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hdc/security/MyUserDetailService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hdc/security/MyUserDetailService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hdc/service/UserLoginService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hdc/service/UserLoginService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hdc/service/impl/UserInfoServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hdc/service/impl/UserInfoServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hdc/service/impl/UserLoginServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hdc/service/impl/UserLoginServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/hdc/service/impl/UsersServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hdc/service/impl/UsersServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/hdc/service/impl/collegeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hdc/service/impl/collegeServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/CollegeDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/CollegeDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/UserLoginMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/UserLoginMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/spring/spring-security.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/spring-security.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -85,74 +146,80 @@
     <session id="-1194516439">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="26" />
+          <entry key="project.closed" value="27" />
           <entry key="project.open.time.10" value="3" />
-          <entry key="project.open.time.11" value="2" />
+          <entry key="project.open.time.11" value="3" />
           <entry key="project.open.time.12" value="5" />
           <entry key="project.open.time.13" value="5" />
+          <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.2" value="2" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.7" value="2" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="5" />
-          <entry key="project.opened" value="27" />
+          <entry key="project.opened" value="29" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="5" />
-          <entry key="html" value="78" />
-          <entry key="java" value="286" />
-          <entry key="js" value="69" />
-          <entry key="json" value="8" />
+          <entry key="class" value="18" />
+          <entry key="css" value="1" />
+          <entry key="html" value="122" />
+          <entry key="java" value="352" />
+          <entry key="js" value="102" />
+          <entry key="json" value="11" />
           <entry key="md" value="1" />
           <entry key="sql" value="1" />
-          <entry key="xml" value="85" />
+          <entry key="ts" value="2" />
+          <entry key="xml" value="92" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="5" />
-          <entry key="HTML" value="78" />
-          <entry key="JAVA" value="286" />
-          <entry key="JSON" value="8" />
-          <entry key="JavaScript" value="69" />
+          <entry key="CLASS" value="18" />
+          <entry key="CSS" value="1" />
+          <entry key="HTML" value="122" />
+          <entry key="JAVA" value="352" />
+          <entry key="JSON" value="11" />
+          <entry key="JavaScript" value="102" />
           <entry key="Markdown" value="1" />
           <entry key="Scratch" value="1" />
-          <entry key="XML" value="85" />
+          <entry key="TypeScript" value="2" />
+          <entry key="XML" value="92" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="642" />
-          <entry key="java" value="5836" />
-          <entry key="js" value="1804" />
-          <entry key="json" value="60" />
+          <entry key="dummy" value="4" />
+          <entry key="html" value="1379" />
+          <entry key="java" value="7646" />
+          <entry key="js" value="2806" />
+          <entry key="json" value="86" />
           <entry key="txt" value="21" />
-          <entry key="xml" value="214" />
+          <entry key="xml" value="289" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="644" />
-          <entry key="JAVA" value="5836" />
-          <entry key="JSON" value="60" />
-          <entry key="JavaScript" value="1802" />
-          <entry key="PLAIN_TEXT" value="21" />
+          <entry key="HTML" value="1381" />
+          <entry key="JAVA" value="7646" />
+          <entry key="JSON" value="86" />
+          <entry key="JavaScript" value="2804" />
+          <entry key="PLAIN_TEXT" value="25" />
           <entry key="SQL" value="4" />
-          <entry key="XML" value="210" />
+          <entry key="XML" value="285" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/controller/admin/collegeController.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/controller/UserInfoController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1656">
-              <caret line="129" column="32" selection-start-line="129" selection-start-column="32" selection-end-line="129" selection-end-column="32" />
+            <state relative-caret-position="235">
+              <caret line="132" lean-forward="true" selection-start-line="132" selection-end-line="132" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -161,85 +228,85 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/admin/collegeEdit.js">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/admin/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="85" column="29" selection-start-line="85" selection-start-column="29" selection-end-line="85" selection-end-column="29" />
+            <state relative-caret-position="494">
+              <caret line="154" column="22" selection-start-line="154" selection-start-column="22" selection-end-line="154" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/main.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="283">
+              <caret line="65" column="27" selection-start-line="65" selection-start-column="27" selection-end-line="65" selection-end-column="27" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/admin/collegeList.js">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/scroll-bar.css">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/main2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-23">
-              <caret line="38" column="33" lean-forward="true" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
+            <state relative-caret-position="361">
+              <caret line="42" column="78" lean-forward="true" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="78" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/collegeAdd.html">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1311">
-              <caret line="57" column="56" lean-forward="true" selection-start-line="57" selection-start-column="56" selection-end-line="57" selection-end-column="56" />
+            <state relative-caret-position="189">
+              <caret line="44" column="80" selection-start-line="44" selection-start-column="80" selection-end-line="44" selection-end-column="80" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/collegeEdit.html">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/controller/admin/AdminView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="51" column="34" lean-forward="true" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
+            <state relative-caret-position="189">
+              <caret line="32" column="22" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
               <folding>
-                <element signature="n#style#0;n#input#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#1002#1003#0" expanded="true" />
+                <element signature="e#1037#1038#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/collegeList.html">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/selectLogin.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1150">
-              <caret line="50" column="14" lean-forward="true" selection-start-line="50" selection-start-column="14" selection-end-line="50" selection-end-column="14" />
+            <state relative-caret-position="243">
+              <caret line="39" column="18" lean-forward="true" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/admin/collegeAdd.js">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/changePassword.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1672">
-              <caret line="103" column="3" lean-forward="true" selection-start-line="103" selection-start-column="3" selection-end-line="103" selection-end-column="3" />
+            <state relative-caret-position="453">
+              <caret line="24" column="24" lean-forward="true" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/service/impl/UsersServiceImpl.java">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/cache.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1695">
-              <caret line="146" column="13" selection-start-line="146" selection-start-column="13" selection-end-line="146" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/service/impl/collegeServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1495">
-              <caret line="85" column="27" selection-start-line="85" selection-start-column="27" selection-end-line="85" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/dao/UsersDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="14" column="29" lean-forward="true" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+            <state relative-caret-position="370">
+              <caret line="301" selection-start-line="301" selection-end-line="301" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -278,6 +345,10 @@
       <find>userID</find>
       <find>Long</find>
       <find>or</find>
+      <find>学院</find>
+      <find>data1</find>
+      <find>admin</find>
+      <find>管理员</find>
     </findStrings>
     <replaceStrings>
       <replace>../resources/json/</replace>
@@ -289,10 +360,14 @@
       <replace>teacherDao.</replace>
       <replace>teacherTitleDao.</replace>
       <replace>学院</replace>
-      <replace>college</replace>
       <replace>userId</replace>
       <replace>Integer</replace>
+      <replace>result</replace>
+      <replace>college</replace>
     </replaceStrings>
+    <dirStrings>
+      <dir>D:\ideaWorkspace\TeacherPerformance\src\main\webapp\WEB-INF</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
@@ -305,57 +380,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/hdc/service/AuthoritiesService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hdc/service/TeacherService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hdc/service/TeacherTitleService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hdc/service/UserInfoService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hdc/service/UserLoginService.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/hdc/BaseTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/hdc/service/AuthoritiesServiceImplTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/hdc/dao/AuthoritiesDaoTest.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/UsersDao.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/AuthoritiesDao.xml" />
-        <option value="$PROJECT_DIR$/src/test/java/com/hdc/service/UsersServiceImplTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hdc/security/SecurityConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/admin/collegePage.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/admin/newsAdd.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/json/adminNavs.json" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/audit/newsAdd.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/spring/spring-web.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hdc/service/SecurityConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hdc/service/WebConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hdc/service/MyCorsRegistration.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hdc/Config/SecurityConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hdc/Config/WebConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hdc/config/WebConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/spring/spring-service.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hdc/service/CrossInterceptor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hdc/service/cInterceptor.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hdc/service/CorsConfigurerAdapter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hdc/service/CollegeService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hdc/dao/CollegeDao.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/CollegeDao.xml" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hdc/controller/admin/AdminView.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hdc/controller/admin/AuthoritiesController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hdc/dao/UsersDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hdc/dto/CollegeDto.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hdc/service/UsersService.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/spring/spring-security.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/collegeEdit.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hdc/entity/Users.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hdc/entity/College.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hdc/entity/UserInfo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hdc/entity/Page.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/collegeAdd.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/collegeList.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hdc/service/impl/collegeServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/systemConfig.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/admin/systemConfig.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hdc/controller/admin/systemConfigController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hdc/service/SystemConfigService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hdc/dto/SystemConfigDto.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/systemConfigPage.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/admin/collegeAdd.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/admin/collegeEdit.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/admin/collegeList.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/collegeAdd.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/collegeList.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hdc/service/impl/UsersServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hdc/service/impl/collegeServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hdc/controller/admin/collegeController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hdc/dto/CollegeDto.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/selectLogin.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hdc/service/impl/UsersServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hdc/controller/college/CollegeView.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/404.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/cacheUserInfo.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/userInfo.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/admin/userInfo.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/json/adminNavs.json" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hdc/dto/UserInfoDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hdc/controller/admin/SystemConfigController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hdc/dao/UserLoginDao.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/UserLoginMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hdc/service/impl/UserLoginServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hdc/service/UserLoginService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hdc/controller/admin/UserInfoController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hdc/controller/admin/userInfoController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hdc/controller/userInfoController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hdc/security/CustomUserDetailsService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hdc/security/MyUser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hdc/security/MyUserDetailService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hdc/service/impl/SystemConfigServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hdc/service/impl/UserInfoServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/login.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/spring/spring-security.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/userInfo.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/userInfoPage.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/admin/systemConfigPage.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/changePwd.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hdc/dto/PasswordDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hdc/controller/UserInfoController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/index.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/changePassword.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/cache.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/admin/index.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hdc/controller/admin/AdminView.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/main.html" />
       </list>
     </option>
   </component>
@@ -385,7 +460,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="39" />
     <option name="width" value="1080" />
     <option name="height" value="1001" />
@@ -436,8 +511,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -489,35 +562,6 @@
               <item name="hdc" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
               <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TeacherPerformance" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TeacherPerformance" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="hdc" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-              <item name="audit" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TeacherPerformance" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TeacherPerformance" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="hdc" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-              <item name="teacher" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TeacherPerformance" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TeacherPerformance" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="hdc" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TeacherPerformance" type="b2602c69:ProjectViewProjectNode" />
@@ -610,6 +654,15 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TeacherPerformance" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TeacherPerformance" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -628,6 +681,35 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="audit" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TeacherPerformance" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TeacherPerformance" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="college" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TeacherPerformance" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TeacherPerformance" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="json" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TeacherPerformance" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TeacherPerformance" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -652,52 +734,7 @@
             <path>
               <item name="TeacherPerformance" type="b2602c69:ProjectViewProjectNode" />
               <item name="TeacherPerformance" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="html" type="462c0819:PsiDirectoryNode" />
-              <item name="audit" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TeacherPerformance" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TeacherPerformance" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="html" type="462c0819:PsiDirectoryNode" />
-              <item name="teacher" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TeacherPerformance" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TeacherPerformance" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TeacherPerformance" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TeacherPerformance" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TeacherPerformance" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TeacherPerformance" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="hdc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TeacherPerformance" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TeacherPerformance" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="hdc" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TeacherPerformance" type="b2602c69:ProjectViewProjectNode" />
@@ -707,40 +744,43 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541766211732" />
-    <property name="last_opened_file_path" value="F:/网站资料/layssh4" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542140528317" />
+    <property name="last_opened_file_path" value="F:/网站资料/schmsite" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.4218391" />
-    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
+    <property name="settings.editor.selected.configurable" value="spring" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\ideaWorkspace\TeacherPerformance\src\main\webapp\WEB-INF\html" />
+      <recent name="D:\ideaWorkspace\TeacherPerformance\src\main\resources\mapper" />
+      <recent name="D:\ideaWorkspace\TeacherPerformance\src\main\webapp\resources\js\audit" />
+      <recent name="D:\ideaWorkspace\TeacherPerformance\src\main\webapp\resources\js\admin" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.hdc.service" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\ideaWorkspace\TeacherPerformance\src\main\webapp\WEB-INF\html\admin" />
-      <recent name="D:\ideaWorkspace\TeacherPerformance\src\main\webapp\resources\js\admin" />
-      <recent name="D:\ideaWorkspace\TeacherPerformance\src\main\java\com\hdc\service" />
-      <recent name="D:\ideaWorkspace\TeacherPerformance\src\main\java\com\hdc\dto" />
-      <recent name="D:\ideaWorkspace\TeacherPerformance\src\main\java\com\hdc\controller\admin" />
-    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.hdc.service" />
       <recent name="com.hdc.dto" />
-      <recent name="com.hdc.service.impl" />
       <recent name="com.hdc.controller.admin" />
-      <recent name="com.hdc.controller.audit" />
+      <recent name="com.hdc.controller.college" />
+      <recent name="com.hdc.service.impl" />
+      <recent name="com.hdc.service" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\ideaWorkspace\TeacherPerformance\src\main\resources\mapper" />
-      <recent name="D:\ideaWorkspace\TeacherPerformance\src\main\webapp\resources\js\audit" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\ideaWorkspace\TeacherPerformance\src\main\webapp\resources\css" />
+      <recent name="D:\ideaWorkspace\TeacherPerformance\src\main\webapp\WEB-INF\html\admin" />
+      <recent name="D:\ideaWorkspace\TeacherPerformance\src\main\webapp\resources\js" />
+      <recent name="D:\ideaWorkspace\TeacherPerformance\src\main\java\com\hdc\security" />
       <recent name="D:\ideaWorkspace\TeacherPerformance\src\main\webapp\resources\js\admin" />
     </key>
   </component>
@@ -845,6 +885,7 @@
       </deployment>
       <server-settings>
         <option name="BASE_DIRECTORY_NAME" value="Unnamed_TeacherPerformance" />
+        <option name="PRESERVE_SESSIONS" value="true" />
       </server-settings>
       <predefined_log_file id="Tomcat" enabled="true" />
       <predefined_log_file id="Tomcat Catalina" enabled="true" />
@@ -1022,7 +1063,9 @@
       <workItem from="1541568363950" duration="14130000" />
       <workItem from="1541612491286" duration="6585000" />
       <workItem from="1541650131294" duration="15810000" />
-      <workItem from="1541721926266" duration="22436000" />
+      <workItem from="1541721926266" duration="23276000" />
+      <workItem from="1541914888741" duration="673000" />
+      <workItem from="1542071139634" duration="46990000" />
     </task>
     <task id="LOCAL-00001" summary="前端页面调整配置">
       <created>1540413908747</created>
@@ -1067,7 +1110,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="193196000" />
+    <option name="totallyTimeSpent" value="241699000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1082,7 +1125,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1988273" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20149253" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1094,18 +1137,17 @@
       <window_info anchor="bottom" id="Application Servers" order="1" sideWeight="0.49925372" weight="0.329718" />
       <window_info anchor="bottom" id="Message" order="2" />
       <window_info anchor="bottom" id="Find" order="3" weight="0.329718" />
-      <window_info active="true" anchor="bottom" id="Run" order="4" sideWeight="0.4968017" visible="true" weight="0.329718" />
+      <window_info anchor="bottom" id="Run" order="4" sideWeight="0.4968017" weight="0.329718" />
       <window_info anchor="bottom" id="Debug" order="5" weight="0.3991323" />
       <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="8" weight="0.329718" />
-      <window_info anchor="bottom" id="Spring" order="9" weight="0.329718" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50319827" side_tool="true" weight="0.329718" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50319827" side_tool="true" weight="0.329718" />
+      <window_info anchor="bottom" id="Spring" order="10" weight="0.329718" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.329718" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.329718" />
-      <window_info anchor="bottom" id="Database Changes" order="13" />
-      <window_info anchor="bottom" id="Version Control" order="14" weight="0.3275488" />
-      <window_info anchor="bottom" id="Problems" order="15" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="13" visible="true" weight="0.3264642" />
+      <window_info anchor="bottom" id="Problems" order="14" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -1116,6 +1158,7 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info anchor="right" id="Bean Validation" order="9" weight="0.23560767" />
+      <window_info anchor="right" id="Database Changes" order="10" side_tool="true" weight="0.32995737" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1169,368 +1212,429 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/src.zip!/java/lang/String.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/4.2.2.RELEASE/spring-security-core-4.2.2.RELEASE.jar!/org/springframework/security/core/userdetails/UsernameNotFoundException.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="116" column="37" lean-forward="true" selection-start-line="116" selection-start-column="37" selection-end-line="116" selection-end-column="37" />
+        <state relative-caret-position="138">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/admin/certifyingScore.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/add.html">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-tx/4.3.7.RELEASE/spring-tx-4.3.7.RELEASE.jar!/org/springframework/dao/DataAccessException.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="225" column="45" selection-start-line="225" selection-start-column="45" selection-end-line="225" selection-end-column="45" />
+        <state relative-caret-position="138">
+          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/service/CollegeService.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/4.2.2.RELEASE/spring-security-core-4.2.2.RELEASE.jar!/org/springframework/security/core/userdetails/UserDetails.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="32" column="10" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
+        <state relative-caret-position="46">
+          <caret line="5" column="54" lean-forward="true" selection-start-line="5" selection-start-column="54" selection-end-line="5" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/security/CustomUserDetailsService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/security/LoginAuthenticationFailureHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-278">
+          <folding>
+            <element signature="e#0#1559#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/4.2.2.RELEASE/spring-security-core-4.2.2.RELEASE.jar!/org/springframework/security/core/userdetails/User.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/4.2.2.RELEASE/spring-security-core-4.2.2.RELEASE.jar!/org/springframework/security/core/Authentication.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/security/MyUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-92">
+          <caret line="17" column="33" lean-forward="true" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#290#322#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/security/MyUserDetailService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="58" column="34" selection-start-line="58" selection-start-column="34" selection-end-line="58" selection-end-column="34" />
+          <folding>
+            <element signature="e#1574#1592#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/src.zip!/java/lang/annotation/Documented.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="39" column="26" selection-start-line="39" selection-start-column="11" selection-end-line="39" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/src.zip!/java/lang/annotation/ElementType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="83" column="4" selection-start-line="83" selection-start-column="4" selection-end-line="83" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/4.2.2.RELEASE/spring-security-core-4.2.2.RELEASE.jar!/org/springframework/security/core/annotation/AuthenticationPrincipal.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="19" column="21" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/4.2.2.RELEASE/spring-security-core-4.2.2.RELEASE.jar!/org/springframework/security/authentication/AbstractAuthenticationToken.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="59">
+          <caret line="23" column="11" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/4.2.2.RELEASE/spring-security-core-4.2.2.RELEASE.jar!/org/springframework/security/authentication/AnonymousAuthenticationToken.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1952#1953#0" expanded="true" />
+            <element signature="e#1989#1990#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/dto/SystemConfigDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="22" column="36" lean-forward="true" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/dto/CollegeDto.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="545">
-          <caret line="59" column="5" lean-forward="true" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
+        <state relative-caret-position="154">
+          <caret line="24" column="35" lean-forward="true" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
           <folding>
-            <element signature="e#1258#1259#0" expanded="true" />
-            <element signature="e#1290#1291#0" expanded="true" />
-            <element signature="e#1341#1342#0" expanded="true" />
-            <element signature="e#1383#1384#0" expanded="true" />
-            <element signature="e#1417#1418#0" expanded="true" />
-            <element signature="e#1446#1447#0" expanded="true" />
-            <element signature="e#1491#1492#0" expanded="true" />
-            <element signature="e#1527#1528#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/hdc/BaseTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.7.RELEASE/spring-webmvc-4.3.7.RELEASE.jar!/org/springframework/web/servlet/config/annotation/WebMvcConfigurationSupport.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="295" lean-forward="true" selection-start-line="295" selection-end-line="295" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-service.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="30" column="19" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-dao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="24" column="41" lean-forward="true" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/hdc/service/AuthoritiesServiceImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="17" column="9" lean-forward="true" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/controller/admin/AdminView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="60" selection-start-line="60" selection-end-line="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/controller/admin/AuthoritiesController.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/4.2.2.RELEASE/spring-security-core-4.2.2.RELEASE.jar!/org/springframework/security/crypto/password/PasswordEncoder.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
-          <caret line="15" column="4" lean-forward="true" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/hdc/service/UsersServiceImplTest.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/4.2.2.RELEASE/spring-security-core-4.2.2.RELEASE.jar!/org/springframework/security/crypto/bcrypt/BCryptPasswordEncoder.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="34" column="63" lean-forward="true" selection-start-line="23" selection-start-column="8" selection-end-line="34" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/userInfo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="18" column="56" selection-start-line="18" selection-start-column="56" selection-end-line="18" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/changePwd.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UsersDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1865">
-          <caret line="167" column="14" selection-start-line="167" selection-start-column="14" selection-end-line="167" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserInfoDao.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CollegeDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="40" column="78" selection-start-line="40" selection-start-column="76" selection-end-line="40" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/AdminDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="76" column="34" lean-forward="true" selection-start-line="76" selection-start-column="34" selection-end-line="76" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-security.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="21" column="57" lean-forward="true" selection-start-line="21" selection-start-column="57" selection-end-line="21" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/dao/CollegeDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="30" column="43" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/entity/AdminExample.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="6" column="34" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/entity/Admin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-115">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/entity/Audit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1357">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/entity/AuditExample.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/entity/Authorities.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/entity/AuthoritiesEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-393">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/entity/AuthoritiesExample.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/entity/College.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="37" column="15" selection-start-line="37" selection-start-column="15" selection-end-line="37" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/entity/CollegeExample.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="126" column="23" selection-start-line="126" selection-start-column="15" selection-end-line="126" selection-end-column="23" />
-          <folding>
-            <element signature="e#748#749#0" expanded="true" />
-            <element signature="e#783#784#0" expanded="true" />
-            <element signature="e#824#825#0" expanded="true" />
-            <element signature="e#866#867#0" expanded="true" />
-            <element signature="e#2118#2119#0" expanded="true" />
-            <element signature="e#2157#2158#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/entity/Teacher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-736">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/entity/TeacherExample.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/entity/TeacherTitle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-874">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/entity/TeacherTitleExample.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/entity/UserInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/entity/UserLoginEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/entity/Users.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="64" column="29" lean-forward="true" selection-start-line="64" selection-start-column="29" selection-end-line="64" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/entity/UsersExample.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="37" column="24" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/service/UsersService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="688">
-          <caret line="39" column="8" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/entity/Page.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-53">
-          <caret line="45" column="19" lean-forward="true" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/admin/collegeEdit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="85" column="29" selection-start-line="85" selection-start-column="29" selection-end-line="85" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/admin/collegeList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-23">
-          <caret line="38" column="33" lean-forward="true" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/collegeAdd.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1311">
-          <caret line="57" column="56" lean-forward="true" selection-start-line="57" selection-start-column="56" selection-end-line="57" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/collegeEdit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="51" column="34" lean-forward="true" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
-          <folding>
-            <element signature="n#style#0;n#input#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/collegeList.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1150">
-          <caret line="50" column="14" lean-forward="true" selection-start-line="50" selection-start-column="14" selection-end-line="50" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/admin/collegeAdd.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1672">
-          <caret line="103" column="3" lean-forward="true" selection-start-line="103" selection-start-column="3" selection-end-line="103" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/service/impl/UsersServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1695">
-          <caret line="146" column="13" selection-start-line="146" selection-start-column="13" selection-end-line="146" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/service/impl/collegeServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1495">
-          <caret line="85" column="27" selection-start-line="85" selection-start-column="27" selection-end-line="85" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/dao/UsersDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="14" column="29" lean-forward="true" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+        <state relative-caret-position="180">
+          <caret line="53" column="19" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/controller/admin/collegeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1656">
-          <caret line="129" column="32" selection-start-line="129" selection-start-column="32" selection-end-line="129" selection-end-column="32" />
+        <state relative-caret-position="-79">
+          <caret line="345" column="38" selection-start-line="345" selection-start-column="38" selection-end-line="345" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/service/UserLoginService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/service/SystemConfigService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-99">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/service/CollegeService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-260">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/service/impl/UsersServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="219" column="4" lean-forward="true" selection-start-line="219" selection-start-column="4" selection-end-line="219" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/service/impl/SystemConfigServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="29" column="18" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
+          <folding>
+            <element signature="e#672#673#0" expanded="true" />
+            <element signature="e#725#726#0" expanded="true" />
+            <element signature="e#796#797#0" expanded="true" />
+            <element signature="e#850#851#0" expanded="true" />
+            <element signature="e#919#920#0" expanded="true" />
+            <element signature="e#983#984#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/service/impl/CollegeServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="72" column="13" lean-forward="true" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/service/impl/UserLoginServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="12" column="4" lean-forward="true" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+          <folding>
+            <element signature="e#590#591#0" expanded="true" />
+            <element signature="e#647#648#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/service/impl/UserInfoServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-426">
+          <caret line="33" column="28" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="40" column="20" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-security.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="29" column="75" lean-forward="true" selection-start-line="29" selection-start-column="75" selection-end-line="29" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/userInfoPage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="56" column="96" lean-forward="true" selection-start-line="55" selection-start-column="16" selection-end-line="56" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/teacher/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1677" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/admin/collegeAdd.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1516">
+          <caret line="67" column="9" lean-forward="true" selection-start-line="64" selection-start-column="10" selection-end-line="67" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/userInfo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="7" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/admin/userInfo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-391">
+          <caret line="30" column="21" lean-forward="true" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/systemConfigPage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="32" column="74" selection-start-line="32" selection-start-column="66" selection-end-line="32" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/audit/newsAdd.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="80" column="68" selection-start-line="80" selection-start-column="24" selection-end-line="80" selection-end-column="68" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/admin/systemConfigPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="45" column="34" lean-forward="true" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/changePwd.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="32" column="37" lean-forward="true" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/dto/PasswordDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="851">
+          <caret line="49" column="5" lean-forward="true" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
+          <folding>
+            <element signature="e#529#530#0" expanded="true" />
+            <element signature="e#563#564#0" expanded="true" />
+            <element signature="e#617#618#0" expanded="true" />
+            <element signature="e#663#664#0" expanded="true" />
+            <element signature="e#701#702#0" expanded="true" />
+            <element signature="e#735#736#0" expanded="true" />
+            <element signature="e#789#790#0" expanded="true" />
+            <element signature="e#835#836#0" expanded="true" />
+            <element signature="e#973#974#0" expanded="true" />
+            <element signature="e#1011#1012#0" expanded="true" />
+            <element signature="e#1073#1074#0" expanded="true" />
+            <element signature="e#1127#1128#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/controller/admin/SystemConfigController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="60" column="57" selection-start-line="60" selection-start-column="45" selection-end-line="60" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/dto/UserInfoDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="24" column="30" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/controller/UserInfoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="132" lean-forward="true" selection-start-line="132" selection-end-line="132" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/changePassword.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="24" column="24" lean-forward="true" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/cache.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="301" selection-start-line="301" selection-end-line="301" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/admin/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="154" column="22" selection-start-line="154" selection-start-column="22" selection-end-line="154" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="44" column="80" selection-start-line="44" selection-start-column="80" selection-end-line="44" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/controller/admin/AdminView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="32" column="22" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
+          <folding>
+            <element signature="e#1002#1003#0" expanded="true" />
+            <element signature="e#1037#1038#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/selectLogin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="39" column="18" lean-forward="true" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/main2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="42" column="78" lean-forward="true" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/scroll-bar.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="65" column="27" selection-start-line="65" selection-start-column="27" selection-end-line="65" selection-end-column="27" />
         </state>
       </provider>
     </entry>

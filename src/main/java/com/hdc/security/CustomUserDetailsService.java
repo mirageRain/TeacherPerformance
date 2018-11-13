@@ -1,3 +1,4 @@
+/*
 package com.hdc.security;
 
 import java.util.ArrayList;
@@ -24,4 +25,4 @@ public class CustomUserDetailsService implements UserDetailsService {
                 "123456", authorities);
     }
 
-}
+}*/

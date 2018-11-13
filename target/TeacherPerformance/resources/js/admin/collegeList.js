@@ -119,14 +119,14 @@ layui.use(['form', 'layer', 'laydate', 'table', 'laytpl'], function () {
                     top.layer.msg("删除失败，服务器繁忙");
                     top.layer.close(index);
                 },
-                "success": function (data1) {
+                "success": function (result) {
 
-                    if (data1.code == 200) {
+                    if (result.code == 200) {
                         top.layer.close(index);
                         tableIns.reload();
                         top.layer.msg("删除成功！");
                     } else {
-                        top.layer.msg(data1.msg);
+                        top.layer.msg(result.msg);
                     }
                 }
             });

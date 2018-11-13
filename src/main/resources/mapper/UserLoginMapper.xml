@@ -21,4 +21,18 @@
 		where a.username = #{username};
 	</select>
 
+	<select id="queryUserLoginByUserId" resultType="com.hdc.entity.UserLoginEntity">
+		SELECT
+				*
+		FROM
+			 users a
+				 LEFT
+				 JOIN
+					 authorities b
+					 ON
+							 a.user_id =
+							 b.user_id
+		where a.user_id = #{userId};
+	</select>
+
 </mapper>

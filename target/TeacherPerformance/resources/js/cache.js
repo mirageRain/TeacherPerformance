@@ -18,6 +18,7 @@ layui.use(['form','jquery',"layer"],function() {
         $("#userFace").attr("src","../../images/face.jpg");
     }
 
+
     //公告层
     function showNotice(){
         layer.open({
@@ -297,6 +298,7 @@ layui.use(['form','jquery',"layer"],function() {
                 skins();
             }
         })
-    })
+    });
+
 
 })

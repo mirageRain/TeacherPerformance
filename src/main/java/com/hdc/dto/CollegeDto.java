@@ -1,6 +1,7 @@
 package com.hdc.dto;
 
 
+import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 import java.io.Serializable;
@@ -21,7 +22,7 @@ public class CollegeDto implements Serializable {
     /**
      * 学院名称
      */
-    @NotEmpty(message = "用户名不能为空！")
+    @NotBlank(message = "用户名不能为空！")
     private String collegeName;
 
     /**

@@ -16,4 +16,9 @@ public class UserLoginServiceImpl implements UserLoginService{
 	public UserLoginEntity getUserLoginByUsername(String username) {
 		return userLoginDao.queryUserLoginByUsername(username);
 	}
+
+	@Override
+	public UserLoginEntity getUserLoginByUserId(Integer userId) {
+		return userLoginDao.queryUserLoginByUserId(userId);
+	}
 }

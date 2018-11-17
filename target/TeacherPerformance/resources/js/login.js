@@ -2,16 +2,22 @@ layui.use(['form','layer','jquery'],function(){
     var form = layui.form,
         layer = parent.layer === undefined ? layui.layer : top.layer
         $ = layui.jquery;
-        
-    $(".loginBody .seraph").click(function(){
-        layer.msg("这只是做个样式，至于功能，你见过哪个后台能这样登录的？还是老老实实的找管理员去注册吧",{
-            time:5000
-        });
-    })
+
     var time = new Date( ); //获得当前时间
                  var year = time.getFullYear();
                  $("#time").append("2017-"+year);
-   
+
+
+    function getRequest() {
+        var url = location.search; //获取url中"?"符后的字串
+        var strs = url.split("?");
+        return strs[strs.length-1];
+    }
+    var error=getRequest();
+    if(error!=null&&error=="error"){
+        layer.alert('登录失败，用户名或密码错误！', {icon: 2,anim: 6,offset: '100px'});
+       // top.layer.msg("登录失败，用户名或密码错误！");
+    }
 
     //表单输入效果
     $(".loginBody .input-item").click(function(e){

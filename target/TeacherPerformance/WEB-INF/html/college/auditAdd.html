@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>添加审核处</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../resources/layui/css/layui.css" media="all"/>
+    <link rel="stylesheet" href="../resources/css/public.css" media="all"/>
+    <style type="text/css">
+        .layui-field-box .layui-upload {
+            margin-left: 40px;
+        }
+
+        .btnlist .layui-btn {
+            float: right;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body class="childrenBody">
+<div class="layui-field-box">
+    <form class="layui-form layui-form-pane" action>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">审核处名称</label>
+                <div class="layui-input-inline">
+                    <input type="text" class="layui-input " id="auditName" name="auditName" placeholder="请输入审核处名称"
+                           autocomplete="off" lay-verify="required|auditName">
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">审核处账号</label>
+                <div class="layui-input-inline">
+                    <input type="text" class="layui-input " id="username" name="username" placeholder="请输入审核处账号"
+                           autocomplete="off" lay-verify="required|username">
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">审核处密码</label>
+                <div class="layui-input-inline">
+                    <input type="text" class="layui-input " id="password" lay-verify="required|password" name="password"
+                           placeholder="请输入审核处密码" autocomplete="off">
+                </div>
+            </div>
+        </div>
+
+         <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">审核处描述</label>
+            <div class="layui-input-block">
+                <textarea placeholder="请输入内容" name="desc" id="desc" class="layui-textarea"></textarea>
+            </div>
+        </div>
+        <div class="page-footer">
+            <div class="btn-list">
+                <div class="btnlist">
+                    <button class="layui-btn layui-btn-primary" type="button" id="close">返回</button>
+                    <button class="layui-btn" type="submit" lay-submit="" lay-filter="submit">提交</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</div>
+<script type="text/javascript" src="../resources/layui/layui.js"></script>
+<script type="text/javascript" src="../resources/js/college/auditAdd.js"></script>
+</body>
+</html>

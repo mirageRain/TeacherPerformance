@@ -119,4 +119,21 @@ public class Audit implements Serializable {
         sb.append("]");
         return sb.toString();
     }
+
+    public Audit(Integer auditId, String auditName, Integer collegeId, Integer userId, String desc) {
+        this.auditId = auditId;
+        this.auditName = auditName;
+        this.collegeId = collegeId;
+        this.userId = userId;
+        this.desc = desc;
+    }
+
+    public Audit() {
+
+    }
+
+    public void init() {
+        this.auditName = "";
+        this.desc = "";
+    }
 }

@@ -28,7 +28,7 @@
 				<div class="layui-inline">
 					<label class="layui-form-label">学院名称</label>
 					<div class="layui-input-inline">
-						<input type="text" class="layui-input " id="collegeName"  name="collegeName" placeholder="请输入学院名称" autocomplete="off"  lay-verify="collegeName">
+						<input type="text" class="layui-input " id="collegeName"  name="collegeName" placeholder="请输入学院名称" autocomplete="off"  lay-verify="required|collegeName">
 					</div>
 				</div>
 			</div>
@@ -36,14 +36,14 @@
 				<div class="layui-inline">
 					<label class="layui-form-label">学院账号</label>
 					<div class="layui-input-inline">
-						<input type="text" class="layui-input " id="username"  name="username" placeholder="请输入学院账号" autocomplete="off"  lay-verify="username">
+						<input type="text" class="layui-input " id="username"  name="username" placeholder="请输入学院账号" autocomplete="off"  lay-verify="required|username">
 					</div>
 				</div>
 			</div>
 			<div class="layui-inline">
 				<label class="layui-form-label">学院密码</label>
 				<div class="layui-input-inline">
-					<input type="text"  class="layui-input " id="password" lay-verify="password" name="password" placeholder="请输入学院密码" autocomplete="off">
+					<input type="text"  class="layui-input " id="password" lay-verify="required|password" name="password" placeholder="请输入学院密码" autocomplete="off">
 				</div>
 			</div>
 			<input  style="display:none" type="text" id="collegeId"  name="collegeId">

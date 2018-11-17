@@ -1,8 +1,6 @@
 package com.hdc.service;
 
-import com.hdc.entity.UserInfo;
-import com.hdc.entity.Users;
-import com.hdc.entity.UsersExample;
+import com.hdc.entity.*;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -39,10 +37,17 @@ public interface UsersService {
 
 	int insertCollege(Users college, UserInfo userInfo);
 
-	int insertAudit(Users audit, UserInfo userInfo);
+    @Transactional
+    int insertAudit(AuditTable auditTable);
 
-	@Transactional
+    @Transactional
 	int updateCollege(Users users, UserInfo userInfo);
 
 	int deleteCollege(List<Integer> collegeIdList);
+
+	@Transactional
+	int updateAudit(AuditTable auditTable);
+
+	@Transactional
+	int deleteAudit(List<Integer> auditIdList);
 }

@@ -1,9 +1,6 @@
 package com.hdc.service.impl;
 
-import com.hdc.dao.AuditDao;
-import com.hdc.dao.AuthoritiesDao;
-import com.hdc.dao.UserInfoDao;
-import com.hdc.dao.UsersDao;
+import com.hdc.dao.*;
 import com.hdc.entity.*;
 import com.hdc.service.AuditService;
 import com.hdc.service.UsersService;
@@ -19,10 +16,18 @@ public class AuditServiceImpl implements AuditService {
 	@Autowired
 	private AuditDao auditDao;
 
+    @Autowired
+    private AuditTableDao auditTableDao;
+
 	@Override
 	public long countByExample(AuditExample example) {
 		return auditDao.countByExample(example);
 	}
+
+    @Override
+    public long tableCountByExample(AuditTableExample example) {
+        return auditTableDao.countByExample(example);
+    }
 
 	@Override
 	public int deleteByExample(AuditExample example) {
@@ -49,7 +54,13 @@ public class AuditServiceImpl implements AuditService {
 		return auditDao.selectByExample(example);
 	}
 
-	@Override
+
+    @Override
+    public List<AuditTable> selectAllByExample(AuditTableExample example) {
+        return auditTableDao.selectByExample(example);
+    }
+
+    @Override
 	public Audit selectByPrimaryKey(Integer auditId) {
 		return auditDao.selectByPrimaryKey(auditId);
 	}

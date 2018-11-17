@@ -1,0 +1,3 @@
+evaluationIndex  评估指标
+observationPoint 主要观测点
+gradingStandard  评分标准

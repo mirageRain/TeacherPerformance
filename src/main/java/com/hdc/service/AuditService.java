@@ -1,8 +1,7 @@
 package com.hdc.service;
 
 
-import com.hdc.entity.Audit;
-import com.hdc.entity.AuditExample;
+import com.hdc.entity.*;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +11,8 @@ import java.util.List;
 public interface AuditService {
 
 	long countByExample(AuditExample example);
+
+	long tableCountByExample(AuditTableExample example);
 
 	int deleteByExample(AuditExample example);
 
@@ -23,7 +24,9 @@ public interface AuditService {
 
 	List<Audit> selectByExample(AuditExample example);
 
-	Audit selectByPrimaryKey(Integer auditId);
+    List<AuditTable> selectAllByExample(AuditTableExample example);
+
+    Audit selectByPrimaryKey(Integer auditId);
 
 	int updateByExampleSelective(@Param("record") Audit record, @Param("example") AuditExample example);
 

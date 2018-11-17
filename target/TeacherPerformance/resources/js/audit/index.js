@@ -134,6 +134,25 @@ layui.use(['bodyTab','form','element','layer','jquery'],function(){
 		window.sessionStorage.removeItem("menu");
 		window.sessionStorage.removeItem("curmenu");
 	}
+
+    function initDisplayName(){
+        $.ajax({
+            "url": "/userInfo",
+            "contentType": "application/json",
+            "type": "get",
+            "error": function () {
+                top.layer.msg("服务器繁忙！");
+            },
+            "success": function (result) {
+                if (result.code == 200) {
+                    $(".displayName").html(result.data.displayName);
+                } else {
+                    top.layer.msg(result.msg);
+                }
+            }
+        });
+    }
+    initDisplayName();
 })
 
 //打开新窗口

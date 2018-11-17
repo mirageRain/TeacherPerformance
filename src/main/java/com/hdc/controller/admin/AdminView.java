@@ -69,6 +69,21 @@ public class AdminView {
         return "admin/collegeAdd";
     }
 
+    @RequestMapping(value = "/teacherTitleList", method = RequestMethod.GET)
+    public String teacherTitlePageView() {
+        return "admin/teacherTitleList";
+    }
+
+    @RequestMapping(value = "/teacherTitleEdit", method = RequestMethod.GET)
+    public String teacherTitleEditView() {
+        return "admin/teacherTitleEdit";
+    }
+
+    @RequestMapping(value = "/teacherTitleAdd", method = RequestMethod.GET)
+    public String teacherTitleAddView() {
+        return "admin/teacherTitleAdd";
+    }
+
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String indexView() {
         return "admin/index";

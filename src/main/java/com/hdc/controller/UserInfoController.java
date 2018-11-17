@@ -44,8 +44,6 @@ public class UserInfoController {
         MyUser userDetails = (MyUser) SecurityContextHolder.getContext()
                 .getAuthentication()
                 .getPrincipal();
-        System.out.println("用户名" + userDetails.getUsername());
-        System.out.println("用户ID" + (userDetails.getMyUserId()));
         Integer userId = userDetails.getMyUserId();
         UserInfo userInfo;
         UserInfoExample userInfoExample = new UserInfoExample();

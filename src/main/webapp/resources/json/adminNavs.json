@@ -19,6 +19,12 @@
 			"spread": false
 		},
 		{
+			"title": "教师职称管理",
+			"icon": "&#xe630;",
+			"href": "admin/teacherTitleList",
+			"spread": false
+		},
+		{
 			"title": "教师管理",
 			"icon": "&#xe630;",
 			"href": "admin/gradingStandard",

@@ -19,7 +19,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/admin/college")
-public class collegeController {
+public class CollegeController {
 
     @Autowired
     private CollegeService collegeService;

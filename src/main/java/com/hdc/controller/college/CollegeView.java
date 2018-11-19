@@ -44,9 +44,34 @@ public class CollegeView {
         return "college/auditEdit";
     }
 
+    @RequestMapping(value = "/teacherList", method = RequestMethod.GET)
+    public String teacherListView() {
+        return "college/teacherList";
+    }
+
+    @RequestMapping(value = "/teacherAdd", method = RequestMethod.GET)
+    public String teacherAddView() {
+        return "college/teacherAdd";
+    }
+
+    @RequestMapping(value = "/teacherEdit", method = RequestMethod.GET)
+    public String teacherEditView() {
+        return "college/teacherEdit";
+    }
+
     @RequestMapping(value = "/evaluationIndexList", method = RequestMethod.GET)
     public String evaluationIndexListView() {
         return "college/evaluationIndexList";
+    }
+
+    @RequestMapping(value = "/evaluationIndexAdd", method = RequestMethod.GET)
+    public String evaluationIndexAddView() {
+        return "college/evaluationIndexAdd";
+    }
+
+    @RequestMapping(value = "/evaluationIndexEdit", method = RequestMethod.GET)
+    public String evaluationIndexEditView() {
+        return "college/evaluationIndexEdit";
     }
 
     @RequestMapping(value = "/observationPointList", method = RequestMethod.GET)
@@ -54,17 +79,29 @@ public class CollegeView {
         return "college/observationPointList";
     }
 
+    @RequestMapping(value = "/observationPointAdd", method = RequestMethod.GET)
+    public String observationPointAddView() {
+        return "college/observationPointAdd";
+    }
+    @RequestMapping(value = "/observationPointEdit", method = RequestMethod.GET)
+    public String observationPointEditView() {
+        return "college/observationPointEdit";
+    }
+
     @RequestMapping(value = "/gradingStandardList", method = RequestMethod.GET)
     public String gradingStandardListView() {
         return "college/gradingStandardList";
     }
 
+    @RequestMapping(value = "/gradingStandardAdd", method = RequestMethod.GET)
+    public String gradingStandardAddView() {
+        return "college/gradingStandardAdd";
+    }
 
-
-
-
-
-
+    @RequestMapping(value = "/gradingStandardEdit", method = RequestMethod.GET)
+    public String gradingStandardEditView() {
+        return "college/gradingStandardEdit";
+    }
 
 
 }

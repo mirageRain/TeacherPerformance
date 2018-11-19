@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hdc.dao.OrderFileDao">
+  <resultMap id="BaseResultMap" type="com.hdc.entity.OrderFile">
+    <id column="order_file_id" jdbcType="INTEGER" property="orderFileId" />
+    <result column="order_id" jdbcType="BIGINT" property="orderId" />
+    <result column="save_file_name" jdbcType="VARCHAR" property="saveFileName" />
+    <result column="upload_file_name" jdbcType="VARCHAR" property="uploadFileName" />
+    <result column="file_url" jdbcType="VARCHAR" property="fileUrl" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    order_file_id, order_id, save_file_name, upload_file_name, file_url
+  </sql>
+  <select id="selectByExample" parameterType="com.hdc.entity.OrderFileExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from order_file
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <if test="limit != null">
+      <if test="offset != null">
+        limit ${offset}, ${limit}
+      </if>
+      <if test="offset == null">
+        limit ${limit}
+      </if>
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from order_file
+    where order_file_id = #{orderFileId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from order_file
+    where order_file_id = #{orderFileId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.hdc.entity.OrderFileExample">
+    delete from order_file
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.hdc.entity.OrderFile">
+    <selectKey keyProperty="orderFileId" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into order_file (order_id, save_file_name, upload_file_name, 
+      file_url)
+    values (#{orderId,jdbcType=BIGINT}, #{saveFileName,jdbcType=VARCHAR}, #{uploadFileName,jdbcType=VARCHAR}, 
+      #{fileUrl,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.hdc.entity.OrderFile">
+    <selectKey keyProperty="orderFileId" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into order_file
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="orderId != null">
+        order_id,
+      </if>
+      <if test="saveFileName != null">
+        save_file_name,
+      </if>
+      <if test="uploadFileName != null">
+        upload_file_name,
+      </if>
+      <if test="fileUrl != null">
+        file_url,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="orderId != null">
+        #{orderId,jdbcType=BIGINT},
+      </if>
+      <if test="saveFileName != null">
+        #{saveFileName,jdbcType=VARCHAR},
+      </if>
+      <if test="uploadFileName != null">
+        #{uploadFileName,jdbcType=VARCHAR},
+      </if>
+      <if test="fileUrl != null">
+        #{fileUrl,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.hdc.entity.OrderFileExample" resultType="java.lang.Long">
+    select count(*) from order_file
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update order_file
+    <set>
+      <if test="record.orderFileId != null">
+        order_file_id = #{record.orderFileId,jdbcType=INTEGER},
+      </if>
+      <if test="record.orderId != null">
+        order_id = #{record.orderId,jdbcType=BIGINT},
+      </if>
+      <if test="record.saveFileName != null">
+        save_file_name = #{record.saveFileName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.uploadFileName != null">
+        upload_file_name = #{record.uploadFileName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fileUrl != null">
+        file_url = #{record.fileUrl,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update order_file
+    set order_file_id = #{record.orderFileId,jdbcType=INTEGER},
+      order_id = #{record.orderId,jdbcType=BIGINT},
+      save_file_name = #{record.saveFileName,jdbcType=VARCHAR},
+      upload_file_name = #{record.uploadFileName,jdbcType=VARCHAR},
+      file_url = #{record.fileUrl,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hdc.entity.OrderFile">
+    update order_file
+    <set>
+      <if test="orderId != null">
+        order_id = #{orderId,jdbcType=BIGINT},
+      </if>
+      <if test="saveFileName != null">
+        save_file_name = #{saveFileName,jdbcType=VARCHAR},
+      </if>
+      <if test="uploadFileName != null">
+        upload_file_name = #{uploadFileName,jdbcType=VARCHAR},
+      </if>
+      <if test="fileUrl != null">
+        file_url = #{fileUrl,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where order_file_id = #{orderFileId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hdc.entity.OrderFile">
+    update order_file
+    set order_id = #{orderId,jdbcType=BIGINT},
+      save_file_name = #{saveFileName,jdbcType=VARCHAR},
+      upload_file_name = #{uploadFileName,jdbcType=VARCHAR},
+      file_url = #{fileUrl,jdbcType=VARCHAR}
+    where order_file_id = #{orderFileId,jdbcType=INTEGER}
+  </update>
+</mapper>

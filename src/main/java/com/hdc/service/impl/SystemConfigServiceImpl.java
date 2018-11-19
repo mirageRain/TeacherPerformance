@@ -56,6 +56,9 @@ public class SystemConfigServiceImpl implements SystemConfigService {
 
 	@Override
 	public SystemConfig selectByPrimaryKey(Integer systemConfigId) {
+		if(systemConfigId == null ||systemConfigId <=0){
+			systemConfigId = 1;
+		}
 		return systemConfigDao.selectByPrimaryKey(systemConfigId);
 	}
 

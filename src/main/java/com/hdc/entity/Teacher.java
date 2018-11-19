@@ -119,4 +119,18 @@ public class Teacher implements Serializable {
         sb.append("]");
         return sb.toString();
     }
+
+    public Teacher(Integer teacherId, Integer userId, String teacherName, Integer teacherTitleId, Integer collegeId) {
+        this.teacherId = teacherId;
+        this.userId = userId;
+        this.teacherName = teacherName;
+        this.teacherTitleId = teacherTitleId;
+        this.collegeId = collegeId;
+    }
+
+    public Teacher() {
+    }
+
+    public void init() {
+    }
 }

@@ -7,89 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="495bf553-a407-47e6-8676-2f1db1ee2180" name="Default Changelist" comment="前端页面调整配置">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hdc/controller/admin/TeacherTitleController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hdc/controller/college/AuditController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hdc/dao/AuditTableDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hdc/dto/AuditDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hdc/dto/TeacherTitleDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hdc/entity/AuditTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hdc/entity/AuditTableExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/AuditTableDao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/auditAdd.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/auditEdit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/auditList.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/admin/teacherTitleAdd.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/admin/teacherTitleEdit.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/admin/teacherTitleList.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/college/auditAdd.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/college/auditEdit.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/college/auditList.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/json/collegeNavs.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/json/record.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hdc/controller/UserInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hdc/controller/UserInfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hdc/controller/admin/AdminView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hdc/controller/admin/AdminView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hdc/controller/admin/collegeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hdc/controller/admin/CollegeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hdc/controller/college/CollegeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hdc/controller/college/CollegeView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hdc/dto/CollegeDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hdc/dto/CollegeDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hdc/entity/Audit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hdc/entity/Audit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hdc/service/AuditService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hdc/service/AuditService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hdc/service/UsersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hdc/service/UsersService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hdc/service/impl/AuditServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hdc/service/impl/AuditServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hdc/service/impl/TeacherTitleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hdc/service/impl/TeacherTitleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hdc/service/impl/UsersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hdc/service/impl/UsersServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/collegeAdd.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/collegeAdd.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/collegeEdit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/collegeEdit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/changePwd.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/collegeAdd.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/teacherTitleAdd.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/collegeEdit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/teacherTitleEdit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/collegeList.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/teacherTitleList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/userInfo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/selectLogin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/selectLogin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/audit/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/audit/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/college/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/college/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/json/adminNavs.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/json/adminNavs.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/controller/UserInfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/controller/UserInfoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/controller/admin/AdminView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/controller/admin/AdminView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/controller/admin/collegeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/controller/admin/collegeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/controller/college/CollegeView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/controller/college/CollegeView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/dto/CollegeDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/dto/CollegeDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/entity/Audit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/entity/Audit.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/service/AuditService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/service/AuditService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/service/UsersService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/service/UsersService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/service/impl/AuditServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/service/impl/AuditServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/service/impl/TeacherTitleServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/service/impl/TeacherTitleServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/service/impl/UsersServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/classes/com/hdc/service/impl/UsersServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/html/admin/collegeAdd.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/html/admin/collegeAdd.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/html/admin/collegeEdit.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/html/admin/collegeEdit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/html/admin/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/html/admin/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/html/college/changePwd.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/html/college/collegeAdd.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/html/college/collegeEdit.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/html/college/collegeList.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/html/college/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/html/college/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/html/college/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/html/college/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/html/college/userInfo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/html/selectLogin.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/WEB-INF/html/selectLogin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/resources/js/audit/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/resources/js/audit/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/resources/js/college/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/resources/js/college/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/resources/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/resources/js/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/TeacherPerformance/resources/json/adminNavs.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/TeacherPerformance/resources/json/adminNavs.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hdc/controller/UserInfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hdc/controller/UserInfoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hdc/controller/admin/AdminView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hdc/controller/admin/AdminView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hdc/controller/admin/collegeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hdc/controller/admin/collegeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hdc/controller/college/CollegeView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hdc/controller/college/CollegeView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hdc/dto/CollegeDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hdc/dto/CollegeDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hdc/entity/Audit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hdc/entity/Audit.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hdc/service/AuditService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hdc/service/AuditService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hdc/service/UsersService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hdc/service/UsersService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hdc/service/impl/AuditServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hdc/service/impl/AuditServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hdc/service/impl/TeacherTitleServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hdc/service/impl/TeacherTitleServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hdc/service/impl/UsersServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hdc/service/impl/UsersServiceImpl.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -119,9 +37,9 @@
     <session id="-1194516439">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="32" />
-          <entry key="project.open.time.10" value="4" />
-          <entry key="project.open.time.11" value="4" />
+          <entry key="project.closed" value="36" />
+          <entry key="project.open.time.10" value="5" />
+          <entry key="project.open.time.11" value="5" />
           <entry key="project.open.time.12" value="6" />
           <entry key="project.open.time.13" value="5" />
           <entry key="project.open.time.14" value="1" />
@@ -129,156 +47,72 @@
           <entry key="project.open.time.3" value="2" />
           <entry key="project.open.time.4" value="2" />
           <entry key="project.open.time.7" value="2" />
-          <entry key="project.open.time.8" value="1" />
-          <entry key="project.open.time.9" value="6" />
-          <entry key="project.opened" value="35" />
+          <entry key="project.open.time.8" value="2" />
+          <entry key="project.open.time.9" value="7" />
+          <entry key="project.opened" value="39" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="19" />
           <entry key="css" value="1" />
-          <entry key="html" value="153" />
-          <entry key="java" value="406" />
-          <entry key="js" value="128" />
-          <entry key="json" value="19" />
+          <entry key="html" value="191" />
+          <entry key="java" value="499" />
+          <entry key="js" value="180" />
+          <entry key="json" value="26" />
           <entry key="md" value="1" />
           <entry key="sql" value="1" />
           <entry key="ts" value="2" />
-          <entry key="txt" value="1" />
-          <entry key="xml" value="94" />
+          <entry key="txt" value="7" />
+          <entry key="xml" value="103" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="19" />
           <entry key="CSS" value="1" />
-          <entry key="HTML" value="153" />
-          <entry key="JAVA" value="406" />
-          <entry key="JSON" value="19" />
-          <entry key="JavaScript" value="128" />
+          <entry key="HTML" value="191" />
+          <entry key="JAVA" value="499" />
+          <entry key="JSON" value="26" />
+          <entry key="JavaScript" value="180" />
           <entry key="Markdown" value="1" />
-          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="PLAIN_TEXT" value="7" />
           <entry key="Scratch" value="1" />
           <entry key="TypeScript" value="2" />
-          <entry key="XML" value="94" />
+          <entry key="XML" value="103" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="6" />
-          <entry key="html" value="1760" />
-          <entry key="java" value="9625" />
-          <entry key="js" value="3091" />
+          <entry key="dummy" value="9" />
+          <entry key="html" value="1970" />
+          <entry key="java" value="10635" />
+          <entry key="js" value="3747" />
           <entry key="json" value="135" />
           <entry key="txt" value="23" />
-          <entry key="xml" value="380" />
+          <entry key="xml" value="432" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="1762" />
-          <entry key="JAVA" value="9625" />
+          <entry key="HTML" value="1972" />
+          <entry key="JAVA" value="10635" />
           <entry key="JSON" value="135" />
-          <entry key="JavaScript" value="3089" />
-          <entry key="PLAIN_TEXT" value="29" />
-          <entry key="SQL" value="12" />
-          <entry key="XML" value="368" />
+          <entry key="JavaScript" value="3745" />
+          <entry key="PLAIN_TEXT" value="32" />
+          <entry key="SQL" value="17" />
+          <entry key="XML" value="415" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/auditAdd.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="49" column="95" selection-start-line="49" selection-start-column="95" selection-end-line="49" selection-end-column="95" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/controller/admin/TeacherTitleController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1182">
-              <caret line="154" column="41" lean-forward="true" selection-start-line="154" selection-start-column="41" selection-end-line="154" selection-end-column="41" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/service/TeacherTitleService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/service/impl/TeacherTitleServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
-              <folding>
-                <element signature="e#701#702#0" expanded="true" />
-                <element signature="e#754#755#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/admin/teacherTitleList.js">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/json/record.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="105" column="58" lean-forward="true" selection-start-line="105" selection-start-column="58" selection-end-line="105" selection-end-column="58" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/admin/teacherTitleAdd.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="16" column="51" lean-forward="true" selection-start-line="16" selection-start-column="51" selection-end-line="16" selection-end-column="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/admin/collegeList.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
-              <caret line="71" column="22" selection-start-line="71" selection-start-column="22" selection-end-line="71" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/dto/TeacherTitleDto.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/admin/userInfo.js">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/admin/teacherTitleEdit.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-329">
-              <caret line="38" column="9" lean-forward="true" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
+            <state relative-caret-position="69">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
@@ -294,21 +128,10 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>add</find>
-      <find>collegeId</find>
-      <find>0</find>
-      <find>Boolean</find>
-      <find>long</find>
-      <find>BaseResultMap</find>
-      <find>in</find>
-      <find>itIn</find>
-      <find>新闻</find>
-      <find>news</find>
       <find>searchForm</find>
       <find>console</find>
       <find>alert</find>
       <find>oredCriteria</find>
-      <find>null</find>
       <find>userID</find>
       <find>Long</find>
       <find>or</find>
@@ -320,10 +143,21 @@
       <find>count</find>
       <find>select</find>
       <find>学院</find>
-      <find>教师</find>
-      <find>audit</find>
       <find>college</find>
       <find>TeacherTitleTable</find>
+      <find>审核处</find>
+      <find>审核</find>
+      <find>Audit</find>
+      <find>audit</find>
+      <find>layero</find>
+      <find>evaluationIndex</find>
+      <find>observationPoint</find>
+      <find>教师</find>
+      <find>Teacher</find>
+      <find>teacher</find>
+      <find>teacherTitle</find>
+      <find>null</find>
+      <find>教师职称</find>
     </findStrings>
     <replaceStrings>
       <replace>../resources/json/</replace>
@@ -347,6 +181,15 @@
       <replace>aeacherTitle</replace>
       <replace>teacherTitle</replace>
       <replace>TeacherTitle</replace>
+      <replace>教师</replace>
+      <replace>tacher</replace>
+      <replace>Teacher</replace>
+      <replace>teacher</replace>
+      <replace>gradingStandard</replace>
+      <replace>EvaluationIndex</replace>
+      <replace>evaluationIndexDao.</replace>
+      <replace>evaluationIndex</replace>
+      <replace>评估指标</replace>
     </replaceStrings>
     <dirStrings>
       <dir>D:\ideaWorkspace\TeacherPerformance\src\main\webapp\WEB-INF</dir>
@@ -364,57 +207,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/userInfoPage.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/admin/systemConfigPage.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/changePwd.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hdc/dto/PasswordDto.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/index.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/changePassword.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/cache.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/admin/index.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/login.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/selectLogin.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/audit/index.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/college/index.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/index.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/main.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/main.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/collegeAdd.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/auditList.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/json/record.txt" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/json/collegeNavs.json" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hdc/entity/Audit.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hdc/service/AuditService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hdc/service/impl/AuditServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hdc/dto/CollegeDto.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hdc/dto/AuditDto.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hdc/controller/UserInfoController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hdc/service/UsersService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hdc/controller/college/auditController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/AuditTableDao.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/college/auditAdd.js" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hdc/entity/AuditTable.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/admin/collegeList.js" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hdc/controller/college/CollegeView.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/college/auditList.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/college/auditEdit.js" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hdc/service/impl/UsersServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hdc/controller/college/AuditController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hdc/controller/admin/AdminView.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/teacherTitleList.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hdc/dto/TeacherTitleDto.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hdc/service/impl/TeacherTitleServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/json/adminNavs.json" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/collegeEdit.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/collegeAdd.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/teacherTitleAdd.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/teacherTitleEdit.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/auditAdd.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/auditEdit.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/admin/teacherTitleAdd.js" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hdc/controller/admin/TeacherTitleController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/admin/teacherTitleEdit.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/admin/teacherTitleList.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hdc/controller/college/teacherController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hdc/service/impl/TeacherServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hdc/entity/Teacher.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hdc/dto/TeacherDto.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/TeacherTableDao.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/teacherAdd.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/teacherEdit.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/college/teacherEdit.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/college/teacherList.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hdc/service/impl/UsersServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/teacherList.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hdc/entity/TeacherTableExample.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hdc/controller/info/InfoController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hdc/service/SystemConfigService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hdc/service/impl/SystemConfigServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hdc/controller/college/CollegeView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hdc/controller/college/evaluationIndexController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hdc/service/EvaluationIndexService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hdc/service/impl/EvaluationIndexServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hdc/controller/college/AuditController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hdc/controller/college/TeacherController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/evaluationIndexList.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/college/evaluationIndexAdd.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/college/evaluationIndexEdit.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hdc/dto/EvaluationIndexDto.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/evaluationIndexAdd.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/evaluationIndexEdit.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hdc/dto/ObservationPointDto.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/observationPointList.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/college/evaluationIndexList.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/college/teacherAdd.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/college/observationPointAdd.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/college/observationPointEdit.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/observationPointAdd.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/observationPointEdit.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/college/observationPointList.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hdc/dto/ObservationPoint1Dto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hdc/controller/college/ObservationPointController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hdc/controller/college/EvaluationIndexController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/gradingStandardPointAdd.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/college/gradingStandardPointList.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hdc/dto/GradingStandardDto.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/gradingStandardEdit.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/gradingStandardList.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/college/gradingStandardAdd.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hdc/controller/college/GradingStandardController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/college/gradingStandardList.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/college/gradingStandardEdit.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/gradingStandardAdd.html" />
       </list>
     </option>
   </component>
@@ -444,11 +287,11 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="362" />
-    <option name="y" value="28" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="714" />
+    <option name="y" value="40" />
     <option name="width" value="1400" />
-    <option name="height" value="1000" />
+    <option name="height" value="1006" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -506,185 +349,6 @@
             <path>
               <item name="TeacherPerformance" type="b2602c69:ProjectViewProjectNode" />
               <item name="TeacherPerformance" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TeacherPerformance" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TeacherPerformance" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TeacherPerformance" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TeacherPerformance" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TeacherPerformance" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TeacherPerformance" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="hdc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TeacherPerformance" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TeacherPerformance" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="hdc" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TeacherPerformance" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TeacherPerformance" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="hdc" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TeacherPerformance" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TeacherPerformance" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="hdc" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-              <item name="college" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TeacherPerformance" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TeacherPerformance" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="hdc" type="462c0819:PsiDirectoryNode" />
-              <item name="dto" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TeacherPerformance" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TeacherPerformance" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="hdc" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TeacherPerformance" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TeacherPerformance" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="hdc" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TeacherPerformance" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TeacherPerformance" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="hdc" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TeacherPerformance" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TeacherPerformance" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TeacherPerformance" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TeacherPerformance" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TeacherPerformance" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TeacherPerformance" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TeacherPerformance" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TeacherPerformance" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TeacherPerformance" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TeacherPerformance" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TeacherPerformance" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TeacherPerformance" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="json" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TeacherPerformance" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TeacherPerformance" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TeacherPerformance" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TeacherPerformance" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="html" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TeacherPerformance" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TeacherPerformance" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="html" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TeacherPerformance" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TeacherPerformance" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="html" type="462c0819:PsiDirectoryNode" />
-              <item name="college" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TeacherPerformance" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TeacherPerformance" type="462c0819:PsiDirectoryNode" />
               <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -703,7 +367,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542484667623" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542660278784" />
     <property name="last_opened_file_path" value="F:/网站资料/schmsite" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -711,28 +375,29 @@
     <property name="settings.editor.selected.configurable" value="spring" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\ideaWorkspace\TeacherPerformance\src\main\webapp\WEB-INF\html" />
-      <recent name="D:\ideaWorkspace\TeacherPerformance\src\main\resources\mapper" />
-      <recent name="D:\ideaWorkspace\TeacherPerformance\src\main\webapp\resources\js\audit" />
-      <recent name="D:\ideaWorkspace\TeacherPerformance\src\main\webapp\resources\js\admin" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.hdc.service" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\ideaWorkspace\TeacherPerformance\src\main\java\com\hdc\entity" />
+      <recent name="D:\ideaWorkspace\TeacherPerformance\src\main\java\com\hdc\dao" />
+      <recent name="D:\ideaWorkspace\TeacherPerformance\src\main\resources\mapper" />
+      <recent name="D:\ideaWorkspace\TeacherPerformance\src\main\webapp\WEB-INF\html\college" />
+      <recent name="D:\ideaWorkspace\TeacherPerformance\src\main\webapp\resources\js\college" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.hdc.dto" />
-      <recent name="com.hdc.controller.admin" />
-      <recent name="com.hdc.controller.college" />
       <recent name="com.hdc.service.impl" />
       <recent name="com.hdc.service" />
+      <recent name="com.hdc.controller.college" />
+      <recent name="com.hdc.controller.info" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\ideaWorkspace\TeacherPerformance\src\main\webapp\resources\js\admin" />
-      <recent name="D:\ideaWorkspace\TeacherPerformance\src\main\webapp\WEB-INF\html\admin" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\ideaWorkspace\TeacherPerformance\src\main\java\com\hdc\controller\college" />
+      <recent name="D:\ideaWorkspace\TeacherPerformance\src\main\java\com\hdc\service\impl" />
+      <recent name="D:\ideaWorkspace\TeacherPerformance\src\main\java\com\hdc\service" />
+      <recent name="D:\ideaWorkspace\TeacherPerformance\src\main\webapp\WEB-INF\html" />
       <recent name="D:\ideaWorkspace\TeacherPerformance\src\main\resources\mapper" />
-      <recent name="D:\ideaWorkspace\TeacherPerformance\src\main\java\com\hdc\dao" />
-      <recent name="D:\ideaWorkspace\TeacherPerformance\src\main\java\com\hdc\entity" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1022,7 +687,11 @@
       <workItem from="1542328216717" duration="17008000" />
       <workItem from="1542427761414" duration="7636000" />
       <workItem from="1542474479361" duration="3172000" />
-      <workItem from="1542477891191" duration="4836000" />
+      <workItem from="1542477891191" duration="5853000" />
+      <workItem from="1542513763277" duration="13672000" />
+      <workItem from="1542585847069" duration="13448000" />
+      <workItem from="1542635441593" duration="12751000" />
+      <workItem from="1542659667822" duration="449000" />
     </task>
     <task id="LOCAL-00001" summary="前端页面调整配置">
       <created>1540413908747</created>
@@ -1067,7 +736,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="289954000" />
+    <option name="totallyTimeSpent" value="331291000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1080,9 +749,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20948827" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18017058" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1090,20 +758,20 @@
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Web" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="0" sideWeight="0.49946696" weight="0.30802602" />
+      <window_info anchor="bottom" id="Messages" order="0" sideWeight="0.49946696" weight="0.28850326" />
       <window_info anchor="bottom" id="Application Servers" order="1" sideWeight="0.49925372" weight="0.329718" />
       <window_info anchor="bottom" id="Message" order="2" />
       <window_info anchor="bottom" id="Find" order="3" weight="0.329718" />
-      <window_info anchor="bottom" id="Run" order="4" sideWeight="0.49626866" visible="true" weight="0.329718" />
+      <window_info anchor="bottom" id="Run" order="4" sideWeight="0.49626866" weight="0.35032538" />
       <window_info anchor="bottom" id="Debug" order="5" weight="0.3991323" />
       <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="8" weight="0.329718" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50373137" side_tool="true" weight="0.329718" />
       <window_info anchor="bottom" id="Spring" order="10" weight="0.329718" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32936078" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3275488" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.329718" />
-      <window_info anchor="bottom" id="Version Control" order="13" weight="0.3264642" />
+      <window_info anchor="bottom" id="Version Control" order="13" weight="0.3256351" />
       <window_info anchor="bottom" id="Problems" order="14" weight="0.329718" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -1169,355 +837,336 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/json/gradingStandardList.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/json/collegeNavs.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="713">
-          <caret line="31" column="10" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/service/CollegeService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="28" column="61" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/404.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/testExample.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/json/record.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="16" selection-start-line="1" selection-end-line="1" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/controller/teacher/TeacherView.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/dto/SystemConfigDto.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
-          <caret line="19" selection-start-line="19" selection-end-line="20" />
+          <caret line="23" column="45" lean-forward="true" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="45" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/dao/AuditTableDao.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/dto/TeacherDto.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/dto/CollegeDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/entity/Audit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="132" column="5" selection-start-line="132" selection-start-column="5" selection-end-line="132" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/dto/AuditDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="573">
-          <caret line="46" column="11" lean-forward="true" selection-start-line="46" selection-start-column="11" selection-end-line="46" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/controller/admin/AuthoritiesController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/controller/admin/SystemConfigController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-667">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/controller/ViewController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/controller/UserInfoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="45" column="32" lean-forward="true" selection-start-line="43" selection-start-column="7" selection-end-line="45" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/service/AuditService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="10" column="31" lean-forward="true" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/AuditTableDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="300" column="36" lean-forward="true" selection-start-line="300" selection-start-column="36" selection-end-line="300" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/entity/UserInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="52" column="16" selection-start-line="52" selection-start-column="16" selection-end-line="52" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/entity/AuditTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="418" column="1" lean-forward="true" selection-start-line="418" selection-start-column="1" selection-end-line="418" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/collegeList.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-759" />
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/commons-lang/commons-lang/2.6/commons-lang-2.6.jar!/org/apache/commons/lang/StringUtils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="30" column="26" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/college/auditList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1748">
-          <caret line="76" column="64" selection-start-line="76" selection-start-column="64" selection-end-line="76" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/college/auditEdit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2254">
-          <caret line="98" column="35" selection-start-line="98" selection-start-column="35" selection-end-line="98" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/college/auditAdd.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1840">
-          <caret line="80" column="42" selection-start-line="80" selection-start-column="42" selection-end-line="80" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/auditList.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1449">
-          <caret line="63" selection-start-line="63" selection-end-line="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/service/UsersService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1058">
-          <caret line="51" selection-start-line="51" selection-end-line="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/service/impl/AuditServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-416">
-          <caret line="19" column="40" lean-forward="true" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/service/impl/AuthoritiesServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/controller/college/AuditController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3772">
-          <caret line="181" column="20" selection-start-line="181" selection-start-column="12" selection-end-line="181" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/admin/collegeAdd.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/controller/college/CollegeView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/controller/admin/AdminView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="573">
-          <caret line="76" column="70" selection-start-line="76" selection-start-column="70" selection-end-line="76" selection-end-column="70" />
-          <folding>
-            <element signature="e#1002#1003#0" expanded="true" />
-            <element signature="e#1037#1038#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/service/impl/UsersServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="734">
-          <caret line="522" column="5" lean-forward="true" selection-start-line="462" selection-start-column="3" selection-end-line="522" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/json/adminNavs.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/teacherTitleList.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="33" column="70" selection-start-line="33" selection-start-column="70" selection-end-line="33" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/collegeEdit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="45" column="96" selection-start-line="45" selection-start-column="96" selection-end-line="45" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/collegeAdd.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="48" column="91" selection-start-line="48" selection-start-column="91" selection-end-line="48" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/teacherTitleAdd.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="32" column="67" selection-start-line="32" selection-start-column="67" selection-end-line="32" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/admin/teacherTitleEdit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-121">
-          <caret line="30" column="176" selection-start-line="30" selection-start-column="176" selection-end-line="30" selection-end-column="176" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/auditEdit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="38" column="159" selection-start-line="38" selection-start-column="159" selection-end-line="38" selection-end-column="159" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/controller/admin/CollegeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="101" column="44" selection-start-line="101" selection-start-column="44" selection-end-line="101" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/auditAdd.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="49" column="95" selection-start-line="49" selection-start-column="95" selection-end-line="49" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/admin/teacherTitleAdd.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="16" column="51" lean-forward="true" selection-start-line="16" selection-start-column="51" selection-end-line="16" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/admin/collegeList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="71" column="22" selection-start-line="71" selection-start-column="22" selection-end-line="71" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/admin/userInfo.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/service/TeacherTitleService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/service/impl/TeacherTitleServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
-          <folding>
-            <element signature="e#701#702#0" expanded="true" />
-            <element signature="e#754#755#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-644">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/dto/TeacherTitleDto.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+        <state relative-caret-position="-115">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/controller/admin/TeacherTitleController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/dto/UserInfoDto.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1182">
-          <caret line="154" column="41" lean-forward="true" selection-start-line="154" selection-start-column="41" selection-end-line="154" selection-end-column="41" />
+        <state relative-caret-position="-598">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/dto/EvaluationIndexDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="19" column="48" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/dto/ObservationPointDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/json/gradingStandardList.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="20" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/json/evaluationIndexList.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/json/observationPointList.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/entity/ObservationPoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="11" column="39" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="11" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/service/impl/SystemConfigServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="60" column="9" lean-forward="true" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/service/impl/ObservationPointServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-345">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/service/impl/EvaluationIndexServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="665">
+          <caret line="71" column="53" selection-start-line="71" selection-start-column="53" selection-end-line="71" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/controller/college/TeacherController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="736">
+          <caret line="63" column="9" lean-forward="true" selection-start-line="60" selection-start-column="8" selection-end-line="63" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/observationPointList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="23" column="76" selection-start-line="23" selection-start-column="61" selection-end-line="23" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/college/teacherList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="131" column="23" lean-forward="true" selection-start-line="125" selection-start-column="20" selection-end-line="131" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/college/teacherAdd.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="81" column="62" lean-forward="true" selection-start-line="81" selection-start-column="8" selection-end-line="81" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/college/observationPointEdit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/evaluationIndexAdd.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="38" column="48" lean-forward="true" selection-start-line="38" selection-start-column="48" selection-end-line="38" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/observationPointEdit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="34" column="18" lean-forward="true" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/college/evaluationIndexAdd.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="24" column="44" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/college/evaluationIndexEdit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="17" column="26" lean-forward="true" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/teacher/scoreDeclaration.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/teacher/newsList.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/college/evaluationIndexList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2990">
+          <caret line="130" column="57" selection-start-line="130" selection-start-column="57" selection-end-line="130" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/teacher/certifiedScore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="24" column="77" selection-start-line="24" selection-start-column="77" selection-end-line="26" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/observationPointAdd.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="805">
+          <caret line="35" column="14" selection-start-line="35" selection-start-column="14" selection-end-line="35" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/college/observationPointList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="69" column="16" selection-start-line="69" selection-start-column="16" selection-end-line="69" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/service/GradingStandardService.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/service/impl/GradingStandardServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/teacher/tableTest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4133">
+          <caret line="30" column="19" selection-start-line="27" selection-start-column="16" selection-end-line="30" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/controller/college/EvaluationIndexController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="310" column="13" lean-forward="true" selection-start-line="310" selection-start-column="13" selection-end-line="310" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/teacher/tableTest2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5062" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/teacherList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="27" column="22" lean-forward="true" selection-start-line="20" selection-start-column="16" selection-end-line="27" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/auditAdd.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="60" column="14" lean-forward="true" selection-start-line="55" selection-start-column="9" selection-end-line="60" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/teacherAdd.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="60" column="14" lean-forward="true" selection-start-line="60" selection-start-column="14" selection-end-line="60" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/teacher/newsAdd.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="163" column="5" lean-forward="true" selection-start-line="133" selection-start-column="3" selection-end-line="163" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/dto/GradingStandardDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="37" column="7" lean-forward="true" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#2694#2695#0" expanded="true" />
+            <element signature="e#2724#2725#0" expanded="true" />
+            <element signature="e#2771#2772#0" expanded="true" />
+            <element signature="e#2809#2810#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/admin/teacherTitleEdit.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/entity/GradingStandard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-329">
-          <caret line="38" column="9" lean-forward="true" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
+        <state relative-caret-position="365">
+          <caret line="50" column="7" lean-forward="true" selection-start-line="50" selection-start-column="7" selection-end-line="50" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/admin/teacherTitleList.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/dao/GradingStandardDao.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/GradingStandardDao.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/controller/college/ObservationPointController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="105" column="58" lean-forward="true" selection-start-line="105" selection-start-column="58" selection-end-line="105" selection-end-column="58" />
+        <state relative-caret-position="237">
+          <caret line="315" column="16" lean-forward="true" selection-start-line="315" selection-start-column="16" selection-end-line="315" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hdc/controller/college/GradingStandardController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="68" column="9" lean-forward="true" selection-start-line="68" selection-start-column="9" selection-end-line="68" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/gradingStandardEdit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="45" column="74" selection-start-line="45" selection-start-column="58" selection-end-line="45" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/college/gradingStandardEdit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="20" column="76" lean-forward="true" selection-start-line="20" selection-start-column="76" selection-end-line="20" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/gradingStandardList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="32" column="28" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/college/gradingStandardAdd.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="710">
+          <caret line="56" column="49" selection-start-line="56" selection-start-column="49" selection-end-line="56" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/college/observationPointAdd.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/college/gradingStandardAdd.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-578">
+          <caret line="20" column="26" lean-forward="true" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/college/gradingStandardList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="232" lean-forward="true" selection-start-line="232" selection-end-line="232" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/json/record.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>

@@ -522,5 +522,294 @@ public class UsersServiceImpl implements UsersService {
         return 1;
     }
 
+    @Override
+    @Transactional
+    public int insertTeacher(TeacherTable teacherTable) {
+
+        Users users = new Users();
+        UserInfo userInfo = new UserInfo();
+        Teacher teacher = new Teacher();
+
+        users.init();
+        userInfo.init();
+        teacher.init();
+
+        users.setPassword(teacherTable.getPassword());
+        users.setUsername(teacherTable.getUsername());
+        users.setType((byte) 4);
+
+        //将传进来的明文密码加密
+        try {
+            String password = passwordEncoder.encode(teacherTable.getPassword());
+            users.setPassword(password);
+            int usersDaoEffectedCount = usersDao.insert(users);
+            if (usersDaoEffectedCount <= 0) {
+                throw new RuntimeException("用户表插入错误");
+            }
+        } catch (Exception e) {
+            throw new RuntimeException("用户表插入错误");
+        }
+
+
+        //新增用户的用户ID
+        Integer userId = users.getUserId();
+        String email = teacherTable.getEmail();
+        String phone = teacherTable.getPhone();
+        String imgUrl = teacherTable.getImgUrl();
+        String displayName = teacherTable.getTeacherName();
+
+        if (StringUtils.isNotBlank(email)) {
+            userInfo.setEmail(email);
+        }
+        if (StringUtils.isNotBlank(phone)) {
+            userInfo.setPhone(phone);
+        }
+        if (StringUtils.isNotBlank(imgUrl)) {
+            userInfo.setImgUrl(imgUrl);
+        }
+        if (StringUtils.isNotBlank(displayName)) {
+            userInfo.setDisplayName(displayName);
+        } else {
+            throw new RuntimeException("教师名称不存在");
+        }
+        if (userId != null && userId > 0) {
+            userInfo.setUserId(userId);
+        } else {
+            throw new RuntimeException("用户ID不存在");
+        }
+
+
+        try {
+            int userInfoDapEffectedCount = userInfoDao.insert(userInfo);
+            if (userInfoDapEffectedCount <= 0) {
+                throw new RuntimeException("用户信息表插入错误");
+            }
+        } catch (Exception e) {
+            throw new RuntimeException("用户信息表插入错误");
+        }
+
+        Authorities authorities = new Authorities();
+        authorities.setAuthorities("ROLE_TEACHER");
+
+        authorities.setUserId(userId);
+        try {
+            int authoritiesDaoEffectedCount = authoritiesDao.insert(authorities);
+            if (authoritiesDaoEffectedCount <= 0) {
+                throw new RuntimeException("权限表插入失败");
+            }
+        } catch (Exception e) {
+            throw new RuntimeException("权限表插入失败");
+        }
+
+        Integer collegeId = teacherTable.getCollegeId();
+        Integer teacherTitleId = teacherTable.getTeacherTitleId();
+        //对审核机构实体赋值
+        if (StringUtils.isNotBlank(displayName)) {
+            teacher.setTeacherName(displayName);
+        } else {
+            throw new RuntimeException("教师名称不存在");
+        }
+
+        if (userId != null && userId > 0) {
+            teacher.setUserId(userId);
+        } else {
+            throw new RuntimeException("用户ID不存在");
+        }
+
+        if (collegeId != null && collegeId > 0) {
+            teacher.setCollegeId(collegeId);
+        } else {
+            throw new RuntimeException("学院ID不存在");
+        }
+        if (teacherTitleId != null && teacherTitleId > 0) {
+            teacher.setTeacherTitleId(teacherTitleId);
+        } else {
+            throw new RuntimeException("职称ID不存在");
+        }
+        try {
+            int teacherDaoEffectedCount = teacherDao.insert(teacher);
+            if (teacherDaoEffectedCount <= 0) {
+                throw new RuntimeException("教师表插入失败");
+            }
+        } catch (Exception e) {
+            throw new RuntimeException("教师表插入失败");
+        }
+
+        return users.getUserId();
+    }
+
+    @Override
+    @Transactional
+    public int updateTeacher(TeacherTable teacherTable) {
+
+        Users users = new Users();
+        UserInfo userInfo = new UserInfo();
+        Teacher teacher = new Teacher();
+
+        users.init();
+        userInfo.init();
+        teacher.init();
+
+        users.setUserId(teacherTable.getUserId());
+        users.setPassword(teacherTable.getPassword());
+        users.setUsername(teacherTable.getUsername());
+        users.setType((byte) 4);
+
+
+        //将传进来的明文密码加密
+        try {
+            String password = passwordEncoder.encode(teacherTable.getPassword());
+            users.setPassword(password);
+            int usersDaoEffectedCount = usersDao.updateByPrimaryKeySelective(users);
+            if (usersDaoEffectedCount <= 0) {
+                throw new RuntimeException("用户表更新错误");
+            }
+        } catch (Exception e) {
+            throw new RuntimeException("用户表更新错误");
+        }
+
+        //新增用户的用户ID
+        Integer userId = teacherTable.getUserId();
+        String email = teacherTable.getEmail();
+        String phone = teacherTable.getPhone();
+        String imgUrl = teacherTable.getImgUrl();
+        String displayName = teacherTable.getTeacherName();
+
+        if (StringUtils.isNotBlank(email)) {
+            userInfo.setEmail(email);
+        }
+        if (StringUtils.isNotBlank(phone)) {
+            userInfo.setPhone(phone);
+        }
+        if (StringUtils.isNotBlank(imgUrl)) {
+            userInfo.setImgUrl(imgUrl);
+        }
+        if (StringUtils.isNotBlank(displayName)) {
+            userInfo.setDisplayName(displayName);
+        } else {
+            throw new RuntimeException("教师名称不存在");
+        }
+        if (userId != null && userId > 0) {
+            userInfo.setUserId(userId);
+        } else {
+            throw new RuntimeException("用户ID不存在");
+        }
+
+        //更新用户信息表
+        try {
+            UserInfoExample userInfoExample = new UserInfoExample();
+            userInfoExample.createCriteria().andUserIdEqualTo(userId);
+            int userInfoDapEffectedCount = userInfoDao.updateByExampleSelective(userInfo, userInfoExample);
+            if (userInfoDapEffectedCount <= 0) {
+                throw new RuntimeException("用户信息表更新错误");
+            }
+        } catch (Exception e) {
+            throw new RuntimeException("用户信息表更新错误");
+        }
+
+        //对审核机构实体赋值
+        Integer collegeId = teacherTable.getCollegeId();
+        Integer teacherTitleId = teacherTable.getTeacherTitleId();
+        //对审核机构实体赋值
+        if (StringUtils.isNotBlank(displayName)) {
+            teacher.setTeacherName(displayName);
+        } else {
+            throw new RuntimeException("教师名称不存在");
+        }
+
+        if (userId != null && userId > 0) {
+            teacher.setUserId(userId);
+        } else {
+            throw new RuntimeException("用户ID不存在");
+        }
+
+        if (collegeId != null && collegeId > 0) {
+            teacher.setCollegeId(collegeId);
+        } else {
+            throw new RuntimeException("学院ID不存在");
+        }
+        if (teacherTitleId != null && teacherTitleId > 0) {
+            teacher.setTeacherTitleId(teacherTitleId);
+        } else {
+            throw new RuntimeException("职称ID不存在");
+        }
+        //更新审核机构信息表
+        try {
+            TeacherExample teacherExample = new TeacherExample();
+            teacherExample.createCriteria().andUserIdEqualTo(userId);
+            teacher.setUserId(userId);
+            int teacherDaoEffectedCount = teacherDao.updateByExampleSelective(teacher, teacherExample);
+            if (teacherDaoEffectedCount <= 0) {
+                throw new RuntimeException("教师表更新失败");
+            }
+        } catch (Exception e) {
+            throw new RuntimeException("教师表更新失败");
+        }
+
+        return users.getUserId();
+    }
+
+    @Override
+    @Transactional
+    public int deleteTeacher(List<Integer> teacherIdList) {
+
+        //将学院ID列表转换成相应的用户ID列表
+        TeacherExample teacherExample = new TeacherExample();
+        teacherExample.createCriteria().andTeacherIdIn(teacherIdList);
+        List<Teacher> collegeList = teacherDao.selectByExample(teacherExample);
+        List<Integer> userIdList = new ArrayList<>();
+        for (Teacher user : collegeList) {
+            userIdList.add(user.getUserId());
+        }
+
+        //删除学院信息
+        try {
+            int teacherDaoEffectedCount = teacherDao.deleteByExample(teacherExample);
+            if (teacherDaoEffectedCount <= 0) {
+                throw new RuntimeException("教师表删除失败");
+            }
+        } catch (Exception e) {
+            throw new RuntimeException("教师表删除失败");
+        }
+
+        //删除权限信息
+        try {
+            AuthoritiesExample authoritiesExample = new AuthoritiesExample();
+            authoritiesExample.createCriteria().andUserIdIn(userIdList);
+            int authoritiesDaoEffectCount = authoritiesDao.deleteByExample(authoritiesExample);
+            if (authoritiesDaoEffectCount <= 0) {
+                throw new RuntimeException("权限表删除失败");
+            }
+        } catch (Exception e) {
+            throw new RuntimeException("权限表删除失败");
+        }
+
+        //删除用户信息
+        try {
+            UserInfoExample userInfoExample = new UserInfoExample();
+            userInfoExample.createCriteria().andUserIdIn(userIdList);
+            int userInfoDapEffectedCount = userInfoDao.deleteByExample(userInfoExample);
+            if (userInfoDapEffectedCount <= 0) {
+                throw new RuntimeException("用户信息表删除错误");
+            }
+        } catch (Exception e) {
+            throw new RuntimeException("用户信息表删除错误");
+        }
+
+        //删除用户
+        try {
+            UsersExample usersExample = new UsersExample();
+            usersExample.createCriteria().andUserIdIn(userIdList);
+            int usersDaoEffectedCount = usersDao.deleteByExample(usersExample);
+            if (usersDaoEffectedCount <= 0) {
+                throw new RuntimeException("用户表删除失败");
+            }
+        } catch (Exception e) {
+            throw new RuntimeException("用户表删除失败");
+        }
+
+        return 1;
+    }
+
 
 }

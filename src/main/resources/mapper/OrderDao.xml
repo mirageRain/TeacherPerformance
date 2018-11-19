@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hdc.dao.OrderDao">
+  <resultMap id="BaseResultMap" type="com.hdc.entity.Order">
+    <id column="order_id" jdbcType="BIGINT" property="orderId" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="grading_standard_id" jdbcType="INTEGER" property="gradingStandardId" />
+    <result column="audit_id" jdbcType="INTEGER" property="auditId" />
+    <result column="note" jdbcType="VARCHAR" property="note" />
+    <result column="self_report_score" jdbcType="REAL" property="selfReportScore" />
+    <result column="certified_score" jdbcType="REAL" property="certifiedScore" />
+    <result column="certified_note" jdbcType="VARCHAR" property="certifiedNote" />
+    <result column="state" jdbcType="TINYINT" property="state" />
+    <result column="add_time" jdbcType="TIMESTAMP" property="addTime" />
+    <result column="certified_time" jdbcType="TIMESTAMP" property="certifiedTime" />
+    <result column="year" jdbcType="INTEGER" property="year" />
+    <result column="semester" jdbcType="INTEGER" property="semester" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    order_id, user_id, grading_standard_id, audit_id, note, self_report_score, certified_score, 
+    certified_note, state, add_time, certified_time, year, semester
+  </sql>
+  <select id="selectByExample" parameterType="com.hdc.entity.OrderExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from order_
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <if test="limit != null">
+      <if test="offset != null">
+        limit ${offset}, ${limit}
+      </if>
+      <if test="offset == null">
+        limit ${limit}
+      </if>
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from order_
+    where order_id = #{orderId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from order_
+    where order_id = #{orderId,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.hdc.entity.OrderExample">
+    delete from order_
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.hdc.entity.Order">
+    <selectKey keyProperty="orderId" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into order_ (user_id, grading_standard_id, audit_id, 
+      note, self_report_score, certified_score, 
+      certified_note, state, add_time, 
+      certified_time, year, semester
+      )
+    values (#{userId,jdbcType=INTEGER}, #{gradingStandardId,jdbcType=INTEGER}, #{auditId,jdbcType=INTEGER}, 
+      #{note,jdbcType=VARCHAR}, #{selfReportScore,jdbcType=REAL}, #{certifiedScore,jdbcType=REAL}, 
+      #{certifiedNote,jdbcType=VARCHAR}, #{state,jdbcType=TINYINT}, #{addTime,jdbcType=TIMESTAMP}, 
+      #{certifiedTime,jdbcType=TIMESTAMP}, #{year,jdbcType=INTEGER}, #{semester,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.hdc.entity.Order">
+    <selectKey keyProperty="orderId" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into order_
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="gradingStandardId != null">
+        grading_standard_id,
+      </if>
+      <if test="auditId != null">
+        audit_id,
+      </if>
+      <if test="note != null">
+        note,
+      </if>
+      <if test="selfReportScore != null">
+        self_report_score,
+      </if>
+      <if test="certifiedScore != null">
+        certified_score,
+      </if>
+      <if test="certifiedNote != null">
+        certified_note,
+      </if>
+      <if test="state != null">
+        state,
+      </if>
+      <if test="addTime != null">
+        add_time,
+      </if>
+      <if test="certifiedTime != null">
+        certified_time,
+      </if>
+      <if test="year != null">
+        year,
+      </if>
+      <if test="semester != null">
+        semester,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="gradingStandardId != null">
+        #{gradingStandardId,jdbcType=INTEGER},
+      </if>
+      <if test="auditId != null">
+        #{auditId,jdbcType=INTEGER},
+      </if>
+      <if test="note != null">
+        #{note,jdbcType=VARCHAR},
+      </if>
+      <if test="selfReportScore != null">
+        #{selfReportScore,jdbcType=REAL},
+      </if>
+      <if test="certifiedScore != null">
+        #{certifiedScore,jdbcType=REAL},
+      </if>
+      <if test="certifiedNote != null">
+        #{certifiedNote,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=TINYINT},
+      </if>
+      <if test="addTime != null">
+        #{addTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="certifiedTime != null">
+        #{certifiedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="year != null">
+        #{year,jdbcType=INTEGER},
+      </if>
+      <if test="semester != null">
+        #{semester,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.hdc.entity.OrderExample" resultType="java.lang.Long">
+    select count(*) from order_
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update order_
+    <set>
+      <if test="record.orderId != null">
+        order_id = #{record.orderId,jdbcType=BIGINT},
+      </if>
+      <if test="record.userId != null">
+        user_id = #{record.userId,jdbcType=INTEGER},
+      </if>
+      <if test="record.gradingStandardId != null">
+        grading_standard_id = #{record.gradingStandardId,jdbcType=INTEGER},
+      </if>
+      <if test="record.auditId != null">
+        audit_id = #{record.auditId,jdbcType=INTEGER},
+      </if>
+      <if test="record.note != null">
+        note = #{record.note,jdbcType=VARCHAR},
+      </if>
+      <if test="record.selfReportScore != null">
+        self_report_score = #{record.selfReportScore,jdbcType=REAL},
+      </if>
+      <if test="record.certifiedScore != null">
+        certified_score = #{record.certifiedScore,jdbcType=REAL},
+      </if>
+      <if test="record.certifiedNote != null">
+        certified_note = #{record.certifiedNote,jdbcType=VARCHAR},
+      </if>
+      <if test="record.state != null">
+        state = #{record.state,jdbcType=TINYINT},
+      </if>
+      <if test="record.addTime != null">
+        add_time = #{record.addTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.certifiedTime != null">
+        certified_time = #{record.certifiedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.year != null">
+        year = #{record.year,jdbcType=INTEGER},
+      </if>
+      <if test="record.semester != null">
+        semester = #{record.semester,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update order_
+    set order_id = #{record.orderId,jdbcType=BIGINT},
+      user_id = #{record.userId,jdbcType=INTEGER},
+      grading_standard_id = #{record.gradingStandardId,jdbcType=INTEGER},
+      audit_id = #{record.auditId,jdbcType=INTEGER},
+      note = #{record.note,jdbcType=VARCHAR},
+      self_report_score = #{record.selfReportScore,jdbcType=REAL},
+      certified_score = #{record.certifiedScore,jdbcType=REAL},
+      certified_note = #{record.certifiedNote,jdbcType=VARCHAR},
+      state = #{record.state,jdbcType=TINYINT},
+      add_time = #{record.addTime,jdbcType=TIMESTAMP},
+      certified_time = #{record.certifiedTime,jdbcType=TIMESTAMP},
+      year = #{record.year,jdbcType=INTEGER},
+      semester = #{record.semester,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hdc.entity.Order">
+    update order_
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="gradingStandardId != null">
+        grading_standard_id = #{gradingStandardId,jdbcType=INTEGER},
+      </if>
+      <if test="auditId != null">
+        audit_id = #{auditId,jdbcType=INTEGER},
+      </if>
+      <if test="note != null">
+        note = #{note,jdbcType=VARCHAR},
+      </if>
+      <if test="selfReportScore != null">
+        self_report_score = #{selfReportScore,jdbcType=REAL},
+      </if>
+      <if test="certifiedScore != null">
+        certified_score = #{certifiedScore,jdbcType=REAL},
+      </if>
+      <if test="certifiedNote != null">
+        certified_note = #{certifiedNote,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        state = #{state,jdbcType=TINYINT},
+      </if>
+      <if test="addTime != null">
+        add_time = #{addTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="certifiedTime != null">
+        certified_time = #{certifiedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="year != null">
+        year = #{year,jdbcType=INTEGER},
+      </if>
+      <if test="semester != null">
+        semester = #{semester,jdbcType=INTEGER},
+      </if>
+    </set>
+    where order_id = #{orderId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hdc.entity.Order">
+    update order_
+    set user_id = #{userId,jdbcType=INTEGER},
+      grading_standard_id = #{gradingStandardId,jdbcType=INTEGER},
+      audit_id = #{auditId,jdbcType=INTEGER},
+      note = #{note,jdbcType=VARCHAR},
+      self_report_score = #{selfReportScore,jdbcType=REAL},
+      certified_score = #{certifiedScore,jdbcType=REAL},
+      certified_note = #{certifiedNote,jdbcType=VARCHAR},
+      state = #{state,jdbcType=TINYINT},
+      add_time = #{addTime,jdbcType=TIMESTAMP},
+      certified_time = #{certifiedTime,jdbcType=TIMESTAMP},
+      year = #{year,jdbcType=INTEGER},
+      semester = #{semester,jdbcType=INTEGER}
+    where order_id = #{orderId,jdbcType=BIGINT}
+  </update>
+</mapper>

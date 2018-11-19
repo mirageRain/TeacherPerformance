@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hdc.dao.GradingStandardDao">
+  <resultMap id="BaseResultMap" type="com.hdc.entity.GradingStandard">
+    <id column="grading_standard_id" jdbcType="INTEGER" property="gradingStandardId" />
+    <result column="evaluation_index_id" jdbcType="INTEGER" property="evaluationIndexId" />
+    <result column="observation_point_id" jdbcType="INTEGER" property="observationPointId" />
+    <result column="college_id" jdbcType="INTEGER" property="collegeId" />
+    <result column="audit_id" jdbcType="INTEGER" property="auditId" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="grading_basis" jdbcType="VARCHAR" property="gradingBasis" />
+    <result column="note" jdbcType="VARCHAR" property="note" />
+    <result column="year" jdbcType="INTEGER" property="year" />
+    <result column="semester" jdbcType="INTEGER" property="semester" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    grading_standard_id, evaluation_index_id, observation_point_id, college_id, audit_id, 
+    content, grading_basis, note, year, semester
+  </sql>
+  <select id="selectByExample" parameterType="com.hdc.entity.GradingStandardExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from grading_standard
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <if test="limit != null">
+      <if test="offset != null">
+        limit ${offset}, ${limit}
+      </if>
+      <if test="offset == null">
+        limit ${limit}
+      </if>
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from grading_standard
+    where grading_standard_id = #{gradingStandardId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from grading_standard
+    where grading_standard_id = #{gradingStandardId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.hdc.entity.GradingStandardExample">
+    delete from grading_standard
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.hdc.entity.GradingStandard">
+    <selectKey keyProperty="gradingStandardId" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into grading_standard (evaluation_index_id, observation_point_id, 
+      college_id, audit_id, content, 
+      grading_basis, note, year, 
+      semester)
+    values (#{evaluationIndexId,jdbcType=INTEGER}, #{observationPointId,jdbcType=INTEGER}, 
+      #{collegeId,jdbcType=INTEGER}, #{auditId,jdbcType=INTEGER}, #{content,jdbcType=VARCHAR}, 
+      #{gradingBasis,jdbcType=VARCHAR}, #{note,jdbcType=VARCHAR}, #{year,jdbcType=INTEGER}, 
+      #{semester,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.hdc.entity.GradingStandard">
+    <selectKey keyProperty="gradingStandardId" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into grading_standard
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="evaluationIndexId != null">
+        evaluation_index_id,
+      </if>
+      <if test="observationPointId != null">
+        observation_point_id,
+      </if>
+      <if test="collegeId != null">
+        college_id,
+      </if>
+      <if test="auditId != null">
+        audit_id,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="gradingBasis != null">
+        grading_basis,
+      </if>
+      <if test="note != null">
+        note,
+      </if>
+      <if test="year != null">
+        year,
+      </if>
+      <if test="semester != null">
+        semester,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="evaluationIndexId != null">
+        #{evaluationIndexId,jdbcType=INTEGER},
+      </if>
+      <if test="observationPointId != null">
+        #{observationPointId,jdbcType=INTEGER},
+      </if>
+      <if test="collegeId != null">
+        #{collegeId,jdbcType=INTEGER},
+      </if>
+      <if test="auditId != null">
+        #{auditId,jdbcType=INTEGER},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="gradingBasis != null">
+        #{gradingBasis,jdbcType=VARCHAR},
+      </if>
+      <if test="note != null">
+        #{note,jdbcType=VARCHAR},
+      </if>
+      <if test="year != null">
+        #{year,jdbcType=INTEGER},
+      </if>
+      <if test="semester != null">
+        #{semester,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.hdc.entity.GradingStandardExample" resultType="java.lang.Long">
+    select count(*) from grading_standard
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update grading_standard
+    <set>
+      <if test="record.gradingStandardId != null">
+        grading_standard_id = #{record.gradingStandardId,jdbcType=INTEGER},
+      </if>
+      <if test="record.evaluationIndexId != null">
+        evaluation_index_id = #{record.evaluationIndexId,jdbcType=INTEGER},
+      </if>
+      <if test="record.observationPointId != null">
+        observation_point_id = #{record.observationPointId,jdbcType=INTEGER},
+      </if>
+      <if test="record.collegeId != null">
+        college_id = #{record.collegeId,jdbcType=INTEGER},
+      </if>
+      <if test="record.auditId != null">
+        audit_id = #{record.auditId,jdbcType=INTEGER},
+      </if>
+      <if test="record.content != null">
+        content = #{record.content,jdbcType=VARCHAR},
+      </if>
+      <if test="record.gradingBasis != null">
+        grading_basis = #{record.gradingBasis,jdbcType=VARCHAR},
+      </if>
+      <if test="record.note != null">
+        note = #{record.note,jdbcType=VARCHAR},
+      </if>
+      <if test="record.year != null">
+        year = #{record.year,jdbcType=INTEGER},
+      </if>
+      <if test="record.semester != null">
+        semester = #{record.semester,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update grading_standard
+    set grading_standard_id = #{record.gradingStandardId,jdbcType=INTEGER},
+      evaluation_index_id = #{record.evaluationIndexId,jdbcType=INTEGER},
+      observation_point_id = #{record.observationPointId,jdbcType=INTEGER},
+      college_id = #{record.collegeId,jdbcType=INTEGER},
+      audit_id = #{record.auditId,jdbcType=INTEGER},
+      content = #{record.content,jdbcType=VARCHAR},
+      grading_basis = #{record.gradingBasis,jdbcType=VARCHAR},
+      note = #{record.note,jdbcType=VARCHAR},
+      year = #{record.year,jdbcType=INTEGER},
+      semester = #{record.semester,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hdc.entity.GradingStandard">
+    update grading_standard
+    <set>
+      <if test="evaluationIndexId != null">
+        evaluation_index_id = #{evaluationIndexId,jdbcType=INTEGER},
+      </if>
+      <if test="observationPointId != null">
+        observation_point_id = #{observationPointId,jdbcType=INTEGER},
+      </if>
+      <if test="collegeId != null">
+        college_id = #{collegeId,jdbcType=INTEGER},
+      </if>
+      <if test="auditId != null">
+        audit_id = #{auditId,jdbcType=INTEGER},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="gradingBasis != null">
+        grading_basis = #{gradingBasis,jdbcType=VARCHAR},
+      </if>
+      <if test="note != null">
+        note = #{note,jdbcType=VARCHAR},
+      </if>
+      <if test="year != null">
+        year = #{year,jdbcType=INTEGER},
+      </if>
+      <if test="semester != null">
+        semester = #{semester,jdbcType=INTEGER},
+      </if>
+    </set>
+    where grading_standard_id = #{gradingStandardId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hdc.entity.GradingStandard">
+    update grading_standard
+    set evaluation_index_id = #{evaluationIndexId,jdbcType=INTEGER},
+      observation_point_id = #{observationPointId,jdbcType=INTEGER},
+      college_id = #{collegeId,jdbcType=INTEGER},
+      audit_id = #{auditId,jdbcType=INTEGER},
+      content = #{content,jdbcType=VARCHAR},
+      grading_basis = #{gradingBasis,jdbcType=VARCHAR},
+      note = #{note,jdbcType=VARCHAR},
+      year = #{year,jdbcType=INTEGER},
+      semester = #{semester,jdbcType=INTEGER}
+    where grading_standard_id = #{gradingStandardId,jdbcType=INTEGER}
+  </update>
+</mapper>

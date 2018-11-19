@@ -1,9 +1,6 @@
 package com.hdc.service.impl;
 
-import com.hdc.dao.AuthoritiesDao;
-import com.hdc.dao.TeacherDao;
-import com.hdc.dao.UserInfoDao;
-import com.hdc.dao.UsersDao;
+import com.hdc.dao.*;
 import com.hdc.entity.*;
 import com.hdc.service.TeacherService;
 import com.hdc.service.UsersService;
@@ -18,11 +15,17 @@ public class TeacherServiceImpl implements TeacherService {
 
 	@Autowired
 	private TeacherDao teacherDao;
-
+	@Autowired
+	private TeacherTableDao teacherTableDao;
 
 	@Override
 	public long countByExample(TeacherExample example) {
 		return teacherDao.countByExample(example);
+	}
+
+	@Override
+	public long tableCountByExample(TeacherTableExample example) {
+		return teacherTableDao.countByExample(example);
 	}
 
 	@Override
@@ -53,6 +56,11 @@ public class TeacherServiceImpl implements TeacherService {
 	@Override
 	public Teacher selectByPrimaryKey(Integer teacherId) {
 		return teacherDao.selectByPrimaryKey(teacherId);
+	}
+
+	@Override
+	public List<TeacherTable> selectAllByExample(TeacherTableExample example) {
+		return teacherTableDao.selectByExample(example);
 	}
 
 	@Override

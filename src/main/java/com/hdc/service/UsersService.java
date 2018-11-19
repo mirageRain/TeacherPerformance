@@ -50,4 +50,13 @@ public interface UsersService {
 
 	@Transactional
 	int deleteAudit(List<Integer> auditIdList);
+
+    @Transactional
+    int insertTeacher(TeacherTable teacherTable);
+
+	@Transactional
+	int updateTeacher(TeacherTable teacherTable);
+
+	@Transactional
+	int deleteTeacher(List<Integer> teacherIdList);
 }

@@ -1,0 +1,71 @@
+[33mcommit 9d465fe538967a552be8d8b973314a941bf74a4d[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: MirageRain <905884644@qq.com>
+Date:   Sun Nov 18 04:13:30 2018 +0800
+
+    完成教师职称、审核处管理页面的前后端编码
+
+[33mcommit c9db997673761339d3fb51c448d2ddf62f7791aa[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: MirageRain <905884644@qq.com>
+Date:   Wed Nov 14 04:25:20 2018 +0800
+
+    完成管理员端首页、系统配置、个人中心、修改密码的前后端编码
+
+[33mcommit b0debde48621df369176d4713e76e8ce1f8ea437[m
+Author: MirageRain <905884644@qq.com>
+Date:   Fri Nov 9 20:30:03 2018 +0800
+
+    以学院管理为例，做出前端、后端增删改查模板。
+
+[33mcommit 8fe65554790d91341f057f076aee456807a6f437[m
+Author: MirageRain <905884644@qq.com>
+Date:   Sat Nov 3 04:54:06 2018 +0800
+
+    调整前端结构，制定数据增删改查模板，后端调试成功接口传入参数验证功能。
+
+[33mcommit 3898a30814597cd2bd79e71ef84685e9726c1bcf[m
+Author: MirageRain <905884644@qq.com>
+Date:   Thu Oct 25 04:45:08 2018 +0800
+
+    前端页面调整配置
+
+[33mcommit 1b026279cc3f0d49e2f15217fbaccb5a7664936a[m
+Author: MirageRain <905884644@qq.com>
+Date:   Wed Oct 24 12:09:56 2018 +0800
+
+    前端数据由静态数据变成Ajax，json的方式
+
+[33mcommit 4a337b47c91b6cae42435690c4284b34a31ccace[m
+Author: MirageRain <905884644@qq.com>
+Date:   Thu Oct 4 01:08:16 2018 +0800
+
+    添加用户登录部分逻辑，调整了一些细节。
+
+[33mcommit 4fb38042f92be181062b3a80068fce810f03034f[m
+Author: MirageRain <905884644@qq.com>
+Date:   Sun Jul 29 19:25:34 2018 +0800
+
+    框架配置好的干净的项目环境
+
+[33mcommit 8d455558a8b6efa8c5434c152e036127c2b348fb[m
+Author: MirageRain <905884644@qq.com>
+Date:   Sat Jul 21 03:19:45 2018 +0800
+
+    配置安全模组
+
+[33mcommit dabe209f2a331f0bdbe594a99b3271c17329a43a[m
+Author: MirageRain <905884644@qq.com>
+Date:   Fri Jul 20 14:01:05 2018 +0800
+
+    fitst
+
+[33mcommit 0b31506915cec15ac4c650fb132c92ec7a21a349[m
+Author: MirageRain <905884644@qq.com>
+Date:   Fri Jul 20 13:46:20 2018 +0800
+
+    first
+
+[33mcommit 2e1a657e189ed5c3da5d7b264b84cb83e747cef9[m
+Author: mirageRain <30815652+mirageRain@users.noreply.github.com>
+Date:   Fri Jul 20 13:41:28 2018 +0800
+
+    Initial commit

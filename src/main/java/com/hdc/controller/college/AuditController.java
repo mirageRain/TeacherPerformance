@@ -40,14 +40,22 @@ public class AuditController {
     @GetMapping("")
     public Map<String, Object> selectAll(Page page, String auditName) {
 
+        //获取登录的用户ID
+        MyUser userDetails = (MyUser) SecurityContextHolder.getContext()
+                .getAuthentication()
+                .getPrincipal();
+        Integer collegeId = userDetails.getMyUserId();
+
         long count = 0;
         List<AuditTable> list;
         AuditTableExample example = new AuditTableExample();
+        AuditTableExample.Criteria criteria = example.createCriteria();
         Map<String, Object> map = new HashMap<>();
 
+        criteria.andCollegeIdEqualTo(collegeId);
         //添加查询条件
         if (StringUtils.isNotBlank(auditName)) {
-            example.createCriteria().andAuditNameLike("%" + auditName + "%");
+            criteria.andAuditNameLike("%" + auditName + "%");
         }
 
         //返回查询条数

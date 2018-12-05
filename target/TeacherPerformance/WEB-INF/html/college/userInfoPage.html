@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>个人资料</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="/resources/layui/css/layui.css" media="all" />
+	<link rel="stylesheet" href="/resources/css/public.css" media="all" />
+</head>
+<body class="childrenBody">
+<form class="layui-form layui-row" lay-filter="userInfoTable">
+	<div class="layui-col-md3 layui-col-xs12 user_right">
+		<div class="layui-upload-list">
+			<img src=" /resources/images/face.jpg"class="layui-upload-img layui-circle userFaceBtn userAvatar" id="userFace">
+		</div>
+	</div>
+	<div class="layui-col-md6 layui-col-xs12">
+		<div class="layui-form-item">
+			<label class="layui-form-label">用户组</label>
+			<div class="layui-input-block">
+				<input type="text" value="学院管理员" id="authority" disabled class="layui-input layui-disabled">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">昵称</label>
+			<div class="layui-input-block">
+				<input type="text" name="displayName" id="displayName" lay-verify="required" class="layui-input">
+			</div>
+		</div>
+		<div class="layui-inline">
+			<label class="layui-form-label">手机</label>
+			<div class="layui-input-inline">
+				<input type="tel" name="phone" id="phone" lay-verify="required|phone" autocomplete="off" class="layui-input">
+			</div>
+		</div>
+		<div class="layui-inline">
+			<label class="layui-form-label">邮箱</label>
+			<div class="layui-input-inline">
+				<input type="text" name="email" id="email" lay-verify="email" autocomplete="off" class="layui-input">
+			</div>
+		</div>
+
+		<div class="layui-form-item">
+			<div class="layui-input-block">
+				<button class="layui-btn"type="submit" lay-submit="" lay-filter="updateUserInfo">更新</button>
+				<button type="button" id="reset" class="layui-btn layui-btn-primary">重置</button>
+			</div>
+		</div>
+	</div>
+</form>
+<script type="text/javascript" src="/resources/layui/layui.js"></script>
+<script type="text/javascript" src="/resources/college/js/userInfo.js"></script>
+</body>
+</html>

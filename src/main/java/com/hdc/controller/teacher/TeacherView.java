@@ -7,20 +7,40 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 @RequestMapping("/teacher")
 public class TeacherView {
-	
-	@RequestMapping(value = "/certifiedScore", method = RequestMethod.GET)
-	public String certifiedScoreView() {
-		return "teacher/certifiedScore";
+
+	@RequestMapping(value = "/certifyingDeclaration", method = RequestMethod.GET)
+	public String certifyingDeclarationView() {
+		return "teacher/certifyingDeclaration";
 	}
-	
-	@RequestMapping(value = "/certifyingScore", method = RequestMethod.GET)
-	public String certifyingScoreView() {
-		return "teacher/certifyingScore";
+
+	@RequestMapping(value = "/certifyingDeclarationEdit", method = RequestMethod.GET)
+	public String certifyingDeclarationEditView() {
+		return "teacher/certifyingDeclarationEdit";
+	}
+
+	@RequestMapping(value = "/certifiedDeclaration", method = RequestMethod.GET)
+	public String certifiedDeclarationView() {
+		return "teacher/certifiedDeclaration";
+	}
+
+	@RequestMapping(value = "/certifiedDeclarationLook", method = RequestMethod.GET)
+	public String certifiedDeclarationLookView() {
+		return "teacher/certifiedDeclarationLook";
+	}
+
+	@RequestMapping(value = "/returnDeclaration", method = RequestMethod.GET)
+	public String returnDeclarationView() {
+		return "teacher/returnDeclaration";
+	}
+
+	@RequestMapping(value = "/returnDeclarationEdit", method = RequestMethod.GET)
+	public String returnDeclarationEditView() {
+		return "teacher/returnDeclarationEdit";
 	}
 	
 	@RequestMapping(value = "/changePwd", method = RequestMethod.GET)
 	public String changePwdView() {
-		return "teacher/changePwd";
+		return "changePwd";
 	}
 	
 	@RequestMapping(value = "/gradingStandard", method = RequestMethod.GET)
@@ -45,14 +65,19 @@ public class TeacherView {
 		return "teacher/scoreReport";
 	}
 	
-	@RequestMapping(value = "/userInfo", method = RequestMethod.GET)
+	@RequestMapping(value = "/userInfoPage", method = RequestMethod.GET)
 	public String userInfoView() {
-		return "teacher/userInfo";
+		return "teacher/userInfoPage";
 	}
 	
 	@RequestMapping(value = "/scoreDeclaration", method = RequestMethod.GET)
 	public String scoreDeclarationView() {
-		return "teacher/scoreDeclaration";
+		return "teacher/certifyingDeclaration";
+	}
+
+	@RequestMapping(value = "/scoreReportLook", method = RequestMethod.GET)
+	public String scoreReportLookView() {
+		return "teacher/scoreReportLook";
 	}
 	
 	@RequestMapping(value = "", method = RequestMethod.GET)
@@ -69,5 +94,22 @@ public class TeacherView {
 	public String tableTest2View() {
 		return "teacher/tableTest2";
 	}
+
+	@RequestMapping(value = "/declarationTablePage", method = RequestMethod.GET)
+	public String declarationTablePageView() {
+		return "teacher/declarationTablePage";
+	}
+
+	@RequestMapping(value = "/declarationTableAdd", method = RequestMethod.GET)
+	public String declarationTableAddView() {
+		return "teacher/declarationTableAdd";
+	}
+
+	@RequestMapping(value = "/declarationTableEdit", method = RequestMethod.GET)
+	public String declarationTablePageEdit() {
+		return "teacher/declarationTableEdit";
+	}
+
+
 	
 }

@@ -1,6 +1,7 @@
 package com.hdc.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * @author 
@@ -9,7 +10,7 @@ public class OrderFile implements Serializable {
     /**
      * 申请单文件ID
      */
-    private Integer orderFileId;
+    private Long orderFileId;
 
     /**
      * 申请单ID
@@ -17,27 +18,42 @@ public class OrderFile implements Serializable {
     private Long orderId;
 
     /**
+     * 上传的教师ID
+     */
+    private Integer teacherId;
+
+    /**
      * 服务器保存的文件名称
      */
     private String saveFileName;
 
     /**
-     * 上次时原始的文件名称
+     * 上传时原始的文件名称
      */
-    private String uploadFileName;
+    private String originFileName;
+
+    /**
+     * 文件大小，单位为B
+     */
+    private Long size;
 
     /**
      * 服务器中文件的URl
      */
     private String fileUrl;
 
+    /**
+     * 创建时间
+     */
+    private Date createTime;
+
     private static final long serialVersionUID = 1L;
 
-    public Integer getOrderFileId() {
+    public Long getOrderFileId() {
         return orderFileId;
     }
 
-    public void setOrderFileId(Integer orderFileId) {
+    public void setOrderFileId(Long orderFileId) {
         this.orderFileId = orderFileId;
     }
 
@@ -49,6 +65,14 @@ public class OrderFile implements Serializable {
         this.orderId = orderId;
     }
 
+    public Integer getTeacherId() {
+        return teacherId;
+    }
+
+    public void setTeacherId(Integer teacherId) {
+        this.teacherId = teacherId;
+    }
+
     public String getSaveFileName() {
         return saveFileName;
     }
@@ -57,12 +81,20 @@ public class OrderFile implements Serializable {
         this.saveFileName = saveFileName;
     }
 
-    public String getUploadFileName() {
-        return uploadFileName;
+    public String getOriginFileName() {
+        return originFileName;
     }
 
-    public void setUploadFileName(String uploadFileName) {
-        this.uploadFileName = uploadFileName;
+    public void setOriginFileName(String originFileName) {
+        this.originFileName = originFileName;
+    }
+
+    public Long getSize() {
+        return size;
+    }
+
+    public void setSize(Long size) {
+        this.size = size;
     }
 
     public String getFileUrl() {
@@ -71,6 +103,14 @@ public class OrderFile implements Serializable {
 
     public void setFileUrl(String fileUrl) {
         this.fileUrl = fileUrl;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
     @Override
@@ -87,9 +127,12 @@ public class OrderFile implements Serializable {
         OrderFile other = (OrderFile) that;
         return (this.getOrderFileId() == null ? other.getOrderFileId() == null : this.getOrderFileId().equals(other.getOrderFileId()))
             && (this.getOrderId() == null ? other.getOrderId() == null : this.getOrderId().equals(other.getOrderId()))
+            && (this.getTeacherId() == null ? other.getTeacherId() == null : this.getTeacherId().equals(other.getTeacherId()))
             && (this.getSaveFileName() == null ? other.getSaveFileName() == null : this.getSaveFileName().equals(other.getSaveFileName()))
-            && (this.getUploadFileName() == null ? other.getUploadFileName() == null : this.getUploadFileName().equals(other.getUploadFileName()))
-            && (this.getFileUrl() == null ? other.getFileUrl() == null : this.getFileUrl().equals(other.getFileUrl()));
+            && (this.getOriginFileName() == null ? other.getOriginFileName() == null : this.getOriginFileName().equals(other.getOriginFileName()))
+            && (this.getSize() == null ? other.getSize() == null : this.getSize().equals(other.getSize()))
+            && (this.getFileUrl() == null ? other.getFileUrl() == null : this.getFileUrl().equals(other.getFileUrl()))
+            && (this.getCreateTime() == null ? other.getCreateTime() == null : this.getCreateTime().equals(other.getCreateTime()));
     }
 
     @Override
@@ -98,9 +141,12 @@ public class OrderFile implements Serializable {
         int result = 1;
         result = prime * result + ((getOrderFileId() == null) ? 0 : getOrderFileId().hashCode());
         result = prime * result + ((getOrderId() == null) ? 0 : getOrderId().hashCode());
+        result = prime * result + ((getTeacherId() == null) ? 0 : getTeacherId().hashCode());
         result = prime * result + ((getSaveFileName() == null) ? 0 : getSaveFileName().hashCode());
-        result = prime * result + ((getUploadFileName() == null) ? 0 : getUploadFileName().hashCode());
+        result = prime * result + ((getOriginFileName() == null) ? 0 : getOriginFileName().hashCode());
+        result = prime * result + ((getSize() == null) ? 0 : getSize().hashCode());
         result = prime * result + ((getFileUrl() == null) ? 0 : getFileUrl().hashCode());
+        result = prime * result + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
         return result;
     }
 
@@ -112,9 +158,12 @@ public class OrderFile implements Serializable {
         sb.append("Hash = ").append(hashCode());
         sb.append(", orderFileId=").append(orderFileId);
         sb.append(", orderId=").append(orderId);
+        sb.append(", teacherId=").append(teacherId);
         sb.append(", saveFileName=").append(saveFileName);
-        sb.append(", uploadFileName=").append(uploadFileName);
+        sb.append(", originFileName=").append(originFileName);
+        sb.append(", size=").append(size);
         sb.append(", fileUrl=").append(fileUrl);
+        sb.append(", createTime=").append(createTime);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

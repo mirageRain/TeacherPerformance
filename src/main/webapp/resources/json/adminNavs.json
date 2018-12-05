@@ -51,7 +51,7 @@
 				{
 					"title": "个人信息",
 					"icon": "&#xe61c;",
-					"href": "admin//userInfoPage",
+					"href": "admin/userInfoPage",
 					"spread": false
 				},
 				{

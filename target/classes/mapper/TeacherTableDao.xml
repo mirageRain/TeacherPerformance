@@ -5,9 +5,11 @@
     <id column="teacher_id" jdbcType="INTEGER" property="teacherId" />
     <result column="user_id" jdbcType="INTEGER" property="userId" />
     <result column="teacher_name" jdbcType="VARCHAR" property="teacherName" />
+    <result column="employee_id" jdbcType="VARCHAR" property="employeeId" />
     <result column="teacher_title_id" jdbcType="INTEGER" property="teacherTitleId" />
     <result column="teacher_title_name" jdbcType="VARCHAR" property="teacherTitleName" />
     <result column="college_id" jdbcType="INTEGER" property="collegeId" />
+    <result column="college_name" jdbcType="VARCHAR" property="collegeName" />
     <result column="username" jdbcType="VARCHAR" property="username" />
     <result column="password" jdbcType="VARCHAR" property="password" />
     <result column="enable" jdbcType="TINYINT" property="enable" />
@@ -84,7 +86,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    teacher_id, users.user_id, teacher_name, teacher.teacher_title_id, name as teacher_title_name, college_id,
+    teacher_id, users.user_id, teacher_name,  employee_id, teacher.teacher_title_id, name as teacher_title_name, teacher.college_id, college_name,
     username, password, enable, type, state, register_ip, last_login_ip, last_login_time,
     register_time, authority_id, authorities, user_info_id, display_name, img_url, phone,
     email
@@ -102,6 +104,9 @@
     left join teacher_title
     on
     teacher.teacher_title_id =teacher_title.teacher_title_id
+    left join college
+    on
+    teacher.college_id =college.college_id
     left join authorities
     on
     teacher.user_id =authorities.user_id
@@ -152,40 +157,43 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.hdc.entity.TeacherTable">
-    <selectKey keyProperty="teacherId" order="AFTER" resultType="java.lang.Integer">
+    <selectKey keyProperty="teacherTitleId" order="AFTER" resultType="java.lang.Integer">
       SELECT LAST_INSERT_ID()
     </selectKey>
-    insert into teacher_table (user_id, teacher_name, teacher_title_id, 
-      teacher_title_name, college_id, username, 
-      password, enable, type, 
-      state, register_ip, last_login_ip, 
-      last_login_time, register_time, authority_id, 
-      authorities, user_info_id, display_name, 
-      img_url, phone, email
-      )
-    values (#{userId,jdbcType=INTEGER}, #{teacherName,jdbcType=VARCHAR}, #{teacherTitleId,jdbcType=INTEGER}, 
-      #{teacherTitleName,jdbcType=VARCHAR}, #{collegeId,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, 
-      #{password,jdbcType=VARCHAR}, #{enable,jdbcType=TINYINT}, #{type,jdbcType=TINYINT}, 
-      #{state,jdbcType=TINYINT}, #{registerIp,jdbcType=VARCHAR}, #{lastLoginIp,jdbcType=VARCHAR}, 
-      #{lastLoginTime,jdbcType=TIMESTAMP}, #{registerTime,jdbcType=TIMESTAMP}, #{authorityId,jdbcType=INTEGER}, 
-      #{authorities,jdbcType=VARCHAR}, #{userInfoId,jdbcType=INTEGER}, #{displayName,jdbcType=VARCHAR}, 
-      #{imgUrl,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}
-      )
+    insert into teacher_table (teacher_id, user_id, teacher_name, 
+      employee_id, teacher_title_name, college_id, 
+      username, password, enable, 
+      type, state, register_ip, 
+      last_login_ip, last_login_time, register_time, 
+      authority_id, authorities, user_info_id, 
+      display_name, img_url, phone, 
+      email)
+    values (#{teacherId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{teacherName,jdbcType=VARCHAR}, 
+      #{employeeId,jdbcType=VARCHAR}, #{teacherTitleName,jdbcType=VARCHAR}, #{collegeId,jdbcType=INTEGER}, 
+      #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{enable,jdbcType=TINYINT}, 
+      #{type,jdbcType=TINYINT}, #{state,jdbcType=TINYINT}, #{registerIp,jdbcType=VARCHAR}, 
+      #{lastLoginIp,jdbcType=VARCHAR}, #{lastLoginTime,jdbcType=TIMESTAMP}, #{registerTime,jdbcType=TIMESTAMP}, 
+      #{authorityId,jdbcType=INTEGER}, #{authorities,jdbcType=VARCHAR}, #{userInfoId,jdbcType=INTEGER}, 
+      #{displayName,jdbcType=VARCHAR}, #{imgUrl,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
+      #{email,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.hdc.entity.TeacherTable">
-    <selectKey keyProperty="teacherId" order="AFTER" resultType="java.lang.Integer">
+    <selectKey keyProperty="teacherTitleId" order="AFTER" resultType="java.lang.Integer">
       SELECT LAST_INSERT_ID()
     </selectKey>
     insert into teacher_table
     <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="teacherId != null">
+        teacher_id,
+      </if>
       <if test="userId != null">
         user_id,
       </if>
       <if test="teacherName != null">
         teacher_name,
       </if>
-      <if test="teacherTitleId != null">
-        teacher_title_id,
+      <if test="employeeId != null">
+        employee_id,
       </if>
       <if test="teacherTitleName != null">
         teacher_title_name,
@@ -243,14 +251,17 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="teacherId != null">
+        #{teacherId,jdbcType=INTEGER},
+      </if>
       <if test="userId != null">
         #{userId,jdbcType=INTEGER},
       </if>
       <if test="teacherName != null">
         #{teacherName,jdbcType=VARCHAR},
       </if>
-      <if test="teacherTitleId != null">
-        #{teacherTitleId,jdbcType=INTEGER},
+      <if test="employeeId != null">
+        #{employeeId,jdbcType=VARCHAR},
       </if>
       <if test="teacherTitleName != null">
         #{teacherTitleName,jdbcType=VARCHAR},
@@ -339,6 +350,9 @@
       <if test="record.teacherName != null">
         teacher_name = #{record.teacherName,jdbcType=VARCHAR},
       </if>
+      <if test="record.employeeId != null">
+        employee_id = #{record.employeeId,jdbcType=VARCHAR},
+      </if>
       <if test="record.teacherTitleId != null">
         teacher_title_id = #{record.teacherTitleId,jdbcType=INTEGER},
       </if>
@@ -406,6 +420,7 @@
     set teacher_id = #{record.teacherId,jdbcType=INTEGER},
       user_id = #{record.userId,jdbcType=INTEGER},
       teacher_name = #{record.teacherName,jdbcType=VARCHAR},
+      employee_id = #{record.employeeId,jdbcType=VARCHAR},
       teacher_title_id = #{record.teacherTitleId,jdbcType=INTEGER},
       teacher_title_name = #{record.teacherTitleName,jdbcType=VARCHAR},
       college_id = #{record.collegeId,jdbcType=INTEGER},
@@ -437,6 +452,9 @@
       </if>
       <if test="teacherName != null">
         teacher_name = #{teacherName,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeId != null">
+        employee_id = #{employeeId,jdbcType=VARCHAR},
       </if>
       <if test="teacherTitleId != null">
         teacher_title_id = #{teacherTitleId,jdbcType=INTEGER},
@@ -502,6 +520,7 @@
     update teacher_table
     set user_id = #{userId,jdbcType=INTEGER},
       teacher_name = #{teacherName,jdbcType=VARCHAR},
+      employee_id = #{employeeId,jdbcType=VARCHAR},
       teacher_title_id = #{teacherTitleId,jdbcType=INTEGER},
       teacher_title_name = #{teacherTitleName,jdbcType=VARCHAR},
       college_id = #{collegeId,jdbcType=INTEGER},

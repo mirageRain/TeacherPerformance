@@ -603,7 +603,8 @@ public class UsersServiceImpl implements UsersService {
 
         Integer collegeId = teacherTable.getCollegeId();
         Integer teacherTitleId = teacherTable.getTeacherTitleId();
-        //对审核机构实体赋值
+        String employeeId = teacherTable.getEmployeeId();
+        //对教师实体赋值
         if (StringUtils.isNotBlank(displayName)) {
             teacher.setTeacherName(displayName);
         } else {
@@ -620,6 +621,11 @@ public class UsersServiceImpl implements UsersService {
             teacher.setCollegeId(collegeId);
         } else {
             throw new RuntimeException("学院ID不存在");
+        }
+        if (StringUtils.isNotBlank(employeeId)) {
+            teacher.setEmployeeId(employeeId);
+        } else {
+            throw new RuntimeException("教师工号不存在");
         }
         if (teacherTitleId != null && teacherTitleId > 0) {
             teacher.setTeacherTitleId(teacherTitleId);
@@ -707,10 +713,11 @@ public class UsersServiceImpl implements UsersService {
             throw new RuntimeException("用户信息表更新错误");
         }
 
-        //对审核机构实体赋值
+        //对教师实体赋值
         Integer collegeId = teacherTable.getCollegeId();
         Integer teacherTitleId = teacherTable.getTeacherTitleId();
-        //对审核机构实体赋值
+        String employeeId = teacherTable.getEmployeeId();
+        //对教师实体赋值
         if (StringUtils.isNotBlank(displayName)) {
             teacher.setTeacherName(displayName);
         } else {
@@ -728,12 +735,17 @@ public class UsersServiceImpl implements UsersService {
         } else {
             throw new RuntimeException("学院ID不存在");
         }
+        if (StringUtils.isNotBlank(employeeId)) {
+            teacher.setEmployeeId(employeeId);
+        } else {
+            throw new RuntimeException("教师工号不存在");
+        }
         if (teacherTitleId != null && teacherTitleId > 0) {
             teacher.setTeacherTitleId(teacherTitleId);
         } else {
             throw new RuntimeException("职称ID不存在");
         }
-        //更新审核机构信息表
+        //更新教师信息表
         try {
             TeacherExample teacherExample = new TeacherExample();
             teacherExample.createCriteria().andUserIdEqualTo(userId);

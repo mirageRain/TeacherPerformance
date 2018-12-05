@@ -30,6 +30,9 @@ public class AuditController {
     @Autowired
     private UsersService usersService;
 
+    @Autowired
+    private CollegeService collegeService;
+
     /**
      * 获取取审核处信息
      *
@@ -40,17 +43,28 @@ public class AuditController {
     @GetMapping("")
     public Map<String, Object> selectAll(Page page, String auditName) {
 
-        //获取登录的用户ID
-        MyUser userDetails = (MyUser) SecurityContextHolder.getContext()
-                .getAuthentication()
-                .getPrincipal();
-        Integer collegeId = userDetails.getMyUserId();
+
 
         long count = 0;
         List<AuditTable> list;
         AuditTableExample example = new AuditTableExample();
         AuditTableExample.Criteria criteria = example.createCriteria();
         Map<String, Object> map = new HashMap<>();
+        Integer collegeId;
+        //获取登录的用户ID
+        try {
+            MyUser userDetails = (MyUser) SecurityContextHolder.getContext()
+                    .getAuthentication()
+                    .getPrincipal();
+            CollegeExample collegeExample = new CollegeExample();
+            collegeExample.createCriteria().andUserIdEqualTo(userDetails.getMyUserId());
+            collegeId =collegeService.selectByExample(collegeExample).get(0).getCollegeId();
+        } catch (Exception e) {
+            map.put("code", 500);
+            map.put("msg", "数据格式错误");
+            return map;
+        }
+
 
         criteria.andCollegeIdEqualTo(collegeId);
         //添加查询条件
@@ -109,16 +123,25 @@ public class AuditController {
     @GetMapping("/testAuditName")
     public Map<String, Object> testAuditName(String auditName, Integer auditId) {
 
-        //获取登录的用户ID
-        MyUser userDetails = (MyUser) SecurityContextHolder.getContext()
-                .getAuthentication()
-                .getPrincipal();
-        Integer collegeId = userDetails.getMyUserId();
-
         long count = 0;
         AuditTableExample example = new AuditTableExample();
         AuditTableExample.Criteria criteria = example.createCriteria();
         Map<String, Object> map = new HashMap<>();
+
+        Integer collegeId;
+        //获取登录的用户ID
+        try {
+            MyUser userDetails = (MyUser) SecurityContextHolder.getContext()
+                    .getAuthentication()
+                    .getPrincipal();
+            CollegeExample collegeExample = new CollegeExample();
+            collegeExample.createCriteria().andUserIdEqualTo(userDetails.getMyUserId());
+            collegeId =collegeService.selectByExample(collegeExample).get(0).getCollegeId();
+        } catch (Exception e) {
+            map.put("code", 500);
+            map.put("msg", "数据格式错误");
+            return map;
+        }
 
         //添加查询条件
         if (collegeId != null && collegeId > 0&&StringUtils.isNotBlank(auditName)) {
@@ -165,16 +188,25 @@ public class AuditController {
     @GetMapping("/testUsername")
     public Map<String, Object> testUsername(String username, Integer auditId) {
 
-        //获取登录的用户ID
-        MyUser userDetails = (MyUser) SecurityContextHolder.getContext()
-                .getAuthentication()
-                .getPrincipal();
-        Integer collegeId = userDetails.getMyUserId();
-
         long count = 0;
         AuditTableExample example = new AuditTableExample();
         AuditTableExample.Criteria criteria = example.createCriteria();
         Map<String, Object> map = new HashMap<>();
+
+        Integer collegeId;
+        //获取登录的用户ID
+        try {
+            MyUser userDetails = (MyUser) SecurityContextHolder.getContext()
+                    .getAuthentication()
+                    .getPrincipal();
+            CollegeExample collegeExample = new CollegeExample();
+            collegeExample.createCriteria().andUserIdEqualTo(userDetails.getMyUserId());
+            collegeId =collegeService.selectByExample(collegeExample).get(0).getCollegeId();
+        } catch (Exception e) {
+            map.put("code", 500);
+            map.put("msg", "数据格式错误");
+            return map;
+        }
 
         //添加查询条件
         if (collegeId != null && collegeId > 0&&StringUtils.isNotBlank(username)) {
@@ -219,16 +251,24 @@ public class AuditController {
      */
     @PostMapping("")
     public Map<String, Object> insert(@Valid @RequestBody(required = false) AuditDto audit, BindingResult errors) {
-
-        //当前登录的用户ID
-        MyUser userDetails = (MyUser) SecurityContextHolder.getContext()
-                .getAuthentication()
-                .getPrincipal();
-        Integer collegeId = userDetails.getMyUserId();
-
         AuditTable auditTable = new AuditTable();
         Map<String, Object> map = new HashMap<>();
         String auditName, username, password,desc;
+
+        Integer collegeId;
+        //获取登录的用户ID
+        try {
+            MyUser userDetails = (MyUser) SecurityContextHolder.getContext()
+                    .getAuthentication()
+                    .getPrincipal();
+            CollegeExample collegeExample = new CollegeExample();
+            collegeExample.createCriteria().andUserIdEqualTo(userDetails.getMyUserId());
+            collegeId =collegeService.selectByExample(collegeExample).get(0).getCollegeId();
+        } catch (Exception e) {
+            map.put("code", 500);
+            map.put("msg", "数据格式错误");
+            return map;
+        }
 
         //检查错误，封装错误信息
         if (errors.getErrorCount() > 0) {
@@ -296,17 +336,25 @@ public class AuditController {
     @PutMapping("")
     public Map<String, Object> update(@Valid @RequestBody(required = false) AuditDto audit, BindingResult errors) {
 
-
-        //当前登录的用户ID
-        MyUser userDetails = (MyUser) SecurityContextHolder.getContext()
-                .getAuthentication()
-                .getPrincipal();
-        Integer collegeId = userDetails.getMyUserId();
-
         AuditTable auditTable = new AuditTable();
         Map<String, Object> map = new HashMap<>();
         Integer auditId, userId;
         String auditName, username, password,desc;
+
+        Integer collegeId;
+        //获取登录的用户ID
+        try {
+            MyUser userDetails = (MyUser) SecurityContextHolder.getContext()
+                    .getAuthentication()
+                    .getPrincipal();
+            CollegeExample collegeExample = new CollegeExample();
+            collegeExample.createCriteria().andUserIdEqualTo(userDetails.getMyUserId());
+            collegeId =collegeService.selectByExample(collegeExample).get(0).getCollegeId();
+        } catch (Exception e) {
+            map.put("code", 500);
+            map.put("msg", "数据格式错误");
+            return map;
+        }
 
         //检查错误，封装错误信息
         if (errors.getErrorCount() > 0) {

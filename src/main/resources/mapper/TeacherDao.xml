@@ -5,6 +5,7 @@
     <id column="teacher_id" jdbcType="INTEGER" property="teacherId" />
     <result column="user_id" jdbcType="INTEGER" property="userId" />
     <result column="teacher_name" jdbcType="VARCHAR" property="teacherName" />
+    <result column="employee_id" jdbcType="VARCHAR" property="employeeId" />
     <result column="teacher_title_id" jdbcType="INTEGER" property="teacherTitleId" />
     <result column="college_id" jdbcType="INTEGER" property="collegeId" />
   </resultMap>
@@ -67,7 +68,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    teacher_id, user_id, teacher_name, teacher_title_id, college_id
+    teacher_id, user_id, teacher_name, employee_id, teacher_title_id, college_id
   </sql>
   <select id="selectByExample" parameterType="com.hdc.entity.TeacherExample" resultMap="BaseResultMap">
     select
@@ -111,10 +112,10 @@
     <selectKey keyProperty="teacherId" order="AFTER" resultType="java.lang.Integer">
       SELECT LAST_INSERT_ID()
     </selectKey>
-    insert into teacher (user_id, teacher_name, teacher_title_id, 
-      college_id)
-    values (#{userId,jdbcType=INTEGER}, #{teacherName,jdbcType=VARCHAR}, #{teacherTitleId,jdbcType=INTEGER}, 
-      #{collegeId,jdbcType=INTEGER})
+    insert into teacher (user_id, teacher_name, employee_id, 
+      teacher_title_id, college_id)
+    values (#{userId,jdbcType=INTEGER}, #{teacherName,jdbcType=VARCHAR}, #{employeeId,jdbcType=VARCHAR}, 
+      #{teacherTitleId,jdbcType=INTEGER}, #{collegeId,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.hdc.entity.Teacher">
     <selectKey keyProperty="teacherId" order="AFTER" resultType="java.lang.Integer">
@@ -127,6 +128,9 @@
       </if>
       <if test="teacherName != null">
         teacher_name,
+      </if>
+      <if test="employeeId != null">
+        employee_id,
       </if>
       <if test="teacherTitleId != null">
         teacher_title_id,
@@ -141,6 +145,9 @@
       </if>
       <if test="teacherName != null">
         #{teacherName,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeId != null">
+        #{employeeId,jdbcType=VARCHAR},
       </if>
       <if test="teacherTitleId != null">
         #{teacherTitleId,jdbcType=INTEGER},
@@ -168,6 +175,9 @@
       <if test="record.teacherName != null">
         teacher_name = #{record.teacherName,jdbcType=VARCHAR},
       </if>
+      <if test="record.employeeId != null">
+        employee_id = #{record.employeeId,jdbcType=VARCHAR},
+      </if>
       <if test="record.teacherTitleId != null">
         teacher_title_id = #{record.teacherTitleId,jdbcType=INTEGER},
       </if>
@@ -184,6 +194,7 @@
     set teacher_id = #{record.teacherId,jdbcType=INTEGER},
       user_id = #{record.userId,jdbcType=INTEGER},
       teacher_name = #{record.teacherName,jdbcType=VARCHAR},
+      employee_id = #{record.employeeId,jdbcType=VARCHAR},
       teacher_title_id = #{record.teacherTitleId,jdbcType=INTEGER},
       college_id = #{record.collegeId,jdbcType=INTEGER}
     <if test="_parameter != null">
@@ -199,6 +210,9 @@
       <if test="teacherName != null">
         teacher_name = #{teacherName,jdbcType=VARCHAR},
       </if>
+      <if test="employeeId != null">
+        employee_id = #{employeeId,jdbcType=VARCHAR},
+      </if>
       <if test="teacherTitleId != null">
         teacher_title_id = #{teacherTitleId,jdbcType=INTEGER},
       </if>
@@ -212,6 +226,7 @@
     update teacher
     set user_id = #{userId,jdbcType=INTEGER},
       teacher_name = #{teacherName,jdbcType=VARCHAR},
+      employee_id = #{employeeId,jdbcType=VARCHAR},
       teacher_title_id = #{teacherTitleId,jdbcType=INTEGER},
       college_id = #{collegeId,jdbcType=INTEGER}
     where teacher_id = #{teacherId,jdbcType=INTEGER}

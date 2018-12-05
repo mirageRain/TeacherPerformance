@@ -1,5 +1,6 @@
 package com.hdc.entity;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -185,63 +186,63 @@ public class OrderExample {
             return (Criteria) this;
         }
 
-        public Criteria andUserIdIsNull() {
-            addCriterion("user_id is null");
+        public Criteria andTeacherIdIsNull() {
+            addCriterion("teacher_id is null");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdIsNotNull() {
-            addCriterion("user_id is not null");
+        public Criteria andTeacherIdIsNotNull() {
+            addCriterion("teacher_id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdEqualTo(Integer value) {
-            addCriterion("user_id =", value, "userId");
+        public Criteria andTeacherIdEqualTo(Integer value) {
+            addCriterion("teacher_id =", value, "teacherId");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdNotEqualTo(Integer value) {
-            addCriterion("user_id <>", value, "userId");
+        public Criteria andTeacherIdNotEqualTo(Integer value) {
+            addCriterion("teacher_id <>", value, "teacherId");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdGreaterThan(Integer value) {
-            addCriterion("user_id >", value, "userId");
+        public Criteria andTeacherIdGreaterThan(Integer value) {
+            addCriterion("teacher_id >", value, "teacherId");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdGreaterThanOrEqualTo(Integer value) {
-            addCriterion("user_id >=", value, "userId");
+        public Criteria andTeacherIdGreaterThanOrEqualTo(Integer value) {
+            addCriterion("teacher_id >=", value, "teacherId");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdLessThan(Integer value) {
-            addCriterion("user_id <", value, "userId");
+        public Criteria andTeacherIdLessThan(Integer value) {
+            addCriterion("teacher_id <", value, "teacherId");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdLessThanOrEqualTo(Integer value) {
-            addCriterion("user_id <=", value, "userId");
+        public Criteria andTeacherIdLessThanOrEqualTo(Integer value) {
+            addCriterion("teacher_id <=", value, "teacherId");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdIn(List<Integer> values) {
-            addCriterion("user_id in", values, "userId");
+        public Criteria andTeacherIdIn(List<Integer> values) {
+            addCriterion("teacher_id in", values, "teacherId");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdNotIn(List<Integer> values) {
-            addCriterion("user_id not in", values, "userId");
+        public Criteria andTeacherIdNotIn(List<Integer> values) {
+            addCriterion("teacher_id not in", values, "teacherId");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdBetween(Integer value1, Integer value2) {
-            addCriterion("user_id between", value1, value2, "userId");
+        public Criteria andTeacherIdBetween(Integer value1, Integer value2) {
+            addCriterion("teacher_id between", value1, value2, "teacherId");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdNotBetween(Integer value1, Integer value2) {
-            addCriterion("user_id not between", value1, value2, "userId");
+        public Criteria andTeacherIdNotBetween(Integer value1, Integer value2) {
+            addCriterion("teacher_id not between", value1, value2, "teacherId");
             return (Criteria) this;
         }
 
@@ -365,73 +366,73 @@ public class OrderExample {
             return (Criteria) this;
         }
 
-        public Criteria andNoteIsNull() {
-            addCriterion("note is null");
+        public Criteria andDeclarationNoteIsNull() {
+            addCriterion("declaration_note is null");
             return (Criteria) this;
         }
 
-        public Criteria andNoteIsNotNull() {
-            addCriterion("note is not null");
+        public Criteria andDeclarationNoteIsNotNull() {
+            addCriterion("declaration_note is not null");
             return (Criteria) this;
         }
 
-        public Criteria andNoteEqualTo(String value) {
-            addCriterion("note =", value, "note");
+        public Criteria andDeclarationNoteEqualTo(String value) {
+            addCriterion("declaration_note =", value, "declarationNote");
             return (Criteria) this;
         }
 
-        public Criteria andNoteNotEqualTo(String value) {
-            addCriterion("note <>", value, "note");
+        public Criteria andDeclarationNoteNotEqualTo(String value) {
+            addCriterion("declaration_note <>", value, "declarationNote");
             return (Criteria) this;
         }
 
-        public Criteria andNoteGreaterThan(String value) {
-            addCriterion("note >", value, "note");
+        public Criteria andDeclarationNoteGreaterThan(String value) {
+            addCriterion("declaration_note >", value, "declarationNote");
             return (Criteria) this;
         }
 
-        public Criteria andNoteGreaterThanOrEqualTo(String value) {
-            addCriterion("note >=", value, "note");
+        public Criteria andDeclarationNoteGreaterThanOrEqualTo(String value) {
+            addCriterion("declaration_note >=", value, "declarationNote");
             return (Criteria) this;
         }
 
-        public Criteria andNoteLessThan(String value) {
-            addCriterion("note <", value, "note");
+        public Criteria andDeclarationNoteLessThan(String value) {
+            addCriterion("declaration_note <", value, "declarationNote");
             return (Criteria) this;
         }
 
-        public Criteria andNoteLessThanOrEqualTo(String value) {
-            addCriterion("note <=", value, "note");
+        public Criteria andDeclarationNoteLessThanOrEqualTo(String value) {
+            addCriterion("declaration_note <=", value, "declarationNote");
             return (Criteria) this;
         }
 
-        public Criteria andNoteLike(String value) {
-            addCriterion("note like", value, "note");
+        public Criteria andDeclarationNoteLike(String value) {
+            addCriterion("declaration_note like", value, "declarationNote");
             return (Criteria) this;
         }
 
-        public Criteria andNoteNotLike(String value) {
-            addCriterion("note not like", value, "note");
+        public Criteria andDeclarationNoteNotLike(String value) {
+            addCriterion("declaration_note not like", value, "declarationNote");
             return (Criteria) this;
         }
 
-        public Criteria andNoteIn(List<String> values) {
-            addCriterion("note in", values, "note");
+        public Criteria andDeclarationNoteIn(List<String> values) {
+            addCriterion("declaration_note in", values, "declarationNote");
             return (Criteria) this;
         }
 
-        public Criteria andNoteNotIn(List<String> values) {
-            addCriterion("note not in", values, "note");
+        public Criteria andDeclarationNoteNotIn(List<String> values) {
+            addCriterion("declaration_note not in", values, "declarationNote");
             return (Criteria) this;
         }
 
-        public Criteria andNoteBetween(String value1, String value2) {
-            addCriterion("note between", value1, value2, "note");
+        public Criteria andDeclarationNoteBetween(String value1, String value2) {
+            addCriterion("declaration_note between", value1, value2, "declarationNote");
             return (Criteria) this;
         }
 
-        public Criteria andNoteNotBetween(String value1, String value2) {
-            addCriterion("note not between", value1, value2, "note");
+        public Criteria andDeclarationNoteNotBetween(String value1, String value2) {
+            addCriterion("declaration_note not between", value1, value2, "declarationNote");
             return (Criteria) this;
         }
 
@@ -445,52 +446,52 @@ public class OrderExample {
             return (Criteria) this;
         }
 
-        public Criteria andSelfReportScoreEqualTo(Float value) {
+        public Criteria andSelfReportScoreEqualTo(BigDecimal value) {
             addCriterion("self_report_score =", value, "selfReportScore");
             return (Criteria) this;
         }
 
-        public Criteria andSelfReportScoreNotEqualTo(Float value) {
+        public Criteria andSelfReportScoreNotEqualTo(BigDecimal value) {
             addCriterion("self_report_score <>", value, "selfReportScore");
             return (Criteria) this;
         }
 
-        public Criteria andSelfReportScoreGreaterThan(Float value) {
+        public Criteria andSelfReportScoreGreaterThan(BigDecimal value) {
             addCriterion("self_report_score >", value, "selfReportScore");
             return (Criteria) this;
         }
 
-        public Criteria andSelfReportScoreGreaterThanOrEqualTo(Float value) {
+        public Criteria andSelfReportScoreGreaterThanOrEqualTo(BigDecimal value) {
             addCriterion("self_report_score >=", value, "selfReportScore");
             return (Criteria) this;
         }
 
-        public Criteria andSelfReportScoreLessThan(Float value) {
+        public Criteria andSelfReportScoreLessThan(BigDecimal value) {
             addCriterion("self_report_score <", value, "selfReportScore");
             return (Criteria) this;
         }
 
-        public Criteria andSelfReportScoreLessThanOrEqualTo(Float value) {
+        public Criteria andSelfReportScoreLessThanOrEqualTo(BigDecimal value) {
             addCriterion("self_report_score <=", value, "selfReportScore");
             return (Criteria) this;
         }
 
-        public Criteria andSelfReportScoreIn(List<Float> values) {
+        public Criteria andSelfReportScoreIn(List<BigDecimal> values) {
             addCriterion("self_report_score in", values, "selfReportScore");
             return (Criteria) this;
         }
 
-        public Criteria andSelfReportScoreNotIn(List<Float> values) {
+        public Criteria andSelfReportScoreNotIn(List<BigDecimal> values) {
             addCriterion("self_report_score not in", values, "selfReportScore");
             return (Criteria) this;
         }
 
-        public Criteria andSelfReportScoreBetween(Float value1, Float value2) {
+        public Criteria andSelfReportScoreBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("self_report_score between", value1, value2, "selfReportScore");
             return (Criteria) this;
         }
 
-        public Criteria andSelfReportScoreNotBetween(Float value1, Float value2) {
+        public Criteria andSelfReportScoreNotBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("self_report_score not between", value1, value2, "selfReportScore");
             return (Criteria) this;
         }
@@ -505,52 +506,52 @@ public class OrderExample {
             return (Criteria) this;
         }
 
-        public Criteria andCertifiedScoreEqualTo(Float value) {
+        public Criteria andCertifiedScoreEqualTo(BigDecimal value) {
             addCriterion("certified_score =", value, "certifiedScore");
             return (Criteria) this;
         }
 
-        public Criteria andCertifiedScoreNotEqualTo(Float value) {
+        public Criteria andCertifiedScoreNotEqualTo(BigDecimal value) {
             addCriterion("certified_score <>", value, "certifiedScore");
             return (Criteria) this;
         }
 
-        public Criteria andCertifiedScoreGreaterThan(Float value) {
+        public Criteria andCertifiedScoreGreaterThan(BigDecimal value) {
             addCriterion("certified_score >", value, "certifiedScore");
             return (Criteria) this;
         }
 
-        public Criteria andCertifiedScoreGreaterThanOrEqualTo(Float value) {
+        public Criteria andCertifiedScoreGreaterThanOrEqualTo(BigDecimal value) {
             addCriterion("certified_score >=", value, "certifiedScore");
             return (Criteria) this;
         }
 
-        public Criteria andCertifiedScoreLessThan(Float value) {
+        public Criteria andCertifiedScoreLessThan(BigDecimal value) {
             addCriterion("certified_score <", value, "certifiedScore");
             return (Criteria) this;
         }
 
-        public Criteria andCertifiedScoreLessThanOrEqualTo(Float value) {
+        public Criteria andCertifiedScoreLessThanOrEqualTo(BigDecimal value) {
             addCriterion("certified_score <=", value, "certifiedScore");
             return (Criteria) this;
         }
 
-        public Criteria andCertifiedScoreIn(List<Float> values) {
+        public Criteria andCertifiedScoreIn(List<BigDecimal> values) {
             addCriterion("certified_score in", values, "certifiedScore");
             return (Criteria) this;
         }
 
-        public Criteria andCertifiedScoreNotIn(List<Float> values) {
+        public Criteria andCertifiedScoreNotIn(List<BigDecimal> values) {
             addCriterion("certified_score not in", values, "certifiedScore");
             return (Criteria) this;
         }
 
-        public Criteria andCertifiedScoreBetween(Float value1, Float value2) {
+        public Criteria andCertifiedScoreBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("certified_score between", value1, value2, "certifiedScore");
             return (Criteria) this;
         }
 
-        public Criteria andCertifiedScoreNotBetween(Float value1, Float value2) {
+        public Criteria andCertifiedScoreNotBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("certified_score not between", value1, value2, "certifiedScore");
             return (Criteria) this;
         }
@@ -625,63 +626,63 @@ public class OrderExample {
             return (Criteria) this;
         }
 
-        public Criteria andStateIsNull() {
-            addCriterion("state is null");
+        public Criteria andStatusIsNull() {
+            addCriterion("status is null");
             return (Criteria) this;
         }
 
-        public Criteria andStateIsNotNull() {
-            addCriterion("state is not null");
+        public Criteria andStatusIsNotNull() {
+            addCriterion("status is not null");
             return (Criteria) this;
         }
 
-        public Criteria andStateEqualTo(Byte value) {
-            addCriterion("state =", value, "state");
+        public Criteria andStatusEqualTo(Byte value) {
+            addCriterion("status =", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStateNotEqualTo(Byte value) {
-            addCriterion("state <>", value, "state");
+        public Criteria andStatusNotEqualTo(Byte value) {
+            addCriterion("status <>", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStateGreaterThan(Byte value) {
-            addCriterion("state >", value, "state");
+        public Criteria andStatusGreaterThan(Byte value) {
+            addCriterion("status >", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStateGreaterThanOrEqualTo(Byte value) {
-            addCriterion("state >=", value, "state");
+        public Criteria andStatusGreaterThanOrEqualTo(Byte value) {
+            addCriterion("status >=", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStateLessThan(Byte value) {
-            addCriterion("state <", value, "state");
+        public Criteria andStatusLessThan(Byte value) {
+            addCriterion("status <", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStateLessThanOrEqualTo(Byte value) {
-            addCriterion("state <=", value, "state");
+        public Criteria andStatusLessThanOrEqualTo(Byte value) {
+            addCriterion("status <=", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStateIn(List<Byte> values) {
-            addCriterion("state in", values, "state");
+        public Criteria andStatusIn(List<Byte> values) {
+            addCriterion("status in", values, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStateNotIn(List<Byte> values) {
-            addCriterion("state not in", values, "state");
+        public Criteria andStatusNotIn(List<Byte> values) {
+            addCriterion("status not in", values, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStateBetween(Byte value1, Byte value2) {
-            addCriterion("state between", value1, value2, "state");
+        public Criteria andStatusBetween(Byte value1, Byte value2) {
+            addCriterion("status between", value1, value2, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStateNotBetween(Byte value1, Byte value2) {
-            addCriterion("state not between", value1, value2, "state");
+        public Criteria andStatusNotBetween(Byte value1, Byte value2) {
+            addCriterion("status not between", value1, value2, "status");
             return (Criteria) this;
         }
 

@@ -1,0 +1,696 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hdc.dao.OrderTableDao">
+  <resultMap id="BaseResultMap" type="com.hdc.entity.OrderTable">
+    <id column="grading_standard_id" jdbcType="INTEGER" property="gradingStandardId" />
+    <result column="grading_standard_content" jdbcType="VARCHAR" property="gradingStandardContent" />
+    <result column="observation_point_id" jdbcType="INTEGER" property="observationPointId" />
+    <result column="observation_point_content" jdbcType="VARCHAR" property="observationPointContent" />
+    <result column="evaluation_index_id" jdbcType="INTEGER" property="evaluationIndexId" />
+    <result column="evaluation_index_content" jdbcType="VARCHAR" property="evaluationIndexContent" />
+    <result column="college_id" jdbcType="INTEGER" property="collegeId" />
+    <result column="college_name" jdbcType="VARCHAR" property="collegeName" />
+    <result column="grading_basis" jdbcType="VARCHAR" property="gradingBasis" />
+    <result column="note" jdbcType="VARCHAR" property="note" />
+    <result column="year" jdbcType="INTEGER" property="year" />
+    <result column="semester" jdbcType="INTEGER" property="semester" />
+    <result column="order_id" jdbcType="BIGINT" property="orderId" />
+    <result column="teacher_id" jdbcType="INTEGER" property="teacherId" />
+    <result column="teacher_name" jdbcType="VARCHAR" property="teacherName" />
+    <result column="employee_id" jdbcType="VARCHAR" property="employeeId" />
+    <result column="teacher_title_id" jdbcType="INTEGER" property="teacherTitleId" />
+    <result column="teacher_title_name" jdbcType="VARCHAR" property="teacherTitleName" />
+    <result column="audit_id" jdbcType="INTEGER" property="auditId" />
+    <result column="audit_name" jdbcType="VARCHAR" property="auditName" />
+    <result column="self_report_score" jdbcType="DECIMAL" property="selfReportScore" />
+    <result column="certified_score" jdbcType="DECIMAL" property="certifiedScore" />
+    <result column="certified_note" jdbcType="VARCHAR" property="certifiedNote" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="add_time" jdbcType="TIMESTAMP" property="addTime" />
+    <result column="certified_time" jdbcType="TIMESTAMP" property="certifiedTime" />
+    <collection property="orderFileList" ofType="OrderFile" column="order_id" select="com.hdc.dao.OrderFileDao.selectByOrderId" >
+    </collection>
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    grading_standard.grading_standard_id, grading_standard.content as grading_standard_content, grading_standard.observation_point_id, observation_point.content as observation_point_content,
+    grading_standard.evaluation_index_id, evaluation_index.content as evaluation_index_content, grading_standard.college_id, college_name, grading_basis,
+    grading_standard.note as grading_standard_note,  grading_standard.year,  grading_standard.semester, order_.order_id,  order_.teacher_id, teacher.teacher_name, teacher.employee_id, teacher.teacher_title_id,
+    teacher_title.name as teacher_title_name, grading_standard.audit_id, audit_name, self_report_score, certified_score, declaration_note,certified_note,
+    status, add_time, certified_time
+  </sql>
+  <select id="selectByExample" parameterType="com.hdc.entity.OrderTableExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from evaluation_index
+    join observation_point
+    on
+    evaluation_index.evaluation_index_id =observation_point.evaluation_index_id
+    join grading_standard
+    on
+    grading_standard.observation_point_id =observation_point.observation_point_id
+    left join audit
+    on
+    grading_standard.audit_id =audit.audit_id
+    left join college
+    on
+    grading_standard.college_id =college.college_id
+    right join order_
+    on
+    grading_standard.grading_standard_id =order_.grading_standard_id
+    left Join teacher
+    on
+    order_.teacher_id = teacher.teacher_id
+    left Join teacher_title
+    on
+    teacher.teacher_title_id = teacher_title.teacher_title_id
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <if test="limit != null">
+      <if test="offset != null">
+        limit ${offset}, ${limit}
+      </if>
+      <if test="offset == null">
+        limit ${limit}
+      </if>
+    </if>
+  </select>
+
+  <select id="selectOrderByExample" parameterType="com.hdc.entity.OrderTableExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from evaluation_index
+    join observation_point
+    on
+    evaluation_index.evaluation_index_id =observation_point.evaluation_index_id
+    join grading_standard
+    on
+    grading_standard.observation_point_id =observation_point.observation_point_id
+    left join audit
+    on
+    grading_standard.audit_id =audit.audit_id
+    left join college
+    on
+    grading_standard.college_id =college.college_id
+    right join order_
+    on
+    grading_standard.grading_standard_id =order_.grading_standard_id
+    left Join teacher
+    on
+    order_.teacher_id = teacher.teacher_id
+    left Join teacher_title
+    on
+    teacher.teacher_title_id = teacher_title.teacher_title_id
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <if test="limit != null">
+      <if test="offset != null">
+        limit ${offset}, ${limit}
+      </if>
+      <if test="offset == null">
+        limit ${limit}
+      </if>
+    </if>
+  </select>
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from evaluation_index
+    join observation_point
+    on
+    evaluation_index.evaluation_index_id =observation_point.evaluation_index_id
+    join grading_standard
+    on
+    grading_standard.observation_point_id =observation_point.observation_point_id
+    left join audit
+    on
+    grading_standard.audit_id =audit.audit_id
+    left join college
+    on
+    grading_standard.college_id =college.college_id
+    right join order_
+    on
+    grading_standard.grading_standard_id =order_.grading_standard_id
+    left Join teacher
+    on
+    order_.teacher_id = teacher.teacher_id
+    left Join teacher_title
+    on
+    teacher.teacher_title_id = teacher_title.teacher_title_id
+    where grading_standard_id = #{gradingStandardId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from declaration_table
+    where grading_standard_id = #{gradingStandardId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.hdc.entity.OrderTableExample">
+    delete from declaration_table
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.hdc.entity.OrderTable">
+    insert into declaration_table (grading_standard_id, grading_standard_content, 
+      observation_point_id, observation_point_content, 
+      evaluation_index_id, evaluation_index_content, 
+      college_id, college_name, grading_basis, 
+      note, year, semester, 
+      order_id, teacher_id, teacher_name, 
+      employee_id, teacher_title_id, teacher_title_name, 
+      audit_id, audit_name, self_report_score, 
+      certified_score, certified_note, status, 
+      add_time, certified_time)
+    values (#{gradingStandardId,jdbcType=INTEGER}, #{gradingStandardContent,jdbcType=VARCHAR}, 
+      #{observationPointId,jdbcType=INTEGER}, #{observationPointContent,jdbcType=VARCHAR}, 
+      #{evaluationIndexId,jdbcType=INTEGER}, #{evaluationIndexContent,jdbcType=VARCHAR}, 
+      #{collegeId,jdbcType=INTEGER}, #{collegeName,jdbcType=VARCHAR}, #{gradingBasis,jdbcType=VARCHAR}, 
+      #{note,jdbcType=VARCHAR}, #{year,jdbcType=INTEGER}, #{semester,jdbcType=INTEGER}, 
+      #{orderId,jdbcType=BIGINT}, #{teacherId,jdbcType=INTEGER}, #{teacherName,jdbcType=VARCHAR}, 
+      #{employeeId,jdbcType=VARCHAR}, #{teacherTitleId,jdbcType=INTEGER}, #{teacherTitleName,jdbcType=VARCHAR}, 
+      #{auditId,jdbcType=INTEGER}, #{auditName,jdbcType=VARCHAR}, #{selfReportScore,jdbcType=DECIMAL}, 
+      #{certifiedScore,jdbcType=DECIMAL}, #{certifiedNote,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT}, 
+      #{addTime,jdbcType=TIMESTAMP}, #{certifiedTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.hdc.entity.OrderTable">
+    insert into declaration_table
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="gradingStandardId != null">
+        grading_standard_id,
+      </if>
+      <if test="gradingStandardContent != null">
+        grading_standard_content,
+      </if>
+      <if test="observationPointId != null">
+        observation_point_id,
+      </if>
+      <if test="observationPointContent != null">
+        observation_point_content,
+      </if>
+      <if test="evaluationIndexId != null">
+        evaluation_index_id,
+      </if>
+      <if test="evaluationIndexContent != null">
+        evaluation_index_content,
+      </if>
+      <if test="collegeId != null">
+        college_id,
+      </if>
+      <if test="collegeName != null">
+        college_name,
+      </if>
+      <if test="gradingBasis != null">
+        grading_basis,
+      </if>
+      <if test="note != null">
+        note,
+      </if>
+      <if test="year != null">
+        year,
+      </if>
+      <if test="semester != null">
+        semester,
+      </if>
+      <if test="orderId != null">
+        order_id,
+      </if>
+      <if test="teacherId != null">
+        teacher_id,
+      </if>
+      <if test="teacherName != null">
+        teacher_name,
+      </if>
+      <if test="employeeId != null">
+        employee_id,
+      </if>
+      <if test="teacherTitleId != null">
+        teacher_title_id,
+      </if>
+      <if test="teacherTitleName != null">
+        teacher_title_name,
+      </if>
+      <if test="auditId != null">
+        audit_id,
+      </if>
+      <if test="auditName != null">
+        audit_name,
+      </if>
+      <if test="selfReportScore != null">
+        self_report_score,
+      </if>
+      <if test="certifiedScore != null">
+        certified_score,
+      </if>
+      <if test="certifiedNote != null">
+        certified_note,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="addTime != null">
+        add_time,
+      </if>
+      <if test="certifiedTime != null">
+        certified_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="gradingStandardId != null">
+        #{gradingStandardId,jdbcType=INTEGER},
+      </if>
+      <if test="gradingStandardContent != null">
+        #{gradingStandardContent,jdbcType=VARCHAR},
+      </if>
+      <if test="observationPointId != null">
+        #{observationPointId,jdbcType=INTEGER},
+      </if>
+      <if test="observationPointContent != null">
+        #{observationPointContent,jdbcType=VARCHAR},
+      </if>
+      <if test="evaluationIndexId != null">
+        #{evaluationIndexId,jdbcType=INTEGER},
+      </if>
+      <if test="evaluationIndexContent != null">
+        #{evaluationIndexContent,jdbcType=VARCHAR},
+      </if>
+      <if test="collegeId != null">
+        #{collegeId,jdbcType=INTEGER},
+      </if>
+      <if test="collegeName != null">
+        #{collegeName,jdbcType=VARCHAR},
+      </if>
+      <if test="gradingBasis != null">
+        #{gradingBasis,jdbcType=VARCHAR},
+      </if>
+      <if test="note != null">
+        #{note,jdbcType=VARCHAR},
+      </if>
+      <if test="year != null">
+        #{year,jdbcType=INTEGER},
+      </if>
+      <if test="semester != null">
+        #{semester,jdbcType=INTEGER},
+      </if>
+      <if test="orderId != null">
+        #{orderId,jdbcType=BIGINT},
+      </if>
+      <if test="teacherId != null">
+        #{teacherId,jdbcType=INTEGER},
+      </if>
+      <if test="teacherName != null">
+        #{teacherName,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeId != null">
+        #{employeeId,jdbcType=VARCHAR},
+      </if>
+      <if test="teacherTitleId != null">
+        #{teacherTitleId,jdbcType=INTEGER},
+      </if>
+      <if test="teacherTitleName != null">
+        #{teacherTitleName,jdbcType=VARCHAR},
+      </if>
+      <if test="auditId != null">
+        #{auditId,jdbcType=INTEGER},
+      </if>
+      <if test="auditName != null">
+        #{auditName,jdbcType=VARCHAR},
+      </if>
+      <if test="selfReportScore != null">
+        #{selfReportScore,jdbcType=DECIMAL},
+      </if>
+      <if test="certifiedScore != null">
+        #{certifiedScore,jdbcType=DECIMAL},
+      </if>
+      <if test="certifiedNote != null">
+        #{certifiedNote,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="addTime != null">
+        #{addTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="certifiedTime != null">
+        #{certifiedTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.hdc.entity.OrderTableExample" resultType="java.lang.Long">
+    select count(*)
+    from evaluation_index
+    join observation_point
+    on
+    evaluation_index.evaluation_index_id =observation_point.evaluation_index_id
+    join grading_standard
+    on
+    grading_standard.observation_point_id =observation_point.observation_point_id
+    left join audit
+    on
+    grading_standard.audit_id =audit.audit_id
+    left join college
+    on
+    grading_standard.college_id =college.college_id
+    right join order_
+    on
+    grading_standard.grading_standard_id =order_.grading_standard_id
+    left Join teacher
+    on
+    order_.teacher_id = teacher.teacher_id
+    left Join teacher_title
+    on
+    teacher.teacher_title_id = teacher_title.teacher_title_id
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <select id="countOrderByExample" parameterType="com.hdc.entity.OrderTableExample" resultType="java.lang.Long">
+    select count(*)
+    from grading_standard
+    left join observation_point
+    on
+    grading_standard.observation_point_id =observation_point.observation_point_id
+    left join evaluation_index
+    on
+    grading_standard.evaluation_index_id =evaluation_index.evaluation_index_id
+    left join audit
+    on
+    grading_standard.audit_id =audit.audit_id
+    left join college
+    on
+    grading_standard.college_id =college.college_id
+    right join order_
+    on
+    grading_standard.grading_standard_id =order_.grading_standard_id
+    left Join teacher
+    on
+    order_.teacher_id = teacher.teacher_id
+    left Join teacher_title
+    on
+    teacher.teacher_title_id = teacher_title.teacher_title_id
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update declaration_table
+    <set>
+      <if test="record.gradingStandardId != null">
+        grading_standard_id = #{record.gradingStandardId,jdbcType=INTEGER},
+      </if>
+      <if test="record.gradingStandardContent != null">
+        grading_standard_content = #{record.gradingStandardContent,jdbcType=VARCHAR},
+      </if>
+      <if test="record.observationPointId != null">
+        observation_point_id = #{record.observationPointId,jdbcType=INTEGER},
+      </if>
+      <if test="record.observationPointContent != null">
+        observation_point_content = #{record.observationPointContent,jdbcType=VARCHAR},
+      </if>
+      <if test="record.evaluationIndexId != null">
+        evaluation_index_id = #{record.evaluationIndexId,jdbcType=INTEGER},
+      </if>
+      <if test="record.evaluationIndexContent != null">
+        evaluation_index_content = #{record.evaluationIndexContent,jdbcType=VARCHAR},
+      </if>
+      <if test="record.collegeId != null">
+        college_id = #{record.collegeId,jdbcType=INTEGER},
+      </if>
+      <if test="record.collegeName != null">
+        college_name = #{record.collegeName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.gradingBasis != null">
+        grading_basis = #{record.gradingBasis,jdbcType=VARCHAR},
+      </if>
+      <if test="record.note != null">
+        note = #{record.note,jdbcType=VARCHAR},
+      </if>
+      <if test="record.year != null">
+        year = #{record.year,jdbcType=INTEGER},
+      </if>
+      <if test="record.semester != null">
+        semester = #{record.semester,jdbcType=INTEGER},
+      </if>
+      <if test="record.orderId != null">
+        order_id = #{record.orderId,jdbcType=BIGINT},
+      </if>
+      <if test="record.teacherId != null">
+        teacher_id = #{record.teacherId,jdbcType=INTEGER},
+      </if>
+      <if test="record.teacherName != null">
+        teacher_name = #{record.teacherName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.employeeId != null">
+        employee_id = #{record.employeeId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.teacherTitleId != null">
+        teacher_title_id = #{record.teacherTitleId,jdbcType=INTEGER},
+      </if>
+      <if test="record.teacherTitleName != null">
+        teacher_title_name = #{record.teacherTitleName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.auditId != null">
+        audit_id = #{record.auditId,jdbcType=INTEGER},
+      </if>
+      <if test="record.auditName != null">
+        audit_name = #{record.auditName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.selfReportScore != null">
+        self_report_score = #{record.selfReportScore,jdbcType=DECIMAL},
+      </if>
+      <if test="record.certifiedScore != null">
+        certified_score = #{record.certifiedScore,jdbcType=DECIMAL},
+      </if>
+      <if test="record.certifiedNote != null">
+        certified_note = #{record.certifiedNote,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null">
+        status = #{record.status,jdbcType=TINYINT},
+      </if>
+      <if test="record.addTime != null">
+        add_time = #{record.addTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.certifiedTime != null">
+        certified_time = #{record.certifiedTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update declaration_table
+    set grading_standard_id = #{record.gradingStandardId,jdbcType=INTEGER},
+      grading_standard_content = #{record.gradingStandardContent,jdbcType=VARCHAR},
+      observation_point_id = #{record.observationPointId,jdbcType=INTEGER},
+      observation_point_content = #{record.observationPointContent,jdbcType=VARCHAR},
+      evaluation_index_id = #{record.evaluationIndexId,jdbcType=INTEGER},
+      evaluation_index_content = #{record.evaluationIndexContent,jdbcType=VARCHAR},
+      college_id = #{record.collegeId,jdbcType=INTEGER},
+      college_name = #{record.collegeName,jdbcType=VARCHAR},
+      grading_basis = #{record.gradingBasis,jdbcType=VARCHAR},
+      note = #{record.note,jdbcType=VARCHAR},
+      year = #{record.year,jdbcType=INTEGER},
+      semester = #{record.semester,jdbcType=INTEGER},
+      order_id = #{record.orderId,jdbcType=BIGINT},
+      teacher_id = #{record.teacherId,jdbcType=INTEGER},
+      teacher_name = #{record.teacherName,jdbcType=VARCHAR},
+      employee_id = #{record.employeeId,jdbcType=VARCHAR},
+      teacher_title_id = #{record.teacherTitleId,jdbcType=INTEGER},
+      teacher_title_name = #{record.teacherTitleName,jdbcType=VARCHAR},
+      audit_id = #{record.auditId,jdbcType=INTEGER},
+      audit_name = #{record.auditName,jdbcType=VARCHAR},
+      self_report_score = #{record.selfReportScore,jdbcType=DECIMAL},
+      certified_score = #{record.certifiedScore,jdbcType=DECIMAL},
+      certified_note = #{record.certifiedNote,jdbcType=VARCHAR},
+      status = #{record.status,jdbcType=TINYINT},
+      add_time = #{record.addTime,jdbcType=TIMESTAMP},
+      certified_time = #{record.certifiedTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hdc.entity.OrderTable">
+    update declaration_table
+    <set>
+      <if test="gradingStandardContent != null">
+        grading_standard_content = #{gradingStandardContent,jdbcType=VARCHAR},
+      </if>
+      <if test="observationPointId != null">
+        observation_point_id = #{observationPointId,jdbcType=INTEGER},
+      </if>
+      <if test="observationPointContent != null">
+        observation_point_content = #{observationPointContent,jdbcType=VARCHAR},
+      </if>
+      <if test="evaluationIndexId != null">
+        evaluation_index_id = #{evaluationIndexId,jdbcType=INTEGER},
+      </if>
+      <if test="evaluationIndexContent != null">
+        evaluation_index_content = #{evaluationIndexContent,jdbcType=VARCHAR},
+      </if>
+      <if test="collegeId != null">
+        college_id = #{collegeId,jdbcType=INTEGER},
+      </if>
+      <if test="collegeName != null">
+        college_name = #{collegeName,jdbcType=VARCHAR},
+      </if>
+      <if test="gradingBasis != null">
+        grading_basis = #{gradingBasis,jdbcType=VARCHAR},
+      </if>
+      <if test="note != null">
+        note = #{note,jdbcType=VARCHAR},
+      </if>
+      <if test="year != null">
+        year = #{year,jdbcType=INTEGER},
+      </if>
+      <if test="semester != null">
+        semester = #{semester,jdbcType=INTEGER},
+      </if>
+      <if test="orderId != null">
+        order_id = #{orderId,jdbcType=BIGINT},
+      </if>
+      <if test="teacherId != null">
+        teacher_id = #{teacherId,jdbcType=INTEGER},
+      </if>
+      <if test="teacherName != null">
+        teacher_name = #{teacherName,jdbcType=VARCHAR},
+      </if>
+      <if test="employeeId != null">
+        employee_id = #{employeeId,jdbcType=VARCHAR},
+      </if>
+      <if test="teacherTitleId != null">
+        teacher_title_id = #{teacherTitleId,jdbcType=INTEGER},
+      </if>
+      <if test="teacherTitleName != null">
+        teacher_title_name = #{teacherTitleName,jdbcType=VARCHAR},
+      </if>
+      <if test="auditId != null">
+        audit_id = #{auditId,jdbcType=INTEGER},
+      </if>
+      <if test="auditName != null">
+        audit_name = #{auditName,jdbcType=VARCHAR},
+      </if>
+      <if test="selfReportScore != null">
+        self_report_score = #{selfReportScore,jdbcType=DECIMAL},
+      </if>
+      <if test="certifiedScore != null">
+        certified_score = #{certifiedScore,jdbcType=DECIMAL},
+      </if>
+      <if test="certifiedNote != null">
+        certified_note = #{certifiedNote,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="addTime != null">
+        add_time = #{addTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="certifiedTime != null">
+        certified_time = #{certifiedTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where grading_standard_id = #{gradingStandardId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hdc.entity.OrderTable">
+    update declaration_table
+    set grading_standard_content = #{gradingStandardContent,jdbcType=VARCHAR},
+      observation_point_id = #{observationPointId,jdbcType=INTEGER},
+      observation_point_content = #{observationPointContent,jdbcType=VARCHAR},
+      evaluation_index_id = #{evaluationIndexId,jdbcType=INTEGER},
+      evaluation_index_content = #{evaluationIndexContent,jdbcType=VARCHAR},
+      college_id = #{collegeId,jdbcType=INTEGER},
+      college_name = #{collegeName,jdbcType=VARCHAR},
+      grading_basis = #{gradingBasis,jdbcType=VARCHAR},
+      note = #{note,jdbcType=VARCHAR},
+      year = #{year,jdbcType=INTEGER},
+      semester = #{semester,jdbcType=INTEGER},
+      order_id = #{orderId,jdbcType=BIGINT},
+      teacher_id = #{teacherId,jdbcType=INTEGER},
+      teacher_name = #{teacherName,jdbcType=VARCHAR},
+      employee_id = #{employeeId,jdbcType=VARCHAR},
+      teacher_title_id = #{teacherTitleId,jdbcType=INTEGER},
+      teacher_title_name = #{teacherTitleName,jdbcType=VARCHAR},
+      audit_id = #{auditId,jdbcType=INTEGER},
+      audit_name = #{auditName,jdbcType=VARCHAR},
+      self_report_score = #{selfReportScore,jdbcType=DECIMAL},
+      certified_score = #{certifiedScore,jdbcType=DECIMAL},
+      certified_note = #{certifiedNote,jdbcType=VARCHAR},
+      status = #{status,jdbcType=TINYINT},
+      add_time = #{addTime,jdbcType=TIMESTAMP},
+      certified_time = #{certifiedTime,jdbcType=TIMESTAMP}
+    where grading_standard_id = #{gradingStandardId,jdbcType=INTEGER}
+  </update>
+</mapper>

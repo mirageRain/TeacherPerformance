@@ -22,6 +22,11 @@ public class Teacher implements Serializable {
     private String teacherName;
 
     /**
+     * 教师工号
+     */
+    private String employeeId;
+
+    /**
      * 教师职称ID
      */
     private Integer teacherTitleId;
@@ -57,6 +62,14 @@ public class Teacher implements Serializable {
         this.teacherName = teacherName;
     }
 
+    public String getEmployeeId() {
+        return employeeId;
+    }
+
+    public void setEmployeeId(String employeeId) {
+        this.employeeId = employeeId;
+    }
+
     public Integer getTeacherTitleId() {
         return teacherTitleId;
     }
@@ -88,6 +101,7 @@ public class Teacher implements Serializable {
         return (this.getTeacherId() == null ? other.getTeacherId() == null : this.getTeacherId().equals(other.getTeacherId()))
             && (this.getUserId() == null ? other.getUserId() == null : this.getUserId().equals(other.getUserId()))
             && (this.getTeacherName() == null ? other.getTeacherName() == null : this.getTeacherName().equals(other.getTeacherName()))
+            && (this.getEmployeeId() == null ? other.getEmployeeId() == null : this.getEmployeeId().equals(other.getEmployeeId()))
             && (this.getTeacherTitleId() == null ? other.getTeacherTitleId() == null : this.getTeacherTitleId().equals(other.getTeacherTitleId()))
             && (this.getCollegeId() == null ? other.getCollegeId() == null : this.getCollegeId().equals(other.getCollegeId()));
     }
@@ -99,6 +113,7 @@ public class Teacher implements Serializable {
         result = prime * result + ((getTeacherId() == null) ? 0 : getTeacherId().hashCode());
         result = prime * result + ((getUserId() == null) ? 0 : getUserId().hashCode());
         result = prime * result + ((getTeacherName() == null) ? 0 : getTeacherName().hashCode());
+        result = prime * result + ((getEmployeeId() == null) ? 0 : getEmployeeId().hashCode());
         result = prime * result + ((getTeacherTitleId() == null) ? 0 : getTeacherTitleId().hashCode());
         result = prime * result + ((getCollegeId() == null) ? 0 : getCollegeId().hashCode());
         return result;
@@ -113,6 +128,7 @@ public class Teacher implements Serializable {
         sb.append(", teacherId=").append(teacherId);
         sb.append(", userId=").append(userId);
         sb.append(", teacherName=").append(teacherName);
+        sb.append(", employeeId=").append(employeeId);
         sb.append(", teacherTitleId=").append(teacherTitleId);
         sb.append(", collegeId=").append(collegeId);
         sb.append(", serialVersionUID=").append(serialVersionUID);
@@ -120,10 +136,11 @@ public class Teacher implements Serializable {
         return sb.toString();
     }
 
-    public Teacher(Integer teacherId, Integer userId, String teacherName, Integer teacherTitleId, Integer collegeId) {
+    public Teacher(Integer teacherId, Integer userId, String teacherName, String employeeId, Integer teacherTitleId, Integer collegeId) {
         this.teacherId = teacherId;
         this.userId = userId;
         this.teacherName = teacherName;
+        this.employeeId = employeeId;
         this.teacherTitleId = teacherTitleId;
         this.collegeId = collegeId;
     }

@@ -21,7 +21,7 @@ public class CollegeView {
 
     @RequestMapping(value = "/userInfoPage", method = RequestMethod.GET)
     public String userInfoPageView() {
-        return "userInfoPage";
+        return "/college/userInfoPage";
     }
 
     @RequestMapping(value = "/changePwd", method = RequestMethod.GET)

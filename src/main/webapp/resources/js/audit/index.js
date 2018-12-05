@@ -153,7 +153,7 @@ layui.use(['bodyTab','form','element','layer','jquery'],function(){
         });
     }
     initDisplayName();
-})
+});
 
 //打开新窗口
 function addTab(_this){

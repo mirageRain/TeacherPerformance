@@ -10,9 +10,9 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="icon" href="favicon.ico">
+	<link rel="icon" type="image/x-icon" href="resources/images/favicon.ico">
 	<link rel="stylesheet" href="resources/layui/css/layui.css" media="all" />
-	<link rel="stylesheet" href="resources//css/index.css" media="all" />
+	<link rel="stylesheet" href="resources/css/index.css" media="all" />
 </head>
 <body class="main_body">
 	<div class="layui-layout layui-layout-admin">
@@ -33,16 +33,16 @@
 			    <!-- 顶部右侧菜单 -->
 			    <ul class="layui-nav top_menu">
 					<li class="layui-nav-item" pc>
-						<a href="javascript:;" class="clearCache"><i class="layui-icon" data-icon="&#xe640;">&#xe640;</i><cite>清除缓存</cite><span class="layui-badge-dot"></span></a>
+						<a href="javascript:;" class="clearCache"><i class="layui-icon" >&#xe640;</i><cite>清除缓存</cite></a>
 					</li>
 					<li class="layui-nav-item lockcms" pc>
 						<a href="javascript:;"><i class="seraph icon-lock"></i><cite>锁屏</cite></a>
 					</li>
 					<li class="layui-nav-item" id="userInfo">
-						<a href="javascript:;"><img src="resources//images/face.jpg" class="layui-nav-img userAvatar" width="35" height="35"><cite class="adminName">教科处</cite></a>
+						<a href="javascript:;"><img src="resources/images/face.jpg" class="layui-nav-img userAvatar" width="35" height="35"><cite class="displayName"></cite></a>
 						<dl class="layui-nav-child">
-							<dd><a href="javascript:;" data-url="audit/userInfo"><i class="seraph icon-ziliao" data-icon="icon-ziliao"></i><cite>个人资料</cite></a></dd>
-							<dd><a href="javascript:;" data-url=audit/changePwd"><i class="seraph icon-xiugai" data-icon="icon-xiugai"></i><cite>修改密码</cite></a></dd>
+							<dd><a href="javascript:;" data-url="audit/userInfoPage"><i class="seraph icon-ziliao" data-icon="icon-ziliao"></i><cite>个人资料</cite></a></dd>
+							<dd><a href="javascript:;" data-url="audit/changePwd"><i class="seraph icon-xiugai" data-icon="icon-xiugai"></i><cite>修改密码</cite></a></dd>
 							<dd><a href="logout" class="signOut"><i class="seraph icon-tuichu"></i><cite>退出</cite></a></dd>
 						</dl>
 					</li>
@@ -52,8 +52,8 @@
 		<!-- 左侧导航 -->
 		<div class="layui-side layui-bg-black">
 			<div class="user-photo">
-				<a class="img" title="我的头像" ><img src="resources//images/face.jpg" class="userAvatar"></a>
-				<p>你好！<span class="userName">教科处</span>, 欢迎登录</p>
+				<a class="img" title="我的头像" ><img src="resources/images/face.jpg" class="userAvatar"></a>
+				<p>你好！<span class="displayName" ></span>, 欢迎登录</p>
 			</div>
 			<!-- 搜索 -->
 			<div class="layui-form component">
@@ -65,7 +65,7 @@
 			<div class="navBar layui-side-scroll" id="navBar">
 				<ul class="layui-nav layui-nav-tree">
 					<li class="layui-nav-item layui-this">
-						<a href="javascript:;" data-url="audit/main\"><i class="layui-icon" data-icon=""></i><cite>首页</cite></a>
+						<a href="javascript:;" data-url="audit/main"><i class="layui-icon" data-icon=""></i><cite>首页</cite></a>
 					</li>
 				</ul>
 			</div>
@@ -88,7 +88,7 @@
 				</ul>
 				<div class="layui-tab-content clildFrame">
 					<div class="layui-tab-item layui-show">
-						<iframe src="/audit/main.html"></iframe>
+						<iframe src="audit/main"></iframe>
 					</div>
 				</div>
 			</div>

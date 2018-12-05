@@ -132,6 +132,7 @@ iframe{ position:absolute; height:100%; width:100%; border:none;}
 	.site-mobile .site-tree-mobile,.topLevelMenus[pc]{display:none !important;}
 }
 @media screen and (max-width: 720px){
+	.logo{ width:120px; font-size: 12px; overflow: hidden}
 	.hideMenu{ display: none !important; }
 	.mobileTopLevelMenus[mobile]{ padding:0;}
 	.top_menu>li[pc]{ display: none !important; }
@@ -143,7 +144,7 @@ iframe{ position:absolute; height:100%; width:100%; border:none;}
 	.layui-body,.layui-layout-admin .layui-footer{ left:-2px; }
 }
 @media screen and (max-width:480px){
-	.logo{ width:120px; font-size: 18px;}
+	.logo{ width:120px; font-size: 12px; overflow: hidden}
 	#userInfo>a{ padding:0 10px;}
 	.mobileTopLevelMenus[mobile] li>a{ padding:0 17px 0 15px;}
 	.logo,.layui-nav.top_menu{ padding:0 5px;}

@@ -2,10 +2,8 @@ package com.hdc.service.impl;
 
 import com.hdc.dao.SystemConfigDao;
 import com.hdc.dao.UserInfoDao;
-import com.hdc.entity.SystemConfig;
-import com.hdc.entity.SystemConfigExample;
-import com.hdc.entity.UserInfo;
-import com.hdc.entity.UserInfoExample;
+import com.hdc.dto.SystemBaseConfigDto;
+import com.hdc.entity.*;
 import com.hdc.service.SystemConfigService;
 import com.hdc.service.UserInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,6 +52,8 @@ public class SystemConfigServiceImpl implements SystemConfigService {
 		return systemConfigDao.selectByExample(example);
 	}
 
+
+
 	@Override
 	public SystemConfig selectByPrimaryKey(Integer systemConfigId) {
 		if(systemConfigId == null ||systemConfigId <=0){
@@ -85,4 +85,40 @@ public class SystemConfigServiceImpl implements SystemConfigService {
 	public int updateByPrimaryKey(SystemConfig record) {
 		return systemConfigDao.updateByPrimaryKey(record);
 	}
+
+	@Override
+	public SystemBaseConfig getSystemBaseConfig() {
+
+		SystemBaseConfig systemBaseConfig = new SystemBaseConfig();
+
+		systemBaseConfig.setSystemOpen(Byte.parseByte(systemConfigDao.selectValueByName("open")));
+		systemBaseConfig.setSystemYear(Integer.parseInt(systemConfigDao.selectValueByName("year")));
+		systemBaseConfig.setSystemSemester(Integer.parseInt(systemConfigDao.selectValueByName("semester")));
+		System.out.println(systemBaseConfig.toString());
+		return systemBaseConfig;
+	}
+
+	@Override
+	@Transactional
+	public void updateBySystemBaseConfigDto(SystemBaseConfigDto systemBaseConfigDto) {
+
+		SystemConfig systemConfig = new SystemConfig();
+
+		systemConfig.setName("open");
+		systemConfig.setValue(String.valueOf(systemBaseConfigDto.getSystemOpen()));
+		int effectedCount1 =  systemConfigDao.updateValueByName(systemConfig);
+
+		systemConfig.setName("year");
+		systemConfig.setValue(String.valueOf(systemBaseConfigDto.getSystemYear()));
+		int effectedCount2 = systemConfigDao.updateValueByName(systemConfig);
+
+		systemConfig.setName("semester");
+		systemConfig.setValue(String.valueOf(systemBaseConfigDto.getSystemSemester()));
+		int effectedCount3 = systemConfigDao.updateValueByName(systemConfig);
+
+		if (effectedCount1 <= 0 &&effectedCount2 <= 0 &&effectedCount3 <= 0 ) {
+			throw new RuntimeException("系统信息更新错误");
+		}
+	}
+
 }

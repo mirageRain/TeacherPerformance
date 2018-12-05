@@ -3,11 +3,9 @@ package com.hdc.controller.college;
 
 import com.google.common.base.CaseFormat;
 import com.hdc.dto.EvaluationIndexDto;
-import com.hdc.entity.Page;
-import com.hdc.entity.EvaluationIndex;
-import com.hdc.entity.EvaluationIndexExample;
-import com.hdc.entity.SystemConfig;
+import com.hdc.entity.*;
 import com.hdc.security.MyUser;
+import com.hdc.service.CollegeService;
 import com.hdc.service.EvaluationIndexService;
 import com.hdc.service.SystemConfigService;
 import org.apache.commons.lang.StringUtils;
@@ -29,6 +27,9 @@ public class EvaluationIndexController {
     private EvaluationIndexService evaluationIndexService;
 
     @Autowired
+    private CollegeService collegeService;
+
+    @Autowired
     private SystemConfigService systemConfigService;
 
     /**
@@ -41,19 +42,29 @@ public class EvaluationIndexController {
     @GetMapping("")
     public Map<String, Object> selectAll(Page page, String content) {
 
-        //获取登录的用户ID
-        MyUser userDetails = (MyUser) SecurityContextHolder.getContext()
-                .getAuthentication()
-                .getPrincipal();
-        Integer collegeId = userDetails.getMyUserId();
+
 
         long count = 0;
-        Integer defaultSystemConfigId =1;
         List<EvaluationIndex> list;
         EvaluationIndexExample example = new EvaluationIndexExample();
         EvaluationIndexExample.Criteria criteria = example.createCriteria();
         Map<String, Object> map = new HashMap<>();
-        SystemConfig systemConfig;
+        SystemBaseConfig systemConfig;
+
+        Integer collegeId;
+        //获取登录的用户ID
+        try {
+            MyUser userDetails = (MyUser) SecurityContextHolder.getContext()
+                    .getAuthentication()
+                    .getPrincipal();
+            CollegeExample collegeExample = new CollegeExample();
+            collegeExample.createCriteria().andUserIdEqualTo(userDetails.getMyUserId());
+            collegeId =collegeService.selectByExample(collegeExample).get(0).getCollegeId();
+        } catch (Exception e) {
+            map.put("code", 500);
+            map.put("msg", "数据格式错误");
+            return map;
+        }
 
         //添加查询条件
         if (StringUtils.isNotBlank(content)) {
@@ -61,7 +72,7 @@ public class EvaluationIndexController {
         }
 
         try {
-            systemConfig = systemConfigService.selectByPrimaryKey(defaultSystemConfigId);
+            systemConfig = systemConfigService.getSystemBaseConfig();
             criteria.andYearEqualTo(systemConfig.getSystemYear());
             criteria.andSemesterEqualTo(systemConfig.getSystemSemester());
             criteria.andCollegeIdEqualTo(collegeId);
@@ -122,16 +133,25 @@ public class EvaluationIndexController {
     @GetMapping("/testEvaluationIndexContent")
     public Map<String, Object> testEvaluationIndexName(String evaluationIndexContent, Integer evaluationIndexId) {
 
-        //获取登录的用户ID
-        MyUser userDetails = (MyUser) SecurityContextHolder.getContext()
-                .getAuthentication()
-                .getPrincipal();
-        Integer collegeId = userDetails.getMyUserId();
-
         long count = 0;
         EvaluationIndexExample example = new EvaluationIndexExample();
         EvaluationIndexExample.Criteria criteria = example.createCriteria();
         Map<String, Object> map = new HashMap<>();
+
+        Integer collegeId;
+        //获取登录的用户ID
+        try {
+            MyUser userDetails = (MyUser) SecurityContextHolder.getContext()
+                    .getAuthentication()
+                    .getPrincipal();
+            CollegeExample collegeExample = new CollegeExample();
+            collegeExample.createCriteria().andUserIdEqualTo(userDetails.getMyUserId());
+            collegeId =collegeService.selectByExample(collegeExample).get(0).getCollegeId();
+        } catch (Exception e) {
+            map.put("code", 500);
+            map.put("msg", "数据格式错误");
+            return map;
+        }
 
         //添加查询条件
         if (StringUtils.isNotBlank(evaluationIndexContent)) {
@@ -187,17 +207,28 @@ public class EvaluationIndexController {
     @PostMapping("")
     public Map<String, Object> insert(@Valid @RequestBody(required = false) EvaluationIndexDto evaluationIndexDto, BindingResult errors) {
 
-        //获取登录的用户ID
-        MyUser userDetails = (MyUser) SecurityContextHolder.getContext()
-                .getAuthentication()
-                .getPrincipal();
-        Integer collegeId = userDetails.getMyUserId();
 
         EvaluationIndex evaluationIndex = new EvaluationIndex();
         Map<String, Object> map = new HashMap<>();
-        Integer defaultSystemConfigId =1;
         String evaluationIndexContent;
-        SystemConfig systemConfig;
+        SystemBaseConfig systemConfig;
+
+        Integer collegeId;
+        //获取登录的用户ID
+        try {
+            MyUser userDetails = (MyUser) SecurityContextHolder.getContext()
+                    .getAuthentication()
+                    .getPrincipal();
+            CollegeExample collegeExample = new CollegeExample();
+            collegeExample.createCriteria().andUserIdEqualTo(userDetails.getMyUserId());
+            collegeId =collegeService.selectByExample(collegeExample).get(0).getCollegeId();
+        } catch (Exception e) {
+            map.put("code", 500);
+            map.put("msg", "数据格式错误");
+            return map;
+        }
+
+
         //检查错误，封装错误信息
         if (errors.getErrorCount() > 0) {
             map.put("code", 500);
@@ -207,7 +238,7 @@ public class EvaluationIndexController {
 
         //赋值
         try {
-            systemConfig = systemConfigService.selectByPrimaryKey(defaultSystemConfigId);
+            systemConfig = systemConfigService.getSystemBaseConfig();
             evaluationIndexContent = evaluationIndexDto.getContent();
 
             evaluationIndex.setContent(evaluationIndexContent);
@@ -257,19 +288,29 @@ public class EvaluationIndexController {
     @PutMapping("")
     public Map<String, Object> update(@Valid @RequestBody(required = false) EvaluationIndexDto evaluationIndexDto, BindingResult errors) {
 
-        //获取登录的用户ID
-        MyUser userDetails = (MyUser) SecurityContextHolder.getContext()
-                .getAuthentication()
-                .getPrincipal();
-        Integer collegeId = userDetails.getMyUserId();
-        Integer defaultSystemConfigId =1;
         String evaluationIndexContent;
-        SystemConfig systemConfig;
+        SystemBaseConfig systemConfig;
 
         EvaluationIndex evaluationIndex = new EvaluationIndex();
         Map<String, Object> map = new HashMap<>();
         Integer evaluationIndexId;
         String evaluationIndexName,desc;
+
+        Integer collegeId;
+        //获取登录的用户ID
+        try {
+            MyUser userDetails = (MyUser) SecurityContextHolder.getContext()
+                    .getAuthentication()
+                    .getPrincipal();
+            CollegeExample collegeExample = new CollegeExample();
+            collegeExample.createCriteria().andUserIdEqualTo(userDetails.getMyUserId());
+            collegeId =collegeService.selectByExample(collegeExample).get(0).getCollegeId();
+        } catch (Exception e) {
+            map.put("code", 500);
+            map.put("msg", "数据格式错误");
+            return map;
+        }
+
 
         //检查错误，封装错误信息
         if (errors.getErrorCount() > 0) {
@@ -280,7 +321,7 @@ public class EvaluationIndexController {
 
         //赋值
         try {
-            systemConfig = systemConfigService.selectByPrimaryKey(defaultSystemConfigId);
+            systemConfig = systemConfigService.getSystemBaseConfig();
             evaluationIndexContent = evaluationIndexDto.getContent();
 
             evaluationIndex.setEvaluationIndexId(evaluationIndexDto.getEvaluationIndexId());

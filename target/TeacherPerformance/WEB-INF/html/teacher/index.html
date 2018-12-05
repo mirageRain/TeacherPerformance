@@ -23,25 +23,19 @@
 				<!-- 显示/隐藏菜单 -->
 				<a href="javascript:;" class="seraph hideMenu icon-caidan"></a>
 				<!-- 顶级菜单 -->
-				<ul class="layui-nav mobileTopLevelMenus" mobile>
-					<li class="layui-nav-item" data-menu="contentManagement">
-						<a href="javascript:;"><i class="seraph icon-caidan"></i><cite>hdc</cite></a>
-						
-					</li>
-				</ul>
 				
 			    <!-- 顶部右侧菜单 -->
 			    <ul class="layui-nav top_menu">
 					<li class="layui-nav-item" pc>
-						<a href="javascript:;" class="clearCache"><i class="layui-icon" data-icon="&#xe640;">&#xe640;</i><cite>清除缓存</cite><span class="layui-badge-dot"></span></a>
+						<a href="javascript:;" class="clearCache"><i class="layui-icon" >&#xe640;</i><cite>清除缓存</cite></a>
 					</li>
 					<li class="layui-nav-item lockcms" pc>
 						<a href="javascript:;"><i class="seraph icon-lock"></i><cite>锁屏</cite></a>
 					</li>
 					<li class="layui-nav-item" id="userInfo">
-						<a href="javascript:;"><img src="resources/images/face.jpg" class="layui-nav-img userAvatar" width="35" height="35"><cite class="adminName">张三</cite></a>
+						<a href="javascript:;"><img src="resources/images/face.jpg" class="layui-nav-img userAvatar" width="35" height="35"><cite class="displayName"></cite></a>
 						<dl class="layui-nav-child">
-							<dd><a href="javascript:;" data-url="teacher/userInfo"><i class="seraph icon-ziliao" data-icon="icon-ziliao"></i><cite>个人资料</cite></a></dd>
+							<dd><a href="javascript:;" data-url="teacher/userInfoPage"><i class="seraph icon-ziliao" data-icon="icon-ziliao"></i><cite>个人资料</cite></a></dd>
 							<dd><a href="javascript:;" data-url="teacher/changePwd"><i class="seraph icon-xiugai" data-icon="icon-xiugai"></i><cite>修改密码</cite></a></dd>
 							<dd><a href="logout" class="signOut"><i class="seraph icon-tuichu"></i><cite>退出</cite></a></dd>
 						</dl>
@@ -53,7 +47,7 @@
 		<div class="layui-side layui-bg-black">
 			<div class="user-photo">
 				<a class="img" title="我的头像" ><img src="resources/images/face.jpg" class="userAvatar"></a>
-				<p>你好！<span class="userName">张三</span>, 欢迎登录</p>
+				<p>你好！<span class="displayName" ></span>, 欢迎登录</p>
 			</div>
 			<!-- 搜索 -->
 			<div class="layui-form component">
@@ -65,7 +59,7 @@
 			<div class="navBar layui-side-scroll" id="navBar">
 				<ul class="layui-nav layui-nav-tree">
 					<li class="layui-nav-item layui-this">
-						<a href="javascript:;" data-url="teacher/main"><i class="layui-icon" data-icon=""></i><cite>首页</cite></a>
+						<a href="javascript:;" data-url="teacher/main"><i class="layui-icon" data-icon=""></i><cite>首页</cite></a>
 					</li>
 				</ul>
 			</div>

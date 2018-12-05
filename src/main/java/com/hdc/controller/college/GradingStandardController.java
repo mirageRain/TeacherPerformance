@@ -3,11 +3,9 @@ package com.hdc.controller.college;
 
 import com.google.common.base.CaseFormat;
 import com.hdc.dto.GradingStandardDto;
-import com.hdc.entity.Page;
-import com.hdc.entity.GradingStandard;
-import com.hdc.entity.GradingStandardExample;
-import com.hdc.entity.SystemConfig;
+import com.hdc.entity.*;
 import com.hdc.security.MyUser;
+import com.hdc.service.CollegeService;
 import com.hdc.service.GradingStandardService;
 import com.hdc.service.SystemConfigService;
 import org.apache.commons.lang.StringUtils;
@@ -31,6 +29,9 @@ public class GradingStandardController {
     @Autowired
     private SystemConfigService systemConfigService;
 
+    @Autowired
+    private CollegeService collegeService;
+
     /**
      * 获取取评分标准信息
      *
@@ -41,19 +42,27 @@ public class GradingStandardController {
     @GetMapping("")
     public Map<String, Object> selectAll(Page page, String content, Integer evaluationIndexId, Integer observationPointId,Integer auditId) {
 
-        //获取登录的用户ID
-        MyUser userDetails = (MyUser) SecurityContextHolder.getContext()
-                .getAuthentication()
-                .getPrincipal();
-        Integer collegeId = userDetails.getMyUserId();
-
         long count = 0;
-        Integer defaultSystemConfigId =1;
         List<GradingStandard> list;
         GradingStandardExample example = new GradingStandardExample();
         GradingStandardExample.Criteria criteria = example.createCriteria();
         Map<String, Object> map = new HashMap<>();
-        SystemConfig systemConfig;
+        SystemBaseConfig systemConfig;
+
+        Integer collegeId;
+        //获取登录的用户ID
+        try {
+            MyUser userDetails = (MyUser) SecurityContextHolder.getContext()
+                    .getAuthentication()
+                    .getPrincipal();
+            CollegeExample collegeExample = new CollegeExample();
+            collegeExample.createCriteria().andUserIdEqualTo(userDetails.getMyUserId());
+            collegeId =collegeService.selectByExample(collegeExample).get(0).getCollegeId();
+        } catch (Exception e) {
+            map.put("code", 500);
+            map.put("msg", "数据格式错误");
+            return map;
+        }
 
         //添加查询条件
         if (StringUtils.isNotBlank(content)) {
@@ -73,7 +82,7 @@ public class GradingStandardController {
         }
 
         try {
-            systemConfig = systemConfigService.selectByPrimaryKey(defaultSystemConfigId);
+            systemConfig = systemConfigService.getSystemBaseConfig();
             criteria.andYearEqualTo(systemConfig.getSystemYear());
             criteria.andSemesterEqualTo(systemConfig.getSystemSemester());
             criteria.andCollegeIdEqualTo(collegeId);
@@ -134,16 +143,27 @@ public class GradingStandardController {
     @GetMapping("/testGradingStandardContent")
     public Map<String, Object> testGradingStandardName(String gradingStandardContent, Integer gradingStandardId) {
 
-        //获取登录的用户ID
-        MyUser userDetails = (MyUser) SecurityContextHolder.getContext()
-                .getAuthentication()
-                .getPrincipal();
-        Integer collegeId = userDetails.getMyUserId();
+
 
         long count = 0;
         GradingStandardExample example = new GradingStandardExample();
         GradingStandardExample.Criteria criteria = example.createCriteria();
         Map<String, Object> map = new HashMap<>();
+
+        Integer collegeId;
+        //获取登录的用户ID
+        try {
+            MyUser userDetails = (MyUser) SecurityContextHolder.getContext()
+                    .getAuthentication()
+                    .getPrincipal();
+            CollegeExample collegeExample = new CollegeExample();
+            collegeExample.createCriteria().andUserIdEqualTo(userDetails.getMyUserId());
+            collegeId =collegeService.selectByExample(collegeExample).get(0).getCollegeId();
+        } catch (Exception e) {
+            map.put("code", 500);
+            map.put("msg", "数据格式错误");
+            return map;
+        }
 
         //添加查询条件
         if (StringUtils.isNotBlank(gradingStandardContent)) {
@@ -199,17 +219,27 @@ public class GradingStandardController {
     @PostMapping("")
     public Map<String, Object> insert(@Valid @RequestBody(required = false) GradingStandardDto gradingStandardDto, BindingResult errors) {
 
-        //获取登录的用户ID
-        MyUser userDetails = (MyUser) SecurityContextHolder.getContext()
-                .getAuthentication()
-                .getPrincipal();
-        Integer collegeId = userDetails.getMyUserId();
 
         GradingStandard gradingStandard = new GradingStandard();
         Map<String, Object> map = new HashMap<>();
-        Integer defaultSystemConfigId =1;
         String gradingStandardContent;
-        SystemConfig systemConfig;
+        SystemBaseConfig systemConfig;
+
+        Integer collegeId;
+        //获取登录的用户ID
+        try {
+            MyUser userDetails = (MyUser) SecurityContextHolder.getContext()
+                    .getAuthentication()
+                    .getPrincipal();
+            CollegeExample collegeExample = new CollegeExample();
+            collegeExample.createCriteria().andUserIdEqualTo(userDetails.getMyUserId());
+            collegeId =collegeService.selectByExample(collegeExample).get(0).getCollegeId();
+        } catch (Exception e) {
+            map.put("code", 500);
+            map.put("msg", "数据格式错误");
+            return map;
+        }
+
         //检查错误，封装错误信息
         if (errors.getErrorCount() > 0) {
             map.put("code", 500);
@@ -219,7 +249,7 @@ public class GradingStandardController {
 
         //赋值
         try {
-            systemConfig = systemConfigService.selectByPrimaryKey(defaultSystemConfigId);
+            systemConfig = systemConfigService.getSystemBaseConfig();
 
             gradingStandard.setContent(gradingStandardDto.getContent());
             gradingStandard.setCollegeId(collegeId);
@@ -272,17 +302,27 @@ public class GradingStandardController {
      */
     @PutMapping("")
     public Map<String, Object> update(@Valid @RequestBody(required = false) GradingStandardDto gradingStandardDto, BindingResult errors) {
-
-        //获取登录的用户ID
-        MyUser userDetails = (MyUser) SecurityContextHolder.getContext()
-                .getAuthentication()
-                .getPrincipal();
-        Integer collegeId = userDetails.getMyUserId();
-        Integer defaultSystemConfigId =1;
-        SystemConfig systemConfig;
+        SystemBaseConfig systemConfig;
 
         GradingStandard gradingStandard = new GradingStandard();
         Map<String, Object> map = new HashMap<>();
+
+        Integer collegeId;
+        //获取登录的用户ID
+        try {
+            MyUser userDetails = (MyUser) SecurityContextHolder.getContext()
+                    .getAuthentication()
+                    .getPrincipal();
+            CollegeExample collegeExample = new CollegeExample();
+            collegeExample.createCriteria().andUserIdEqualTo(userDetails.getMyUserId());
+            collegeId =collegeService.selectByExample(collegeExample).get(0).getCollegeId();
+        } catch (Exception e) {
+            map.put("code", 500);
+            map.put("msg", "数据格式错误");
+            return map;
+        }
+
+
 
         //检查错误，封装错误信息
         if (errors.getErrorCount() > 0) {
@@ -293,7 +333,7 @@ public class GradingStandardController {
 
         //赋值
         try {
-            systemConfig = systemConfigService.selectByPrimaryKey(defaultSystemConfigId);
+            systemConfig = systemConfigService.getSystemBaseConfig();
 
             gradingStandard.setGradingStandardId(gradingStandardDto.getGradingStandardId());
             gradingStandard.setContent(gradingStandardDto.getContent());

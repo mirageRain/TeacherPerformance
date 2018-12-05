@@ -1,5 +1,6 @@
 package com.hdc.controller.info;
 
+import com.hdc.entity.SystemBaseConfig;
 import com.hdc.entity.SystemConfig;
 import com.hdc.entity.TeacherTitle;
 import com.hdc.entity.TeacherTitleExample;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -56,15 +58,13 @@ public class InfoController {
 	@GetMapping("/systemConfig")
 	public Map<String, Object> select() {
 
-		//只设置系统设置表中的第一条
-		Integer defaultId = 1;
-		SystemConfig systemConfig;
+		SystemBaseConfig systemConfig;
 		Map<String, Object> map = new HashMap<>();
 
 
 		//返回查询条数
 		try {
-			systemConfig = systemConfigService.selectByPrimaryKey(defaultId);
+			systemConfig = systemConfigService.getSystemBaseConfig();
 		} catch (Exception e) {
 			map.put("code", 500);
 			map.put("msg", "服务器繁忙");
@@ -75,6 +75,26 @@ public class InfoController {
 		map.put("code", 200);
 		map.put("msg", "请求成功");
 		map.put("data", systemConfig);
+		return map;
+	}
+
+	/**
+	 * 获取服务器时间
+	 *
+	 * @return 返回的JSON数据
+	 */
+	@GetMapping("/serverTime")
+	public Map<String, Object> getServerTime() {
+
+		SystemBaseConfig systemConfig;
+		Map<String, Object> map = new HashMap<>();
+
+
+
+		//封装JSON
+		map.put("code", 200);
+		map.put("msg", "请求成功");
+		map.put("data", new Date());
 		return map;
 	}
 }

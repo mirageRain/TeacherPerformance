@@ -23,19 +23,19 @@
 		<div class="layui-form-item">
 			<label class="layui-form-label">用户名</label>
 			<div class="layui-input-block">
-				<input type="text" value="张三" disabled class="layui-input layui-disabled">
+				<input type="text" value="张三" disabled id="username" class="layui-input layui-disabled">
 			</div>
 		</div>
 		<div class="layui-form-item">
 			<label class="layui-form-label">用户组</label>
 			<div class="layui-input-block">
-				<input type="text" value="系统管理员" disabled class="layui-input layui-disabled">
+				<input type="text" value="系统管理员" id="authority" disabled class="layui-input layui-disabled">
 			</div>
 		</div>
 		<div class="layui-form-item">
 			<label class="layui-form-label">昵称</label>
 			<div class="layui-input-block">
-				<input type="text" name="displayName" id="displayName" value="10000"  class="layui-input">
+				<input type="text" name="displayName" id="displayName" lay-verify="required" class="layui-input">
 			</div>
 		</div>
 		<div class="layui-inline">

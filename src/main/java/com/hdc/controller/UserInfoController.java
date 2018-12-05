@@ -1,6 +1,7 @@
 package com.hdc.controller;
 
 
+import com.google.common.base.CaseFormat;
 import com.hdc.dto.PasswordDto;
 import com.hdc.dto.UserInfoDto;
 import com.hdc.entity.*;
@@ -8,6 +9,7 @@ import com.hdc.security.MyUser;
 import com.hdc.service.UserInfoService;
 import com.hdc.service.UsersService;
 import com.hdc.service.impl.UserLoginServiceImpl;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -67,6 +70,8 @@ public class UserInfoController {
         return map;
     }
 
+
+
     /**
      * 更新用户信息
      *
@@ -114,6 +119,8 @@ public class UserInfoController {
         map.put("msg", "请求成功");
         return map;
     }
+
+
 
     /**
      * 修改账户密码

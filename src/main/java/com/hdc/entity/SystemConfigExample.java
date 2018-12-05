@@ -184,183 +184,283 @@ public class SystemConfigExample {
             return (Criteria) this;
         }
 
-        public Criteria andSystemOpenIsNull() {
-            addCriterion("system_open is null");
+        public Criteria andNameIsNull() {
+            addCriterion("name is null");
             return (Criteria) this;
         }
 
-        public Criteria andSystemOpenIsNotNull() {
-            addCriterion("system_open is not null");
+        public Criteria andNameIsNotNull() {
+            addCriterion("name is not null");
             return (Criteria) this;
         }
 
-        public Criteria andSystemOpenEqualTo(Byte value) {
-            addCriterion("system_open =", value, "systemOpen");
+        public Criteria andNameEqualTo(String value) {
+            addCriterion("name =", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andSystemOpenNotEqualTo(Byte value) {
-            addCriterion("system_open <>", value, "systemOpen");
+        public Criteria andNameNotEqualTo(String value) {
+            addCriterion("name <>", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andSystemOpenGreaterThan(Byte value) {
-            addCriterion("system_open >", value, "systemOpen");
+        public Criteria andNameGreaterThan(String value) {
+            addCriterion("name >", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andSystemOpenGreaterThanOrEqualTo(Byte value) {
-            addCriterion("system_open >=", value, "systemOpen");
+        public Criteria andNameGreaterThanOrEqualTo(String value) {
+            addCriterion("name >=", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andSystemOpenLessThan(Byte value) {
-            addCriterion("system_open <", value, "systemOpen");
+        public Criteria andNameLessThan(String value) {
+            addCriterion("name <", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andSystemOpenLessThanOrEqualTo(Byte value) {
-            addCriterion("system_open <=", value, "systemOpen");
+        public Criteria andNameLessThanOrEqualTo(String value) {
+            addCriterion("name <=", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andSystemOpenIn(List<Byte> values) {
-            addCriterion("system_open in", values, "systemOpen");
+        public Criteria andNameLike(String value) {
+            addCriterion("name like", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andSystemOpenNotIn(List<Byte> values) {
-            addCriterion("system_open not in", values, "systemOpen");
+        public Criteria andNameNotLike(String value) {
+            addCriterion("name not like", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andSystemOpenBetween(Byte value1, Byte value2) {
-            addCriterion("system_open between", value1, value2, "systemOpen");
+        public Criteria andNameIn(List<String> values) {
+            addCriterion("name in", values, "name");
             return (Criteria) this;
         }
 
-        public Criteria andSystemOpenNotBetween(Byte value1, Byte value2) {
-            addCriterion("system_open not between", value1, value2, "systemOpen");
+        public Criteria andNameNotIn(List<String> values) {
+            addCriterion("name not in", values, "name");
             return (Criteria) this;
         }
 
-        public Criteria andSystemYearIsNull() {
-            addCriterion("system_year is null");
+        public Criteria andNameBetween(String value1, String value2) {
+            addCriterion("name between", value1, value2, "name");
             return (Criteria) this;
         }
 
-        public Criteria andSystemYearIsNotNull() {
-            addCriterion("system_year is not null");
+        public Criteria andNameNotBetween(String value1, String value2) {
+            addCriterion("name not between", value1, value2, "name");
             return (Criteria) this;
         }
 
-        public Criteria andSystemYearEqualTo(Integer value) {
-            addCriterion("system_year =", value, "systemYear");
+        public Criteria andValueIsNull() {
+            addCriterion("value is null");
             return (Criteria) this;
         }
 
-        public Criteria andSystemYearNotEqualTo(Integer value) {
-            addCriterion("system_year <>", value, "systemYear");
+        public Criteria andValueIsNotNull() {
+            addCriterion("value is not null");
             return (Criteria) this;
         }
 
-        public Criteria andSystemYearGreaterThan(Integer value) {
-            addCriterion("system_year >", value, "systemYear");
+        public Criteria andValueEqualTo(String value) {
+            addCriterion("value =", value, "value");
             return (Criteria) this;
         }
 
-        public Criteria andSystemYearGreaterThanOrEqualTo(Integer value) {
-            addCriterion("system_year >=", value, "systemYear");
+        public Criteria andValueNotEqualTo(String value) {
+            addCriterion("value <>", value, "value");
             return (Criteria) this;
         }
 
-        public Criteria andSystemYearLessThan(Integer value) {
-            addCriterion("system_year <", value, "systemYear");
+        public Criteria andValueGreaterThan(String value) {
+            addCriterion("value >", value, "value");
             return (Criteria) this;
         }
 
-        public Criteria andSystemYearLessThanOrEqualTo(Integer value) {
-            addCriterion("system_year <=", value, "systemYear");
+        public Criteria andValueGreaterThanOrEqualTo(String value) {
+            addCriterion("value >=", value, "value");
             return (Criteria) this;
         }
 
-        public Criteria andSystemYearIn(List<Integer> values) {
-            addCriterion("system_year in", values, "systemYear");
+        public Criteria andValueLessThan(String value) {
+            addCriterion("value <", value, "value");
             return (Criteria) this;
         }
 
-        public Criteria andSystemYearNotIn(List<Integer> values) {
-            addCriterion("system_year not in", values, "systemYear");
+        public Criteria andValueLessThanOrEqualTo(String value) {
+            addCriterion("value <=", value, "value");
             return (Criteria) this;
         }
 
-        public Criteria andSystemYearBetween(Integer value1, Integer value2) {
-            addCriterion("system_year between", value1, value2, "systemYear");
+        public Criteria andValueLike(String value) {
+            addCriterion("value like", value, "value");
             return (Criteria) this;
         }
 
-        public Criteria andSystemYearNotBetween(Integer value1, Integer value2) {
-            addCriterion("system_year not between", value1, value2, "systemYear");
+        public Criteria andValueNotLike(String value) {
+            addCriterion("value not like", value, "value");
             return (Criteria) this;
         }
 
-        public Criteria andSystemSemesterIsNull() {
-            addCriterion("system_semester is null");
+        public Criteria andValueIn(List<String> values) {
+            addCriterion("value in", values, "value");
             return (Criteria) this;
         }
 
-        public Criteria andSystemSemesterIsNotNull() {
-            addCriterion("system_semester is not null");
+        public Criteria andValueNotIn(List<String> values) {
+            addCriterion("value not in", values, "value");
             return (Criteria) this;
         }
 
-        public Criteria andSystemSemesterEqualTo(Integer value) {
-            addCriterion("system_semester =", value, "systemSemester");
+        public Criteria andValueBetween(String value1, String value2) {
+            addCriterion("value between", value1, value2, "value");
             return (Criteria) this;
         }
 
-        public Criteria andSystemSemesterNotEqualTo(Integer value) {
-            addCriterion("system_semester <>", value, "systemSemester");
+        public Criteria andValueNotBetween(String value1, String value2) {
+            addCriterion("value not between", value1, value2, "value");
             return (Criteria) this;
         }
 
-        public Criteria andSystemSemesterGreaterThan(Integer value) {
-            addCriterion("system_semester >", value, "systemSemester");
+        public Criteria andTypeIsNull() {
+            addCriterion("type is null");
             return (Criteria) this;
         }
 
-        public Criteria andSystemSemesterGreaterThanOrEqualTo(Integer value) {
-            addCriterion("system_semester >=", value, "systemSemester");
+        public Criteria andTypeIsNotNull() {
+            addCriterion("type is not null");
             return (Criteria) this;
         }
 
-        public Criteria andSystemSemesterLessThan(Integer value) {
-            addCriterion("system_semester <", value, "systemSemester");
+        public Criteria andTypeEqualTo(String value) {
+            addCriterion("type =", value, "type");
             return (Criteria) this;
         }
 
-        public Criteria andSystemSemesterLessThanOrEqualTo(Integer value) {
-            addCriterion("system_semester <=", value, "systemSemester");
+        public Criteria andTypeNotEqualTo(String value) {
+            addCriterion("type <>", value, "type");
             return (Criteria) this;
         }
 
-        public Criteria andSystemSemesterIn(List<Integer> values) {
-            addCriterion("system_semester in", values, "systemSemester");
+        public Criteria andTypeGreaterThan(String value) {
+            addCriterion("type >", value, "type");
             return (Criteria) this;
         }
 
-        public Criteria andSystemSemesterNotIn(List<Integer> values) {
-            addCriterion("system_semester not in", values, "systemSemester");
+        public Criteria andTypeGreaterThanOrEqualTo(String value) {
+            addCriterion("type >=", value, "type");
             return (Criteria) this;
         }
 
-        public Criteria andSystemSemesterBetween(Integer value1, Integer value2) {
-            addCriterion("system_semester between", value1, value2, "systemSemester");
+        public Criteria andTypeLessThan(String value) {
+            addCriterion("type <", value, "type");
             return (Criteria) this;
         }
 
-        public Criteria andSystemSemesterNotBetween(Integer value1, Integer value2) {
-            addCriterion("system_semester not between", value1, value2, "systemSemester");
+        public Criteria andTypeLessThanOrEqualTo(String value) {
+            addCriterion("type <=", value, "type");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeLike(String value) {
+            addCriterion("type like", value, "type");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeNotLike(String value) {
+            addCriterion("type not like", value, "type");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeIn(List<String> values) {
+            addCriterion("type in", values, "type");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeNotIn(List<String> values) {
+            addCriterion("type not in", values, "type");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeBetween(String value1, String value2) {
+            addCriterion("type between", value1, value2, "type");
+            return (Criteria) this;
+        }
+
+        public Criteria andTypeNotBetween(String value1, String value2) {
+            addCriterion("type not between", value1, value2, "type");
+            return (Criteria) this;
+        }
+
+        public Criteria andDescIsNull() {
+            addCriterion("desc is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDescIsNotNull() {
+            addCriterion("desc is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDescEqualTo(String value) {
+            addCriterion("desc =", value, "desc");
+            return (Criteria) this;
+        }
+
+        public Criteria andDescNotEqualTo(String value) {
+            addCriterion("desc <>", value, "desc");
+            return (Criteria) this;
+        }
+
+        public Criteria andDescGreaterThan(String value) {
+            addCriterion("desc >", value, "desc");
+            return (Criteria) this;
+        }
+
+        public Criteria andDescGreaterThanOrEqualTo(String value) {
+            addCriterion("desc >=", value, "desc");
+            return (Criteria) this;
+        }
+
+        public Criteria andDescLessThan(String value) {
+            addCriterion("desc <", value, "desc");
+            return (Criteria) this;
+        }
+
+        public Criteria andDescLessThanOrEqualTo(String value) {
+            addCriterion("desc <=", value, "desc");
+            return (Criteria) this;
+        }
+
+        public Criteria andDescLike(String value) {
+            addCriterion("desc like", value, "desc");
+            return (Criteria) this;
+        }
+
+        public Criteria andDescNotLike(String value) {
+            addCriterion("desc not like", value, "desc");
+            return (Criteria) this;
+        }
+
+        public Criteria andDescIn(List<String> values) {
+            addCriterion("desc in", values, "desc");
+            return (Criteria) this;
+        }
+
+        public Criteria andDescNotIn(List<String> values) {
+            addCriterion("desc not in", values, "desc");
+            return (Criteria) this;
+        }
+
+        public Criteria andDescBetween(String value1, String value2) {
+            addCriterion("desc between", value1, value2, "desc");
+            return (Criteria) this;
+        }
+
+        public Criteria andDescNotBetween(String value1, String value2) {
+            addCriterion("desc not between", value1, value2, "desc");
             return (Criteria) this;
         }
     }

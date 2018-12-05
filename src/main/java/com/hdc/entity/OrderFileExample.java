@@ -1,6 +1,7 @@
 package com.hdc.entity;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class OrderFileExample {
@@ -134,52 +135,52 @@ public class OrderFileExample {
             return (Criteria) this;
         }
 
-        public Criteria andOrderFileIdEqualTo(Integer value) {
+        public Criteria andOrderFileIdEqualTo(Long value) {
             addCriterion("order_file_id =", value, "orderFileId");
             return (Criteria) this;
         }
 
-        public Criteria andOrderFileIdNotEqualTo(Integer value) {
+        public Criteria andOrderFileIdNotEqualTo(Long value) {
             addCriterion("order_file_id <>", value, "orderFileId");
             return (Criteria) this;
         }
 
-        public Criteria andOrderFileIdGreaterThan(Integer value) {
+        public Criteria andOrderFileIdGreaterThan(Long value) {
             addCriterion("order_file_id >", value, "orderFileId");
             return (Criteria) this;
         }
 
-        public Criteria andOrderFileIdGreaterThanOrEqualTo(Integer value) {
+        public Criteria andOrderFileIdGreaterThanOrEqualTo(Long value) {
             addCriterion("order_file_id >=", value, "orderFileId");
             return (Criteria) this;
         }
 
-        public Criteria andOrderFileIdLessThan(Integer value) {
+        public Criteria andOrderFileIdLessThan(Long value) {
             addCriterion("order_file_id <", value, "orderFileId");
             return (Criteria) this;
         }
 
-        public Criteria andOrderFileIdLessThanOrEqualTo(Integer value) {
+        public Criteria andOrderFileIdLessThanOrEqualTo(Long value) {
             addCriterion("order_file_id <=", value, "orderFileId");
             return (Criteria) this;
         }
 
-        public Criteria andOrderFileIdIn(List<Integer> values) {
+        public Criteria andOrderFileIdIn(List<Long> values) {
             addCriterion("order_file_id in", values, "orderFileId");
             return (Criteria) this;
         }
 
-        public Criteria andOrderFileIdNotIn(List<Integer> values) {
+        public Criteria andOrderFileIdNotIn(List<Long> values) {
             addCriterion("order_file_id not in", values, "orderFileId");
             return (Criteria) this;
         }
 
-        public Criteria andOrderFileIdBetween(Integer value1, Integer value2) {
+        public Criteria andOrderFileIdBetween(Long value1, Long value2) {
             addCriterion("order_file_id between", value1, value2, "orderFileId");
             return (Criteria) this;
         }
 
-        public Criteria andOrderFileIdNotBetween(Integer value1, Integer value2) {
+        public Criteria andOrderFileIdNotBetween(Long value1, Long value2) {
             addCriterion("order_file_id not between", value1, value2, "orderFileId");
             return (Criteria) this;
         }
@@ -241,6 +242,66 @@ public class OrderFileExample {
 
         public Criteria andOrderIdNotBetween(Long value1, Long value2) {
             addCriterion("order_id not between", value1, value2, "orderId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTeacherIdIsNull() {
+            addCriterion("teacher_id is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTeacherIdIsNotNull() {
+            addCriterion("teacher_id is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTeacherIdEqualTo(Integer value) {
+            addCriterion("teacher_id =", value, "teacherId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTeacherIdNotEqualTo(Integer value) {
+            addCriterion("teacher_id <>", value, "teacherId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTeacherIdGreaterThan(Integer value) {
+            addCriterion("teacher_id >", value, "teacherId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTeacherIdGreaterThanOrEqualTo(Integer value) {
+            addCriterion("teacher_id >=", value, "teacherId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTeacherIdLessThan(Integer value) {
+            addCriterion("teacher_id <", value, "teacherId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTeacherIdLessThanOrEqualTo(Integer value) {
+            addCriterion("teacher_id <=", value, "teacherId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTeacherIdIn(List<Integer> values) {
+            addCriterion("teacher_id in", values, "teacherId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTeacherIdNotIn(List<Integer> values) {
+            addCriterion("teacher_id not in", values, "teacherId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTeacherIdBetween(Integer value1, Integer value2) {
+            addCriterion("teacher_id between", value1, value2, "teacherId");
+            return (Criteria) this;
+        }
+
+        public Criteria andTeacherIdNotBetween(Integer value1, Integer value2) {
+            addCriterion("teacher_id not between", value1, value2, "teacherId");
             return (Criteria) this;
         }
 
@@ -314,73 +375,133 @@ public class OrderFileExample {
             return (Criteria) this;
         }
 
-        public Criteria andUploadFileNameIsNull() {
-            addCriterion("upload_file_name is null");
+        public Criteria andOriginFileNameIsNull() {
+            addCriterion("origin_file_name is null");
             return (Criteria) this;
         }
 
-        public Criteria andUploadFileNameIsNotNull() {
-            addCriterion("upload_file_name is not null");
+        public Criteria andOriginFileNameIsNotNull() {
+            addCriterion("origin_file_name is not null");
             return (Criteria) this;
         }
 
-        public Criteria andUploadFileNameEqualTo(String value) {
-            addCriterion("upload_file_name =", value, "uploadFileName");
+        public Criteria andOriginFileNameEqualTo(String value) {
+            addCriterion("origin_file_name =", value, "originFileName");
             return (Criteria) this;
         }
 
-        public Criteria andUploadFileNameNotEqualTo(String value) {
-            addCriterion("upload_file_name <>", value, "uploadFileName");
+        public Criteria andOriginFileNameNotEqualTo(String value) {
+            addCriterion("origin_file_name <>", value, "originFileName");
             return (Criteria) this;
         }
 
-        public Criteria andUploadFileNameGreaterThan(String value) {
-            addCriterion("upload_file_name >", value, "uploadFileName");
+        public Criteria andOriginFileNameGreaterThan(String value) {
+            addCriterion("origin_file_name >", value, "originFileName");
             return (Criteria) this;
         }
 
-        public Criteria andUploadFileNameGreaterThanOrEqualTo(String value) {
-            addCriterion("upload_file_name >=", value, "uploadFileName");
+        public Criteria andOriginFileNameGreaterThanOrEqualTo(String value) {
+            addCriterion("origin_file_name >=", value, "originFileName");
             return (Criteria) this;
         }
 
-        public Criteria andUploadFileNameLessThan(String value) {
-            addCriterion("upload_file_name <", value, "uploadFileName");
+        public Criteria andOriginFileNameLessThan(String value) {
+            addCriterion("origin_file_name <", value, "originFileName");
             return (Criteria) this;
         }
 
-        public Criteria andUploadFileNameLessThanOrEqualTo(String value) {
-            addCriterion("upload_file_name <=", value, "uploadFileName");
+        public Criteria andOriginFileNameLessThanOrEqualTo(String value) {
+            addCriterion("origin_file_name <=", value, "originFileName");
             return (Criteria) this;
         }
 
-        public Criteria andUploadFileNameLike(String value) {
-            addCriterion("upload_file_name like", value, "uploadFileName");
+        public Criteria andOriginFileNameLike(String value) {
+            addCriterion("origin_file_name like", value, "originFileName");
             return (Criteria) this;
         }
 
-        public Criteria andUploadFileNameNotLike(String value) {
-            addCriterion("upload_file_name not like", value, "uploadFileName");
+        public Criteria andOriginFileNameNotLike(String value) {
+            addCriterion("origin_file_name not like", value, "originFileName");
             return (Criteria) this;
         }
 
-        public Criteria andUploadFileNameIn(List<String> values) {
-            addCriterion("upload_file_name in", values, "uploadFileName");
+        public Criteria andOriginFileNameIn(List<String> values) {
+            addCriterion("origin_file_name in", values, "originFileName");
             return (Criteria) this;
         }
 
-        public Criteria andUploadFileNameNotIn(List<String> values) {
-            addCriterion("upload_file_name not in", values, "uploadFileName");
+        public Criteria andOriginFileNameNotIn(List<String> values) {
+            addCriterion("origin_file_name not in", values, "originFileName");
             return (Criteria) this;
         }
 
-        public Criteria andUploadFileNameBetween(String value1, String value2) {
-            addCriterion("upload_file_name between", value1, value2, "uploadFileName");
+        public Criteria andOriginFileNameBetween(String value1, String value2) {
+            addCriterion("origin_file_name between", value1, value2, "originFileName");
             return (Criteria) this;
         }
 
-        public Criteria andUploadFileNameNotBetween(String value1, String value2) {
-            addCriterion("upload_file_name not between", value1, value2, "uploadFileName");
+        public Criteria andOriginFileNameNotBetween(String value1, String value2) {
+            addCriterion("origin_file_name not between", value1, value2, "originFileName");
+            return (Criteria) this;
+        }
+
+        public Criteria andSizeIsNull() {
+            addCriterion("size is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSizeIsNotNull() {
+            addCriterion("size is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSizeEqualTo(Long value) {
+            addCriterion("size =", value, "size");
+            return (Criteria) this;
+        }
+
+        public Criteria andSizeNotEqualTo(Long value) {
+            addCriterion("size <>", value, "size");
+            return (Criteria) this;
+        }
+
+        public Criteria andSizeGreaterThan(Long value) {
+            addCriterion("size >", value, "size");
+            return (Criteria) this;
+        }
+
+        public Criteria andSizeGreaterThanOrEqualTo(Long value) {
+            addCriterion("size >=", value, "size");
+            return (Criteria) this;
+        }
+
+        public Criteria andSizeLessThan(Long value) {
+            addCriterion("size <", value, "size");
+            return (Criteria) this;
+        }
+
+        public Criteria andSizeLessThanOrEqualTo(Long value) {
+            addCriterion("size <=", value, "size");
+            return (Criteria) this;
+        }
+
+        public Criteria andSizeIn(List<Long> values) {
+            addCriterion("size in", values, "size");
+            return (Criteria) this;
+        }
+
+        public Criteria andSizeNotIn(List<Long> values) {
+            addCriterion("size not in", values, "size");
+            return (Criteria) this;
+        }
+
+        public Criteria andSizeBetween(Long value1, Long value2) {
+            addCriterion("size between", value1, value2, "size");
+            return (Criteria) this;
+        }
+
+        public Criteria andSizeNotBetween(Long value1, Long value2) {
+            addCriterion("size not between", value1, value2, "size");
             return (Criteria) this;
         }
 
@@ -451,6 +572,66 @@ public class OrderFileExample {
 
         public Criteria andFileUrlNotBetween(String value1, String value2) {
             addCriterion("file_url not between", value1, value2, "fileUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeIsNull() {
+            addCriterion("create_time is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeIsNotNull() {
+            addCriterion("create_time is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeEqualTo(Date value) {
+            addCriterion("create_time =", value, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeNotEqualTo(Date value) {
+            addCriterion("create_time <>", value, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeGreaterThan(Date value) {
+            addCriterion("create_time >", value, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeGreaterThanOrEqualTo(Date value) {
+            addCriterion("create_time >=", value, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeLessThan(Date value) {
+            addCriterion("create_time <", value, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeLessThanOrEqualTo(Date value) {
+            addCriterion("create_time <=", value, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeIn(List<Date> values) {
+            addCriterion("create_time in", values, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeNotIn(List<Date> values) {
+            addCriterion("create_time not in", values, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeBetween(Date value1, Date value2) {
+            addCriterion("create_time between", value1, value2, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeNotBetween(Date value1, Date value2) {
+            addCriterion("create_time not between", value1, value2, "createTime");
             return (Criteria) this;
         }
     }

@@ -46,7 +46,7 @@ public class AdminView {
 
     @RequestMapping(value = "/userInfoPage", method = RequestMethod.GET)
     public String userInfoView() {
-        return "userInfoPage";
+        return "admin/userInfoPage";
     }
 
     @RequestMapping(value = "/scoreDeclaration", method = RequestMethod.GET)

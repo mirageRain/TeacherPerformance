@@ -6,25 +6,27 @@ import java.io.Serializable;
  * @author 
  */
 public class SystemConfig implements Serializable {
-    /**
-     * 系统配置ID
-     */
     private Integer systemConfigId;
 
     /**
-     * 系统是否开启：0关闭，1开启
+     * 配置的KEY值
      */
-    private Byte systemOpen;
+    private String name;
 
     /**
-     * 系统当前年份
+     * 配置的value值
      */
-    private Integer systemYear;
+    private String value;
 
     /**
-     * 系统当前学期
+     * 配置的分类
      */
-    private Integer systemSemester;
+    private String type;
+
+    /**
+     * 配置的描述
+     */
+    private String desc;
 
     private static final long serialVersionUID = 1L;
 
@@ -36,28 +38,36 @@ public class SystemConfig implements Serializable {
         this.systemConfigId = systemConfigId;
     }
 
-    public Byte getSystemOpen() {
-        return systemOpen;
+    public String getName() {
+        return name;
     }
 
-    public void setSystemOpen(Byte systemOpen) {
-        this.systemOpen = systemOpen;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public Integer getSystemYear() {
-        return systemYear;
+    public String getValue() {
+        return value;
     }
 
-    public void setSystemYear(Integer systemYear) {
-        this.systemYear = systemYear;
+    public void setValue(String value) {
+        this.value = value;
     }
 
-    public Integer getSystemSemester() {
-        return systemSemester;
+    public String getType() {
+        return type;
     }
 
-    public void setSystemSemester(Integer systemSemester) {
-        this.systemSemester = systemSemester;
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
     }
 
     @Override
@@ -73,9 +83,10 @@ public class SystemConfig implements Serializable {
         }
         SystemConfig other = (SystemConfig) that;
         return (this.getSystemConfigId() == null ? other.getSystemConfigId() == null : this.getSystemConfigId().equals(other.getSystemConfigId()))
-            && (this.getSystemOpen() == null ? other.getSystemOpen() == null : this.getSystemOpen().equals(other.getSystemOpen()))
-            && (this.getSystemYear() == null ? other.getSystemYear() == null : this.getSystemYear().equals(other.getSystemYear()))
-            && (this.getSystemSemester() == null ? other.getSystemSemester() == null : this.getSystemSemester().equals(other.getSystemSemester()));
+            && (this.getName() == null ? other.getName() == null : this.getName().equals(other.getName()))
+            && (this.getValue() == null ? other.getValue() == null : this.getValue().equals(other.getValue()))
+            && (this.getType() == null ? other.getType() == null : this.getType().equals(other.getType()))
+            && (this.getDesc() == null ? other.getDesc() == null : this.getDesc().equals(other.getDesc()));
     }
 
     @Override
@@ -83,9 +94,10 @@ public class SystemConfig implements Serializable {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((getSystemConfigId() == null) ? 0 : getSystemConfigId().hashCode());
-        result = prime * result + ((getSystemOpen() == null) ? 0 : getSystemOpen().hashCode());
-        result = prime * result + ((getSystemYear() == null) ? 0 : getSystemYear().hashCode());
-        result = prime * result + ((getSystemSemester() == null) ? 0 : getSystemSemester().hashCode());
+        result = prime * result + ((getName() == null) ? 0 : getName().hashCode());
+        result = prime * result + ((getValue() == null) ? 0 : getValue().hashCode());
+        result = prime * result + ((getType() == null) ? 0 : getType().hashCode());
+        result = prime * result + ((getDesc() == null) ? 0 : getDesc().hashCode());
         return result;
     }
 
@@ -96,9 +108,10 @@ public class SystemConfig implements Serializable {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", systemConfigId=").append(systemConfigId);
-        sb.append(", systemOpen=").append(systemOpen);
-        sb.append(", systemYear=").append(systemYear);
-        sb.append(", systemSemester=").append(systemSemester);
+        sb.append(", name=").append(name);
+        sb.append(", value=").append(value);
+        sb.append(", type=").append(type);
+        sb.append(", desc=").append(desc);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

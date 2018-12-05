@@ -10,7 +10,7 @@ public interface OrderFileDao {
 
     int deleteByExample(OrderFileExample example);
 
-    int deleteByPrimaryKey(Integer orderFileId);
+    int deleteByPrimaryKey(Long orderFileId);
 
     int insert(OrderFile record);
 
@@ -18,7 +18,7 @@ public interface OrderFileDao {
 
     List<OrderFile> selectByExample(OrderFileExample example);
 
-    OrderFile selectByPrimaryKey(Integer orderFileId);
+    OrderFile selectByPrimaryKey(Long orderFileId);
 
     int updateByExampleSelective(@Param("record") OrderFile record, @Param("example") OrderFileExample example);
 
@@ -27,4 +27,6 @@ public interface OrderFileDao {
     int updateByPrimaryKeySelective(OrderFile record);
 
     int updateByPrimaryKey(OrderFile record);
+
+    OrderFile selectByOrderId(Long orderId);
 }

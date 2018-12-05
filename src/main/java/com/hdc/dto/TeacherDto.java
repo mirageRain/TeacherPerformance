@@ -49,6 +49,10 @@ public class TeacherDto implements Serializable {
     @Pattern(regexp = "^[\\S]{6,12}$", message = "密码格式不正确")
     private String password;
 
+    @Pattern(regexp = "^[\\d]{1,10}$", message = "工号格式不正确，应为1到10为数字")
+    private String employeeId;
+
+
 
 
     private static final long serialVersionUID = 1L;
@@ -107,5 +111,13 @@ public class TeacherDto implements Serializable {
 
     public void setTeacherName(String teacherName) {
         this.teacherName = teacherName;
+    }
+
+    public String getEmployeeId() {
+        return employeeId;
+    }
+
+    public void setEmployeeId(String employeeId) {
+        this.employeeId = employeeId;
     }
 }

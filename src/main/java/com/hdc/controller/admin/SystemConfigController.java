@@ -1,7 +1,7 @@
 package com.hdc.controller.admin;
 
 
-import com.hdc.dto.SystemConfigDto;
+import com.hdc.dto.SystemBaseConfigDto;
 import com.hdc.entity.*;
 import com.hdc.service.SystemConfigService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,15 +28,13 @@ public class SystemConfigController {
     @GetMapping("")
     public Map<String, Object> select() {
 
-        //只设置系统设置表中的第一条
-        Integer defaultId = 1;
-        SystemConfig systemConfig;
+        SystemBaseConfig systemBaseConfig;
         Map<String, Object> map = new HashMap<>();
 
 
         //返回查询条数
         try {
-            systemConfig = systemConfigService.selectByPrimaryKey(defaultId);
+            systemBaseConfig = systemConfigService.getSystemBaseConfig();
         } catch (Exception e) {
             map.put("code", 500);
             map.put("msg", "服务器繁忙");
@@ -46,23 +44,20 @@ public class SystemConfigController {
         //封装JSON
         map.put("code", 200);
         map.put("msg", "请求成功");
-        map.put("data", systemConfig);
+        map.put("data", systemBaseConfig);
         return map;
     }
 
     /**
      * 更新系统设置信息
      *
-     * @param systemConfigDto 系统设置信息
+     * @param systemBaseConfigDto 系统设置信息
      * @param errors  检查之后返回的错误数据
      * @return code为200时为插入成功，其它情况为更新失败
      */
     @PutMapping("")
-    public Map<String, Object> update(@Valid @RequestBody(required = false) SystemConfigDto systemConfigDto, BindingResult errors) {
+    public Map<String, Object> update(@Valid @RequestBody(required = false) SystemBaseConfigDto systemBaseConfigDto, BindingResult errors) {
 
-        //只设置系统设置表中的第一条
-        Integer defaultId = 1;
-        SystemConfig systemConfig = new SystemConfig();
         Map<String, Object> map = new HashMap<>();
 
 
@@ -75,11 +70,7 @@ public class SystemConfigController {
 
         //执行更新操作
         try {
-            systemConfig.setSystemConfigId(defaultId);
-            systemConfig.setSystemOpen(systemConfigDto.getSystemOpen());
-            systemConfig.setSystemSemester(systemConfigDto.getSystemSemester());
-            systemConfig.setSystemYear(systemConfigDto.getSystemYear());
-            systemConfigService.updateByPrimaryKey(systemConfig);
+            systemConfigService.updateBySystemBaseConfigDto(systemBaseConfigDto);
         } catch (Exception e) {
             map.put("code", 500);
             map.put("msg", "更新失败");

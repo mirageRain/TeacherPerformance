@@ -1,9 +1,9 @@
 {
 	"contentManagement": [
 		{
-			"title": "评分标准",
+			"title": "业绩申报表<span class='layui-badge-dot layui-bg-orange'></span>",
 			"icon": "&#xe630;",
-			"href": "teacher/gradingStandard",
+			"href": "teacher/declarationTablePage",
 			"spread": false
 		},
 		{
@@ -13,21 +13,21 @@
 			"spread": false,
 			"children": [
 				{
-					"title": "新业绩评分申报",
+					"title": "待认证审核单",
+					"icon": "&#xe609;",
+					"href": "teacher/certifyingDeclaration",
+					"spread": false
+				},
+				{
+					"title": "已认证审核单",
+					"icon": "&#xe609;",
+					"href": "teacher/certifiedDeclaration",
+					"spread": false
+				},
+				{
+					"title": "退回审核单",
 					"icon": "&#xe61c;",
-					"href": "teacher/scoreDeclaration",
-					"spread": false
-				},
-				{
-					"title": "待认证评分",
-					"icon": "&#xe609;",
-					"href": "teacher/certifyingScore",
-					"spread": false
-				},
-				{
-					"title": "已认证评分",
-					"icon": "&#xe609;",
-					"href": "teacher/certifiedScore",
+					"href": "teacher/returnDeclaration",
 					"spread": false
 				},
 				{
@@ -47,7 +47,7 @@
 				{
 					"title": "个人信息",
 					"icon": "&#xe61c;",
-					"href": "teacher/userInfo",
+					"href": "teacher/userInfoPage",
 					"spread": false
 				},
 				{

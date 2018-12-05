@@ -7,6 +7,47 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 @RequestMapping("/audit")
 public class AuditView {
+
+	@RequestMapping(value = "/certifyingDeclaration", method = RequestMethod.GET)
+	public String certifyingDeclarationView() {
+		return "audit/certifyingDeclaration";
+	}
+
+	@RequestMapping(value = "/certifyingDeclarationEdit", method = RequestMethod.GET)
+	public String certifyingDeclarationEditView() {
+		return "audit/certifyingDeclarationEdit";
+	}
+
+	@RequestMapping(value = "/certifiedDeclaration", method = RequestMethod.GET)
+	public String certifiedDeclarationView() {
+		return "audit/certifiedDeclaration";
+	}
+
+	@RequestMapping(value = "/certifiedDeclarationLook", method = RequestMethod.GET)
+	public String certifiedDeclarationLookView() {
+		return "audit/certifiedDeclarationLook";
+	}
+
+	@RequestMapping(value = "/certifiedDeclarationEdit", method = RequestMethod.GET)
+	public String certifiedDeclarationEditView() {
+		return "audit/certifiedDeclarationEdit";
+	}
+
+	@RequestMapping(value = "/returnDeclaration", method = RequestMethod.GET)
+	public String returnDeclarationView() {
+		return "audit/returnDeclaration";
+	}
+
+	@RequestMapping(value = "/returnDeclarationLook", method = RequestMethod.GET)
+	public String returnDeclarationLookView() {
+		return "audit/returnDeclarationLook";
+	}
+
+	@RequestMapping(value = "/returnDeclarationEdit", method = RequestMethod.GET)
+	public String returnDeclarationEditView() {
+		return "audit/returnDeclarationEdit";
+	}
+
 	
 	@RequestMapping(value = "/certifiedScore", method = RequestMethod.GET)
 	public String certifiedScoreView() {
@@ -20,7 +61,7 @@ public class AuditView {
 	
 	@RequestMapping(value = "/changePwd", method = RequestMethod.GET)
 	public String changePwdView() {
-		return "audit/changePwd";
+		return "changePwd";
 	}
 	
 	@RequestMapping(value = "/gradingStandard", method = RequestMethod.GET)
@@ -47,7 +88,7 @@ public class AuditView {
 	
 	@RequestMapping(value = "/userInfo", method = RequestMethod.GET)
 	public String userInfoView() {
-		return "audit/userInfo";
+		return "audit/userInfoPage";
 	}
 	
 	@RequestMapping(value = "/scoreDeclaration", method = RequestMethod.GET)

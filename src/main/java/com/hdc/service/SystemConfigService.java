@@ -1,5 +1,7 @@
 package com.hdc.service;
 
+import com.hdc.dto.SystemBaseConfigDto;
+import com.hdc.entity.SystemBaseConfig;
 import com.hdc.entity.SystemConfig;
 import com.hdc.entity.SystemConfigExample;
 import org.apache.ibatis.annotations.Param;
@@ -30,4 +32,8 @@ public interface SystemConfigService {
 	int updateByPrimaryKeySelective(SystemConfig record);
 
 	int updateByPrimaryKey(SystemConfig record);
+
+	SystemBaseConfig getSystemBaseConfig();
+
+	void updateBySystemBaseConfigDto(SystemBaseConfigDto systemBaseConfigDto);
 }

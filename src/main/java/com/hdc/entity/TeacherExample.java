@@ -314,6 +314,76 @@ public class TeacherExample {
             return (Criteria) this;
         }
 
+        public Criteria andEmployeeIdIsNull() {
+            addCriterion("employee_id is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andEmployeeIdIsNotNull() {
+            addCriterion("employee_id is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andEmployeeIdEqualTo(String value) {
+            addCriterion("employee_id =", value, "employeeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andEmployeeIdNotEqualTo(String value) {
+            addCriterion("employee_id <>", value, "employeeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andEmployeeIdGreaterThan(String value) {
+            addCriterion("employee_id >", value, "employeeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andEmployeeIdGreaterThanOrEqualTo(String value) {
+            addCriterion("employee_id >=", value, "employeeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andEmployeeIdLessThan(String value) {
+            addCriterion("employee_id <", value, "employeeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andEmployeeIdLessThanOrEqualTo(String value) {
+            addCriterion("employee_id <=", value, "employeeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andEmployeeIdLike(String value) {
+            addCriterion("employee_id like", value, "employeeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andEmployeeIdNotLike(String value) {
+            addCriterion("employee_id not like", value, "employeeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andEmployeeIdIn(List<String> values) {
+            addCriterion("employee_id in", values, "employeeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andEmployeeIdNotIn(List<String> values) {
+            addCriterion("employee_id not in", values, "employeeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andEmployeeIdBetween(String value1, String value2) {
+            addCriterion("employee_id between", value1, value2, "employeeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andEmployeeIdNotBetween(String value1, String value2) {
+            addCriterion("employee_id not between", value1, value2, "employeeId");
+            return (Criteria) this;
+        }
+
         public Criteria andTeacherTitleIdIsNull() {
             addCriterion("teacher_title_id is null");
             return (Criteria) this;

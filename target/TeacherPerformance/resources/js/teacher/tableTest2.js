@@ -207,7 +207,7 @@ layui.use(['form', 'element', 'layer', 'jquery'], function () {
                     content+="<tr>";
                     var gradingStandard = tableList[i].observationPointList[j].gradingStandardList[k];
                     //第一分类第一项
-                    if(j==0){
+                    if(j==0&&k==0){
                         content=content+'<td rowspan="'+tableList[i].gradingStandardListSize+'">'+(i+1)+'.'+tableList[i].content+'</td>';
                     }
                     //第二分类第一项
@@ -215,7 +215,7 @@ layui.use(['form', 'element', 'layer', 'jquery'], function () {
                         content=content+'<td rowspan="'+tableList[i].observationPointList[j].gradingStandardList.length+'">'+(i+1)+'.'+(j+1)+' '+tableList[i].observationPointList[j].content+'</td>';
                     }
                       // '<a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>'
-                      //   '<a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="del">删除</a>'
+                      //   '<a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="del">删除</a>'C
                       //   '<a class="layui-btn layui-btn-xs layui-btn-primary" lay-event="look">预览</a>'
                     content=content+'<td>'+(i+1)+'.'+(j+1)+'.'+(k+1)+' 评分标准：'+gradingStandard.content+'</td>'
                     content=content+'<td>'+gradingStandard.gradingBasis+'</td>';

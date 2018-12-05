@@ -1,5 +1,6 @@
 package com.hdc.dao;
 
+import com.hdc.entity.SystemBaseConfig;
 import com.hdc.entity.SystemConfig;
 import com.hdc.entity.SystemConfigExample;
 import java.util.List;
@@ -27,4 +28,9 @@ public interface SystemConfigDao {
     int updateByPrimaryKeySelective(SystemConfig record);
 
     int updateByPrimaryKey(SystemConfig record);
+
+    String selectValueByName(String name);
+
+    int updateValueByName(SystemConfig record);
+
 }

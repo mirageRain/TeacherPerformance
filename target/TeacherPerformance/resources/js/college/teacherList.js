@@ -26,6 +26,7 @@ layui.use(['form', 'layer', 'laydate', 'table', 'laytpl'], function () {
             {field: 'teacherId', title: '教师ID', width: 100, align: "center", sort: true},
             {field: 'teacherName', title: '教师名称', align: "center", sort: true},
             {field: 'username', title: '教师账号', align: "center", sort: true},
+            {field: 'employeeId', title: '教师工号', align: "center", sort: true},
             {field: 'teacherTitleName', title: '教师职称', align: "center", sort: true},
             {title: '操作', width: 220, templet: '#teacherListBar', fixed: "right", align: "center"}
         ]]
@@ -133,6 +134,7 @@ layui.use(['form', 'layer', 'laydate', 'table', 'laytpl'], function () {
 
                     body.find("#username").val(data.username);
                     body.find("#teacherName").val(data.teacherName);
+                    body.find("#employeeId").val(data.employeeId);
                     body.find("#teacherId").val(data.teacherId);
 
                 }

@@ -1,78 +1,84 @@
-var form, $,areaData;
-$('#userFace').attr('src','../resources/images/face.jpg');
-layui.config({
-    base : "../../js/"
-}).extend({
-    "address" : "address"
-})
-layui.use(['form','layer','upload','laydate',"address"],function(){
+layui.use(['form','layer','layedit','laydate','upload'],function(){
 
-    form = layui.form;
-    $ = layui.jquery;
-    var layer = parent.layer === undefined ? layui.layer : top.layer,
+    var form = layui.form,
+        laypage = layui.laypage,
         upload = layui.upload,
+        layedit = layui.layedit,
         laydate = layui.laydate,
-        address = layui.address;
-   
-    //上传头像
-    upload.render({
-        elem: '.userFaceBtn',
-        url: '../resources/json/userface.json',
-        method : "get",  //此处是为了演示之用，实际使用中请将此删除，默认用post方式提交
-        done: function(res, index, upload){
-        	console.log("ok");
-            var num = parseInt(4*Math.random());  //生成0-4的随机数，随机显示一个头像信息
-            $('#userFace').attr('src',res.data[num].src);
-            window.sessionStorage.setItem('userFace',res.data[num].src);
-        }
+        $ = layui.jquery;
+
+    function initData(){
+        $.ajax({
+            "url": "/userInfo",
+            "contentType": "application/json",
+            "type": "get",
+            "error": function () {
+                top.layer.msg("服务器繁忙！");
+            },
+            "success": function (result) {
+                if (result.code == 200) {
+                    $("#displayName").val(result.data.displayName);
+                    $("#phone").val(result.data.phone);
+                    $("#email").val(result.data.email);
+                    form.render();
+                } else {
+                    top.layer.msg(result.msg);
+                }
+            }
+        });
+
+        $.ajax({
+            "url": "/teacher/info",
+            "contentType": "application/json",
+            "type": "get",
+            "error": function () {
+                top.layer.msg("服务器繁忙！");
+            },
+            "success": function (result) {
+                if (result.code == 200) {
+                    $("#collegeName").val(result.data.collegeName);
+                    $("#teacherTitleName").val(result.data.teacherTitleName);
+                    $("#employeeId").val(result.data.employeeId);
+                    form.render();
+                } else {
+                    top.layer.msg(result.msg);
+                }
+            }
+        });
+    }
+    initData();
+
+    form.on("submit(updateUserInfo)", function (data) {
+        var index = top.layer.msg('数据提交中，请稍候', {icon: 16, time: false, shade: 0.1});
+        //将学院信息封装成JSON数据
+        var userInfoData = {};
+        userInfoData.displayName = $("#displayName").val();
+        userInfoData.phone = $("#phone").val();
+        userInfoData.email = $("#email").val();
+
+        $.ajax({
+            "url": "/userInfo",
+            "data": JSON.stringify(userInfoData),
+            "contentType": "application/json",
+            "type": "put",
+            "error": function () {
+                top.layer.msg("服务器繁忙！");
+            },
+            "success": function (result) {
+                if (result.code == 200) {
+                    top.layer.close(index);
+                    location.reload();
+                    top.layer.msg("用户信息更新成功！");
+                } else {
+                    top.layer.msg(result.msg);
+                }
+            }
+        });
+        return false;
     });
 
-    //添加验证规则
-    form.verify({
-        userBirthday : function(value){
-            if(!/^(\d{4})[\u4e00-\u9fa5]|[-\/](\d{1}|0\d{1}|1[0-2])([\u4e00-\u9fa5]|[-\/](\d{1}|0\d{1}|[1-2][0-9]|3[0-1]))*$/.test(value)){
-                return "出生日期格式不正确！";
-            }
-        }
-    })
-   
-    //提交个人资料
-    form.on("submit(changeUser)",function(data){
-        var index = layer.msg('提交中，请稍候',{icon: 16,time:false,shade:0.8});
-        //将填写的用户信息存到session以便下次调取
-        var key,userInfoHtml = '';
-        userInfoHtml = {
-            'realName' : $(".realName").val(),
-            'sex' : data.field.sex,
-            'userPhone' : $(".userPhone").val(),
-            'userBirthday' : $(".userBirthday").val(),
-            'province' : data.field.province,
-            'city' : data.field.city,
-            'area' : data.field.area,
-            'userEmail' : $(".userEmail").val(),
-            'myself' : $(".myself").val()
-        };
-        for(key in data.field){
-            if(key.indexOf("like") != -1){
-                userInfoHtml[key] = "on";
-            }
-        }
-        window.sessionStorage.setItem("userInfo",JSON.stringify(userInfoHtml));
-        setTimeout(function(){
-            layer.close(index);
-            layer.msg("提交成功！");
-        },2000);
-        return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
-    })
+    $("#reset").click(function(){
+        initData();
+    });
 
-    //修改密码
-    form.on("submit(changePwd)",function(data){
-        var index = layer.msg('提交中，请稍候',{icon: 16,time:false,shade:0.8});
-        setTimeout(function(){
-            layer.close(index);
-            layer.msg("密码修改成功！");
-            $(".pwd").val('');
-        },2000);
-        return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
-    })
 })

@@ -64,6 +64,10 @@ layui.use(['form', 'layer', 'layedit', 'laydate', 'upload'], function () {
             if (meg != null && meg != "")
                 return meg;
         }
+        , employeeId: [
+            /^[\d]{1,10}$/
+            , '工号必须为1到10为的数字'
+        ]
         , password: [
             /^[\S]{6,12}$/
             , '密码必须6到12位，且不能出现空格'
@@ -80,6 +84,7 @@ layui.use(['form', 'layer', 'layedit', 'laydate', 'upload'], function () {
         teacherData.username = $("#username").val();
         teacherData.password = $("#password").val();
         teacherData.teacherName = $("#teacherName").val();
+        teacherData.employeeId = $("#employeeId").val();
         teacherData.teacherTitleId = $("#teacherTitle").val();
         $.ajax({
             "url": "/college/teacher",

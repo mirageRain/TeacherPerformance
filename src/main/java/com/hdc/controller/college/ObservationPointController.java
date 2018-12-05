@@ -3,11 +3,9 @@ package com.hdc.controller.college;
 
 import com.google.common.base.CaseFormat;
 import com.hdc.dto.ObservationPointDto;
-import com.hdc.entity.Page;
-import com.hdc.entity.ObservationPoint;
-import com.hdc.entity.ObservationPointExample;
-import com.hdc.entity.SystemConfig;
+import com.hdc.entity.*;
 import com.hdc.security.MyUser;
+import com.hdc.service.CollegeService;
 import com.hdc.service.ObservationPointService;
 import com.hdc.service.SystemConfigService;
 import org.apache.commons.lang.StringUtils;
@@ -29,6 +27,9 @@ public class ObservationPointController {
     private ObservationPointService observationPointService;
 
     @Autowired
+    private CollegeService collegeService;
+
+    @Autowired
     private SystemConfigService systemConfigService;
 
     /**
@@ -41,19 +42,28 @@ public class ObservationPointController {
     @GetMapping("")
     public Map<String, Object> selectAll(Page page, String content, Integer evaluationIndexId) {
 
-        //获取登录的用户ID
-        MyUser userDetails = (MyUser) SecurityContextHolder.getContext()
-                .getAuthentication()
-                .getPrincipal();
-        Integer collegeId = userDetails.getMyUserId();
 
         long count = 0;
-        Integer defaultSystemConfigId =1;
         List<ObservationPoint> list;
         ObservationPointExample example = new ObservationPointExample();
         ObservationPointExample.Criteria criteria = example.createCriteria();
         Map<String, Object> map = new HashMap<>();
-        SystemConfig systemConfig;
+        SystemBaseConfig systemConfig;
+
+        Integer collegeId;
+        //获取登录的用户ID
+        try {
+            MyUser userDetails = (MyUser) SecurityContextHolder.getContext()
+                    .getAuthentication()
+                    .getPrincipal();
+            CollegeExample collegeExample = new CollegeExample();
+            collegeExample.createCriteria().andUserIdEqualTo(userDetails.getMyUserId());
+            collegeId =collegeService.selectByExample(collegeExample).get(0).getCollegeId();
+        } catch (Exception e) {
+            map.put("code", 500);
+            map.put("msg", "数据格式错误");
+            return map;
+        }
 
         //添加查询条件
         if (StringUtils.isNotBlank(content)) {
@@ -65,7 +75,7 @@ public class ObservationPointController {
         }
 
         try {
-            systemConfig = systemConfigService.selectByPrimaryKey(defaultSystemConfigId);
+            systemConfig = systemConfigService.getSystemBaseConfig();
             criteria.andYearEqualTo(systemConfig.getSystemYear());
             criteria.andSemesterEqualTo(systemConfig.getSystemSemester());
             criteria.andCollegeIdEqualTo(collegeId);
@@ -126,16 +136,26 @@ public class ObservationPointController {
     @GetMapping("/testObservationPointContent")
     public Map<String, Object> testObservationPointName(String observationPointContent, Integer observationPointId) {
 
-        //获取登录的用户ID
-        MyUser userDetails = (MyUser) SecurityContextHolder.getContext()
-                .getAuthentication()
-                .getPrincipal();
-        Integer collegeId = userDetails.getMyUserId();
 
         long count = 0;
         ObservationPointExample example = new ObservationPointExample();
         ObservationPointExample.Criteria criteria = example.createCriteria();
         Map<String, Object> map = new HashMap<>();
+
+        Integer collegeId;
+        //获取登录的用户ID
+        try {
+            MyUser userDetails = (MyUser) SecurityContextHolder.getContext()
+                    .getAuthentication()
+                    .getPrincipal();
+            CollegeExample collegeExample = new CollegeExample();
+            collegeExample.createCriteria().andUserIdEqualTo(userDetails.getMyUserId());
+            collegeId =collegeService.selectByExample(collegeExample).get(0).getCollegeId();
+        } catch (Exception e) {
+            map.put("code", 500);
+            map.put("msg", "数据格式错误");
+            return map;
+        }
 
         //添加查询条件
         if (StringUtils.isNotBlank(observationPointContent)) {
@@ -191,17 +211,27 @@ public class ObservationPointController {
     @PostMapping("")
     public Map<String, Object> insert(@Valid @RequestBody(required = false) ObservationPointDto observationPointDto, BindingResult errors) {
 
-        //获取登录的用户ID
-        MyUser userDetails = (MyUser) SecurityContextHolder.getContext()
-                .getAuthentication()
-                .getPrincipal();
-        Integer collegeId = userDetails.getMyUserId();
 
         ObservationPoint observationPoint = new ObservationPoint();
         Map<String, Object> map = new HashMap<>();
-        Integer defaultSystemConfigId =1;
         String observationPointContent;
-        SystemConfig systemConfig;
+        SystemBaseConfig systemConfig;
+
+        Integer collegeId;
+        //获取登录的用户ID
+        try {
+            MyUser userDetails = (MyUser) SecurityContextHolder.getContext()
+                    .getAuthentication()
+                    .getPrincipal();
+            CollegeExample collegeExample = new CollegeExample();
+            collegeExample.createCriteria().andUserIdEqualTo(userDetails.getMyUserId());
+            collegeId =collegeService.selectByExample(collegeExample).get(0).getCollegeId();
+        } catch (Exception e) {
+            map.put("code", 500);
+            map.put("msg", "数据格式错误");
+            return map;
+        }
+
         //检查错误，封装错误信息
         if (errors.getErrorCount() > 0) {
             map.put("code", 500);
@@ -211,7 +241,7 @@ public class ObservationPointController {
 
         //赋值
         try {
-            systemConfig = systemConfigService.selectByPrimaryKey(defaultSystemConfigId);
+            systemConfig = systemConfigService.getSystemBaseConfig();
             observationPointContent = observationPointDto.getContent();
 
             observationPoint.setContent(observationPointContent);
@@ -261,20 +291,28 @@ public class ObservationPointController {
      */
     @PutMapping("")
     public Map<String, Object> update(@Valid @RequestBody(required = false) ObservationPointDto observationPointDto, BindingResult errors) {
-
-        //获取登录的用户ID
-        MyUser userDetails = (MyUser) SecurityContextHolder.getContext()
-                .getAuthentication()
-                .getPrincipal();
-        Integer collegeId = userDetails.getMyUserId();
-        Integer defaultSystemConfigId =1;
         String observationPointContent;
-        SystemConfig systemConfig;
+        SystemBaseConfig systemConfig;
 
         ObservationPoint observationPoint = new ObservationPoint();
         Map<String, Object> map = new HashMap<>();
         Integer observationPointId;
         String observationPointName,desc;
+
+        Integer collegeId;
+        //获取登录的用户ID
+        try {
+            MyUser userDetails = (MyUser) SecurityContextHolder.getContext()
+                    .getAuthentication()
+                    .getPrincipal();
+            CollegeExample collegeExample = new CollegeExample();
+            collegeExample.createCriteria().andUserIdEqualTo(userDetails.getMyUserId());
+            collegeId =collegeService.selectByExample(collegeExample).get(0).getCollegeId();
+        } catch (Exception e) {
+            map.put("code", 500);
+            map.put("msg", "数据格式错误");
+            return map;
+        }
 
         //检查错误，封装错误信息
         if (errors.getErrorCount() > 0) {
@@ -285,7 +323,7 @@ public class ObservationPointController {
 
         //赋值
         try {
-            systemConfig = systemConfigService.selectByPrimaryKey(defaultSystemConfigId);
+            systemConfig = systemConfigService.getSystemBaseConfig();
             observationPointContent = observationPointDto.getContent();
 
             observationPoint.setObservationPointId(observationPointDto.getObservationPointId());

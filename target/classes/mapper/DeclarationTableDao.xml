@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hdc.dao.DeclarationTableDao">
+  <resultMap id="BaseResultMap" type="com.hdc.entity.DeclarationTable">
+    <id column="grading_standard_id" jdbcType="INTEGER" property="gradingStandardId" />
+    <result column="grading_standard_content" jdbcType="VARCHAR" property="gradingStandardContent" />
+    <result column="observation_point_id" jdbcType="INTEGER" property="observationPointId" />
+    <result column="observation_point_content" jdbcType="VARCHAR" property="observationPointContent" />
+    <result column="evaluation_index_id" jdbcType="INTEGER" property="evaluationIndexId" />
+    <result column="evaluation_index_content" jdbcType="VARCHAR" property="evaluationIndexContent" />
+    <result column="college_id" jdbcType="INTEGER" property="collegeId" />
+    <result column="college_name" jdbcType="VARCHAR" property="collegeName" />
+    <result column="grading_basis" jdbcType="VARCHAR" property="gradingBasis" />
+    <result column="note" jdbcType="VARCHAR" property="note" />
+    <result column="year" jdbcType="INTEGER" property="year" />
+    <result column="semester" jdbcType="INTEGER" property="semester" />
+    <result column="order_id" jdbcType="BIGINT" property="orderId" />
+    <result column="teacher_id" jdbcType="INTEGER" property="teacherId" />
+    <result column="teacher_name" jdbcType="VARCHAR" property="teacherName" />
+    <result column="employee_id" jdbcType="VARCHAR" property="employeeId" />
+    <result column="teacher_title_id" jdbcType="INTEGER" property="teacherTitleId" />
+    <result column="teacher_title_name" jdbcType="VARCHAR" property="teacherTitleName" />
+    <result column="audit_id" jdbcType="INTEGER" property="auditId" />
+    <result column="audit_name" jdbcType="VARCHAR" property="auditName" />
+    <result column="self_report_score" jdbcType="DECIMAL" property="selfReportScore" />
+    <result column="certified_score" jdbcType="DECIMAL" property="certifiedScore" />
+    <result column="certified_note" jdbcType="VARCHAR" property="certifiedNote" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="add_time" jdbcType="TIMESTAMP" property="addTime" />
+    <result column="certified_time" jdbcType="TIMESTAMP" property="certifiedTime" />
+    <collection property="orderFileList" ofType="OrderFile" column="order_id" select="com.hdc.dao.OrderFileDao.selectByOrderId" >
+    </collection>
+  </resultMap>
+  <sql id="Base_Column_List">
+    grading_standard.grading_standard_id,grading_standard_content, grading_standard.observation_point_id, observation_point_content,
+    grading_standard.evaluation_index_id, evaluation_index_content, grading_standard.college_id, grading_standard.college_name, grading_basis,
+    grading_standard_note,  grading_standard.year,  grading_standard.semester, order_.order_id,  order_.teacher_id, order_.teacher_name, order_.employee_id, order_.teacher_title_id,
+    teacher_title_name, grading_standard.audit_id, audit_name, self_report_score, certified_score, declaration_note,certified_note,
+    status, add_time, certified_time
+  </sql>
+
+  <select id="selectByExample" parameterType="com.hdc.entity.DeclarationTableExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from
+    (select
+    grading_standard.grading_standard_id, grading_standard.content as grading_standard_content,
+    grading_standard.observation_point_id, observation_point.content as observation_point_content,
+    grading_standard.evaluation_index_id, evaluation_index.content as evaluation_index_content,
+    grading_standard.college_id, college_name, grading_basis,
+    grading_standard.note as grading_standard_note, grading_standard.year, grading_standard.semester
+    ,grading_standard.audit_id,audit_name
+    from
+    evaluation_index
+    join observation_point
+    on
+    evaluation_index.evaluation_index_id =observation_point.evaluation_index_id
+    join grading_standard
+    on
+    grading_standard.observation_point_id =observation_point.observation_point_id
+    left join audit
+    on
+    grading_standard.audit_id =audit.audit_id
+    left join college
+    on
+    grading_standard.college_id =college.college_id
+    where
+    grading_standard.college_id = ${collegeId}
+    and grading_standard.semester =${semester}
+    and grading_standard.year = #{year}
+    ) as grading_standard
+    left join
+    (select
+    order_id, order_.teacher_id,college.college_id,college.college_name,grading_standard_id,
+    teacher.teacher_name , teacher.employee_id, teacher.teacher_title_id,
+    teacher_title.name as teacher_title_name, self_report_score, certified_score, declaration_note,certified_note,
+    status, add_time, certified_time,semester,year
+    from order_
+    left Join teacher
+    on
+    order_.teacher_id = teacher.teacher_id
+    left Join teacher_title
+    on
+    teacher.teacher_title_id = teacher_title.teacher_title_id
+    left join college
+    on
+    teacher.college_id =college.college_id
+    where order_.teacher_id = #{teacherId}
+    and order_.semester =#{semester}
+    and order_.year = #{year}
+    ) as order_
+    on
+    grading_standard.grading_standard_id =order_.grading_standard_id
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+
+
+</mapper>

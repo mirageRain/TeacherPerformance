@@ -186,62 +186,62 @@ public class TeacherTableExample {
         }
 
         public Criteria andUserIdIsNull() {
-            addCriterion("user_id is null");
+            addCriterion("users.user_id is null");
             return (Criteria) this;
         }
 
         public Criteria andUserIdIsNotNull() {
-            addCriterion("user_id is not null");
+            addCriterion("users.user_id is not null");
             return (Criteria) this;
         }
 
         public Criteria andUserIdEqualTo(Integer value) {
-            addCriterion("user_id =", value, "userId");
+            addCriterion("users.user_id =", value, "userId");
             return (Criteria) this;
         }
 
         public Criteria andUserIdNotEqualTo(Integer value) {
-            addCriterion("user_id <>", value, "userId");
+            addCriterion("users.user_id <>", value, "userId");
             return (Criteria) this;
         }
 
         public Criteria andUserIdGreaterThan(Integer value) {
-            addCriterion("user_id >", value, "userId");
+            addCriterion("users.user_id >", value, "userId");
             return (Criteria) this;
         }
 
         public Criteria andUserIdGreaterThanOrEqualTo(Integer value) {
-            addCriterion("user_id >=", value, "userId");
+            addCriterion("users.user_id >=", value, "userId");
             return (Criteria) this;
         }
 
         public Criteria andUserIdLessThan(Integer value) {
-            addCriterion("user_id <", value, "userId");
+            addCriterion("users.user_id <", value, "userId");
             return (Criteria) this;
         }
 
         public Criteria andUserIdLessThanOrEqualTo(Integer value) {
-            addCriterion("user_id <=", value, "userId");
+            addCriterion("users.user_id <=", value, "userId");
             return (Criteria) this;
         }
 
         public Criteria andUserIdIn(List<Integer> values) {
-            addCriterion("user_id in", values, "userId");
+            addCriterion("users.user_id in", values, "userId");
             return (Criteria) this;
         }
 
         public Criteria andUserIdNotIn(List<Integer> values) {
-            addCriterion("user_id not in", values, "userId");
+            addCriterion("users.user_id not in", values, "userId");
             return (Criteria) this;
         }
 
         public Criteria andUserIdBetween(Integer value1, Integer value2) {
-            addCriterion("user_id between", value1, value2, "userId");
+            addCriterion("users.user_id between", value1, value2, "userId");
             return (Criteria) this;
         }
 
         public Criteria andUserIdNotBetween(Integer value1, Integer value2) {
-            addCriterion("user_id not between", value1, value2, "userId");
+            addCriterion("users.user_id not between", value1, value2, "userId");
             return (Criteria) this;
         }
 
@@ -315,6 +315,76 @@ public class TeacherTableExample {
             return (Criteria) this;
         }
 
+        public Criteria andEmployeeIdIsNull() {
+            addCriterion("employee_id is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andEmployeeIdIsNotNull() {
+            addCriterion("employee_id is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andEmployeeIdEqualTo(String value) {
+            addCriterion("employee_id =", value, "employeeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andEmployeeIdNotEqualTo(String value) {
+            addCriterion("employee_id <>", value, "employeeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andEmployeeIdGreaterThan(String value) {
+            addCriterion("employee_id >", value, "employeeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andEmployeeIdGreaterThanOrEqualTo(String value) {
+            addCriterion("employee_id >=", value, "employeeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andEmployeeIdLessThan(String value) {
+            addCriterion("employee_id <", value, "employeeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andEmployeeIdLessThanOrEqualTo(String value) {
+            addCriterion("employee_id <=", value, "employeeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andEmployeeIdLike(String value) {
+            addCriterion("employee_id like", value, "employeeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andEmployeeIdNotLike(String value) {
+            addCriterion("employee_id not like", value, "employeeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andEmployeeIdIn(List<String> values) {
+            addCriterion("employee_id in", values, "employeeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andEmployeeIdNotIn(List<String> values) {
+            addCriterion("employee_id not in", values, "employeeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andEmployeeIdBetween(String value1, String value2) {
+            addCriterion("employee_id between", value1, value2, "employeeId");
+            return (Criteria) this;
+        }
+
+        public Criteria andEmployeeIdNotBetween(String value1, String value2) {
+            addCriterion("employee_id not between", value1, value2, "employeeId");
+            return (Criteria) this;
+        }
+
         public Criteria andTeacherTitleIdIsNull() {
             addCriterion("teacher_title_id is null");
             return (Criteria) this;
@@ -326,52 +396,52 @@ public class TeacherTableExample {
         }
 
         public Criteria andTeacherTitleIdEqualTo(Integer value) {
-            addCriterion("teacher_title.teacher_title_id =", value, "teacherTitleId");
+            addCriterion("teacher_title_id =", value, "teacherTitleId");
             return (Criteria) this;
         }
 
         public Criteria andTeacherTitleIdNotEqualTo(Integer value) {
-            addCriterion("teacher_title.teacher_title_id <>", value, "teacherTitleId");
+            addCriterion("teacher_title_id <>", value, "teacherTitleId");
             return (Criteria) this;
         }
 
         public Criteria andTeacherTitleIdGreaterThan(Integer value) {
-            addCriterion("teacher_title.teacher_title_id >", value, "teacherTitleId");
+            addCriterion("teacher_title_id >", value, "teacherTitleId");
             return (Criteria) this;
         }
 
         public Criteria andTeacherTitleIdGreaterThanOrEqualTo(Integer value) {
-            addCriterion("teacher_title.teacher_title_id >=", value, "teacherTitleId");
+            addCriterion("teacher_title_id >=", value, "teacherTitleId");
             return (Criteria) this;
         }
 
         public Criteria andTeacherTitleIdLessThan(Integer value) {
-            addCriterion("teacher_title.teacher_title_id <", value, "teacherTitleId");
+            addCriterion("teacher_title_id <", value, "teacherTitleId");
             return (Criteria) this;
         }
 
         public Criteria andTeacherTitleIdLessThanOrEqualTo(Integer value) {
-            addCriterion("teacher_title.teacher_title_id <=", value, "teacherTitleId");
+            addCriterion("teacher_title_id <=", value, "teacherTitleId");
             return (Criteria) this;
         }
 
         public Criteria andTeacherTitleIdIn(List<Integer> values) {
-            addCriterion("teacher_title.teacher_title_id in", values, "teacherTitleId");
+            addCriterion("teacher_title_id in", values, "teacherTitleId");
             return (Criteria) this;
         }
 
         public Criteria andTeacherTitleIdNotIn(List<Integer> values) {
-            addCriterion("teacher_title.teacher_title_id not in", values, "teacherTitleId");
+            addCriterion("teacher_title_id not in", values, "teacherTitleId");
             return (Criteria) this;
         }
 
         public Criteria andTeacherTitleIdBetween(Integer value1, Integer value2) {
-            addCriterion("teacher_title.teacher_title_id between", value1, value2, "teacherTitleId");
+            addCriterion("teacher_title_id between", value1, value2, "teacherTitleId");
             return (Criteria) this;
         }
 
         public Criteria andTeacherTitleIdNotBetween(Integer value1, Integer value2) {
-            addCriterion("teacher_title.teacher_title_id not between", value1, value2, "teacherTitleId");
+            addCriterion("teacher_title_id not between", value1, value2, "teacherTitleId");
             return (Criteria) this;
         }
 
@@ -446,62 +516,62 @@ public class TeacherTableExample {
         }
 
         public Criteria andCollegeIdIsNull() {
-            addCriterion("college_id is null");
+            addCriterion("teacher.college_id is null");
             return (Criteria) this;
         }
 
         public Criteria andCollegeIdIsNotNull() {
-            addCriterion("college_id is not null");
+            addCriterion("teacher.college_id is not null");
             return (Criteria) this;
         }
 
         public Criteria andCollegeIdEqualTo(Integer value) {
-            addCriterion("college_id =", value, "collegeId");
+            addCriterion("teacher.college_id =", value, "collegeId");
             return (Criteria) this;
         }
 
         public Criteria andCollegeIdNotEqualTo(Integer value) {
-            addCriterion("college_id <>", value, "collegeId");
+            addCriterion("teacher.college_id <>", value, "collegeId");
             return (Criteria) this;
         }
 
         public Criteria andCollegeIdGreaterThan(Integer value) {
-            addCriterion("college_id >", value, "collegeId");
+            addCriterion("teacher.college_id >", value, "collegeId");
             return (Criteria) this;
         }
 
         public Criteria andCollegeIdGreaterThanOrEqualTo(Integer value) {
-            addCriterion("college_id >=", value, "collegeId");
+            addCriterion("teacher.college_id >=", value, "collegeId");
             return (Criteria) this;
         }
 
         public Criteria andCollegeIdLessThan(Integer value) {
-            addCriterion("college_id <", value, "collegeId");
+            addCriterion("teacher.college_id <", value, "collegeId");
             return (Criteria) this;
         }
 
         public Criteria andCollegeIdLessThanOrEqualTo(Integer value) {
-            addCriterion("college_id <=", value, "collegeId");
+            addCriterion("teacher.college_id <=", value, "collegeId");
             return (Criteria) this;
         }
 
         public Criteria andCollegeIdIn(List<Integer> values) {
-            addCriterion("college_id in", values, "collegeId");
+            addCriterion("teacher.college_id in", values, "collegeId");
             return (Criteria) this;
         }
 
         public Criteria andCollegeIdNotIn(List<Integer> values) {
-            addCriterion("college_id not in", values, "collegeId");
+            addCriterion("teacher.college_id not in", values, "collegeId");
             return (Criteria) this;
         }
 
         public Criteria andCollegeIdBetween(Integer value1, Integer value2) {
-            addCriterion("college_id between", value1, value2, "collegeId");
+            addCriterion("teacher.college_id between", value1, value2, "collegeId");
             return (Criteria) this;
         }
 
         public Criteria andCollegeIdNotBetween(Integer value1, Integer value2) {
-            addCriterion("college_id not between", value1, value2, "collegeId");
+            addCriterion("teacher.college_id not between", value1, value2, "collegeId");
             return (Criteria) this;
         }
 

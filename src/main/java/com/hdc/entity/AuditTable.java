@@ -23,6 +23,11 @@ public class AuditTable implements Serializable {
     private Integer collegeId;
 
     /**
+     * 所属学院ID
+     */
+    private String collegeName;
+
+    /**
      * 审核部门对应的用户ID
      */
     private Integer userId;
@@ -415,5 +420,14 @@ public class AuditTable implements Serializable {
         this.imgUrl = imgUrl;
         this.phone = "";
         this.email = "";
+    }
+
+
+    public String getCollegeName() {
+        return collegeName;
+    }
+
+    public void setCollegeName(String collegeName) {
+        this.collegeName = collegeName;
     }
 }

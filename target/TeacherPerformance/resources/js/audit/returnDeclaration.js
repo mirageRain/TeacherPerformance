@@ -37,12 +37,12 @@ layui.use(['form', 'layer', 'laydate', 'table', 'laytpl'], function () {
             }
         });
         $.ajax({
-            "url": "/audit/order/evaluationIndex",
+            "url": "/audit/evaluationIndex",
             "contentType": "application/json",
             "type": "get",
             "async": false,
             "error": function () {
-                alert("服务器繁忙");
+                layer.alert("服务器繁忙");
             },
             "success": function (returnData) {
                 if (returnData.code == 200) {
@@ -59,7 +59,7 @@ layui.use(['form', 'layer', 'laydate', 'table', 'laytpl'], function () {
             }
         });
         $.ajax({
-            "url": "/audit/order/observationPoint",
+            "url": "/audit/observationPoint",
             "contentType": "application/json",
             "type": "get",
             "async": false,
@@ -73,19 +73,19 @@ layui.use(['form', 'layer', 'laydate', 'table', 'laytpl'], function () {
                         observationPointList[item.observationPointId]=item;
                     });
                 } else {
-                    alert(returnData.msg);
+                    layer.alert(returnData.msg);
                 }
 
             }
         });
 
         $.ajax({
-            "url": "/audit/order/gradingStandard",
+            "url": "/audit/gradingStandard",
             "contentType": "application/json",
             "type": "get",
             "async": false,
             "error": function () {
-                alert("服务器繁忙");
+                layer.alert("服务器繁忙");
             },
             "success": function (returnData) {
                 if (returnData.code == 200) {
@@ -94,7 +94,7 @@ layui.use(['form', 'layer', 'laydate', 'table', 'laytpl'], function () {
                         gradingStandardList[item.gradingStandardId] = item;
                     });
                 } else {
-                    alert(returnData.msg);
+                    layer.alert(returnData.msg);
                 }
 
             }

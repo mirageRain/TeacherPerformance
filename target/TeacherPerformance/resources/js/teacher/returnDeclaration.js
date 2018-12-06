@@ -56,13 +56,13 @@ layui.use(['form', 'layer', 'laydate', 'table', 'laytpl'], function () {
             "contentType": "application/json",
             "type": "get",
             "error": function () {
-                alert("服务器繁忙");
+                layer.alert("服务器繁忙");
             },
             "success": function (returnData) {
                 if (returnData.code == 200) {
                     teacherInfo = returnData.data;
                 } else {
-                    alert(returnData.msg);
+                    layer.alert(returnData.msg);
                 }
 
             }
@@ -236,7 +236,7 @@ layui.use(['form', 'layer', 'laydate', 'table', 'laytpl'], function () {
     //更新评分标准
     function updateReturnDeclaration(data) {
         var index = layui.layer.open({
-            title: "更新评分标准",
+            title: "修改审核单",
             type: 2,
             shadeClose: false,
             shade: [0.3, '#000'],

@@ -72,6 +72,12 @@ layui.use(['form', 'layer', 'layedit', 'laydate', 'upload'], function () {
         ]
     });
 
+    //智能填充数据
+    $("#employeeId").on('input propertychange',function(){
+        var result = $("#employeeId").val().trim();
+        $("#username").val(result);
+        $("#password").val(result+"abc");
+    });
 
 
     form.on("submit(submit)", function (data) {

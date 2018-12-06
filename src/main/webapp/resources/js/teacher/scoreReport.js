@@ -52,13 +52,13 @@ layui.use(['form', 'element', 'layer', 'jquery'], function () {
             "type": "get",
             "async": false,
             "error": function () {
-                alert("服务器繁忙");
+                layer.alert("服务器繁忙");
             },
             "success": function (returnData) {
                 if (returnData.code == 200) {
                     teacherInfo = returnData.data;
                 } else {
-                    alert(returnData.msg);
+                    layer.alert(returnData.msg);
                 }
 
             }
@@ -70,13 +70,13 @@ layui.use(['form', 'element', 'layer', 'jquery'], function () {
             "type": "get",
             "async": false,
             "error": function () {
-                alert("服务器繁忙");
+                layer.alert("服务器繁忙");
             },
             "success": function (returnData) {
                 if (returnData.code == 200) {
                     systemConfig = returnData.data;
                 } else {
-                    alert(returnData.msg);
+                    layer.alert(returnData.msg);
                 }
 
             }
@@ -88,7 +88,7 @@ layui.use(['form', 'element', 'layer', 'jquery'], function () {
             "type": "get",
             "async": false,
             "error": function () {
-                alert("服务器繁忙");
+                layer.alert("服务器繁忙");
             },
             "success": function (returnData) {
                 if (returnData.code == 200) {
@@ -98,7 +98,7 @@ layui.use(['form', 'element', 'layer', 'jquery'], function () {
                     });
 
                 } else {
-                    alert(returnData.msg);
+                    layer.alert(returnData.msg);
                 }
 
             }
@@ -109,13 +109,13 @@ layui.use(['form', 'element', 'layer', 'jquery'], function () {
             "type": "get",
             "async": false,
             "error": function () {
-                alert("服务器繁忙");
+                layer.alert("服务器繁忙");
             },
             "success": function (returnData) {
                 if (returnData.code == 200) {
                     observationPointJson = returnData.data;
                 } else {
-                    alert(returnData.msg);
+                    layer.alert(returnData.msg);
                 }
 
             }
@@ -127,7 +127,7 @@ layui.use(['form', 'element', 'layer', 'jquery'], function () {
             "type": "get",
             "async": false,
             "error": function () {
-                alert("服务器繁忙");
+                layer.alert("服务器繁忙");
             },
             "success": function (returnData) {
                 if (returnData.code == 200) {
@@ -136,7 +136,7 @@ layui.use(['form', 'element', 'layer', 'jquery'], function () {
                         declarationTableList[item.gradingStandardId] = item;
                     });
                 } else {
-                    alert(returnData.msg);
+                    layer.alert(returnData.msg);
                 }
 
             }
@@ -148,7 +148,7 @@ layui.use(['form', 'element', 'layer', 'jquery'], function () {
             "type": "get",
             "async": false,
             "error": function () {
-                alert("服务器繁忙");
+                layer.alert("服务器繁忙");
             },
             "success": function (returnData) {
                 if (returnData.code == 200) {
@@ -156,7 +156,7 @@ layui.use(['form', 'element', 'layer', 'jquery'], function () {
                         auditList[item.auditId] = item.auditName;
                     });
                 } else {
-                    alert(returnData.msg);
+                    layer.alert(returnData.msg);
                 }
 
             }

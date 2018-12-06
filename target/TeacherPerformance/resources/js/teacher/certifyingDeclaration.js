@@ -56,13 +56,13 @@ layui.use(['form', 'layer', 'laydate', 'table', 'laytpl'], function () {
             "contentType": "application/json",
             "type": "get",
             "error": function () {
-                alert("服务器繁忙");
+                layer.alert("服务器繁忙");
             },
             "success": function (returnData) {
                 if (returnData.code == 200) {
                     teacherInfo = returnData.data;
                 } else {
-                    alert(returnData.msg);
+                    layer.alert(returnData.msg);
                 }
 
             }

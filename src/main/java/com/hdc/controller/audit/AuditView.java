@@ -64,9 +64,9 @@ public class AuditView {
 		return "changePwd";
 	}
 	
-	@RequestMapping(value = "/gradingStandard", method = RequestMethod.GET)
-	public String gradingStandardView() {
-		return "audit/gradingStandard";
+	@RequestMapping(value = "/declarationTablePage", method = RequestMethod.GET)
+	public String declarationTablePageView() {
+		return "audit/declarationTablePage";
 	}
 	
 	@RequestMapping(value = "/main", method = RequestMethod.GET)
@@ -86,8 +86,8 @@ public class AuditView {
 		return "audit/scoreReport";
 	}
 	
-	@RequestMapping(value = "/userInfo", method = RequestMethod.GET)
-	public String userInfoView() {
+	@RequestMapping(value = "/userInfoPage", method = RequestMethod.GET)
+	public String userInfoPageView() {
 		return "audit/userInfoPage";
 	}
 	

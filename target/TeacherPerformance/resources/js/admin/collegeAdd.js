@@ -69,6 +69,14 @@ layui.use(['form', 'layer', 'layedit', 'laydate', 'upload'], function () {
     });
 
 
+    //智能填充数据
+    $("#collegeName").on('input propertychange',function(){
+        var pinyinResult = makePy($("#collegeName").val().trim())[0].toLowerCase();
+        $("#username").val(pinyinResult);
+        $("#password").val(pinyinResult+"123456");
+    });
+
+
     form.on("submit(submit)", function (data) {
 
         var index = top.layer.msg('数据提交中，请稍候', {icon: 16, time: false, shade: 0.1});

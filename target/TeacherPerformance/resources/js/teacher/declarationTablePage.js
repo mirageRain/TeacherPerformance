@@ -28,7 +28,7 @@ layui.use(['form', 'element', 'layer', 'jquery'], function () {
                 if (returnData.code == 200) {
                     teacherInfo = returnData.data;
                 } else {
-                    alert(returnData.msg);
+                    layer.alert(returnData.msg);
                 }
 
             }
@@ -40,13 +40,13 @@ layui.use(['form', 'element', 'layer', 'jquery'], function () {
             "type": "get",
             "async": false,
             "error": function () {
-                alert("服务器繁忙");
+                layer.alert("服务器繁忙");
             },
             "success": function (returnData) {
                 if (returnData.code == 200) {
                     systemConfig = returnData.data;
                 } else {
-                    alert(returnData.msg);
+                    layer.alert(returnData.msg);
                 }
 
             }
@@ -60,7 +60,7 @@ layui.use(['form', 'element', 'layer', 'jquery'], function () {
             "type": "get",
             "async": false,
             "error": function () {
-                alert("服务器繁忙");
+                layer.alert("服务器繁忙");
             },
             "success": function (returnData) {
                 if (returnData.code == 200) {
@@ -70,7 +70,7 @@ layui.use(['form', 'element', 'layer', 'jquery'], function () {
                     });
 
                 } else {
-                    alert(returnData.msg);
+                    layer.alert(returnData.msg);
                 }
 
             }
@@ -81,13 +81,13 @@ layui.use(['form', 'element', 'layer', 'jquery'], function () {
             "type": "get",
             "async": false,
             "error": function () {
-                alert("服务器繁忙");
+                layer.alert("服务器繁忙");
             },
             "success": function (returnData) {
                 if (returnData.code == 200) {
                     observationPointJson = returnData.data;
                 } else {
-                    alert(returnData.msg);
+                    layer.alert(returnData.msg);
                 }
 
             }
@@ -99,7 +99,7 @@ layui.use(['form', 'element', 'layer', 'jquery'], function () {
             "type": "get",
             "async": false,
             "error": function () {
-                alert("服务器繁忙");
+                layer.alert("服务器繁忙");
             },
             "success": function (returnData) {
                 if (returnData.code == 200) {
@@ -108,7 +108,7 @@ layui.use(['form', 'element', 'layer', 'jquery'], function () {
                         declarationTableList[item.gradingStandardId] = item;
                     });
                 } else {
-                    alert(returnData.msg);
+                    layer.alert(returnData.msg);
                 }
 
             }
@@ -120,7 +120,7 @@ layui.use(['form', 'element', 'layer', 'jquery'], function () {
             "type": "get",
             "async": false,
             "error": function () {
-                alert("服务器繁忙");
+                layer.alert("服务器繁忙");
             },
             "success": function (returnData) {
                 if (returnData.code == 200) {
@@ -128,7 +128,7 @@ layui.use(['form', 'element', 'layer', 'jquery'], function () {
                         auditList[item.auditId] = item.auditName;
                     });
                 } else {
-                    alert(returnData.msg);
+                    layer.alert(returnData.msg);
                 }
 
             }
@@ -249,7 +249,7 @@ layui.use(['form', 'element', 'layer', 'jquery'], function () {
     //新增申报表
     function addDeclarationBtn(declarationData) {
         var index = layui.layer.open({
-            title: "添加审核处",
+            title: "申报审核单",
             type: 2,
             shadeClose: false,
             shade: [0.3, '#000'],
@@ -292,7 +292,7 @@ layui.use(['form', 'element', 'layer', 'jquery'], function () {
     function updateDeclarationBtn(declarationData) {
         window.gradingStandardId=declarationData.gradingStandardId;
         var index = layui.layer.open({
-            title: "添加审核处",
+            title: "更新审核单",
             type: 2,
             shadeClose: false,
             shade: [0.3, '#000'],

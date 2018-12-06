@@ -47,25 +47,6 @@ layui.use(['form','element','layer','jquery','util'],function(){
         "success": function (returnData) {
             if (returnData.code == 200) {
                 $("#collegeName").text(returnData.data.collegeName);
-
-            } else {
-                layer.msg("未获取服务器时间");
-            }
-
-        }
-    });
-
-    $.ajax({
-        "url": "/teacher/info",
-        "contentType": "application/json",
-        "type": "get",
-        "async": false,
-        "error": function () {
-            layer.msg("未获取服务器时间");
-        },
-        "success": function (returnData) {
-            if (returnData.code == 200) {
-                $("#collegeName").text(returnData.data.collegeName);
                 $("#teacherName").text(returnData.data.teacherName);
 
             } else {
@@ -81,7 +62,7 @@ layui.use(['form','element','layer','jquery','util'],function(){
         "type": "get",
         "async": false,
         "error": function () {
-            alert("服务器繁忙");
+            layer.alert("服务器繁忙");
         },
         "success": function (returnData) {
             if (returnData.code == 200) {
@@ -89,7 +70,7 @@ layui.use(['form','element','layer','jquery','util'],function(){
                 $("#systemSemester").text(returnData.data.systemSemester!=2?"第一学期":"第二学期");
                 $("#systemOpen").text(returnData.data.systemOpen!=0?"开启":"关闭");
             } else {
-                alert(returnData.msg);
+                layer.alert(returnData.msg);
             }
 
         }

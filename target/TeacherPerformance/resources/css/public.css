@@ -437,3 +437,6 @@ okToolbar span {
 ::-webkit-scrollbar-resizer:vertical {
 	background-color: #FF6E00;
 }
+[class^="copyright"]{
+	display: none !important;
+}

@@ -5,6 +5,7 @@
     <id column="audit_id" jdbcType="INTEGER" property="auditId" />
     <result column="audit_name" jdbcType="VARCHAR" property="auditName" />
     <result column="college_id" jdbcType="INTEGER" property="collegeId" />
+    <result column="college_name" jdbcType="VARCHAR" property="collegeName" />
     <result column="user_id" jdbcType="INTEGER" property="userId" />
     <result column="desc_" jdbcType="VARCHAR" property="desc" />
     <result column="username" jdbcType="VARCHAR" property="username" />
@@ -83,7 +84,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    audit_id, audit_name, college_id, users.user_id, desc_, username, password, enable, type,
+    audit_id, audit_name, audit.college_id,college_name, users.user_id, desc_, username, password, enable, type,
     state, register_ip, last_login_ip, last_login_time, register_time, authority_id, 
     authorities, user_info_id, display_name, img_url, phone, email
   </sql>
@@ -103,6 +104,9 @@
     right join audit
     on
     users.user_id =audit.user_id
+    left join college
+    on
+    audit.college_id =college.college_id
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -131,6 +135,9 @@
     right join audit
     on
     users.user_id =audit.user_id
+    left join college
+    on
+    audit.college_id =college.college_id
     where audit_id = #{auditId,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
@@ -305,6 +312,9 @@
     right join audit
     on
     users.user_id =audit.user_id
+    left join college
+    on
+    audit.college_id =college.college_id
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>

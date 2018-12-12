@@ -1,5 +1,7 @@
 package com.hdc.service;
 
+import com.hdc.dto.CollegeDto;
+import com.hdc.dto.TeacherDto;
 import com.hdc.entity.*;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
@@ -31,16 +33,22 @@ public interface UsersService {
 
 	int updateByPrimaryKey(Users record);
 
+	@Transactional
 	int insertAdmin(Users admin, UserInfo userInfo);
 
+	@Transactional
 	int insertTeacher(Users teacher , UserInfo userInfo);
 
+	@Transactional
 	int insertCollege(Users college, UserInfo userInfo);
 
     @Transactional
     int insertAudit(AuditTable auditTable);
 
-    @Transactional
+	@Transactional
+	int batchInsertCollege(List<CollegeDto> collegeList);
+
+	@Transactional
 	int updateCollege(Users users, UserInfo userInfo);
 
 	int deleteCollege(List<Integer> collegeIdList);
@@ -59,4 +67,7 @@ public interface UsersService {
 
 	@Transactional
 	int deleteTeacher(List<Integer> teacherIdList);
+
+	@Transactional
+	int batchInsertTeacher(List<TeacherTable> teacherList);
 }

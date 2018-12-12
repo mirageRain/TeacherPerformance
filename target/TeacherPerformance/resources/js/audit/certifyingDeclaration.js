@@ -255,6 +255,7 @@ layui.use(['form', 'layer', 'laydate', 'table', 'laytpl'], function () {
 
     //审核审核单
     function updateCertifyingDeclaration(data) {
+        window.orderListData = data;
         var index = layui.layer.open({
             title: "审核审核单",
             type: 2,
@@ -266,7 +267,7 @@ layui.use(['form', 'layer', 'laydate', 'table', 'laytpl'], function () {
             success: function (layero, index) {
                 var body = layui.layer.getChildFrame('body', index);
                 if (data) {
-                    window.orderListData = data;
+
                     body.find("#teacherName").val(data.teacherName);
                     body.find("#teacherTitle").val(data.teacherTitleName);
                     body.find("#college").val(data.collegeName);

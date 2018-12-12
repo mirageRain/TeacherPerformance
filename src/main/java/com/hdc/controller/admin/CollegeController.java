@@ -2,12 +2,14 @@ package com.hdc.controller.admin;
 
 
 import com.google.common.base.CaseFormat;
+import com.hdc.dao.CollegeDao;
 import com.hdc.dto.CollegeDto;
 import com.hdc.entity.*;
 import com.hdc.service.CollegeService;
 import com.hdc.service.UsersService;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
@@ -259,6 +261,29 @@ public class CollegeController {
             return map;
         }
 
+        map.put("code", 200);
+        map.put("msg", "请求成功");
+        return map;
+    }
+
+    /**
+     * 批量插入学院账号
+     *
+     * @param collegeList 学院列表
+     * @return code为200时为插入成功，其它情况为插入失败
+     */
+    @PostMapping("/excel")
+    public Map<String, Object> excelInsert(@RequestBody(required = false) List<CollegeDto> collegeList) {
+
+        Map<String, Object> map = new HashMap<>();
+
+        try {
+            usersService.batchInsertCollege(collegeList);
+        } catch (Exception e) {
+            map.put("code", 500);
+            map.put("msg", e.getMessage());
+            return map;
+        }
         map.put("code", 200);
         map.put("msg", "请求成功");
         return map;

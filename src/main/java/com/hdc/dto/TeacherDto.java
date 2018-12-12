@@ -27,6 +27,11 @@ public class TeacherDto implements Serializable {
     private Integer teacherTitleId;
 
     /**
+     * 用户教师职称Id
+     */
+    private Integer teacherTitleName;
+
+    /**
      * 学院ID
      */
     private Integer collegeId;
@@ -46,7 +51,7 @@ public class TeacherDto implements Serializable {
     /**
      * 账号密码
      */
-    @Pattern(regexp = "^[\\S]{6,12}$", message = "密码格式不正确")
+    @Pattern(regexp = "^[\\S]{6,18}$", message = "密码格式不正确")
     private String password;
 
     @Pattern(regexp = "^[\\d]{1,10}$", message = "工号格式不正确，应为1到10为数字")
@@ -119,5 +124,13 @@ public class TeacherDto implements Serializable {
 
     public void setEmployeeId(String employeeId) {
         this.employeeId = employeeId;
+    }
+
+    public Integer getTeacherTitleName() {
+        return teacherTitleName;
+    }
+
+    public void setTeacherTitleName(Integer teacherTitleName) {
+        this.teacherTitleName = teacherTitleName;
     }
 }

@@ -386,62 +386,62 @@ public class TeacherTableExample {
         }
 
         public Criteria andTeacherTitleIdIsNull() {
-            addCriterion("teacher_title_id is null");
+            addCriterion("teacher.teacher_title_id is null");
             return (Criteria) this;
         }
 
         public Criteria andTeacherTitleIdIsNotNull() {
-            addCriterion("teacher_title_id is not null");
+            addCriterion("teacher.teacher_title_id is not null");
             return (Criteria) this;
         }
 
         public Criteria andTeacherTitleIdEqualTo(Integer value) {
-            addCriterion("teacher_title_id =", value, "teacherTitleId");
+            addCriterion("teacher.teacher_title_id =", value, "teacherTitleId");
             return (Criteria) this;
         }
 
         public Criteria andTeacherTitleIdNotEqualTo(Integer value) {
-            addCriterion("teacher_title_id <>", value, "teacherTitleId");
+            addCriterion("teacher.teacher_title_id <>", value, "teacherTitleId");
             return (Criteria) this;
         }
 
         public Criteria andTeacherTitleIdGreaterThan(Integer value) {
-            addCriterion("teacher_title_id >", value, "teacherTitleId");
+            addCriterion("teacher.teacher_title_id >", value, "teacherTitleId");
             return (Criteria) this;
         }
 
         public Criteria andTeacherTitleIdGreaterThanOrEqualTo(Integer value) {
-            addCriterion("teacher_title_id >=", value, "teacherTitleId");
+            addCriterion("teacher.teacher_title_id >=", value, "teacherTitleId");
             return (Criteria) this;
         }
 
         public Criteria andTeacherTitleIdLessThan(Integer value) {
-            addCriterion("teacher_title_id <", value, "teacherTitleId");
+            addCriterion("teacher.teacher_title_id <", value, "teacherTitleId");
             return (Criteria) this;
         }
 
         public Criteria andTeacherTitleIdLessThanOrEqualTo(Integer value) {
-            addCriterion("teacher_title_id <=", value, "teacherTitleId");
+            addCriterion("teacher.teacher_title_id <=", value, "teacherTitleId");
             return (Criteria) this;
         }
 
         public Criteria andTeacherTitleIdIn(List<Integer> values) {
-            addCriterion("teacher_title_id in", values, "teacherTitleId");
+            addCriterion("teacher.teacher_title_id in", values, "teacherTitleId");
             return (Criteria) this;
         }
 
         public Criteria andTeacherTitleIdNotIn(List<Integer> values) {
-            addCriterion("teacher_title_id not in", values, "teacherTitleId");
+            addCriterion("teacher.teacher_title_id not in", values, "teacherTitleId");
             return (Criteria) this;
         }
 
         public Criteria andTeacherTitleIdBetween(Integer value1, Integer value2) {
-            addCriterion("teacher_title_id between", value1, value2, "teacherTitleId");
+            addCriterion("teacher.teacher_title_id between", value1, value2, "teacherTitleId");
             return (Criteria) this;
         }
 
         public Criteria andTeacherTitleIdNotBetween(Integer value1, Integer value2) {
-            addCriterion("teacher_title_id not between", value1, value2, "teacherTitleId");
+            addCriterion("teacher.teacher_title_id not between", value1, value2, "teacherTitleId");
             return (Criteria) this;
         }
 

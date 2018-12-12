@@ -3,6 +3,7 @@ package com.hdc.controller.college;
 
 import com.google.common.base.CaseFormat;
 import com.hdc.dto.AuditDto;
+import com.hdc.dto.CollegeDto;
 import com.hdc.dto.TeacherDto;
 import com.hdc.entity.*;
 import com.hdc.security.MyUser;
@@ -59,7 +60,7 @@ public class TeacherController {
                     .getPrincipal();
             CollegeExample collegeExample = new CollegeExample();
             collegeExample.createCriteria().andUserIdEqualTo(userDetails.getMyUserId());
-            collegeId =collegeService.selectByExample(collegeExample).get(0).getCollegeId();
+            collegeId = collegeService.selectByExample(collegeExample).get(0).getCollegeId();
         } catch (Exception e) {
             map.put("code", 500);
             map.put("msg", "学院ID获取失败，请重试");
@@ -74,7 +75,7 @@ public class TeacherController {
         }
 
         //添加查询条件
-        if (teacherTitleId!= null &&teacherTitleId>0) {
+        if (teacherTitleId != null && teacherTitleId > 0) {
             criteria.andTeacherTitleIdEqualTo(teacherTitleId);
         }
 
@@ -123,12 +124,11 @@ public class TeacherController {
      * 检查教师名称是否存在
      *
      * @param teacherName 教师名称
-     * @param teacherId 如果存在，则在检查的时候排除本身
+     * @param teacherId   如果存在，则在检查的时候排除本身
      * @return code为200时为不存在，其余为存在重复
      */
     @GetMapping("/testTeacherName")
     public Map<String, Object> testTeacherName(String teacherName, Integer teacherId) {
-
 
 
         long count = 0;
@@ -144,7 +144,7 @@ public class TeacherController {
                     .getPrincipal();
             CollegeExample collegeExample = new CollegeExample();
             collegeExample.createCriteria().andUserIdEqualTo(userDetails.getMyUserId());
-            collegeId =collegeService.selectByExample(collegeExample).get(0).getCollegeId();
+            collegeId = collegeService.selectByExample(collegeExample).get(0).getCollegeId();
         } catch (Exception e) {
             map.put("code", 500);
             map.put("msg", "数据格式错误");
@@ -152,7 +152,7 @@ public class TeacherController {
         }
 
         //添加查询条件
-        if (collegeId != null && collegeId > 0&&StringUtils.isNotBlank(teacherName)) {
+        if (collegeId != null && collegeId > 0 && StringUtils.isNotBlank(teacherName)) {
             criteria.andCollegeIdEqualTo(collegeId);
             criteria.andTeacherNameEqualTo(teacherName);
         } else {
@@ -210,7 +210,7 @@ public class TeacherController {
                     .getPrincipal();
             CollegeExample collegeExample = new CollegeExample();
             collegeExample.createCriteria().andUserIdEqualTo(userDetails.getMyUserId());
-            collegeId =collegeService.selectByExample(collegeExample).get(0).getCollegeId();
+            collegeId = collegeService.selectByExample(collegeExample).get(0).getCollegeId();
         } catch (Exception e) {
             map.put("code", 500);
             map.put("msg", "数据格式错误");
@@ -219,7 +219,7 @@ public class TeacherController {
 
 
         //添加查询条件
-        if (collegeId != null && collegeId > 0&&StringUtils.isNotBlank(username)) {
+        if (collegeId != null && collegeId > 0 && StringUtils.isNotBlank(username)) {
             criteria.andUsernameEqualTo(username);
         } else {
             map.put("code", 500);
@@ -262,7 +262,6 @@ public class TeacherController {
     public Map<String, Object> testEmployeeId(String EmployeeId, Integer teacherId) {
 
 
-
         long count = 0;
         TeacherTableExample example = new TeacherTableExample();
         TeacherTableExample.Criteria criteria = example.createCriteria();
@@ -276,7 +275,7 @@ public class TeacherController {
                     .getPrincipal();
             CollegeExample collegeExample = new CollegeExample();
             collegeExample.createCriteria().andUserIdEqualTo(userDetails.getMyUserId());
-            collegeId =collegeService.selectByExample(collegeExample).get(0).getCollegeId();
+            collegeId = collegeService.selectByExample(collegeExample).get(0).getCollegeId();
         } catch (Exception e) {
             map.put("code", 500);
             map.put("msg", "数据格式错误");
@@ -285,7 +284,7 @@ public class TeacherController {
 
 
         //添加查询条件
-        if (collegeId != null && collegeId > 0&&StringUtils.isNotBlank(EmployeeId)) {
+        if (collegeId != null && collegeId > 0 && StringUtils.isNotBlank(EmployeeId)) {
             criteria.andEmployeeIdEqualTo(EmployeeId);
         } else {
             map.put("code", 500);
@@ -331,7 +330,7 @@ public class TeacherController {
 
         TeacherTable teacherTable = new TeacherTable();
         Map<String, Object> map = new HashMap<>();
-        String teacherName, username, password,employeeId;
+        String teacherName, username, password, employeeId;
         Integer teacherTitleId;
 
         Integer collegeId;
@@ -342,7 +341,7 @@ public class TeacherController {
                     .getPrincipal();
             CollegeExample collegeExample = new CollegeExample();
             collegeExample.createCriteria().andUserIdEqualTo(userDetails.getMyUserId());
-            collegeId =collegeService.selectByExample(collegeExample).get(0).getCollegeId();
+            collegeId = collegeService.selectByExample(collegeExample).get(0).getCollegeId();
         } catch (Exception e) {
             map.put("code", 500);
             map.put("msg", "数据格式错误");
@@ -361,7 +360,7 @@ public class TeacherController {
             teacherName = teacher.getTeacherName();
             username = teacher.getUsername();
             password = teacher.getPassword();
-            teacherTitleId= teacher.getTeacherTitleId();
+            teacherTitleId = teacher.getTeacherTitleId();
             employeeId = teacher.getEmployeeId();
 
             teacherTable.setCollegeId(collegeId);
@@ -413,6 +412,51 @@ public class TeacherController {
     }
 
     /**
+     * 批量插入教师账号
+     *
+     * @param teacherList 学院列表
+     * @return code为200时为插入成功，其它情况为插入失败
+     */
+    @PostMapping("/excel")
+    public Map<String, Object> excelInsert(@RequestBody(required = false) List<TeacherTable> teacherList) {
+
+        Map<String, Object> map = new HashMap<>();
+
+        Integer collegeId;
+        //获取登录的用户ID
+        try {
+            MyUser userDetails = (MyUser) SecurityContextHolder.getContext()
+                    .getAuthentication()
+                    .getPrincipal();
+            CollegeExample collegeExample = new CollegeExample();
+            collegeExample.createCriteria().andUserIdEqualTo(userDetails.getMyUserId());
+            collegeId = collegeService.selectByExample(collegeExample).get(0).getCollegeId();
+        } catch (Exception e) {
+            map.put("code", 500);
+            map.put("msg", "数据格式错误");
+            return map;
+        }
+
+//      将教师列表中的学院ID设置是当前登陆的的学院用户的学院ID
+        for (TeacherTable teacher : teacherList
+        ) {
+            teacher.setCollegeId(collegeId);
+        }
+
+        try {
+            usersService.batchInsertTeacher(teacherList);
+        } catch (Exception e) {
+            map.put("code", 500);
+            map.put("msg", e.getMessage());
+            return map;
+        }
+        map.put("code", 200);
+        map.put("msg", "请求成功");
+        return map;
+    }
+
+
+    /**
      * 更新教师信息
      *
      * @param teacher 教师信息
@@ -423,11 +467,10 @@ public class TeacherController {
     public Map<String, Object> update(@Valid @RequestBody(required = false) TeacherDto teacher, BindingResult errors) {
 
 
-
         TeacherTable teacherTable = new TeacherTable();
         Map<String, Object> map = new HashMap<>();
         Integer teacherId, userId, teacherTitleId;
-        String teacherName, username, password,employeeId;
+        String teacherName, username, password, employeeId;
 
         Integer collegeId;
         //获取登录的用户ID
@@ -437,7 +480,7 @@ public class TeacherController {
                     .getPrincipal();
             CollegeExample collegeExample = new CollegeExample();
             collegeExample.createCriteria().andUserIdEqualTo(userDetails.getMyUserId());
-            collegeId =collegeService.selectByExample(collegeExample).get(0).getCollegeId();
+            collegeId = collegeService.selectByExample(collegeExample).get(0).getCollegeId();
         } catch (Exception e) {
             map.put("code", 500);
             map.put("msg", "数据格式错误");
@@ -460,7 +503,7 @@ public class TeacherController {
             teacherTable.setTeacherName(teacherName);
             username = teacher.getUsername();
             password = teacher.getPassword();
-            teacherTitleId= teacher.getTeacherTitleId();
+            teacherTitleId = teacher.getTeacherTitleId();
             employeeId = teacher.getEmployeeId();
 
             teacherTable.setCollegeId(collegeId);

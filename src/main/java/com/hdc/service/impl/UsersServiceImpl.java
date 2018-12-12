@@ -1,6 +1,8 @@
 package com.hdc.service.impl;
 
 import com.hdc.dao.*;
+import com.hdc.dto.CollegeDto;
+import com.hdc.dto.TeacherDto;
 import com.hdc.entity.*;
 import com.hdc.service.UsersService;
 import org.apache.commons.lang.StringUtils;
@@ -10,7 +12,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class UsersServiceImpl implements UsersService {
@@ -38,6 +42,9 @@ public class UsersServiceImpl implements UsersService {
 
     @Autowired
     private PasswordEncoder passwordEncoder;
+
+    @Autowired
+    private TeacherTitleDao teacherTitleDao;
 
     //private PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
@@ -150,27 +157,74 @@ public class UsersServiceImpl implements UsersService {
         //将传进来的明文密码加密
         String password = passwordEncoder.encode(users.getPassword());
         users.setPassword(password);
-        usersDao.insert(users);
+        int effectCount1 = usersDao.insert(users);
         //新增用户的用户ID
         int userId = users.getUserId();
         String username = users.getUsername();
 
         userInfo.setUserId(userId);
-        userInfoDao.insert(userInfo);
+        int effectCount2 = userInfoDao.insert(userInfo);
 
         Authorities authorities = new Authorities();
         authorities.setAuthorities("ROLE_COLLEGE");
 
         authorities.setUserId(userId);
-        authoritiesDao.insert(authorities);
+        int effectCount3 = authoritiesDao.insert(authorities);
 
         College collegeParam = new College();
         collegeParam.init();
         collegeParam.setUserId(userId);
         collegeParam.setCollegeName(userInfo.getDisplayName());
-        collegeDao.insert(collegeParam);
+        int effectCount4 = collegeDao.insert(collegeParam);
 
-        return users.getUserId();
+        if (effectCount1 >= 1 && effectCount2 >= 1 && effectCount3 >= 1 && effectCount4 >= 1) {
+            return 1;
+        } else {
+            throw new RuntimeException("插入失败");
+
+        }
+    }
+
+    @Override
+    @Transactional
+    public int batchInsertCollege(List<CollegeDto> collegeList) {
+
+        Users user = new Users();
+        UserInfo userInfo = new UserInfo();
+        String collegeName, username, password;
+        int i = 0;
+        for (CollegeDto college : collegeList) {
+
+
+            i++;
+            collegeName = college.getCollegeName();
+            username = college.getUsername();
+            password = college.getPassword();
+
+            if (!StringUtils.isNotBlank(collegeName)) {
+                throw new RuntimeException("第" + i + "行学院名数据为空，请检查后重试！");
+            }
+            if (!StringUtils.isNotBlank(username) || !username.matches("^[a-zA-Z0-9_\u4e00-\u9fa5\\s·]+$")) {
+                throw new RuntimeException("第" + i + "行用户名格式不正确，请检查后重试！");
+            }
+            if (!StringUtils.isNotBlank(password) || !password.matches("^[\\S]{6,18}$")) {
+                throw new RuntimeException("第" + i + "行密码格式不正确，请检查后重试！");
+            }
+
+            user.init();
+            userInfo.init();
+            user.setUsername(username);
+            user.setPassword(password);
+            userInfo.setDisplayName(collegeName);
+
+            try {
+                insertCollege(user, userInfo);
+            } catch (Exception e) {
+                throw new RuntimeException("第" + i + "行数据有误，请检查学院名称或学院账号是否被占用！");
+            }
+
+        }
+        return 1;
     }
 
     @Override
@@ -642,6 +696,61 @@ public class UsersServiceImpl implements UsersService {
         }
 
         return users.getUserId();
+    }
+
+    @Override
+    @Transactional
+    public int batchInsertTeacher(List<TeacherTable> teacherList) {
+
+        String teacherName, username, password, teacherTitleName;
+        int i = 0;
+        Map<String, Integer> teacherTitleMap = new HashMap<>();
+
+        List<TeacherTitle> teacherTitleList = teacherTitleDao.selectByExample(null);
+
+        for (TeacherTitle teacherTitle : teacherTitleList
+        ) {
+            teacherTitleMap.put(teacherTitle.getName(), teacherTitle.getTeacherTitleId());
+        }
+
+        for (TeacherTable teacher : teacherList) {
+
+
+            i++;
+            teacherName = teacher.getTeacherName();
+            username = teacher.getUsername();
+            password = teacher.getPassword();
+            teacherTitleName = teacher.getTeacherTitleName();
+
+            if (!StringUtils.isNotBlank(teacherName)) {
+                throw new RuntimeException("第" + i + "行教师姓名数据为空，请检查后重试！");
+            }
+            if (!StringUtils.isNotBlank(username) || !username.matches("^[a-zA-Z0-9_\u4e00-\u9fa5\\s·]+$")) {
+                throw new RuntimeException("第" + i + "行用户名格式不正确，请检查后重试！");
+            }
+            if (!StringUtils.isNotBlank(password) || !password.matches("^[\\S]{6,18}$")) {
+                throw new RuntimeException("第" + i + "行密码格式不正确，请检查后重试！");
+            }
+
+            if (!StringUtils.isNotBlank(teacherTitleName)) {
+                throw new RuntimeException("第" + i + "行教师职称数据为空，请检查后重试！");
+            } else {
+                Integer teacherTitleId = teacherTitleMap.get(teacherTitleName);
+                if (teacherTitleId == null || teacherTitleId <= 0) {
+                    throw new RuntimeException("第" + i + "行教师职称数据错误，请检查后重试！");
+                } else {
+                    teacher.setTeacherTitleId(teacherTitleId);
+                }
+            }
+
+            try {
+                insertTeacher(teacher);
+            } catch (Exception e) {
+                throw new RuntimeException("第" + i + "行数据有误，请检查教师姓名或教师账号是否被占用！");
+            }
+
+        }
+        return 1;
     }
 
     @Override

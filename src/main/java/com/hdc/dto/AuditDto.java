@@ -40,7 +40,7 @@ public class AuditDto implements Serializable {
     /**
      * 账号密码
      */
-    @Pattern(regexp = "^[\\S]{6,12}$", message = "密码格式不正确")
+    @Pattern(regexp = "^[\\S]{6,18}$", message = "密码格式不正确")
     private String password;
 
     /**

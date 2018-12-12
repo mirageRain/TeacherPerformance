@@ -63,8 +63,8 @@ layui.use(['form', 'layer', 'layedit', 'laydate', 'upload'], function () {
                 return meg;
         }
         , password: [
-            /^[\S]{6,12}$/
-            , '密码必须6到12位，且不能出现空格'
+            /^[\S]{6,18}$/
+            , '密码必须6到18位，且不能出现空格'
         ]
     });
 

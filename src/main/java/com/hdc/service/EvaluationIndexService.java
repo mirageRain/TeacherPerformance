@@ -7,6 +7,7 @@ import com.hdc.entity.TeacherTitle;
 import com.hdc.entity.TeacherTitleExample;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -20,6 +21,9 @@ public interface EvaluationIndexService {
 	int deleteByPrimaryKey(Integer evaluationIndexId);
 
 	int insert(EvaluationIndex record);
+
+	@Transactional
+	int batchInsertEvaluationIndex(List<EvaluationIndex> evaluationIndexrList);
 
 	int insertSelective(EvaluationIndex record);
 

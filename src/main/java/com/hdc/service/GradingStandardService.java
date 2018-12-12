@@ -34,4 +34,6 @@ public interface GradingStandardService {
 	int updateByPrimaryKeySelective(GradingStandard record);
 
 	int updateByPrimaryKey(GradingStandard record);
+
+	int batchInsertGradingStandard(List<GradingStandard> gradingStandardList);
 }

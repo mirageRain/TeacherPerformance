@@ -24,6 +24,11 @@ public class ObservationPointDto implements Serializable {
     @Range(min=0,message = "开启系统参数错误")
     private Integer evaluationIndexId;
 
+    /**
+     * 评估指标名称
+     */
+    private String evaluationIndexName;
+
     @NotBlank(message = "评估指标内容不能为空")
     private String content;
 
@@ -53,5 +58,13 @@ public class ObservationPointDto implements Serializable {
 
     public void setObservationPointId(Integer observationPointId) {
         this.observationPointId = observationPointId;
+    }
+
+    public String getEvaluationIndexName() {
+        return evaluationIndexName;
+    }
+
+    public void setEvaluationIndexName(String evaluationIndexName) {
+        this.evaluationIndexName = evaluationIndexName;
     }
 }

@@ -1,9 +1,10 @@
-layui.use(['form', 'layer', 'laydate', 'table', 'laytpl'], function () {
+layui.use(['form', 'layer', 'laydate', 'table', 'laytpl','upload'], function () {
     var form = layui.form,
         layer = parent.layer === undefined ? layui.layer : top.layer,
         $ = layui.jquery,
         laydate = layui.laydate,
         laytpl = layui.laytpl,
+        upload = layui.upload,
         table = layui.table;
 
     var initCollegeName,auditJson, evaluationIndexJson,observationPointJson,tableJson;
@@ -401,4 +402,89 @@ layui.use(['form', 'layer', 'laydate', 'table', 'laytpl'], function () {
             layer.alert("此功能需要前台展示，实际开发中传入对应的必要参数进行评分标准内容页面访问")
         }
     });
+
+    upload.render({
+        elem: '#importData'
+        , url: '/upload/'
+        , accept: 'file' //普通文件
+        , exts: 'XLSX|XLS' //只允许上传压缩文件
+        , auto: false
+        , choose: function (obj) {
+            var files = this.files = obj.pushFile(); //将每次选择的文件追加到文件队列
+
+            //读取本地文件
+            obj.preview(function (index, file, result) {
+                var titleInfo = "确定要导入 "+file.name+" 文件内的数据嘛？";
+                layer.confirm(titleInfo, {icon: 1, title: '确认导入信息', anim: 1}, function (index) {
+                    var f = file;
+                    var reader = new FileReader();
+                    var rABS = false;
+                    reader.onload = function (e) {	//定义生成事件
+                        var data = e.target.result;
+                        if (rABS) {
+                            wb = XLSX.read(btoa(fixdata(data)), {//手动转化
+                                type: 'base64'
+                            });
+                        } else {
+                            wb = XLSX.read(data, {
+                                type: 'binary'
+                            });
+                        }
+                        var jsonData = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]]);
+                        var data = JSON.stringify(jsonData);
+
+                        console.log(data);
+
+                        var index = top.layer.msg('数据导入中，请稍候', {icon: 16, time: false, shade: 0.1});
+                        $.ajax({
+                            "url": "/college/gradingStandard/excel",
+                            "data": data,
+                            "contentType": "application/json",
+                            "type": "post",
+                            "error": function () {
+                                top.layer.msg("导入失败，服务器繁忙");
+                                top.layer.close(index);
+                            },
+                            "success": function (result) {
+
+                                if (result.code == 200) {
+
+                                    top.layer.msg("导入成功！");
+                                    location.reload();
+                                } else {
+                                    top.layer.close(index);
+                                    top.layer.alert(result.msg,{icon: 2, title:'导入失败', anim: 6});
+                                    location.reload();
+                                }
+                            }
+                        });
+                        console.log(data);
+
+                        //table.reload('collegeListTable');
+                        //location.reload();
+                    };
+                    if (rABS) {	//读取文件
+                        reader.readAsArrayBuffer(f);
+                    } else {
+                        reader.readAsBinaryString(f);
+                    }
+                },function (index) {
+                    location.reload();
+                });
+            });
+        }
+
+        , done: function (res) {
+            console.log(res)
+        }
+    });
+
+    function fixdata(data) { //文件流转BinaryString
+        var o = "",
+            l = 0,
+            w = 10240;
+        for (; l < data.byteLength / w; ++l) o += String.fromCharCode.apply(null, new Uint8Array(data.slice(l * w, l * w + w)));
+        o += String.fromCharCode.apply(null, new Uint8Array(data.slice(l * w)));
+        return o;
+    }
 });

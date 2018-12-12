@@ -34,4 +34,6 @@ public interface ObservationPointService {
 	int updateByPrimaryKeySelective(ObservationPoint record);
 
 	int updateByPrimaryKey(ObservationPoint record);
+
+    int batchInsertObservationPoint(List<ObservationPoint> observationPointList);
 }

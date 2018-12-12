@@ -279,6 +279,63 @@ public class EvaluationIndexController {
     }
 
     /**
+     * 批量插入评估指标
+     *
+     * @param evaluationIndexList 评估指标列表
+     * @return code为200时为插入成功，其它情况为插入失败
+     */
+    @PostMapping("/excel")
+    public Map<String, Object> excelInsert(@RequestBody(required = false) List<EvaluationIndex> evaluationIndexList) {
+
+        Map<String, Object> map = new HashMap<>();
+        SystemBaseConfig systemConfig;
+
+        Integer collegeId;
+        //获取登录的用户ID
+        try {
+            MyUser userDetails = (MyUser) SecurityContextHolder.getContext()
+                    .getAuthentication()
+                    .getPrincipal();
+            CollegeExample collegeExample = new CollegeExample();
+            collegeExample.createCriteria().andUserIdEqualTo(userDetails.getMyUserId());
+            collegeId = collegeService.selectByExample(collegeExample).get(0).getCollegeId();
+        } catch (Exception e) {
+            map.put("code", 500);
+            map.put("msg", "数据格式错误");
+            return map;
+        }
+
+        //赋值
+        try {
+            systemConfig = systemConfigService.getSystemBaseConfig();
+        } catch (Exception e) {
+            map.put("code", 500);
+            map.put("msg", "数据格式错误");
+            return map;
+        }
+
+
+//      设置导入项的学院年份学期
+        for (EvaluationIndex evaluationIndex : evaluationIndexList
+        ) {
+            evaluationIndex.setCollegeId(collegeId);
+            evaluationIndex.setYear(systemConfig.getSystemYear());
+            evaluationIndex.setSemester(systemConfig.getSystemSemester());
+        }
+
+        try {
+            evaluationIndexService.batchInsertEvaluationIndex(evaluationIndexList);
+        } catch (Exception e) {
+            map.put("code", 500);
+            map.put("msg", e.getMessage());
+            return map;
+        }
+        map.put("code", 200);
+        map.put("msg", "请求成功");
+        return map;
+    }
+
+    /**
      * 更新评估指标信息
      *
      * @param evaluationIndexDto 评估指标信息

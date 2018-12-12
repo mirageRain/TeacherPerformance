@@ -6,6 +6,7 @@ import com.hdc.dto.ObservationPointDto;
 import com.hdc.entity.*;
 import com.hdc.security.MyUser;
 import com.hdc.service.CollegeService;
+import com.hdc.service.EvaluationIndexService;
 import com.hdc.service.ObservationPointService;
 import com.hdc.service.SystemConfigService;
 import org.apache.commons.lang.StringUtils;
@@ -15,6 +16,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -25,6 +27,9 @@ public class ObservationPointController {
 
     @Autowired
     private ObservationPointService observationPointService;
+
+    @Autowired
+    private EvaluationIndexService evaluationIndexService;
 
     @Autowired
     private CollegeService collegeService;
@@ -277,6 +282,126 @@ public class ObservationPointController {
             return map;
         }
 
+        map.put("code", 200);
+        map.put("msg", "请求成功");
+        return map;
+    }
+
+    /**
+     * 批量插入观测点
+     *
+     * @param observationPointDtoList 观测点列表
+     * @return code为200时为插入成功，其它情况为插入失败
+     */
+    @PostMapping("/excel")
+    public Map<String, Object> excelInsert(@RequestBody(required = false) List<ObservationPointDto> observationPointDtoList) {
+
+        Map<String, Object> map = new HashMap<>();
+        List<ObservationPoint> observationPointList = new ArrayList<>();
+        SystemBaseConfig systemConfig;
+
+        Integer collegeId;
+        //获取登录的用户ID
+        try {
+            MyUser userDetails = (MyUser) SecurityContextHolder.getContext()
+                    .getAuthentication()
+                    .getPrincipal();
+            CollegeExample collegeExample = new CollegeExample();
+            collegeExample.createCriteria().andUserIdEqualTo(userDetails.getMyUserId());
+            collegeId = collegeService.selectByExample(collegeExample).get(0).getCollegeId();
+        } catch (Exception e) {
+            map.put("code", 500);
+            map.put("msg", "数据格式错误");
+            return map;
+        }
+
+        //赋值
+        try {
+            systemConfig = systemConfigService.getSystemBaseConfig();
+        } catch (Exception e) {
+            map.put("code", 500);
+            map.put("msg", "数据格式错误");
+            return map;
+        }
+
+        //获取一级分类内容,ID对应的hashMap键值对
+        Map<String,Integer> evaluationIndexMap = new HashMap<>();
+        EvaluationIndexExample evaluationIndexExample = new EvaluationIndexExample();
+        EvaluationIndexExample.Criteria criteria = evaluationIndexExample.createCriteria();
+        criteria.andYearEqualTo(systemConfig.getSystemYear());
+        criteria.andSemesterEqualTo(systemConfig.getSystemSemester());
+        criteria.andCollegeIdEqualTo(collegeId);
+
+        List<EvaluationIndex> evaluationIndexList = evaluationIndexService.selectByExample(evaluationIndexExample);
+
+        for (EvaluationIndex evaluationIndex: evaluationIndexList
+             ) {
+            evaluationIndexMap.put(evaluationIndex.getContent(), evaluationIndex.getEvaluationIndexId());
+        }
+
+
+//      设置导入项的学院、年份、学期,并转换为observationPoint列表
+        String evaluationIndexName, observationPointContent;
+        Integer evaluationIndexId, semester , year;
+        int observationPointDtoListCount=0;
+        for (ObservationPointDto observationPointDto : observationPointDtoList
+        ) {
+
+            observationPointDtoListCount++;
+            ObservationPoint observationPoint = new ObservationPoint();
+
+            evaluationIndexName = observationPointDto.getEvaluationIndexName();
+            evaluationIndexId = evaluationIndexMap.get(evaluationIndexName);
+            observationPointContent = observationPointDto.getContent();
+            semester = systemConfig.getSystemSemester();
+            year = systemConfig.getSystemYear();
+
+            if (!StringUtils.isNotBlank(evaluationIndexName)) {
+                map.put("code", 500);
+                map.put("msg", "第" + observationPointDtoListCount + "行评估指标数据为空，请检查后重试！");
+                return map;
+            }
+
+            if (evaluationIndexId == null || evaluationIndexId<=0) {
+                map.put("code", 500);
+                map.put("msg", "第" + observationPointDtoListCount + "行评估指标不存在，请检查后重试！");
+                return map;
+            }
+
+            if (!StringUtils.isNotBlank(observationPointContent)) {
+                map.put("code", 500);
+                map.put("msg", "第" + observationPointDtoListCount + "行观测点数据为空，请检查后重试！");
+                return map;
+            }
+
+            if (semester == null || semester<=0) {
+                map.put("code", 500);
+                map.put("msg", "第" + observationPointDtoListCount + "学期信息错误，请联系总管理员！");
+                return map;
+            }
+
+            if (year == null || year<=0) {
+                map.put("code", 500);
+                map.put("msg", "第" + observationPointDtoListCount + "学年信息错误，请联系总管理员！");
+                return map;
+            }
+
+            observationPoint.setEvaluationIndexId(evaluationIndexId);
+            observationPoint.setCollegeId(collegeId);
+            observationPoint.setSemester(semester);
+            observationPoint.setYear(year);
+            observationPoint.setContent(observationPointContent);
+
+            observationPointList.add(observationPoint);
+        }
+
+        try {
+            observationPointService.batchInsertObservationPoint(observationPointList);
+        } catch (Exception e) {
+            map.put("code", 500);
+            map.put("msg", e.getMessage());
+            return map;
+        }
         map.put("code", 200);
         map.put("msg", "请求成功");
         return map;
